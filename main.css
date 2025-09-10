@@ -1,0 +1,55 @@
+html {
+    width : 1440px;
+    padding: 16px;
+    background-color: black;
+    color: whitesmoke;
+}
+
+header {
+    height : 70px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+header nav {
+    display: flex;
+    flex-direction: row;
+}
+
+header nav ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+}
+
+header nav ul li {
+    margin : auto 5px;
+}
+
+#hero {
+    height: 500px;
+    background-color: beige;
+}
+
+.category {
+    display: flex;
+    flex-direction: column;
+}
+
+.scrollbox{
+    display: flex;
+    flex-direction: row; 
+    overflow: scroll;
+    list-style: none;
+    height : 250px;
+    padding : 0;
+}
+
+.scrollbox li {
+    height: 200px;
+    aspect-ratio: 16/9;
+    border : 1px  solid whitesmoke;
+    margin : 8px;
+    padding: 0;
+}
