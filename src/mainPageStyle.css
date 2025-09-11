@@ -11,7 +11,7 @@
     --flexbox-padding:0px;
 }
 
-.page{
+.page > *{
     width: var(--page-width);
 }
 
@@ -65,6 +65,8 @@
     flex-direction: row;
 }
 .MovieList > *{
+    width: 280px;
+    height: auto;
     margin: var(--all-margin);
     padding: var(--all-padding);
 }
