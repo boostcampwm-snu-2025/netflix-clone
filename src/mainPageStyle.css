@@ -1,0 +1,12 @@
+:root{
+    --page-witth:1440px;
+    --page-margin:0 auto;
+
+    --flexbox-margin:16px;
+    --flexbox-padding:16px;
+}
+
+.page{
+    width: var(--page-margin);
+    margin: var(--page-margin);
+}
