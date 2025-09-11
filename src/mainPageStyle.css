@@ -45,3 +45,27 @@
     margin: var(--all-margin);
     padding: var(--all-padding);
 }
+
+#HeroSubtitle > *{
+    margin: var(--all-margin);
+    padding: var(--all-padding);
+}
+
+.Category{
+    background-color: bisque;
+}
+
+.Category > *{
+    margin: var(--all-margin);
+    padding: var(--all-padding);
+}
+
+.MovieList{
+    display: flex;
+    flex-direction: row;
+}
+.MovieList > *{
+    margin: var(--all-margin);
+    padding: var(--all-padding);
+}
+
