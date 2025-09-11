@@ -1,12 +1,37 @@
+*{
+    color : black;
+}
+
 :root{
-    --page-witth:1440px;
+    --page-width:1440px;
     --page-margin:0 auto;
 
-    --flexbox-margin:16px;
-    --flexbox-padding:16px;
+    --all-margin:8px;
+    --all-padding:8px;
+    --flexbox-padding:0px;
 }
 
 .page{
-    width: var(--page-margin);
-    margin: var(--page-margin);
+    width: var(--page-width);
+}
+
+#Menu {
+    display : flex;
+    flex-direction : row;
+    justify-content: space-between;
+    background-color: rgba(255, 255, 255, 0.3);
+    
+}
+
+.MenuList{
+    margin: var(--all-margin);
+    padding: var(--all-padding);
+    
+    display: flex;
+    flex-direction: row
+}
+
+.MenuList > * {
+    margin: var(--all-margin);
+    padding: var(--all-padding);
 }
