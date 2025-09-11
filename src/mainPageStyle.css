@@ -35,3 +35,13 @@
     margin: var(--all-margin);
     padding: var(--all-padding);
 }
+
+#Hero {
+    display: flex;
+    flex-direction: column;
+}
+
+#Hero > *{
+    margin: var(--all-margin);
+    padding: var(--all-padding);
+}
