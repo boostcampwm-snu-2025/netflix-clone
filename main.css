@@ -1,5 +1,4 @@
 html {
-    width : 1440px;
     padding: 16px;
     background-color: black;
     color: whitesmoke;
@@ -17,19 +16,89 @@ header nav {
     flex-direction: row;
 }
 
+
 header nav ul {
     display: flex;
     flex-direction: row;
     list-style: none;
+    padding : 0
 }
 
 header nav ul li {
     margin : auto 5px;
 }
 
+header nav ul li:hover {
+    scale : 1.1;
+}
+
+nav a{
+    text-decoration: none;
+    color:inherit
+}
+
+#mainlogo {
+    color: red;
+    font-size: 25px;
+    margin-right: 32px;
+}
+
 #hero {
-    height: 500px;
-    background-color: beige;
+    height: 800px;
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-between;
+    position: relative;
+    background-image: url("https://img.vogue.co.kr/vogue/2025/09/style_68b4faadda9d5-1400x933.jpg");
+    background-size: cover;
+    z-index: 2;
+}
+
+#hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* 왼쪽에서 오른쪽으로, 그리고 아래에서 위로 어두워지는 그라데이션 */
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.3) 50%, transparent 70%),
+                linear-gradient(to top, rgba(0, 0, 0, 0.3) 50%, transparent 60%);
+    z-index: -2;
+}
+
+#leftcontent {
+    align-self: center;
+    padding-left: 16px;
+}
+
+#rightcontent {
+    position : absolute;
+    top : 60%;
+    right: 0px;
+    background-color: rgba(63, 63, 63, 0.858);
+    width: 100px;
+    box-shadow: -3px 0 whitesmoke;
+}
+
+#rightcontent p {
+    margin: 8px 8px 8px 16px;
+}
+
+#mid {
+    position: relative;
+    margin-top: -200px;
+    z-index: 10;
+}
+
+#imgcontain {
+    width: max-content;
+}
+
+#cut {
+    position: absolute;   
+    z-index: -1;
+    object-fit: contain;
 }
 
 .category {
@@ -44,12 +113,36 @@ header nav ul li {
     list-style: none;
     height : 250px;
     padding : 0;
+    -ms-overflow-style: none;  /* IE, Edge */
+    scrollbar-width: none;     /* Firefox */
+
 }
 
 .scrollbox li {
     height: 200px;
     aspect-ratio: 16/9;
     border : 1px  solid whitesmoke;
-    margin : 8px;
+    margin : 8px 16px 0 0;
     padding: 0;
+    background-color: black;
+}
+
+.scrollbox li:hover {
+    scale : 1.05;
+}
+
+button {
+    height: 40px;
+    font: inherit;
+    padding : 0 16px;
+    border-radius: 8px;
+}
+
+button:hover {
+    scale: 1.1;
+}
+
+#detail {
+    background-color: rgba(109, 109, 110, 0.7);
+    color: white;
 }
