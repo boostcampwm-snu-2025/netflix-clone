@@ -5,64 +5,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Netflix (Clone)</title>
     <link rel="stylesheet" href="/index.css" />
+    <link
+      rel="stylesheet"
+      as="style"
+      crossorigin
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard.css"
+    />
   </head>
 
   <body>
     <div class="container">
       <div class="header__container">
-        <div class="header__left-container">
+        <div class="header__content-container">
           <img class="header__logo" src="/assets/header/logo.png" />
-          <div class="header__navbar">
-            <span class="header__navbar-text">홈</span>
-            <span class="header__navbar-text">시리즈</span>
-            <span class="header__navbar-text">영화</span>
-            <span class="header__navbar-text">게임</span>
-            <span class="header__navbar-text">NEW! 요즘 대세 콘텐츠</span>
-            <span class="header__navbar-text">내가 찜한 리스트</span>
-            <span class="header__navbar-text">언어별로 찾아보기</span>
+          <div class="header__navbar header__text">
+            <span>홈</span>
+            <span>시리즈</span>
+            <span>영화</span>
+            <span>게임</span>
+            <span>NEW! 요즘 대세 콘텐츠</span>
+            <span>내가 찜한 리스트</span>
+            <span>언어별로 찾아보기</span>
           </div>
         </div>
 
-        <div class="header__right-container">
-          <img class="header__icon" src="/assets/header/search-icon.png" />
-          <span class="header__navbar-text">키즈</span>
-          <img class="header__icon" src="/assets/header/noti-icon.png" />
-          <div class="header__profile-container">
+        <div class="header__content-container">
+          <img class="header__icon" src="/assets/header/search-icon.svg" />
+          <span class="header__text">키즈</span>
+          <img class="header__icon" src="/assets/header/noti-icon.svg" />
+          <button class="header__profile-container" disabled>
             <img
               class="header__profile-image"
               src="/assets/header/profile.png"
             />
             <img
               class="header__chevron"
-              src="/assets/header/chevron-icon.png"
+              src="/assets/header/chevron-icon.svg"
             />
-          </div>
+          </button>
         </div>
       </div>
 
       <div class="hero__container">
         <div class="hero__overlay">
+          <img class="hero__logo" src="assets/hero/logo.png" />
+          <div class="hero__rank-row">
+            <img class="top-10-logo" src="assets/top-10.png" />
+            오늘 시리즈 순위 2위
+          </div>
+          <span class="hero__description">
+            시간을 거슬러 과거로 가게 된 현대의 셰프가 폭군으로 악명 높은 왕을
+            만난다. 그녀는 탁월한 요리 솜씨로 왕의 마음과 입맛을 모두 사로잡을
+            수 있을까?
+          </span>
 
-        <img class="hero__logo" src="assets/hero/logo.png" />
-        <div class="hero__title-container">
-          <img class="top-10-logo" src="assets/top-10.png" />
-          <span class="hero__rank-text">오늘 시리즈 순위 2위</span>
-        </div>
-        <span class="hero__description">
-          시간을 거슬러 과거로 가게 된 현대의 셰프가 폭군으로 악명 높은 왕을
-          만난다. 그녀는 탁월한 요리 솜씨로 왕의 마음과 입맛을 모두 사로잡을 수
-          있을까?
-        </span>
-
-        <div class="hero__button-row">
-          <button class="hero__button" disabled>
-            <img class="hero__button-icon" src="assets/hero/play-icon.png">
-            재생
-          </button>
-          <button class="hero__button hero__button-info" disabled>
-            <img class="hero__button-icon" src="assets/hero/info-icon.png">
-            상세 정보
-          </button>
+          <div class="hero__button-row">
+            <button class="hero__button" disabled>
+              <img class="hero__button-icon" src="assets/hero/play-icon.svg" />
+              재생
+            </button>
+            <button class="hero__button hero__button-info" disabled>
+              <img class="hero__button-icon" src="assets/hero/info-icon.svg" />
+              상세 정보
+            </button>
+          </div>
         </div>
       </div>
 
