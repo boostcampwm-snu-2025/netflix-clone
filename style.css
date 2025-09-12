@@ -202,20 +202,20 @@ body {
     margin-left: 40px;    
 }
 
-#contents_for_user {
-    grid-area: section1;
-}
-
 nav {
     color: white;
     font-size: 20px;
     padding-bottom: 10px;
 }
 
+#contents_for_user {
+    grid-area: section1;
+}
+
 .contents_for_user_img_flex {
     display: flex;
     align-items: center;
-    width: 1440px;
+    width: auto;
     height: auto;
     gap: 5px;
     margin-bottom: 25px;
@@ -223,5 +223,39 @@ nav {
 
 .contents_for_user_img {
     width: 220px;
-    heigh: auto;
+    height: auto;
+}
+
+
+/* top10 시리즈 스타일 */
+#top10_contents {
+    grid-area: section2;
+}
+
+.top10_contents_img_flex {
+    display: flex;
+    align-items: center;
+    width: auto;
+    height: auto;
+    gap: 5px;
+    margin-bottom: 25px;
+}
+
+.top10_contents_img_inner_flex {
+    display: flex;
+    align-items: center;
+} 
+
+.rank_font {
+    padding-left: 10px;
+    font-size: 150px;
+    color: gray;
+    font-style: italic;
+    padding-right: 0px;
+    margin-right: 0px;
+}
+
+.top10_contents_img {
+    width: 126.75px;
+    height: auto;
 }
