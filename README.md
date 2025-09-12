@@ -1,2 +1,10 @@
-# netflix-clone
-넷플릭스 클론 프로젝트
+# checklist
+- semantic tag 별로 잘 분리해서 구현했는가
+- img alt를 추가했는가
+- flex/grid를 사용했는가
+- overlay를 잘 했는가
+- 여백/간격을 잘 설정했는가
+- 디자인 토큰 재사용을 했는가
+- 카드 확대를 CSS로 구현했는가
+- Tab 접근성 확보를 했는가
+- 색상 대비를 확실하게 했는가
