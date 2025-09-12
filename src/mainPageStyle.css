@@ -1,5 +1,5 @@
 *{
-    color : black;
+    color : white;
 }
 
 :root{
@@ -29,7 +29,6 @@
 
 .MenuList{
     margin: var(--all-margin);
-    padding: var(--all-padding);
     align-items: center;
     
     display: flex;
@@ -38,7 +37,6 @@
 
 .MenuList > * {
     margin: var(--all-margin);
-    padding: var(--all-padding);
 }
 
 #Hero {
@@ -46,9 +44,16 @@
     flex-direction: column;
 }
 
+#HeroBackground{
+    position : absolute;
+    width: var(--page-width);
+    height: auto;
+    z-index: -1;
+}
+
 #Hero > *{
-    margin: var(--all-margin);
-    padding: var(--all-padding);
+    margin-left: var(--all-margin);
+    
 }
 
 #HeroSubtitle > *{
@@ -57,7 +62,6 @@
 }
 
 .Category{
-    background-color: bisque;
 }
 
 .Category > *{
@@ -74,5 +78,4 @@
     width: 280px;
     height: auto;
     margin: var(--all-margin);
-    padding: var(--all-padding);
 }
