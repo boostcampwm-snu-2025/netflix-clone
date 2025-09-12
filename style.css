@@ -2,20 +2,12 @@ body {
     background-color: black;
 }
 
-.grid_container {
+.flex_container {
     width: 1440px;
     overflow: hidden;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 42px repeat(4, auto) 1fr;
+    display: flex;
+    flex-direction: column;
     gap: 10px;
-    grid-template-areas: 
-    "header"
-    "hero"
-    "section1"
-    "section2"
-    "section3"
-    "footer";
 }
 
 
