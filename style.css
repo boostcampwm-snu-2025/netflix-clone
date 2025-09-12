@@ -5,14 +5,21 @@ body {
 .grid_container {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 40px repeat(4, auto) 50px;
+    grid-template-rows: 40px repeat(4, auto) 1fr;
     gap: 10px;
+    grid-template-areas: 
+    "header"
+    "hero"
+    "section1"
+    "section2"
+    "section3"
+    "footer";
 }
 
 .flex_header {
     display: flex;
     align-items: center;
-    
+    grid-area: header;
 }
 
 .logo {
@@ -22,16 +29,12 @@ body {
     padding-right: 10px;
 }
 
-button {
+.button_header {
     background-color: black;
     border: none;
     font-size: 13px; 
     color: white; 
     margin-left: 5px;
-}
-
-.home {
-    
 }
 
 .magnifier {
@@ -59,4 +62,49 @@ button {
     height: 8px;
     width: auto;
     margin-left: 10px
+}
+
+
+.hero {
+    grid-area: hero;
+}
+
+.overlay {
+    max-width: 100%;
+    height: auto;
+}
+
+.button_with_hero {
+    background-color: white;
+    font-size: 20px;
+    padding: 6px 24px;
+}
+
+.play_sign {
+    height: 28px;
+    width: auto;
+}
+
+.button_with_info {
+    background-color: gray;
+    font-size: 20px;
+    padding: 5px 36px;
+}
+
+.info_sign {
+    height: 32px;
+    width: auto;
+}
+
+.sound_sign {
+    height: 30px;
+    width: auto;
+}
+
+.age_limit {
+    color: white;
+    font-size: 20px;
+    background-color: gray;
+    padding-left: 10px;
+    padding-right: 70px;
 }
