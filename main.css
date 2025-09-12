@@ -121,10 +121,16 @@ nav a{
 .scrollbox li {
     height: 200px;
     aspect-ratio: 16/9;
-    border : 1px  solid whitesmoke;
+
     margin : 8px 16px 0 0;
     padding: 0;
     background-color: black;
+}
+
+.scrollbox li img {
+    width: 100%;
+    height: 100%;
+
 }
 
 #rank li{
@@ -135,11 +141,11 @@ nav a{
 }
 
 #rank li * {
-    width: 50%;
     overflow: hidden;
+    width: 50%;
 }
 
-#rank li .left-ranking *{
+#rank li .left-ranking span{
     font-size: 270px;
     line-height: 0.6;
     margin-left: 45px;
@@ -148,9 +154,14 @@ nav a{
 }
 
 #rank li .right-poster {
+    aspect-ratio: 9/16;
     background-color: rgb(107, 107, 107);
     display: block;
     position: relative;
+}
+
+#rank li .right-poster img {
+    width: 100%;
 }
 
 .scrollbox li:hover {
