@@ -7,7 +7,7 @@ body {
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 8px;
 }
 
 
@@ -15,14 +15,21 @@ body {
 .flex_header {
     display: flex;
     align-items: center;
-    grid-area: header;
+    justify-content: space-between;
+    height: 40px;
+    overflow: hidden;
+}
+
+.flex_header_left {
+    display: flex;
+    align-items: center;
 }
 
 .logo {
-    height: 100px;
+    height: 100px; /* 높이 42px을 넘어가면 잘리는 것을 이용해서 크기 조정 */
     width: auto;
-    padding-left: 20px;
-    padding-right: 10px;
+    padding-left: 24px;
+    padding-right: 8px;
 }
 
 .button_header {
@@ -30,31 +37,36 @@ body {
     border: none;
     font-size: 13px; 
     color: white; 
-    margin-left: 5px;
+    margin-left: 8px;
+}
+
+.flex_header_right {
+    display: flex;
+    align-items: center;
 }
 
 .magnifier {
     height: 23px;
     width: auto;
-    margin-left: 700px;
 }
 
 .bell {
     height: 22px;
     width: auto;
-    margin-left: 13px;
+    margin-left: 16px;
 }
 
 .basic_profile{
     height: 26px;
     width: auto;
-    margin-left: 11px;
+    margin-left: 16px;
 }
 
 .triangle {
     height: 8px;
     width: auto;
-    margin-left: 10px
+    margin-left: 8px;
+    margin-right: 40px;
 }
 
 
