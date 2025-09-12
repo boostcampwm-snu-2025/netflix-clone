@@ -279,3 +279,54 @@ nav {
     width: 220px;
     height: auto;
 }
+
+
+/* footer 스타일 */
+footer {
+    margin-top: 100px;
+    margin-left: 300px;
+    width: 700px;
+    font-size: 13px;
+    color: gray;
+}
+
+.footer_logos {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    height: 28px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.footer_logos > img:nth-child(1) {
+    height: 28px;
+}
+
+.footer_logos > img:nth-child(2) {
+    height: 25px;
+    margin-left: 15px;
+}
+
+.footer_logos > img:nth-child(3) {
+    height: 30px;
+    margin-left: 15px;
+}
+
+.footer_logos > img:nth-child(4) {
+    height: 50px;
+    margin-left: 5px;
+}
+
+.footer_link {
+    display: grid;
+    height: 70px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    margin-bottom: 20px;
+}
+
+.footer_info {
+    font-size: 11px;
+    margin-bottom: 10px;
+}
