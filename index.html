@@ -2,10 +2,59 @@
 <html lang="ko">
 <head>
   <meta charset="utf-8" />
-  <title>Netflix-like Page</title>
+  <title>홈 - 넷플릭스</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <header class="nf-header" role="banner">
+    <div class="page nf-header__inner">
+      <!--AI로부터 로고 디자인 도움 받음-->
+      <a class="nf-logo" href="#" aria-label="넷플릭스 홈">
+        <svg viewBox="0 0 512 128" width="92" height="24" aria-hidden="true" focusable="false">
+          <rect width="512" height="128" fill="none"/>
+          <text x="0" y="92" font-size="100" font-weight="800" fill="#e50914"
+                font-family="Arial Black, Arial, Helvetica, sans-serif" letter-spacing="3">NETFLIX</text>
+        </svg>
+      </a>
+      <!--상단 메뉴-->
+      <nav class="nf-nav" aria-label="주 메뉴">
+        <a href="#" aria-current="page">홈</a>
+        <a href="#">시리즈</a>
+        <a href="#">영화</a>
+        <a href="#">게임</a>
+        <a href="#">NEW! 요즘 대세 콘텐츠</a>
+        <a href="#">내가 찜한 리스트</a>
+        <a href="#">언어별로 찾아보기</a>
+      </nav>
   
+      <div class="nf-actions" aria-label="헤더 액션">
+        <!--검색 버튼-->
+        <button class="icon-btn" aria-label="검색" disabled>
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+            <!--AI 활용하여 svg 이미지 생성 (이하 svg에도 마찬가지)-->
+            <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 5 1.49-1.49-5-5zM9.5 14A4.5 4.5 0 119.5 5a4.5 4.5 0 010 9z" fill="currentColor"/>
+          </svg>
+        </button>
+        <!--키즈 메뉴-->
+        <a class="kids" href="#">키즈</a>
+        <!--알림 버튼-->
+        <button class="icon-btn bell" aria-label="알림" disabled>
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+            <path d="M12 22a2 2 0 002-2h-4a2 2 0 002 2zm6-6v-5a6 6 0 10-12 0v5l-2 2v1h16v-1l-2-2z" fill="currentColor"/>
+          </svg>
+          <span class="badge" aria-hidden="true">00</span>
+        </button>
+        <!--프로필 버튼-->
+        <button class="profile" aria-label="프로필 메뉴" disabled>
+          <!--AI로부터 더미 이미지 사이트 추천받아 사용함-->
+          <img src="https://placehold.co/28x28" alt="프로필 사진" />
+          <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+            <path d="M7 10l5 5 5-5z" fill="currentColor"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
 </body>
 </html>
