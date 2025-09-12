@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Netflix (Clone)</title>
+    <title>Netflix Clone Project</title>
     <link rel="stylesheet" href="/index.css" />
     <link
       rel="stylesheet"
@@ -14,25 +14,47 @@
   </head>
 
   <body>
-    <div class="container">
-      <div class="header__container">
-        <div class="header__content-container">
-          <img class="header__logo" src="/assets/header/logo.png" />
-          <div class="header__navbar header__text">
-            <span>홈</span>
-            <span>시리즈</span>
-            <span>영화</span>
-            <span>게임</span>
-            <span>NEW! 요즘 대세 콘텐츠</span>
-            <span>내가 찜한 리스트</span>
-            <span>언어별로 찾아보기</span>
-          </div>
-        </div>
+    <main class="container">
+      <header class="header__container">
+        <section class="header__content-container">
+          <a href="/">
+            <img
+              class="header__logo"
+              src="/assets/header/logo.png"
+              alt="Netflix logo"
+            />
+          </a>
+          <nav class="header__navbar">
+            <ul class="header__nav-list">
+              <li><a class="header__text" href="#">홈</a></li>
+              <li><a class="header__text" href="#">시리즈</a></li>
+              <li><a class="header__text" href="#">영화</a></li>
+              <li><a class="header__text" href="#">게임</a></li>
+              <li>
+                <a class="header__text" href="#">NEW! 요즘 대세 콘텐츠</a>
+              </li>
+              <li><a class="header__text" href="#">내가 찜한 리스트</a></li>
+              <li><a class="header__text" href="#">언어별로 찾아보기</a></li>
+            </ul>
+          </nav>
+        </section>
 
-        <div class="header__content-container">
-          <img class="header__icon" src="/assets/header/search-icon.svg" />
-          <span class="header__text">키즈</span>
-          <img class="header__icon" src="/assets/header/noti-icon.svg" />
+        <section class="header__content-container">
+          <a href="/">
+            <img
+              class="header__icon"
+              src="/assets/header/search-icon.svg"
+              alt="Search Icon"
+            />
+          </a>
+          <li><a class="header__text" href="#">키즈</a></li>
+          <a href="/">
+            <img
+              class="header__icon"
+              src="/assets/header/noti-icon.svg"
+              alt="Notification Icon"
+            />
+          </a>
           <button class="header__profile-container" disabled>
             <img
               class="header__profile-image"
@@ -41,40 +63,54 @@
             <img
               class="header__chevron"
               src="/assets/header/chevron-icon.svg"
+              alt="Chevron Icon"
             />
           </button>
-        </div>
-      </div>
+        </section>
+      </header>
 
-      <div class="hero__container">
+      <section class="hero__container">
         <div class="hero__overlay">
-          <img class="hero__logo" src="assets/hero/logo.png" />
-          <div class="hero__rank-row">
-            <img class="top-10-logo" src="assets/top-10.png" />
+          <img class="hero__logo" src="assets/hero/logo.png" alt="Hero Logo" />
+
+          <section class="hero__rank-row">
+            <img
+              class="top-10-logo"
+              src="assets/top-10.png"
+              alt="Top 10 Logo"
+            />
             오늘 시리즈 순위 2위
-          </div>
-          <span class="hero__description">
+          </section>
+          <p class="hero__description">
             시간을 거슬러 과거로 가게 된 현대의 셰프가 폭군으로 악명 높은 왕을
             만난다. 그녀는 탁월한 요리 솜씨로 왕의 마음과 입맛을 모두 사로잡을
             수 있을까?
-          </span>
+          </p>
 
-          <div class="hero__button-row">
+          <section class="hero__button-row">
             <button class="hero__button" disabled>
-              <img class="hero__button-icon" src="assets/hero/play-icon.svg" />
+              <img
+                class="hero__button-icon"
+                src="assets/hero/play-icon.svg"
+                alt="Play Icon"
+              />
               재생
             </button>
             <button class="hero__button hero__button-info" disabled>
-              <img class="hero__button-icon" src="assets/hero/info-icon.svg" />
+              <img
+                class="hero__button-icon"
+                src="assets/hero/info-icon.svg"
+                alt="Info Icon"
+              />
               상세 정보
             </button>
-          </div>
+          </section>
         </div>
-      </div>
+      </section>
 
       <div class="content__container"></div>
 
       <div class="footer__container"></div>
-    </div>
+    </main>
   </body>
 </html>

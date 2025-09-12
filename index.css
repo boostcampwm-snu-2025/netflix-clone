@@ -38,6 +38,20 @@ button {
   cursor: pointer;
 }
 
+li {
+  list-style: none;
+}
+
+li a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  display: flex;
+  list-style: none;
+}
+
 .container {
   position: relative;
   width: 1440px;
@@ -75,6 +89,10 @@ button {
 
 .header__navbar {
   display: flex;
+  align-items: center;
+}
+
+.header__nav-list {
   gap: 24px;
 }
 
