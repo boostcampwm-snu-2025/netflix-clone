@@ -259,3 +259,23 @@ nav {
     width: 126.75px;
     height: auto;
 }
+
+
+/* 새로 올라온 컨텐츠 스타일 */
+#new_contents {
+    grid-area: section3;
+}
+
+.new_contents_img_flex {
+    display: flex;
+    align-items: center;
+    width: auto;
+    height: auto;
+    gap: 5px;
+    margin-bottom: 25px;
+}
+
+.new_contents_img {
+    width: 220px;
+    height: auto;
+}
