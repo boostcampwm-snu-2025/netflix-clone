@@ -44,6 +44,11 @@
     flex-direction: column;
 }
 
+#Hero > *:not(#HeroBackground) {
+    margin: var(--all-margin);
+    padding: var(--all-padding);
+}
+
 #HeroBackground{
     position : absolute;
     width: var(--page-width);
@@ -51,10 +56,7 @@
     z-index: -1;
 }
 
-#Hero > *{
-    margin-left: var(--all-margin);
-    
-}
+
 
 #HeroSubtitle > *{
     margin: var(--all-margin);
@@ -75,7 +77,13 @@
 }
 
 .MovieCard{
+    aspect-ratio: 16/9;
+    overflow: hidden;
     width: 280px;
     height: auto;
     margin: var(--all-margin);
+}
+
+.MovieCard:hover{
+    transform: translateY(-10px) scale(1.10);
 }
