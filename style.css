@@ -288,6 +288,7 @@ footer {
     width: 700px;
     font-size: 13px;
     color: gray;
+    grid-area: footer;
 }
 
 .footer_logos {
