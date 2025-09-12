@@ -5,7 +5,7 @@ body {
 .grid_container {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 40px repeat(4, auto) 1fr;
+    grid-template-rows: 42px repeat(4, auto) 1fr;
     gap: 10px;
     grid-template-areas: 
     "header"
@@ -25,7 +25,7 @@ body {
 .logo {
     height: 100px;
     width: auto;
-    padding-left: 17px;
+    padding-left: 20px;
     padding-right: 10px;
 }
 
@@ -43,20 +43,17 @@ body {
     margin-left: 700px;
 }
 
-
 .bell {
     height: 22px;
     width: auto;
     margin-left: 13px;
 }
 
-
 .basic_profile{
     height: 26px;
     width: auto;
     margin-left: 11px;
 }
-
 
 .triangle {
     height: 8px;
@@ -65,19 +62,91 @@ body {
 }
 
 
+
 .hero {
     grid-area: hero;
-}
-
-.overlay {
-    max-width: 100%;
+    position: relative;
+    width: 1500px;
     height: auto;
 }
 
-.button_with_hero {
+.overlay_image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.overlay_upper {
+    position: absolute;
+    top: 20%;
+    left: 50px;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.0);
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.overlay_1st_row {
+    width: 500px;
+    height: auto;
+    display: block;
+}
+
+.overlay_2nd_row {
+    width: 250px;
+    height: auto;
+    display: flex;
+    align-items: center;
+}
+
+.overlay_2nd_row .top10_logo {
+    height: 30px;
+    width: auto;
+}
+
+.overlay_2nd_row .rank {
+    font-size: 22px;
+    color: white;
+    margin-left: 8px;
+}
+
+.overlay_3rd_row {
+    width: 500px;
+    height: auto;
+    font-size: 18px;
+    color: white;
+}
+
+.overlay_4th_row {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+
+.overlay_4th_row .overlay_4th_left {
+    display: flex;
+    align-items: center;
+}
+
+.overlay_4th_row .overlay_4th_right {
+    display: flex;
+    align-items: center;
+}
+
+.button_with_play {
+    border: none;
     background-color: white;
     font-size: 20px;
     padding: 6px 24px;
+    display: flex;
+    align-items: center;
 }
 
 .play_sign {
@@ -86,25 +155,39 @@ body {
 }
 
 .button_with_info {
-    background-color: gray;
+    border: none;
+    background-color: rgba(128, 128, 128, 0.6);
     font-size: 20px;
-    padding: 5px 36px;
+    padding: 4px 18px;
+    margin-left: 8px;
+    display: flex;
+    align-items: center;
 }
 
 .info_sign {
-    height: 32px;
+    height: 34px;
     width: auto;
 }
 
+.info_font {
+    color: white;
+    padding-right: 4px;
+    margin-left: 5px;
+}
+
 .sound_sign {
-    height: 30px;
+    height: 35px;
     width: auto;
 }
 
 .age_limit {
     color: white;
-    font-size: 20px;
-    background-color: gray;
+    font-size: 15px;
+    background-color: rgba(128, 128, 128, 0.6);
+    border-left: 3.5px solid white;
+    padding-top: 5px;
+    padding-bottom: 5px;
     padding-left: 10px;
-    padding-right: 70px;
+    padding-right: 80px;
+    margin-left: 20px;
 }

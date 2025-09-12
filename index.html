@@ -7,6 +7,7 @@
     </head>
 
     <body>
+        <!-- 일단 화면 크기 100%로 고정 -->
         <div class="grid_container">
             <header class="flex_header">
                 <img src="./img_header/logo.png" class="logo"> <!-- netflix -->
@@ -24,17 +25,33 @@
             </header>
 
             <hero class="hero">
-                <img src="./img_hero/overlay.jpg" class="overlay">
-                <button class="button_with_hero">
-                    <img src="./img_hero/play.png" class="play_sign">    
-                    재생
-                </button>
-                <button class="button_with_info">
-                    <img src="./img_hero/info.png" class="info_sign">    
-                    상세 정보
-                </button>
-                <img src="./img_hero/sound.png" class="sound_sign"> <!-- 소리/음소거 -->
-                <span class="age_limit">19+</span> <!-- 연령 제한 -->
+                <img src="./img_hero/overlay.jpg" class="overlay_image">
+                <div class="overlay_upper">
+                    <img src="./img_hero/overname.png" class="overlay_1st_row">
+                    <div class="overlay_2nd_row">
+                        <img src="./img_hero/top10.jpg" class="top10_logo">
+                        <span class="rank">오늘 시리즈 순위 2위</span>
+                    </div>
+                    <div class="overlay_3rd_row">시간을 거슬러 과거로 가게 된 현대의 셰프가 폭군으로 악명 높은 왕을
+                    만난다. 그녀는 탁월한 요리 솜씨로 왕의 마음과 입맛을 모두 사로잡을 수 있을까?</div>
+                    <div class="overlay_4th_row">
+                        <div class="overlay_4th_left">
+                            <button class="button_with_play">
+                                <img src="./img_hero/play.png" class="play_sign">    
+                                <span>재생</span>
+                            </button>
+                            <button class="button_with_info">
+                                <img src="./img_hero/info.png" class="info_sign">    
+                                <span class="info_font">상세 정보</span>
+                            </button>
+                        </div>
+                        <div class="overlay_4th_right">
+                            <img src="./img_hero/sound.png" class="sound_sign"> <!-- 소리/음소거 -->
+                            <span class="age_limit">19+</span> <!-- 연령 제한 -->
+                        </div>
+                    </div>
+                    
+                </div>    
             </hero>
 
             <section class="contents" id="contents_for_user">
