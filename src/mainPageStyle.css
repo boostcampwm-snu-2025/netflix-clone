@@ -58,7 +58,7 @@
 }
 
 #HeroBackground{
-    position : absolute;
+    position: absolute;
     width: var(--page-width);
     height: auto;
     z-index: -1;
