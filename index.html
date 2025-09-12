@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Netflix-style Layout</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Navigation -->
+  <header class="nav" role="navigation" aria-label="Global">
+    <div class="logo" aria-label="Logo">NETFLIX</div>
+    <nav class="nav-menu" aria-label="Primary">
+      <a href="#">홈</a>
+      <a href="#">시리즈</a>
+      <a href="#">영화</a>
+      <a href="#">NEW! 요즘 대세</a>
+      <a href="#">내가 찜한 리스트</a>
+      <a href="#">언어별로 찾아보기</a>
+    </nav>
+    <div class="nav-right">
+      <button class="icon-btn" aria-label="검색">🔍</button>
+      <div class="avatar" aria-label="프로필"></div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section
+    class="hero"
+    aria-label="Featured"
+    style="--hero-img: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1920&auto=format&fit=crop');"
+  >
+    <div class="hero-badge">
+      <span class="badge-n">N</span>
+      <span class="badge-top">오늘 시리즈 순위 2위</span>
+      <span class="age">15+</span>
+    </div>
+    <h1 class="hero-title">폭군의 셰프</h1>
+    <p class="hero-desc">
+      시간을 거슬러 과거로 가게 된 현대의 셰프가 폭군으로 악명 높은 왕을 만난다.
+      그녀는 탁월한 요리 솜씨로 왕의 마음과 입맛을 모두 사로잡을 수 있을까?
+    </p>
+    <div class="hero-actions">
+      <button class="btn primary" aria-label="재생">▶ 재생</button>
+      <button class="btn secondary" aria-label="상세 정보">ℹ 상세 정보</button>
+    </div>
+  </section>
+
+  <!-- Rows -->
+  <main class="section" aria-label="Rows of content">
+    <!-- Row 1 -->
+    <section class="row" aria-labelledby="row-1-title">
+      <h2 id="row-1-title" class="row-title">발견구</h2>
+      <div class="scroller">
+        <article class="card">
+          <span class="micro-badge">TOP 10</span>
+          <img src="https://images.unsplash.com/photo-1524985069026-dd778a71c7b4?q=80&w=1200&auto=format&fit=crop" alt="셰프 포스터" />
+          <div class="card-title">셰프</div>
+        </article>
+        <article class="card">
+          <span class="micro-badge">신작</span>
+          <img src="https://images.unsplash.com/photo-1517602302552-471fe67acf66?q=80&w=1200&auto=format&fit=crop" alt="에스콰이어 포스터" />
+          <div class="card-title">에스콰이어</div>
+        </article>
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1515165562835-c3b8c2e59cf0?q=80&w=1200&auto=format&fit=crop" alt="트리거 포스터" />
+          <div class="card-title">트리거</div>
+        </article>
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1498931299472-f7a63a5a1cfa?q=80&w=1200&auto=format&fit=crop" alt="사막의 그림자 포스터" />
+          <div class="card-title">사막의 그림자</div>
+        </article>
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1200&auto=format&fit=crop" alt="뜻밖의 왕자 포스터" />
+          <div class="card-title">뜻밖의 왕자</div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Row 2 -->
+    <section class="row" aria-labelledby="row-2-title">
+      <h2 id="row-2-title" class="row-title">님이 시청 중인 콘텐츠</h2>
+      <div class="scroller">
+        <article class="card">
+          <span class="micro-badge">이어보기</span>
+          <img src="https://images.unsplash.com/photo-1526947425960-945c6e72858f?q=80&w=1200&auto=format&fit=crop" alt="드라마 오피스 포스터" />
+          <div class="card-title">드라마 오피스</div>
+        </article>
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1200&auto=format&fit=crop" alt="스타트업 포스터" />
+          <div class="card-title">스타트업</div>
+        </article>
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1515165562835-c3b8c2e59cf0?q=80&w=1200&auto=format&fit=crop" alt="미스터 셜록 포스터" />
+          <div class="card-title">미스터 셜록</div>
+        </article>
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1524985069026-dd778a71c7b4?q=80&w=1200&auto=format&fit=crop" alt="난로 포스터" />
+          <div class="card-title">난로</div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Row 3: TOP 10 -->
+    <section class="row" aria-labelledby="row-3-title">
+      <h2 id="row-3-title" class="row-title">오늘 대한민국의 TOP 10 시리즈</h2>
+      <div class="scroller">
+        <div class="rank-card">
+          <div class="rank">1</div>
+          <article class="card">
+            <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1200&auto=format&fit=crop" alt="Top 1 포스터" />
+            <div class="card-title">검은 역사</div>
+          </article>
+        </div>
+        <div class="rank-card">
+          <div class="rank">2</div>
+          <article class="card">
+            <img src="https://images.unsplash.com/photo-1515165562835-c3b8c2e59cf0?q=80&w=1200&auto=format&fit=crop" alt="Top 2 포스터" />
+            <div class="card-title">폭군의 셰프</div>
+          </article>
+        </div>
+        <div class="rank-card">
+          <div class="rank">3</div>
+          <article class="card">
+            <img src="https://images.unsplash.com/photo-1526947425960-945c6e72858f?q=80&w=1200&auto=format&fit=crop" alt="Top 3 포스터" />
+            <div class="card-title">에스콰이어</div>
+          </article>
+        </div>
+        <div class="rank-card">
+          <div class="rank">4</div>
+          <article class="card">
+            <img src="https://images.unsplash.com/photo-1517602302552-471fe67acf66?q=80&w=1200&auto=format&fit=crop" alt="Top 4 포스터" />
+            <div class="card-title">트리거</div>
+          </article>
+        </div>
+        <div class="rank-card">
+          <div class="rank">5</div>
+          <article class="card">
+            <img src="https://images.unsplash.com/photo-1524985069026-dd778a71c7b4?q=80&w=1200&auto=format&fit=crop" alt="Top 5 포스터" />
+            <div class="card-title">앰마</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer-space" aria-hidden="true"></div>
+  </main>
+</body>
+</html>
