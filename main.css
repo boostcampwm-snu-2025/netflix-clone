@@ -127,6 +127,32 @@ nav a{
     background-color: black;
 }
 
+#rank li{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    justify-content: right;
+}
+
+#rank li * {
+    width: 50%;
+    overflow: hidden;
+}
+
+#rank li .left-ranking *{
+    font-size: 270px;
+    line-height: 0.6;
+    margin-left: 45px;
+    color: transparent;                /* 안쪽 비우기 */
+    -webkit-text-stroke: 2px #8a8a8a;     /* 외곽선만 표시 */
+}
+
+#rank li .right-poster {
+    background-color: rgb(107, 107, 107);
+    display: block;
+    position: relative;
+}
+
 .scrollbox li:hover {
     scale : 1.05;
 }
