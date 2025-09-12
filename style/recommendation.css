@@ -1,0 +1,209 @@
+.recommendation-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.recommendation-contents-wrapper {
+  margin-bottom: 40px;
+}
+
+.recommendation-contents-wrapper p {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #e5e5e5;
+}
+
+.recommendation-contents-list-inner {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+.recommendation-contents-list-inner::-webkit-scrollbar {
+  display: none;
+}
+
+.recommendation-contents-inner {
+  position: relative;
+  flex-shrink: 0;
+  width: 200px;
+  height: 112px;
+  border-radius: 4px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.recommendation-contents-inner:hover {
+  transform: scale(1.05);
+}
+
+.recommendation-thumbnail {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #1a1a1a, #333);
+  object-fit: cover;
+}
+
+/* TOP 10 배지 */
+.recommendation-contents-inner:nth-child(1)::before,
+.recommendation-contents-inner:nth-child(2)::before,
+.recommendation-contents-inner:nth-child(4)::before {
+  content: "TOP 10";
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background-color: #e50914;
+  color: white;
+  font-size: 10px;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 2px;
+  z-index: 10;
+}
+
+/* Netflix N 로고 */
+.recommendation-contents-inner:nth-child(3)::after,
+.recommendation-contents-inner:nth-child(5)::after,
+.recommendation-contents-inner:nth-child(6)::after {
+  content: "N";
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background-color: #e50914;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  width: 20px;
+  height: 20px;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+/* 두 번째 섹션의 첫 번째 아이템에도 N 로고 */
+.recommendation-contents-wrapper:nth-child(2)
+  .recommendation-contents-inner:first-child::after {
+  content: "N";
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background-color: #e50914;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  width: 20px;
+  height: 20px;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+/* 세 번째 섹션의 N 로고들 */
+.recommendation-contents-wrapper:nth-child(3)
+  .recommendation-contents-inner:nth-child(1)::after,
+.recommendation-contents-wrapper:nth-child(3)
+  .recommendation-contents-inner:nth-child(6)::after {
+  content: "N";
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background-color: #e50914;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  width: 20px;
+  height: 20px;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.recommendation-new-episode {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+  padding: 15px 8px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.recommendation-new-episode span:first-child {
+  background-color: #e50914;
+  color: white;
+  font-size: 10px;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 2px;
+  align-self: flex-start;
+}
+
+.recommendation-new-episode span:last-child {
+  color: #e5e5e5;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.recommendation-new {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+}
+
+.recommendation-new span {
+  background-color: #46d369;
+  color: white;
+  font-size: 10px;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 2px;
+}
+
+.recommendation-new-season {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+}
+
+.recommendation-new-season span {
+  background-color: #e50914;
+  color: white;
+  font-size: 10px;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 2px;
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+  .recommendation-contents-inner {
+    width: 150px;
+    height: 84px;
+  }
+
+  .recommendation-contents-wrapper p {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .recommendation-contents-inner {
+    width: 120px;
+    height: 67px;
+  }
+
+  .recommendation-contents-wrapper p {
+    font-size: 16px;
+  }
+}
