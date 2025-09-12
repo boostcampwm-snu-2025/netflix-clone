@@ -6,6 +6,8 @@
     --page-width:1440px;
     --page-margin:0 auto;
 
+    --header-height:72px;
+    
     --all-margin:8px;
     --all-padding:8px;
     --flexbox-padding:0px;
@@ -19,6 +21,8 @@
     display : flex;
     flex-direction : row;
     justify-content: space-between;
+    position:sticky; 
+    top:0;
     background-color: rgba(255, 255, 255, 0.3);
     
 }
@@ -26,6 +30,7 @@
 .MenuList{
     margin: var(--all-margin);
     padding: var(--all-padding);
+    align-items: center;
     
     display: flex;
     flex-direction: row
@@ -64,10 +69,10 @@
     display: flex;
     flex-direction: row;
 }
-.MovieList > *{
+
+.MovieCard{
     width: 280px;
     height: auto;
     margin: var(--all-margin);
     padding: var(--all-padding);
 }
-
