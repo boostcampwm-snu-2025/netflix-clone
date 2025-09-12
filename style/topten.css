@@ -14,9 +14,9 @@
 .topten-contents-inner span {
   font-size: 240px;
   font-weight: 900;
-  color: black;
-  text-shadow: -1px -1px 0 gray, 1px -1px 0 gray, -1px 1px 0 gray,
-    1px 1px 0 gray;
+  color: var(--color-black);
+  text-shadow: -1px -1px 0 var(--color-gray), 1px -1px 0 var(--color-gray),
+    -1px 1px 0 var(--color-gray), 1px 1px 0 var(--color-gray);
   margin-right: -15px;
   z-index: 1;
   position: relative;
@@ -32,111 +32,13 @@
   z-index: 2;
 }
 
-/* 각 순위별 개별 스타일링 */
-.topten-contents-inner:nth-child(1) .topten-thumbnail::after {
-  content: "새로운 에피소드";
-  position: absolute;
-  bottom: 8px;
-  left: 8px;
-  background-color: #e50914;
-  color: white;
-  font-size: 9px;
-  font-weight: bold;
-  padding: 2px 5px;
-  border-radius: 2px;
-}
-
-.topten-contents-inner:nth-child(1) .topten-thumbnail::before {
-  content: "지금 시청하기";
-  position: absolute;
-  bottom: 22px;
-  left: 8px;
-  color: #e5e5e5;
-  font-size: 8px;
-  font-weight: 500;
-}
-
-.topten-contents-inner:nth-child(2) .topten-thumbnail::after {
-  content: "새로운 에피소드";
-  position: absolute;
-  bottom: 8px;
-  left: 8px;
-  background-color: #e50914;
-  color: white;
-  font-size: 9px;
-  font-weight: bold;
-  padding: 2px 5px;
-  border-radius: 2px;
-}
-
-.topten-contents-inner:nth-child(2) .topten-thumbnail::before {
-  content: "지금 시청하기";
-  position: absolute;
-  bottom: 22px;
-  left: 8px;
-  color: #e5e5e5;
-  font-size: 8px;
-  font-weight: 500;
-}
-
-.topten-contents-inner:nth-child(3) .topten-thumbnail::after {
-  content: "새로운 에피소드";
-  position: absolute;
-  bottom: 8px;
-  left: 8px;
-  background-color: #e50914;
-  color: white;
-  font-size: 9px;
-  font-weight: bold;
-  padding: 2px 5px;
-  border-radius: 2px;
-}
-
-.topten-contents-inner:nth-child(3) .topten-thumbnail::before {
-  content: "지금 시청하기";
-  position: absolute;
-  bottom: 22px;
-  left: 8px;
-  color: #e5e5e5;
-  font-size: 8px;
-  font-weight: 500;
-}
-
-.topten-contents-inner:nth-child(4) .topten-thumbnail::after {
-  content: "최신 등록";
-  position: absolute;
-  bottom: 8px;
-  left: 8px;
-  background-color: #46d369;
-  color: white;
-  font-size: 9px;
-  font-weight: bold;
-  padding: 2px 5px;
-  border-radius: 2px;
-}
-
-.topten-contents-inner:nth-child(5) .topten-thumbnail::after {
-  content: "새로운 에피소드";
-  position: absolute;
-  bottom: 8px;
-  left: 8px;
-  background-color: #e50914;
-  color: white;
-  font-size: 9px;
-  font-weight: bold;
-  padding: 2px 5px;
-  border-radius: 2px;
-}
-
-/* Netflix N 로고 */
-.topten-contents-inner:nth-child(4) .topten-thumbnail::before,
-.topten-contents-inner:nth-child(5) .topten-thumbnail::before {
+.topten-upper-badge {
   content: "N";
   position: absolute;
   top: 8px;
   right: 8px;
-  background-color: #e50914;
-  color: white;
+  background-color: var(--color-red);
+  color: var(--color-white);
   font-size: 12px;
   font-weight: bold;
   width: 18px;
@@ -152,21 +54,11 @@
   .topten-contents-inner span {
     font-size: 100px;
   }
-
-  .topten-thumbnail {
-    width: 130px;
-    height: 73px;
-  }
 }
 
 @media (max-width: 768px) {
   .topten-contents-inner span {
     font-size: 80px;
-  }
-
-  .topten-thumbnail {
-    width: 110px;
-    height: 62px;
   }
 
   .topten-contents-wrapper p {
@@ -178,11 +70,6 @@
   .topten-contents-inner span {
     font-size: 60px;
     margin-right: -10px;
-  }
-
-  .topten-thumbnail {
-    width: 90px;
-    height: 50px;
   }
 
   .topten-contents-wrapper p {

@@ -54,7 +54,7 @@
 }
 
 .nav-item a {
-  color: #e5e5e5;
+  color: var(--color-oat);
   text-decoration: none;
   font-size: 14px;
   font-weight: 400;
@@ -64,11 +64,11 @@
 }
 
 .nav-item a:hover {
-  color: #b3b3b3;
+  color: var(--color-light-gray);
 }
 
 .nav-item a.active {
-  color: #ffffff;
+  color: var(--color-white);
   font-weight: 500;
 }
 
@@ -86,7 +86,7 @@
 .header-icon-notification {
   background: none;
   border: none;
-  color: white;
+  color: var(--color-white);
   cursor: pointer;
   padding: 4px;
   border-radius: 4px;
@@ -107,7 +107,6 @@
 .header-icon-button img {
   width: 20px;
   height: 20px;
-  content: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='white' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z'/%3E%3C/svg%3E");
 }
 
 /* Kids Button */
@@ -126,15 +125,14 @@
 .header-icon-notification img {
   width: 20px;
   height: 20px;
-  content: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='white' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z'/%3E%3C/svg%3E");
 }
 
 .header-icon-notification-badge {
   position: absolute;
   top: -2px;
   right: -2px;
-  background: #e50914;
-  color: white;
+  background: var(--color-red);
+  color: var(--color-white);
   border-radius: 50%;
   width: 16px;
   height: 16px;
@@ -143,10 +141,9 @@
   align-items: center;
   justify-content: center;
   font-weight: bold;
-  border: 1px solid #141414;
+  border: 1px solid var(--color-dark-gray);
 }
 
-/* Profile Button (last button) */
 .header-container > div:last-child > button:last-child {
   display: flex;
   align-items: center;
@@ -173,7 +170,6 @@
   transform: rotate(180deg);
 }
 
-/* Responsive Design */
 @media (max-width: 950px) {
   .header-left-wrapper ul {
     display: none;
