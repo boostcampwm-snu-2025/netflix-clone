@@ -18,8 +18,8 @@ body {
 .logo {
     height: 100px;
     width: auto;
-    padding-left: 15px;
-    padding-right: 12px;
+    padding-left: 17px;
+    padding-right: 10px;
 }
 
 button {
@@ -27,6 +27,7 @@ button {
     border: none;
     font-size: 13px; 
     color: white; 
+    margin-left: 5px;
 }
 
 .home {
