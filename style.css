@@ -3,6 +3,8 @@ body {
 }
 
 .grid_container {
+    width: 1440px;
+    overflow: hidden;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 42px repeat(4, auto) 1fr;
@@ -16,6 +18,8 @@ body {
     "footer";
 }
 
+
+/* header 스타일 */
 .flex_header {
     display: flex;
     align-items: center;
@@ -62,11 +66,11 @@ body {
 }
 
 
-
+/* hero 스타일 */
 .hero {
     grid-area: hero;
     position: relative;
-    width: 1500px;
+    width: 1440px;
     height: auto;
 }
 
@@ -79,7 +83,7 @@ body {
 .overlay_upper {
     position: absolute;
     top: 20%;
-    left: 50px;
+    left: 40px;
     z-index: 1;
     background-color: rgba(0, 0, 0, 0.0);
     width: 100%;
@@ -190,4 +194,34 @@ body {
     padding-left: 10px;
     padding-right: 80px;
     margin-left: 20px;
+}
+
+
+/* 회원 추천 컨텐츠 스타일 */
+.contents {
+    margin-left: 40px;    
+}
+
+#contents_for_user {
+    grid-area: section1;
+}
+
+nav {
+    color: white;
+    font-size: 20px;
+    padding-bottom: 10px;
+}
+
+.contents_for_user_img_flex {
+    display: flex;
+    align-items: center;
+    width: 1440px;
+    height: auto;
+    gap: 5px;
+    margin-bottom: 25px;
+}
+
+.contents_for_user_img {
+    width: 220px;
+    heigh: auto;
 }
