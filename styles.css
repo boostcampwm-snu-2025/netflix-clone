@@ -7,6 +7,8 @@
 
   --fz-12: 12px; --fz-14: 14px; --fz-16: 16px; --fz-18: 18px;
   --fz-24: 24px; --fz-32: 32px; --fz-48: 48px;
+
+  --accent: #e50914;
 }
 
 * { box-sizing: border-box; }
@@ -47,3 +49,24 @@ a:focus-visible, button:focus-visible {
 }
 .nav a { font-size: var(--fz-14); color: #e5e5e5; }
 .nav a[aria-current="page"] { font-weight: 700; color: #fff; }
+
+.actions {
+  margin-left: auto;
+  display: flex; gap: var(--space-12); align-items: center;
+}
+.icon-btn {
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  display: inline-flex; align-items: center; justify-content: center;
+  color: #e5e5e5;
+}
+.icon-btn:hover { background: #2a2a2a; }
+.kids { font-size: var(--fz-14); color: #e5e5e5; }
+.bell { position: relative; }
+.badge {
+  position: absolute; top: -6px; right: -6px;
+  background: var(--accent); color: #fff;
+  border-radius: 999px; font-size: 10px; line-height: 1; padding: 3px 5px;
+}
+.profile { display: flex; align-items: center; gap: 6px; }
+.profile img { width: 28px; height: 28px; border-radius: 4px; }
