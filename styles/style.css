@@ -40,7 +40,7 @@ body {
 .user-menu {
 	display: flex;
 	align-items: center;
-	gap: 16px;
+	gap: 25px;
 	margin-right: 40px;
 }
 
