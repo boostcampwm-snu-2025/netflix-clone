@@ -76,6 +76,8 @@ body {
 /* hero 스타일 */
 .hero {
     position: relative;
+    width: 1440px;
+    overflow: hidden;
 }
 
 .overlay_image {
