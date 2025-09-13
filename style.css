@@ -1,5 +1,6 @@
 body {
     background-color: rgba(0, 0, 0, 1.0);
+    margin-top: 0px;
 }
 
 .flex_container {
@@ -275,20 +276,19 @@ nav {
 /* footer 스타일 */
 footer {
     margin-top: 100px;
-    margin-left: 300px;
+    margin-left: 440px;
     width: 700px;
     font-size: 13px;
-    color: gray;
-    grid-area: footer;
+    color: rgba(128, 128, 128, 1.0);
 }
 
 .footer_logos {
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 8px;
     height: 28px;
     overflow: hidden;
-    margin-bottom: 10px;
+    margin-bottom: 16px;
 }
 
 .footer_logos > img:nth-child(1) {
@@ -297,17 +297,16 @@ footer {
 
 .footer_logos > img:nth-child(2) {
     height: 25px;
-    margin-left: 15px;
+    margin-left: 16px;
 }
 
 .footer_logos > img:nth-child(3) {
     height: 30px;
-    margin-left: 15px;
+    margin-left: 16px;
 }
 
 .footer_logos > img:nth-child(4) {
-    height: 50px;
-    margin-left: 5px;
+    height: 54px;
 }
 
 .footer_link {
@@ -315,10 +314,10 @@ footer {
     height: 70px;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    margin-bottom: 20px;
+    margin-bottom: 24px;
 }
 
 .footer_info {
     font-size: 11px;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
