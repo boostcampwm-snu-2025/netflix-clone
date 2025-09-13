@@ -15,12 +15,8 @@
   --shadow: 0 10px 24px rgba(0,0,0,0.35);
 
   /* typography */
-  --fonts-sm: clamp(12px, 2vw, 16px);
-  --fonts-base: clamp(14px, 2px, 18px);
-  --fonts-lg: clamp(16px, 3vw, 22px);
-  --fonts-xl: clamp(20px, 4vw, 32px);
-  --fonts-2xl: clamp(24px, 5vw, 40px);
-  --fonts-3xl: clamp(32px, 6vw, 56px);
+  --fonts-sm: 14px; --fonts-base: 16px; --fonts-lg: 18px;
+  --fonts-xl: 24px; --fonts-2xl: 32px; --fonts-3xl: 48px;
 
   /* layout */
   --page-w: 1440px;
@@ -203,12 +199,64 @@ hero > img {
 }
 
 .slider-item {
-  display: flex;
+  display: grid;
   cursor: pointer;
+  transition: transform 0.3s ease;
   &:hover {
     transform: scale(1.05);
-    transition: transform 0.3s ease;
   }
+  flex: 0 0 auto;
+  padding: var(--spacing-4);
+}
+
+.top-10-rank-slider .slider-item {
+  display: grid;
+  width: 235px;
+  height: 270px;
+  position: relative;
+  padding: 0 var(--spacing-4);
+  margin: 0 var(--spacing-16);
+}
+
+.top-10-rank-slider .slider-item svg,
+.top-10-rank-slider .slider-item img {
+  grid-area: 1 / 2; /* 같은 그리드 영역에 배치 */
+  width: 100%;
+  height: 100%;
+}
+
+.top-10-rank-slider .slider-item svg {
+  position: absolute;
+  z-index: 1;
+  width: 120px; /* 숫자를 크게 */
+  height: auto;
+  left: -30px; /* 왼쪽으로 더 많이 나오게 */
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.9; /* 살짝 투명하게 */
+}
+
+#rank-1 {
+  width: 105px; /* 1등은 더 크게 */
+}
+
+#rank-10 {
+  width: 160px; /* 10등은 더 작게 */
+  left: -80px; 
+  margin-left: 40px;
+}
+
+/* 이미지는 뒤쪽에 */
+.top-10-rank-slider .slider-item img {
+  position: absolute;
+  z-index: 2;
+  width: 170px; /* 이미지를 작게 */
+  height: auto;
+  object-fit: cover;
+  right: 0; /* 오른쪽에 배치 */
+  top: 50%;
+  transform: translateY(-50%);
+  box-shadow: var(--shadow);
 }
 
 /* footer part */
