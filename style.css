@@ -232,6 +232,9 @@ nav {
     height: auto;
 }
 
+.contents_for_user_img:hover {
+    transform: scale(1.4);
+}
 
 /* top10 시리즈 스타일 */
 .top10_contents_img_flex {
@@ -248,6 +251,10 @@ nav {
     height: 180px;
     overflow: hidden;
 } 
+
+.top10_contents_img_inner_flex:hover {
+    transform: scale(1.4);
+}
 
 .rank_font {
     padding-left: 8px;
@@ -274,6 +281,10 @@ nav {
 .new_contents_img {
     width: 220px;
     height: auto;
+}
+
+.new_contents_img:hover {
+    transform: scale(1.4);
 }
 
 
