@@ -47,10 +47,17 @@ a:focus-visible {
 }
 
 .logo {
-    height: 100px; /* 높이 42px을 넘어가면 잘리는 것을 이용해서 크기 조정 */
+    height: 100px;
     width: auto;
     padding-left: 24px;
     padding-right: 8px;
+}
+
+.logo_cutting {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    overflow: hidden;
 }
 
 .button_header {
@@ -226,7 +233,7 @@ a:focus-visible {
 
 
 /*컨텐츠 스타일 */
-.contents {
+section {
     width: 1400px;
     overflow: hidden;    
     margin-left: 40px;
@@ -236,7 +243,6 @@ a:focus-visible {
 .contents_option {
     color: var(--white);
     font-size: 20px;
-    padding-bottom: 8px;
 }
 
 
@@ -245,6 +251,7 @@ a:focus-visible {
     display: flex;
     align-items: center;
     gap: 8px;
+    margin-top: 8px;
 }
 
 .contents_for_user_img {
@@ -264,6 +271,7 @@ a:focus-visible {
     width: auto;
     height: auto;
     gap: 8px;
+    margin-top: 8px;
 }
 
 .top10_contents_img_inner_flex {
@@ -298,6 +306,7 @@ a:focus-visible {
     width: auto;
     height: auto;
     gap: 8px;
+    margin-top: 8px;
 }
 
 .new_contents_img {
