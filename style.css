@@ -1,5 +1,13 @@
+:root {
+    --white: rgba(255, 255, 255, 1.0);
+    --black: rgba(0, 0, 0, 1.0);
+    --gray: rgba(128, 128, 128, 1.0);
+    --trans-gray: rgba(128, 128, 128, 0.6);
+    --standard-border-radius: 10%;
+}
+
 body {
-    background-color: rgba(0, 0, 0, 1.0);
+    background-color: var(--black);
     margin-top: 0px;
 }
 
@@ -8,7 +16,7 @@ a {
 }
 
 a:focus-visible {
-    outline: 2px solid white;
+    outline: 2px solid var(--white);
     outline-offset: -1px;
 }
 
@@ -26,7 +34,7 @@ a:focus-visible {
     align-items: center;
     justify-content: space-between;
     height: 40px;
-    background-color: rgba(0, 0, 0, 1.0);
+    background-color: var(--black);
     overflow: hidden;
     position: sticky;
     top: 0;
@@ -46,7 +54,7 @@ a:focus-visible {
 }
 
 .button_header {
-    background-color: rgba(0, 0, 0, 1.0);
+    background-color: var(--black);
     border: none;
     font-size: 13px; 
     color: rgb(190, 190, 190, 1.0); 
@@ -54,7 +62,7 @@ a:focus-visible {
 }
 
 .button_header:hover {
-    color: rgba(255, 255, 255, 1.0);
+    color: var(--white);
 }
 
 .flex_header_right {
@@ -107,7 +115,6 @@ a:focus-visible {
     top: 30%;
     left: 40px;
     z-index: 1;
-    background-color: rgba(0, 0, 0, 0.0);
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -133,14 +140,14 @@ a:focus-visible {
 
 .overlay_2nd_row .rank {
     font-size: 22px;
-    color: rgba(255, 255, 255, 1.0);
+    color: var(--white);
 }
 
 .overlay_3rd_row {
     width: 470px;
     height: auto;
     font-size: 18px;
-    color: rgba(255, 255, 255, 1.0);
+    color: var(--white);
 }
 
 .overlay_4th_row {
@@ -165,7 +172,7 @@ a:focus-visible {
 
 .button_with_play {
     border: none;
-    background-color: rgba(255, 255, 255, 1.0);
+    background-color: var(--white);
     font-size: 20px;
     padding: 8px 24px;
     display: flex;
@@ -180,7 +187,7 @@ a:focus-visible {
 
 .button_with_info {
     border: none;
-    background-color: rgba(128, 128, 128, 0.6);
+    background-color: var(--trans-gray);
     font-size: 20px;
     padding: 8px 16px;
     gap: 8px;
@@ -194,7 +201,7 @@ a:focus-visible {
 }
 
 .info_font {
-    color: rgba(255, 255, 255, 1.0);
+    color: var(--white);
 }
 
 .sound_sign {
@@ -203,10 +210,10 @@ a:focus-visible {
 }
 
 .age_limit {
-    color: rgba(255, 255, 255, 1.0);
+    color: var(--white);
     font-size: 16px;
     background-color: rgba(128, 128, 128, 0.6);
-    border-left: 3.5px solid rgba(255, 255, 255, 1.0);
+    border-left: 3.5px solid var(--white);
     padding-top: 8px;
     padding-right: 80px;
     padding-bottom: 8px;
@@ -223,7 +230,7 @@ a:focus-visible {
 }
 
 .contents_option {
-    color: rgba(255, 255, 255, 1.0);
+    color: var(--white);
     font-size: 20px;
     padding-bottom: 8px;
 }
@@ -268,7 +275,7 @@ a:focus-visible {
 .rank_font {
     padding-left: 8px;
     font-size: 150px;
-    color: gray;
+    color: var(--gray);
     font-style: italic;
 }
 
@@ -303,7 +310,7 @@ footer {
     margin-left: 440px;
     width: 700px;
     font-size: 13px;
-    color: rgba(128, 128, 128, 1.0);
+    color: var(--gray);
 }
 
 .footer_logos {
