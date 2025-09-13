@@ -9,6 +9,8 @@
   --fz-24: 24px; --fz-32: 32px; --fz-48: 48px;
 
   --accent: #e50914;
+
+  --r-6: 6px; --r-10: 10px; --r-12: 12px;
 }
 
 * { box-sizing: border-box; }
@@ -70,3 +72,77 @@ a:focus-visible, button:focus-visible {
 }
 .profile { display: flex; align-items: center; gap: 6px; }
 .profile img { width: 28px; height: 28px; border-radius: 4px; }
+
+.hero {
+  position: relative;
+  min-height: 70vh;
+  padding-top: var(--header-h);
+  background:
+    linear-gradient(to top, rgba(20,20,20,.9) 0%, rgba(20,20,20,.35) 40%, rgba(0,0,0,0) 100%),
+    url('https://placehold.co/1440x800/jpg') center/cover no-repeat;
+}
+.hero::after {
+  content: "";
+  position: absolute; inset: 0;
+  background: var(--overlay, transparent);
+}
+.hero__inner {
+  position: relative; z-index: 1;
+  display: grid; align-items: end;
+  height: 100%;
+}
+.hero__content {
+  padding: var(--space-48) 0 var(--space-32);
+}
+.hero__logo img {
+  display: block;
+  max-width: 420px;
+  margin-bottom: var(--space-16);
+}
+.hero__rank {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  margin-bottom: var(--space-12);
+}
+.chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--r-6);
+  font-weight: 700;
+  line-height: 1;
+}
+.chip--top10 {
+  flex-direction: column;
+  width: 30px; height: 34px;
+  background: var(--accent);
+  color: #fff;
+  font-size: .7rem;
+}
+.rank-text { color: #fff; font-size: 1.05rem; }
+.rank-text strong { font-weight: 900; }
+.hero__desc {
+  max-width: 420px;
+  color: #e5e5e5;
+  margin: 0 0 var(--space-16) 0;
+  font-size: clamp(1rem, 1.2vw, 1.15rem);
+  line-height: 1.45;
+}
+.hero__actions {
+  display: flex; gap: var(--space-12);
+}
+.btn {
+  display: inline-flex; align-items: center; gap: .4rem;
+  height: 44px; padding: 0 var(--space-16);
+  border-radius: var(--r-6);
+  font-weight: 700;
+  font-size: 1rem;
+  box-shadow: var(--shadow-sm);
+  text-decoration: none;
+}
+.btn--primary { background: #fff; color: #000; }
+.btn--primary:hover { filter: brightness(.9); }
+.btn--secondary { background: rgba(255,255,255,.18); color: #fff; }
+.btn--secondary:hover { background: rgba(255,255,255,.28); }
+
