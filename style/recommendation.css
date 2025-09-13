@@ -1,0 +1,134 @@
+.recommendation-container {
+  position: relative;
+  width: 100%;
+  height: 1200px;
+}
+
+.recommendation-contents-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding-left: 54px;
+  width: 100%;
+  gap: 24px;
+}
+
+.recommendation-contents-wrapper p {
+  font-size: 20px;
+  color: var(--color-oat);
+}
+
+.recommendation-float-wrapper {
+  position: absolute;
+  top: -80px;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.recommendation-contents-list-inner {
+  display: flex;
+  width: calc(100vw - 72px);
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+.recommendation-contents-list-inner::-webkit-scrollbar {
+  display: none;
+}
+
+.recommendation-contents-inner {
+  position: relative;
+  flex-shrink: 0;
+  width: 300px;
+  height: 200px;
+  border-radius: 4px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.recommendation-contents-inner:hover {
+  transform: scale(1.02);
+}
+
+.recommendation-thumbnail {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* TOP 10 배지 */
+.recommendation-top-ten {
+  content: "TOP 10";
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background-color: var(--color-red);
+  color: var(--color-white);
+  font-size: 10px;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 2px;
+  z-index: 10;
+}
+
+.recommendation-new-episode,
+.recommendation-new,
+.recommendation-new-season {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  width: 300px;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 16px;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+}
+
+.recommendation-new-episode span:first-child {
+  background-color: var(--color-red);
+  color: var(--color-white);
+  padding: 6px;
+  border-radius: 2px;
+  font-weight: 500;
+}
+
+.recommendation-new-episode span:last-child {
+  background-color: var(--color-oat);
+  padding: 6px;
+  border-radius: 2px;
+  font-weight: 500;
+}
+
+.recommendation-new span {
+  background-color: var(--color-red);
+  color: var(--color-white);
+  padding: 6px;
+  border-radius: 2px;
+  font-weight: 500;
+}
+
+.recommendation-new-season span {
+  background-color: var(--color-red);
+  color: var(--color-white);
+  padding: 6px;
+  border-radius: 2px;
+  font-weight: 500;
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+  .recommendation-contents-wrapper p {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .recommendation-contents-wrapper p {
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,78 @@
+.topten-contents-inner {
+  position: relative;
+  flex-shrink: 0;
+  display: flex;
+  align-items: flex-end;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.topten-contents-inner:hover {
+  transform: scale(1.02);
+}
+
+.topten-contents-inner span {
+  font-size: 240px;
+  font-weight: 900;
+  color: var(--color-black);
+  text-shadow: -1px -1px 0 var(--color-gray), 1px -1px 0 var(--color-gray),
+    -1px 1px 0 var(--color-gray), 1px 1px 0 var(--color-gray);
+  margin-right: -15px;
+  z-index: 1;
+  position: relative;
+}
+
+.topten-thumbnail {
+  width: 150px;
+  height: 225px;
+  background: linear-gradient(135deg, #1a1a1a, #333);
+  border-radius: 4px;
+  object-fit: cover;
+  position: relative;
+  z-index: 2;
+}
+
+.topten-upper-badge {
+  content: "N";
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background-color: var(--color-red);
+  color: var(--color-white);
+  font-size: 12px;
+  font-weight: bold;
+  width: 18px;
+  height: 18px;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 반응형 */
+@media (max-width: 1200px) {
+  .topten-contents-inner span {
+    font-size: 100px;
+  }
+}
+
+@media (max-width: 768px) {
+  .topten-contents-inner span {
+    font-size: 80px;
+  }
+
+  .topten-contents-wrapper p {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .topten-contents-inner span {
+    font-size: 60px;
+    margin-right: -10px;
+  }
+
+  .topten-contents-wrapper p {
+    font-size: 16px;
+  }
+}
