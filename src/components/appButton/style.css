@@ -1,0 +1,30 @@
+button {
+  background-color: red;
+  cursor: pointer;
+  transition: background-color cubic-bezier(0.4, 0, 0.68, 0.06) 0.25s;
+  border-radius: 3px;
+  color: white;
+  border: none;
+  padding: 0;
+  outline: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+button[size='lg'] {
+  width: 167px;
+  height: 56px;
+  font-size: 24px;
+}
+
+button[size='sm'] {
+  width: 68px;
+  height: 32px;
+  font-size: 14px;
+}
+
+button:hover {
+  background-color: rgb(229, 9, 20);
+}
