@@ -220,7 +220,6 @@ nav {
     display: flex;
     align-items: center;
     gap: 8px;
-    margin-bottom: 8px;
 }
 
 .contents_for_user_img {
@@ -230,35 +229,30 @@ nav {
 
 
 /* top10 시리즈 스타일 */
-#top10_contents {
-    grid-area: section2;
-}
-
 .top10_contents_img_flex {
     display: flex;
     align-items: center;
     width: auto;
     height: auto;
-    gap: 5px;
-    margin-bottom: 25px;
+    gap: 8px;
 }
 
 .top10_contents_img_inner_flex {
     display: flex;
     align-items: center;
+    height: 180px;
+    overflow: hidden;
 } 
 
 .rank_font {
-    padding-left: 10px;
+    padding-left: 8px;
     font-size: 150px;
     color: gray;
     font-style: italic;
-    padding-right: 0px;
-    margin-right: 0px;
 }
 
 .top10_contents_img {
-    width: 126.75px;
+    width: 128.75px; /* 카드 가로길이 220px 고정 */
     height: auto;
 }
 
