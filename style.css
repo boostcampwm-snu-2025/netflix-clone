@@ -7,6 +7,11 @@ a {
   text-decoration: none;
 }
 
+a:focus-visible {
+    outline: 2px solid white;
+    outline-offset: -1px;
+}
+
 .flex_container {
     width: 1440px;
     display: flex;
