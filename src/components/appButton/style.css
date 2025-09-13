@@ -1,5 +1,5 @@
 button {
-  background-color: red;
+  background-color: rgb(229, 9, 20);
   cursor: pointer;
   transition: background-color cubic-bezier(0.4, 0, 0.68, 0.06) 0.25s;
   border-radius: 3px;
@@ -26,5 +26,5 @@ button[size='sm'] {
 }
 
 button:hover {
-  background-color: rgb(229, 9, 20);
+  background-color: rgb(195, 0, 10);
 }
