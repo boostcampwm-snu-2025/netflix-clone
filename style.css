@@ -40,8 +40,12 @@ body {
     background-color: rgba(0, 0, 0, 1.0);
     border: none;
     font-size: 13px; 
-    color: rgba(255, 255, 255, 1.0); 
+    color: rgb(190, 190, 190, 1.0); 
     margin-left: 8px;
+}
+
+.button_header:hover {
+    color: rgba(255, 255, 255, 1.0);
 }
 
 .flex_header_right {
