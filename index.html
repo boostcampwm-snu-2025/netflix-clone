@@ -2,14 +2,14 @@
 <html lang="ko">
 <head>
   <meta charset="utf-8" />
-  <title>홈 - 넷플릭스</title>
+  <title>홈 - 넷플릭스 클론</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="nf-header" role="banner">
-    <div class="page nf-header__inner">
+  <header class="header" role="banner">
+    <div class="header__inner page">
       <!--AI로부터 로고 디자인 도움 받음-->
-      <a class="nf-logo" href="#" aria-label="넷플릭스 홈">
+      <a class="logo" href="#" aria-label="넷플릭스 홈">
         <svg viewBox="0 0 512 128" width="92" height="24" aria-hidden="true" focusable="false">
           <rect width="512" height="128" fill="none"/>
           <text x="0" y="92" font-size="100" font-weight="800" fill="#e50914"
@@ -17,7 +17,7 @@
         </svg>
       </a>
       <!--상단 메뉴-->
-      <nav class="nf-nav" aria-label="주 메뉴">
+      <nav class="nav" aria-label="주 메뉴">
         <a href="#" aria-current="page">홈</a>
         <a href="#">시리즈</a>
         <a href="#">영화</a>
@@ -27,7 +27,7 @@
         <a href="#">언어별로 찾아보기</a>
       </nav>
   
-      <div class="nf-actions" aria-label="헤더 액션">
+      <div class="actions" aria-label="헤더 액션">
         <!--검색 버튼-->
         <button class="icon-btn" aria-label="검색" disabled>
           <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
@@ -58,11 +58,10 @@
 
   <main id="main">
     <section class="hero" aria-label="히어로 배너">
-      <div class="page hero__inner">
+      <div class="hero__inner page">
         <div class="hero__content">
           <div class="hero__logo">
-            <img src="https://placehold.co/400x120?text=LOGO" 
-                 alt="폭군의 셰프 로고" />
+            <img src="https://placehold.co/400x120?text=LOGO" alt="폭군의 셰프 로고" />
           </div>
 
           <div class="hero__rank">
@@ -90,8 +89,8 @@
     </section>
     
     <!-- 섹션 1: 회원님을 위해 엄선한 오늘의 콘텐츠 -->
-    <section class="section page" aria-labelledby="recommendations">
-      <h2 id="recommendations" class="section__title">회원님을 위해 엄선한 오늘의 콘텐츠</h2>
+    <section class="section page" aria-labelledby="recommend">
+      <h2 id="recommend" class="section__title">회원님을 위해 엄선한 오늘의 콘텐츠</h2>
       <div class="row">
         <article class="card"><a class="tile" href="#" aria-label="귀멸의 칼날"><figure class="thumb"><img src="https://placehold.co/600x400/jpg" alt="귀멸의 칼날 포스터" /></figure></a></article>
         <article class="card"><a class="tile" href="#" aria-label="트리거"><figure class="thumb"><img src="https://placehold.co/600x400/jpg" alt="트리거 포스터" /></figure></a></article>
@@ -130,10 +129,10 @@
   </main>
 
   <footer class="footer" role="contentinfo">
-    <div class="page">
+    <div class="footer__inner page">
   
       <!-- SNS 아이콘 -->
-      <div class="footer-sns">
+      <div class="footer__sns">
         <a href="#" aria-label="Facebook">
           <img src="https://placehold.co/28x28" alt="Facebook 아이콘" />
         </a>
@@ -149,7 +148,7 @@
       </div>
   
       <!-- 푸터 링크 -->
-      <nav aria-label="footer links" class="footer-grid">
+      <nav class="footer__nav" aria-label="footer links">
         <div><a href="#">화면 해설</a></div>
         <div><a href="#">고객 센터</a></div>
         <div><a href="#">기프트카드</a></div>
@@ -165,7 +164,7 @@
       </nav>
   
       <!-- 회사 정보 -->
-      <div class="footer-info">
+      <div class="footer__info">
         <p>넷플릭스서비시스코리아 유한회사 통신판매업신고번호: 제2018-서울종로-0426호 전화번호: 00-308-321-0161 (수신자 부담)</p>
         <p>대표: 레지널드 숀 톰프슨</p>
         <p>이메일 주소: korea@netflix.com</p>
