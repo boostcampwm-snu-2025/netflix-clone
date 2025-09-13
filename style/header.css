@@ -72,15 +72,13 @@
   font-weight: 500;
 }
 
-/* Right Side Icons Container */
-.header-container > div:last-child {
+.header-icons-container {
   display: flex;
   align-items: center;
   gap: 20px;
   flex-shrink: 0;
 }
 
-/* Base Button Style */
 .header-icon-button,
 .header-icon-kids,
 .header-icon-notification {
@@ -103,13 +101,11 @@
   opacity: 0.8;
 }
 
-/* Search Button */
 .header-icon-button img {
   width: 20px;
   height: 20px;
 }
 
-/* Kids Button */
 .header-icon-kids {
   font-size: 14px;
   font-weight: 400;
@@ -117,7 +113,6 @@
   background: none;
 }
 
-/* Notification Button */
 .header-icon-notification {
   position: relative;
 }
@@ -144,7 +139,7 @@
   border: 1px solid var(--color-dark-gray);
 }
 
-.header-container > div:last-child > button:last-child {
+.header-icon-my-profile {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -154,13 +149,13 @@
   cursor: pointer;
 }
 
-.header-container > div:last-child > button:last-child img:first-child {
+.header-icon-my-profile-img {
   width: 32px;
   height: 32px;
   border-radius: 4px;
 }
 
-.header-container > div:last-child > button:last-child img:last-child {
+.header-icon-my-profile-arow {
   width: 24px;
   height: 24px;
   transition: transform 0.3s ease;
