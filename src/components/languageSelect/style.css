@@ -1,0 +1,36 @@
+.select-wrapper {
+  width: 54px;
+  height: 20px;
+  padding: 6px 36px;
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border: 1px solid rgba(128, 128, 128, 0.7);
+  border-radius: 4px;
+  gap: 12px;
+  font-size: var(--text-sm);
+}
+
+.select-wrapper select:focus {
+  outline: none;
+}
+
+.select-wrapper:focus-within {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+.select-wrapper select {
+  flex: 1;
+  background: transparent;
+  color: #fff;
+  appearance: none;
+  border: none;
+  margin-left: -4px;
+}
+
+.select-wrapper img {
+  pointer-events: none;
+}
