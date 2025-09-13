@@ -8,3 +8,6 @@ https://www.krds.go.kr/html/site/style/style_07.html 참조
 
 https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements
 elements 기본 양식 학습 mdn
+
+https://stock.adobe.com/kr/search?k=black+and+white+logo&search_type=recentsearch&asset_id=554944812
+로고 다운로드
