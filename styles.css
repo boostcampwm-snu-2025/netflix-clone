@@ -4,6 +4,9 @@
 
   --space-4: 4px; --space-8: 8px; --space-12: 12px; --space-16: 16px;
   --space-24: 24px; --space-32: 32px; --space-48: 48px;
+
+  --fz-12: 12px; --fz-14: 14px; --fz-16: 16px; --fz-18: 18px;
+  --fz-24: 24px; --fz-32: 32px; --fz-48: 48px;
 }
 
 * { box-sizing: border-box; }
@@ -38,3 +41,9 @@ a:focus-visible, button:focus-visible {
 }
 .logo { display: inline-flex; align-items: center; }
 
+.nav {
+  display: flex; gap: var(--space-16);
+  margin-left: var(--space-16);
+}
+.nav a { font-size: var(--fz-14); color: #e5e5e5; }
+.nav a[aria-current="page"] { font-weight: 700; color: #fff; }
