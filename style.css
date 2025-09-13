@@ -3,7 +3,7 @@
     --black: rgba(0, 0, 0, 1.0);
     --gray: rgba(128, 128, 128, 1.0);
     --trans-gray: rgba(128, 128, 128, 0.6);
-    --standard-border-radius: 10%;
+    --standard-border-radius: 5%;
 }
 
 body {
@@ -85,6 +85,7 @@ a:focus-visible {
     height: 26px;
     width: auto;
     margin-left: 16px;
+    border-radius: var(--standard-border-radius);
 }
 
 .triangle {
@@ -136,6 +137,7 @@ a:focus-visible {
 .overlay_2nd_row .top10_logo {
     height: 30px;
     width: auto;
+    border-radius: var(--standard-border-radius);
 }
 
 .overlay_2nd_row .rank {
@@ -172,6 +174,7 @@ a:focus-visible {
 
 .button_with_play {
     border: none;
+    border-radius: var(--standard-border-radius);
     background-color: var(--white);
     font-size: 20px;
     padding: 8px 24px;
@@ -187,6 +190,7 @@ a:focus-visible {
 
 .button_with_info {
     border: none;
+    border-radius: var(--standard-border-radius);
     background-color: var(--trans-gray);
     font-size: 20px;
     padding: 8px 16px;
@@ -246,6 +250,7 @@ a:focus-visible {
 .contents_for_user_img {
     width: 220px;
     height: auto;
+    border-radius: var(--standard-border-radius);
 }
 
 .contents_for_user_img:hover {
@@ -266,6 +271,7 @@ a:focus-visible {
     align-items: center;
     height: 180px;
     overflow: hidden;
+    border-radius: var(--standard-border-radius);
 } 
 
 .top10_contents_img_inner_flex:hover {
@@ -297,6 +303,7 @@ a:focus-visible {
 .new_contents_img {
     width: 220px;
     height: auto;
+    border-radius: var(--standard-border-radius);
 }
 
 .new_contents_img:hover {
