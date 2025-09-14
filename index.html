@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1200" />
+    <!-- 고정 너비 -->
+    <title>Netflix UI Clone</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- 헤더 -->
+    <header class="header" role="banner">
+      <div class="container header__inner">
+        <h1 class="logo"><a href="#">NETFLIX</a></h1>
+        <nav class="nav" aria-label="메인 내비게이션">
+          <ul class="nav__list">
+            <li><a href="#">홈</a></li>
+            <li><a href="#">시리즈</a></li>
+            <li><a href="#">영화</a></li>
+            <li><a href="#">NEW & 인기</a></li>
+            <li><a href="#">내가 찜한 리스트</a></li>
+          </ul>
+        </nav>
+        <div class="header__actions">
+          <button class="icon-btn" aria-label="검색">🔍</button>
+          <button class="icon-btn" aria-label="알림">🔔</button>
+          <button class="avatar" aria-label="프로필">SJ</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- 메인 -->
+    <main class="main" role="main">
+      <!-- Hero -->
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero__overlay"></div>
+        <div class="hero__content container">
+          <h2 id="hero-title" class="hero__title">푸른의 셰프</h2>
+          <p class="hero__desc">
+            시간과 국경을 초월한 가업, 한식의 셰프가 두고 온 아련한 맛의 향연.
+          </p>
+          <div class="hero__buttons">
+            <button class="btn btn--primary">▶ 재생</button>
+            <button class="btn btn--secondary">ℹ 상세 정보</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Category 1 -->
+      <section class="category" aria-labelledby="cat1">
+        <div class="container">
+          <h3 id="cat1" class="category__title">반주극</h3>
+          <ul class="row" role="list">
+            <li class="card">
+              <img src="https://via.placeholder.com/200x112" alt="콘텐츠 1" />
+            </li>
+            <li class="card">
+              <img src="https://via.placeholder.com/200x112" alt="콘텐츠 2" />
+            </li>
+            <li class="card">
+              <img src="https://via.placeholder.com/200x112" alt="콘텐츠 3" />
+            </li>
+            <li class="card">
+              <img src="https://via.placeholder.com/200x112" alt="콘텐츠 4" />
+            </li>
+            <li class="card">
+              <img src="https://via.placeholder.com/200x112" alt="콘텐츠 5" />
+            </li>
+            <li class="card">
+              <img src="https://via.placeholder.com/200x112" alt="콘텐츠 6" />
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Category 2 -->
+      <section class="category" aria-labelledby="cat2">
+        <div class="container">
+          <h3 id="cat2" class="category__title">연애 세포를 깨우는 작품들</h3>
+          <ul class="row" role="list">
+            <li class="card">
+              <img src="https://via.placeholder.com/200x112" alt="콘텐츠 1" />
+            </li>
+            <li class="card">
+              <img src="https://via.placeholder.com/200x112" alt="콘텐츠 2" />
+            </li>
+            <li class="card">
+              <img src="https://via.placeholder.com/200x112" alt="콘텐츠 3" />
+            </li>
+            <li class="card">
+              <img src="https://via.placeholder.com/200x112" alt="콘텐츠 4" />
+            </li>
+            <li class="card">
+              <img src="https://via.placeholder.com/200x112" alt="콘텐츠 5" />
+            </li>
+            <li class="card">
+              <img src="https://via.placeholder.com/200x112" alt="콘텐츠 6" />
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Category 3 -->
+      <section class="category" aria-labelledby="cat3">
+        <div class="container">
+          <h3 id="cat3" class="category__title">오늘 대한민국 TOP 10 시리즈</h3>
+          <ul class="row" role="list">
+            <li class="card">
+              <img src="https://via.placeholder.com/200x112" alt="시리즈 1" />
+            </li>
+            <li class="card">
+              <img src="https://via.placeholder.com/200x112" alt="시리즈 2" />
+            </li>
+            <li class="card">
+              <img src="https://via.placeholder.com/200x112" alt="시리즈 3" />
+            </li>
+            <li class="card">
+              <img src="https://via.placeholder.com/200x112" alt="시리즈 4" />
+            </li>
+            <li class="card">
+              <img src="https://via.placeholder.com/200x112" alt="시리즈 5" />
+            </li>
+            <li class="card">
+              <img src="https://via.placeholder.com/200x112" alt="시리즈 6" />
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <!-- 푸터 -->
+    <footer class="footer" role="contentinfo">
+      <div class="container footer__inner">
+        <ul class="footer__links" role="list">
+          <li><a href="#">고객 센터</a></li>
+          <li><a href="#">이용 약관</a></li>
+          <li><a href="#">개인정보 처리방침</a></li>
+        </ul>
+        <small class="footer__copy">© 2025 Netflix Clone</small>
+      </div>
+    </footer>
+  </body>
+</html>
