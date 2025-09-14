@@ -35,3 +35,44 @@ ul {
   width: var(--page-width);
   margin: 0 auto;
 }
+
+/* 헤더 */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--header-h);
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+}
+
+/*헤더 내부에서 로고/내비/액션을 정렬*/
+.header__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+.logo a {
+  font-weight: 900;
+  font-size: 35px;
+  color: var(--color-red);
+}
+.nav__list {
+  display: flex;
+  gap: var(--space-2);
+}
+.header__actions {
+  display: flex;
+  gap: var(--space-1);
+  font-size: 25px;
+}
+
+/* profile 이미지 크기 조절 */
+.profile {
+  width: 32px;
+  height: 32px;
+  object-fit: cover;
+  border-radius: 50%;
+}
