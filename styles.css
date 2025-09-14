@@ -228,3 +228,10 @@ a:focus-visible, button:focus-visible {
   text-decoration: underline;
 }
 .footer__info a:hover { color: #cfcfcf; }
+
+/* AI 추천 코드 */
+@media (prefers-reduced-motion: reduce) {
+  .card:hover .hover-panel, .card:focus-within .hover-panel {
+      transform: translate(-50%, 0);
+  }
+}
