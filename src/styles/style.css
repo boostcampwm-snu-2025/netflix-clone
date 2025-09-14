@@ -1,7 +1,19 @@
-.ranking-list,
-.feature-list {
+.ranking-list {
   display: flex;
   gap: 40px;
+  width: 100%;
+  overflow-x: auto;
+}
+
+.feature-list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 body {
@@ -11,6 +23,14 @@ body {
 
 main {
   padding: 0;
+  gap: 96px;
+  display: flex;
+  flex-direction: column;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: 500;
 }
 
 section:not(.hero) {
