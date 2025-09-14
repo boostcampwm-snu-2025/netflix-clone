@@ -17,7 +17,8 @@
   box-sizing: border-box; /* norder-box:: 박스 크기 계산에 패딩과 보더 포함 */
 }
 body {
-  margin: 0;
+  margin: 0 auto;
+  width: var(--page-width); /* 1200px 고정 */
   background: var(--color-bg); /* var(--변수명): css 변수 값을 꺼내 쓰는 문법 */
   color: var(--color-text);
   font-family: Arial, sans-serif;
@@ -32,8 +33,9 @@ ul {
   list-style: none;
 }
 .container {
+  padding: var(--space-4);
   width: var(--page-width);
-  margin: 0 auto;
+  margin: auto;
 }
 
 /* 헤더 */
@@ -75,4 +77,52 @@ ul {
   height: 32px;
   object-fit: cover;
   border-radius: 50%;
+}
+
+/* 메인 */
+.main {
+  padding-top: var(--header-h);
+}
+
+/* Hero */
+.hero {
+  position: relative;
+  height: 500px;
+  background-image: url("./src/hero.png");
+  background-size: cover;
+  display: flex;
+  align-items: center;
+}
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3));
+}
+.hero__content {
+  position: relative;
+  z-index: 1;
+  max-width: 600px;
+}
+.hero__title {
+  font-size: 60px;
+  margin-bottom: var(--space-2);
+}
+.hero__desc {
+  font-size: 20px;
+  color: var(--color-muted);
+  margin-bottom: var(--space-3);
+}
+.btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.btn--primary {
+  background: #fff;
+  color: #000;
+}
+.btn--secondary {
+  background: rgba(109, 109, 110, 0.7);
+  color: #fff;
 }
