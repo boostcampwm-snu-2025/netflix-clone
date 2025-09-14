@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <title>홈 - 넷플릭스 클론</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header" role="banner">
+    <div class="header__inner page">
+      <!--AI로부터 로고 디자인 도움 받음-->
+      <a class="logo" href="#" aria-label="넷플릭스 홈">
+        <svg viewBox="0 0 512 128" width="92" height="24" aria-hidden="true" focusable="false">
+          <rect width="512" height="128" fill="none"/>
+          <text x="0" y="92" font-size="100" font-weight="800" fill="#e50914"
+                font-family="Arial Black, Arial, Helvetica, sans-serif" letter-spacing="3">NETFLIX</text>
+        </svg>
+      </a>
+      <!--상단 메뉴-->
+      <nav class="nav" aria-label="주 메뉴">
+        <a href="#" aria-current="page">홈</a>
+        <a href="#">시리즈</a>
+        <a href="#">영화</a>
+        <a href="#">게임</a>
+        <a href="#">NEW! 요즘 대세 콘텐츠</a>
+        <a href="#">내가 찜한 리스트</a>
+        <a href="#">언어별로 찾아보기</a>
+      </nav>
+  
+      <div class="actions" aria-label="헤더 액션">
+        <!--검색 버튼-->
+        <button class="icon-btn" aria-label="검색" disabled>
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+            <!--AI 활용하여 svg 이미지 생성 (이하 svg에도 마찬가지)-->
+            <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 5 1.49-1.49-5-5zM9.5 14A4.5 4.5 0 119.5 5a4.5 4.5 0 010 9z" fill="currentColor"/>
+          </svg>
+        </button>
+        <!--키즈 메뉴-->
+        <a class="kids" href="#">키즈</a>
+        <!--알림 버튼-->
+        <button class="icon-btn bell" aria-label="알림" disabled>
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+            <path d="M12 22a2 2 0 002-2h-4a2 2 0 002 2zm6-6v-5a6 6 0 10-12 0v5l-2 2v1h16v-1l-2-2z" fill="currentColor"/>
+          </svg>
+          <span class="badge" aria-hidden="true">00</span>
+        </button>
+        <!--프로필 버튼-->
+        <button class="profile" aria-label="프로필 메뉴" disabled>
+          <!--AI로부터 더미 이미지 사이트 추천받아 사용함-->
+          <img src="https://placehold.co/28x28" alt="프로필 사진" />
+          <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+            <path d="M7 10l5 5 5-5z" fill="currentColor"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-label="히어로 배너">
+      <div class="hero__inner page">
+        <div class="hero__content">
+          <div class="hero__logo">
+            <img src="https://placehold.co/400x120?text=LOGO" alt="폭군의 셰프 로고" />
+          </div>
+
+          <div class="hero__rank">
+            <span class="chip chip--top10"><span>TOP</span><span>10</span></span>
+            <span class="rank-text">오늘 시리즈 순위 <strong>2</strong>위</span>
+          </div>
+    
+          <div class="hero__desc-box">
+            <p class="hero__desc">
+              시간을 거슬러 과거로 가게 된 현대의 셰프가 폭군으로 악명 높은 왕을 만난다. 
+              그녀는 탁월한 요리 솜씨로 왕의 마음과 입맛을 모두 사로잡을 수 있을까?
+            </p>
+          </div>
+    
+          <div class="hero__actions">
+            <a href="#" class="btn btn--primary" aria-label="재생">
+              <span class="icon">▶</span> 재생
+            </a>
+            <a href="#" class="btn btn--secondary" aria-label="상세 정보">
+              <span class="icon">i</span> 상세 정보
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- 섹션 1: 회원님을 위해 엄선한 오늘의 콘텐츠 -->
+    <section class="section page" aria-labelledby="recommend">
+      <h2 id="recommend" class="section__title">회원님을 위해 엄선한 오늘의 콘텐츠</h2>
+      <div class="row">
+        <article class="card"><a href="#" aria-label="귀멸의 칼날"><img class="card__img" src="https://placehold.co/600x400/jpg" alt="귀멸의 칼날 포스터" /></a></article>
+        <article class="card"><a href="#" aria-label="트리거"><img class="card__img" src="https://placehold.co/600x400/jpg" alt="트리거 포스터" /></a></article>
+        <article class="card"><a href="#" aria-label="미션 임파서블"><img class="card__img" src="https://placehold.co/600x400/jpg" alt="미션 임파서블 포스터" /></a></article>
+        <article class="card"><a href="#" aria-label="폭싹 속았수다"><img class="card__img" src="https://placehold.co/600x400/jpg" alt="폭싹 속았수다 포스터" /></a></article>
+        <article class="card"><a href="#" aria-label="브레이킹 배드"><img class="card__img" src="https://placehold.co/600x400/jpg" alt="브레이킹 배드 포스터" /></a></article>
+        <article class="card"><a href="#" aria-label="폭군의 셰프"><img class="card__img" src="https://placehold.co/600x400/jpg" alt="폭군의 셰프 포스터" /></a></article>
+      </div>
+    </section>  
+
+    <!-- 섹션 2: 연애 세포를 깨우는 작품들 -->
+    <section class="section page" aria-labelledby="lovely-videos">
+      <h2 id="lovely-videos" class="section__title">연애 세포를 깨우는 작품들</h2>
+      <div class="row">
+        <article class="card"><a href="#" aria-label="고백의 역사"><img class="card__img" src="https://placehold.co/600x400/jpg" alt="고백의 역사 포스터" /></a></article>
+        <article class="card"><a href="#" aria-label="스타트업"><img class="card__img" src="https://placehold.co/600x400/jpg" alt="스타트업 포스터" /></a></article>
+        <article class="card"><a href="#" aria-label="미스터션샤인"><img class="card__img" src="https://placehold.co/600x400/jpg" alt="미스터션샤인 포스터" /></a></article>
+        <article class="card"><a href="#" aria-label="난홍"><img class="card__img" src="https://placehold.co/600x400/jpg" alt="난홍 포스터" /></a></article>
+        <article class="card"><a href="#" aria-label="어느 날 월터 형제들과 살게 됐다"><img class="card__img" src="https://placehold.co/600x400/jpg" alt="어느 날 월터 형제들과 살게 됐다 포스터" /></a></article>
+        <article class="card"><a href="#" aria-label="트라이"><img class="card__img" src="https://placehold.co/600x400/jpg" alt="트라이 포스터" /></a></article>
+      </div>
+    </section>  
+
+    <!-- 섹션 3: 오늘 대한민국의 TOP 10 시리즈 -->
+    <section class="section page" aria-labelledby="top10-series">
+      <h2 id="top10-series" class="section__title">오늘 대한민국의 TOP 10 시리즈</h2>
+      <div class="row">
+        <article class="card"><a href="#" aria-label="사마귀"><img class="card__img" src="https://placehold.co/600x400/jpg" alt="사마귀 포스터" /></a></article>
+        <article class="card"><a href="#" aria-label="폭군의 셰프"><img class="card__img" src="https://placehold.co/600x400/jpg" alt="폭군의 셰프 포스터" /></a></article>
+        <article class="card"><a href="#" aria-label="에스콰이어"><img class="card__img" src="https://placehold.co/600x400/jpg" alt="에스콰이어 포스터" /></a></article>
+        <article class="card"><a href="#" aria-label="애마"><img class="card__img" src="https://placehold.co/600x400/jpg" alt="애마 포스터" /></a></article>
+        <article class="card"><a href="#" aria-label="나는 SOLO"><img class="card__img" src="https://placehold.co/600x400/jpg" alt="나는 SOLO 포스터" /></a></article>
+        <article class="card"><a href="#" aria-label="귀멸의 칼날"><img class="card__img" src="https://placehold.co/600x400/jpg" alt="귀멸의 칼날 포스터" /></a></article>
+      </div>
+    </section>    
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="footer__inner page">
+  
+      <!-- SNS 아이콘 -->
+      <div class="footer__sns">
+        <a href="#" aria-label="Facebook">
+          <img src="https://placehold.co/28x28" alt="Facebook 아이콘" />
+        </a>
+        <a href="#" aria-label="Instagram">
+          <img src="https://placehold.co/28x28" alt="Instagram 아이콘" />
+        </a>
+        <a href="#" aria-label="Twitter">
+          <img src="https://placehold.co/28x28" alt="Twitter 아이콘" />
+        </a>
+        <a href="#" aria-label="YouTube">
+          <img src="https://placehold.co/28x28" alt="YouTube 아이콘" />
+        </a>
+      </div>
+  
+      <!-- 푸터 링크 -->
+      <nav class="footer__nav" aria-label="footer links">
+        <div><a href="#">화면 해설</a></div>
+        <div><a href="#">고객 센터</a></div>
+        <div><a href="#">기프트카드</a></div>
+        <div><a href="#">미디어 센터</a></div>
+        <div><a href="#">투자 정보(IR)</a></div>
+        <div><a href="#">입사 정보</a></div>
+        <div><a href="#">이용 약관</a></div>
+        <div><a href="#">개인정보</a></div>
+        <div><a href="#">법적 고지</a></div>
+        <div><a href="#">쿠키 설정</a></div>
+        <div><a href="#">회사 정보</a></div>
+        <div><a href="#">문의하기</a></div>
+      </nav>
+  
+      <!-- 회사 정보 -->
+      <div class="footer__info">
+        <p>넷플릭스서비시스코리아 유한회사 통신판매업신고번호: 제2018-서울종로-0426호 전화번호: 00-308-321-0161 (수신자 부담)</p>
+        <p>대표: 레지널드 숀 톰프슨</p>
+        <p>이메일 주소: korea@netflix.com</p>
+        <p>주소: 대한민국 서울특별시 종로구 우정국로 26, 센트로폴리스 A동 20층 우편번호 03161</p>
+        <p>사업자등록번호: 165-87-00119</p>
+        <p>클라우드 호스팅: Amazon Web Services Inc.</p>
+        <p><a href="#">공정거래위원회 웹사이트</a></p>
+      </div>
+  
+    </div>
+  </footer>
+  
+</body>
+</html>
