@@ -1,0 +1,37 @@
+/* 디자인 토큰 (디자인에 반복적으로 쓰이는 값. 색상, 간격, 글꼴 크기, 레이아웃 등) */
+:root {
+  --page-width: 1200px; /* 페이지 전체의 최대 너비 */
+  --header-h: 72px; /* 헤더 높이 (Header Height) */
+  --space-1: 8px; /* 간격 (spacing) 작은 단위 */
+  --space-2: 16px; /* 간격 중간 단위 */
+  --space-3: 24px; /* 간격 큰 단위 */
+  --space-4: 32px; /* 간격 제일 큰 단위 */
+  --color-bg: #000; /* 배경색 (검정) */
+  --color-text: #fff; /* 기본 텍스트 색 (흰색) */
+  --color-muted: #aaa; /* 보조 텍스트 색 (회색) */
+  --color-red: #e50914; /* 넷플릭스 레드 */
+}
+
+/* 기본 설정 */
+* {
+  box-sizing: border-box; /* norder-box:: 박스 크기 계산에 패딩과 보더 포함 */
+}
+body {
+  margin: 0;
+  background: var(--color-bg); /* var(--변수명): css 변수 값을 꺼내 쓰는 문법 */
+  color: var(--color-text);
+  font-family: Arial, sans-serif;
+}
+a {
+  color: inherit; /* 부모 요소의 색상 상속 */
+  text-decoration: none; /* 밑줄 제거 */
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.container {
+  width: var(--page-width);
+  margin: 0 auto;
+}
