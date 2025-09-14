@@ -1,0 +1,45 @@
+.recommendation-container {
+    padding: 0 20px;
+    margin-bottom: 40px;
+}
+
+.section-title {
+    font-size: 25px;
+    font-weight: bold;
+    margin-left: 20px;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.recommendation-list {
+        display: flex;
+        gap: 15px;
+        overflow-x: hidden;
+        padding: 10px 0 15px;
+        scroll-behavior: smooth;
+        user-select: none;
+        -webkit-user-select: none;
+        cursor: grab;
+        position: relative;
+}
+
+.recommendation-list:active {
+        cursor: grabbing;
+}
+
+.recommendation-container {
+        --fade-width: 40px;
+}
+
+.recommendation-item {
+    min-width: 100px;
+    flex: 0 0 auto;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.recommendation-item:hover {
+    transform: scale(1.05);
+}

@@ -1,0 +1,30 @@
+:root {
+	--app-font: 'Pretendard', 'Inter', 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+	--page-width: 1440px;
+	--color-text: #fff;
+}
+
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.page {
+	width: var(--page-width);
+	margin: 0 auto;
+}
+
+body {
+	background-color: #141414;
+	font-family: var(--app-font);
+	color: var(--color-text);
+}
+
+img {
+	-webkit-user-drag: none;
+	-moz-user-drag: none;
+	-ms-user-drag: none;
+	user-drag: none;
+}
