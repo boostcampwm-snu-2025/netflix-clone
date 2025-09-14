@@ -1,0 +1,201 @@
+.page { width: 1440px; margin: 0 auto; background-color:black}
+
+/* header styles */
+.header {
+    display: flex;
+    justify-content: space-between; /*divide right and left header part*/
+	align-items: center;
+	height: 72px;
+	padding: 0 24px;
+    margin: 0;
+}
+
+/* left side header*/
+.header_left {
+    display: flex;
+    align-items: center;
+}
+.netflix_logo a {
+    color: red;
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-decoration: none; 
+}
+.main_nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-left: 50px;
+}
+.main_nav li a {
+    color: white;
+    font-size: 0.9rem;
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+/* right side header */
+.header_right {
+    display: flex;
+    align-items: center;
+    color: white;
+    gap: 25px;
+}
+.header_right a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* overall main layout (by flex box) */
+.main{
+	display: flex;
+	flex-direction: column;
+}
+
+/* hero styles */
+.hero {
+    width: 100%; 
+    height: 800px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 0 24px;
+}
+
+/* background image */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/img/before_sunset_hero_2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    z-index: -2; /* fix to background image */
+}
+/* overlay */
+.hero::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.8), transparent);
+    z-index: -1; /* higher than  backgound image, lower than contents */
+}
+
+/* hero content styles */
+.hero_content {
+    max-width: 620px;
+	z-index: 0; /* higher than overlay */
+}
+/* movie title for hero */
+.hero_title {
+    font-size: 4.5rem;
+    font-weight: bold;
+    color: white;
+    margin: 0;
+}
+/* movie description for hero  */
+.hero_rank {
+    font-size: 1.8rem;
+    color: white;
+    margin:0;
+}
+/* movie description for hero  */
+.hero_description {
+    font-size: 1.4rem;
+    color: white;
+    line-height: 1.5;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+/* card list styles */
+.list{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+.list_title{color:aliceblue; font-size:large;}
+.list a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* movie card1 styles (except ranking row) */
+.movie_card1{
+	width:224px;
+	margin: 8px;
+}
+.movie_card1 img {
+    width: 100%; /* 부모(.movie_card)의 너비에 꽉 채웁니다. (240px) */
+    height: 144px;
+    object-fit: cover; /* 이미지 비율이 깨지지 않도록 채워줍니다. */
+    display: block; /* 이미지 아래에 생기는 미세한 공백을 제거합니다. */
+}
+
+/* 영화 카드 안의 제목 스타일 */
+.movie_card1 h3 {
+    color: white; /* 넷플릭스처럼 글자색을 밝게 */
+    font-size: 16px;
+    margin-top: 8px; /* 이미지와의 간격 */
+}
+
+/* movie card2 styles (ranking row) */
+.movie_card2{
+	display: flex;
+	align-items:center;
+	flex-wrap: wrap;
+	margin: 8px;
+}
+
+.movie_card2 .rank {
+    font-size: 8rem; /* 숫자를 매우 크게 */
+    font-weight: bold;
+    color: #555;      /* 너무 튀지 않는 색상 */
+    /* 숫자가 이미지 왼쪽으로 살짝 겹치게 하는 효과 */
+    margin-right: -20px;
+    z-index: -1; 
+}
+.movie_card2 img {
+    width:120px; /* 부모(.movie_card)의 너비에 꽉 채웁니다. (240px) */
+    height: 180px;
+    object-fit: cover; /* 이미지 비율이 깨지지 않도록 채워줍니다. */
+    display: block; /* 이미지 아래에 생기는 미세한 공백을 제거합니다. */
+}
+
+/* 영화 카드 안의 제목 스타일 */
+.movie_card2 h3 {
+    color: white; /* 넷플릭스처럼 글자색을 밝게 */
+    font-size: 16px;
+    margin-top: 8px; /* 이미지와의 간격 */
+}
+
+/* card hover effect */
+.movie_card1, .movie_card2 {
+    transition: transform 0.3s ease; /* smooth effect transition*/
+}
+.movie_card1:hover {
+    transform: scale(1.05);
+    z-index: 10;
+}
+.movie_card2:hover {
+    transform: scale(1.05);
+    z-index: 10;
+}
+
+/* footer style */
+.footer{
+	display: flex;
+	flex-direction: column-reverse;
+}
+.footer-content{
+	font-size: 2.0;
+	color: #555;
+}
