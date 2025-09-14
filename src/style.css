@@ -261,6 +261,52 @@ hero > img {
 
 /* footer part */
 
-/* footer {
+footer {
+  display: contents;
+  flex-direction: column;
+  width: 100;
+  align-items: center;
   position: absolute;
-} */
+}
+
+.social-links img {
+  height: 72px;
+  align-self: initial;
+  align-items: center;
+}
+
+.social-links {
+  display: flex;
+  gap: var(--spacing-16);
+  justify-content: baseline;
+  margin-top: var(--spacing-32);
+  margin-bottom: var(--spacing-16);
+  transition: transform 0.3s ease;
+  :hover {
+    transform: scale(1.1);
+  }
+}
+
+.footer-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-16);
+  margin-bottom: var(--spacing-24);
+  transition: background-color 0.3s ease;
+  :hover {
+    color: grey;
+  }
+}
+
+.footer-links .footer-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-8);
+}
+
+.footer-copyright {
+  color: var(--muted);
+  font-size: var(--fonts-sm);
+  margin-bottom: var(--spacing-32);
+  text-align: center;
+}
