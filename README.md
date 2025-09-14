@@ -11,6 +11,8 @@
 사용할 영화 포스터 이미지들을 정하고, 컴포넌트들 간 간격을 설정한다.
 반응형이 아니므로 배치 중심으로, 너무 디테일하지 않게 대략적으로 디자인한다.
 
+### [FIGMA](https://www.figma.com/design/R8NHH2yQ6cepLO5EW902Eg/VLSI--AI%EB%A5%BC-%ED%99%9C%EC%9A%A9%ED%95%9C-front-end-%EA%B0%9C%EB%B0%9C-?node-id=35-2&m=dev)
+
 ### 2. HTML 뼈대 잡기
 
 Semantic 태그들을 이용해 사이트의 뼈대를 잡는다.
