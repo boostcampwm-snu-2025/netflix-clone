@@ -161,6 +161,8 @@ footer {
   color: rgba(255, 255, 255, 0.7);
   font-size: 16px;
   line-height: 1.5;
+  padding: 0 148px;
+  margin-bottom: 96px;
 }
 
 .footer-contact {
@@ -219,8 +221,8 @@ footer {
 
 .recaptcha-notice {
   margin-top: 16px;
-  font-size: 11px;
-  color: rgba(255, 255, 255, 0.7);
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .recaptcha-notice a {
