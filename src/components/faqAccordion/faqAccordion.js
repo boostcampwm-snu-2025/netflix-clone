@@ -25,15 +25,32 @@ class FaqAccordion extends HTMLElement {
       const isOpen = answer.style.display === 'block';
 
       if (isOpen) {
-        answer.style.display = 'none';
-        icon.style.transform = 'rotate(0deg)';
-        button.setAttribute('aria-expanded', 'false');
+        this.close();
       } else {
-        answer.style.display = 'block';
-        icon.style.transform = 'rotate(45deg)';
-        button.setAttribute('aria-expanded', 'true');
+        this.dispatchEvent(new CustomEvent('faq-open', { bubbles: true }));
+        this.open();
       }
     });
+  }
+
+  open() {
+    const answer = this.shadowRoot.querySelector('.answer');
+    const icon = this.shadowRoot.querySelector('img');
+    answer.style.display = 'block';
+    icon.style.transform = 'rotate(45deg)';
+    this.shadowRoot
+      .querySelector('button')
+      .setAttribute('aria-expanded', 'true');
+  }
+
+  close() {
+    const answer = this.shadowRoot.querySelector('.answer');
+    const icon = this.shadowRoot.querySelector('img');
+    answer.style.display = 'none';
+    icon.style.transform = 'rotate(0deg)';
+    this.shadowRoot
+      .querySelector('button')
+      .setAttribute('aria-expanded', 'false');
   }
 }
 
