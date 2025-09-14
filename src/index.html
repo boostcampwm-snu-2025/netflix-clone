@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="auto">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>홈 - 넷플릭스</title>
+    <meta name="description" content="A Netflix clone built with plain html and css." />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <header class="site-header">
+        <a class="logo" href="#">
+            <img class="nav-logo" src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"
+                alt="Netflix Logo" />
+        </a>
+        <nav>
+            <ul class="nav-left">
+                <li><a href="#">홈</a></li>
+                <li><a href="#">시리즈</a></li>
+                <li><a href="#">영화</a></li>
+                <li><a href="#">게임</a></li>
+                <li><a href="#">NEW! 요즘 대세 콘텐츠</a></li>
+                <li><a href="#">내가 찜한 리스트</a></li>
+                <li><a href="#">언어별로 찾아보기</a></li>
+            </ul>
+        </nav>
+        <menu class="nav-right">
+            <!-- 오른쪽의 버튼들.  -->
+            <button class="search-button">
+                <form role="search"></form>🔍
+            </button>
+            <a href="#">키즈</a>
+            <button class="search-button">🔔</button>
+            <button class="nav-button">
+                <img class="nav-avatar" src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png"
+                    alt="Netflix Avatar" />▾
+            </button>
+        </menu>
+    </header>
+
+    <main>
+        <!-- hero section -->
+        <section class="hero" aria-label="추천 타이틀">
+            <figure class="hero__media">
+                <picture>
+                    <img src="https://occ-0-988-993.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABU6--YLZfHXkELlpf6Wzmxc51LI2QF9w0Ikf_jjsQyP4Mlz7TxUuFNUx9pygUAeAdZ1UdXk9_ncXiBNE-hK1f08vm8LxoLYibGW8.webp?r=daa"
+                        alt="" width="2000" height="1125" loading="eager" decoding="async">
+                </picture>
+            </figure>
+
+            <article class="hero__panel">
+                <img src="https://occ-0-988-993.1.nflxso.net/dnm/api/v6/LmEnxtiAuzezXBjYXPuDgfZ4zZQ/AAAABSEAZ_OGKIuMvR3XAHoohrMbXhN1511i3iU5c9lH9mmECitcSJP0I8qdHdoUzKhPbcOxYO_jKf7XPE1xVzws2P0Czyc1eU8B71bT32Iw5xQR.webp?r=9e5">
+                <header class="hero__header">
+                    <p class="hero__subheader">
+                         <span class="badge" aria-label="Top 10">TOP<br>10</span>오늘 시리즈 순위 2위
+                    </p>
+                    <p class="hero__desc">
+                        시간을 거슬러 과거로 가게 된 현대의 셰프가 폭군으로 악명 높은 왕을 만난다. 그녀는 탁월한 요리 솜씨로 왕의 마음과 입맛을 모두 사로잡을 수 있을까?
+                    </p>
+                </header>
+
+                <menu class="hero__actions" role="menubar" aria-label="히어로 동작">
+                    <button type="button" class="btn btn--play" aria-label="재생">▶ 재생</button>
+                    <button type="button" class="btn btn--more" aria-label="상세정보">ⓘ 상세정보</button>
+                    <button class="icon-btn" type="button" aria-label="다시 재생" title="다시 재생">↻</button>
+                    <span class="rating" aria-label="연령 등급 15세 이상">15+</span>
+                </menu>
+
+
+        <!-- category section -->
+        <!-- first pagination -->
+        <section class="row" aria-labelledby="row-ko-audio-desc">
+            <header>
+                <h2 id="row-ko-audio-desc"><br><br><br>꼭 챙겨 보세요! 회원님을 위한 콘텐츠</h2>
+                <ul class="pagination-indicator">
+                    <li class="active"></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </header>
+
+            <!-- Flex-based horizontal list -->
+            <ul class="row-list" role="list">
+                <li>
+                    <article>
+                        <a href="#">
+                            <figure>
+                                <img src="https://occ-0-988-993.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABX51Gk1NYuRpTudvXkB8fw1YhMf93LdGy7xh81QARdsIIxTumuxbqPfzxx5JjlIlcagv34rgryqSeQTnfQJa3WjubJafVLPfcS7yj-yGRKsTFV2ww42ebQc11PfL0YdxHmjg.jpg?r=872"
+                                    alt="모태솔로지만 연애는 하고 싶어">
+                            </figure>
+                        </a>
+                    </article>
+                </li>
+
+                <li>
+                    <article>
+                        <a href="#">
+                            <figure>
+                                <img src="https://occ-0-988-993.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABYcDTPwpLKOm41r554TZih1XOz1axU4vvJ3nslSH-sZ9XvJePF33wbpvYTbgAhxVbOLp39S-fqw6EI3X9dR4rRH8WPJhOWAZ89VdggNd5PcYBpsFJGUNs7WPf-ra47THqD3Q.jpg?r=020"
+                                    alt="흑백요리사: 요리 계급 전쟁">
+                            </figure>
+                        </a>
+                    </article>
+                </li>
+
+                <li>
+                    <article>
+                        <a href="#">
+                            <figure>
+                                <img src="https://occ-0-988-993.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABcJ6ZqpkCdROzBtFGH6IqRoNCs19Fha0wsYv9t30Njz9IjFWqnItLCO0cHS8kGWwZf3TEi_Upb64c8o4TB7ktDjPPW7YDyx092t1SCPzkDzQbz_tLj8f-fV5TEjDddj02iWg.jpg?r=3d1"
+                                    alt="약한영웅">
+                            </figure>
+                        </a>
+                    </article>
+                </li>
+                <li>
+                    <article>
+                        <a href="#">
+                            <figure>
+                                <img src="https://occ-0-988-993.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABb9iUYuf2zFBMrBI209_XTCcLChX2nB8chbWqY8L-RqX-lqh7kmFxhFm5U6bPINGsKJxzVRLMrw-btcWwIO8UsnRHBAJ58Gu3NQ.webp?r=151"
+                                    alt="그린북">
+                            </figure>
+                        </a>
+                    </article>
+                </li>
+                <li>
+                    <article>
+                        <a href="#">
+                            <figure>
+                                <img src="https://occ-0-988-993.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABR0VbMCGuT4np2KujRzzwkZn-XVc05f9_i0VsRHksYjAthx5wG817IYADr-M3K0vELcyVf-14wZn5mJXk7ENc011mL0iwN8XlgEl7ZZRgR13ONBgkyndbJQi27cCabtAE8KK.jpg?r=5cc"
+                                    alt="F1 본능의 질주">
+                            </figure>
+                        </a>
+                    </article>
+                </li>
+                <li>
+                    <article>
+                        <a href="#">
+                            <figure>
+                                <img src="https://occ-0-988-993.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABcJ6ZqpkCdROzBtFGH6IqRoNCs19Fha0wsYv9t30Njz9IjFWqnItLCO0cHS8kGWwZf3TEi_Upb64c8o4TB7ktDjPPW7YDyx092t1SCPzkDzQbz_tLj8f-fV5TEjDddj02iWg.jpg?r=3d1"
+                                    alt="약한영웅">
+                            </figure>
+                        </a>
+                    </article>
+                </li>
+            </ul>
+        </section>
+        <!-- top 10 series -->
+        <section class="row" aria-labelledby="row-kr-top10">
+            <header>
+                <h2 id="row-kr-top10">오늘 대한민국의 TOP 10 영화</h2>
+                <ul class="pagination-indicator" aria-label="페이지네이션">
+                    <li class="active"></li>
+                    <li></li>
+                </ul>
+            </header>
+
+            <!-- Flex-based horizontal list -->
+            <ul class="row-list top10" role="list">
+                <li>
+                    <article>
+                        <a href="#">
+                            <figure>
+                                <img src="https://occ-0-988-993.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABefrVO8A3y9NCWwtiPH39guZundHIt0OJ8BFsN0rvIlbcNjrYsl2vlqv3-81YaKcZh7B4q2CLXk3NxkV4GqNISzQbnH2Ei-QX4VmIE0_SQ9WZP487XAhwkEk_QnuRf-aTcR6-SWe9Dps3qGQBYm9YqvdX06UjrQRdiRpZELgfrEZ.webp?r=646"
+                                    alt="야당">
+                            </figure>
+                        </a>
+                    </article>
+                </li>
+
+                <li>
+                    <article>
+                        <a href="#">
+                            <figure>
+                                <img src="https://occ-0-988-993.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABaBnbQmWTEi0rYomNX137ZmOOJpqX3JgS-Yry2Ihd_4JmrwslWv5NryUvZkzYNiLBeQVx4cMr6UkNnI8688LgPFwahEQkBKTUdALPHyZhuK50S4pk2ovDDoBM7mfpTj758dXVUuJO1qW1R9GkzA5rvgbo6XTuqHRf-CIualUv-vf.webp?r=254"
+                                    alt="크레이븐 더 헌터">
+                            </figure>
+                        </a>
+                    </article>
+                </li>
+
+                <li>
+                    <article>
+                        <a href="#">
+                            <figure>
+                                <img src="https://occ-0-988-993.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABcmiZG5KCI8KNXV82xHnG_Gu4J0Fr2iBsy474eBvkQqjK0VWn0ppBltqoeoX8Xk0cFshI-o-jy0Lo8ZU0eRYCYmL-doqBJCvVPg6GZh_O095Ke54qtbLxP1ZU_4bJ5uXJT5eJg.jpg?r=ff7"
+                                    alt="케이팝 데몬 헌터스">
+                            </figure>
+                        </a>
+                    </article>
+                </li>
+
+                <li>
+                    <article>
+                        <a href="#">
+                            <figure>
+                                <img src="https://occ-0-988-993.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABdRH3g3wmQXbRZiZCJEXszs92N-pgm7j5PCkBHIv9P1QOvRckufv82LVJ4SD1bRGmxVVhTJIZdH-Yb-FVswvlBJnqUj4OzN3t3jpYwhvYxUaPA2RU6_8YxG4YoSPEVh2ZQ6Q-rE6v_--TI4H0I3N_aOt200_XI-c_aGWjU1apnNI710QfZ1vVDy3pBlVxrZRm_frkGHT.jpg?r=4ca"
+                                    alt="고백의 역사">
+                            </figure>
+                        </a>
+                    </article>
+                </li>
+
+                <li>
+                    <article>
+                        <a href="#">
+                            <figure>
+                                <img src="https://occ-0-988-993.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABb_ZepWDRLLdrsFzkCLgcj3GuigbKz-l8MygI0dLPeBBzK2QIIt0bZPG5uhE6x7IMwUGVbw5-WakZVsPYAeVSSCW1ShjBGQ9eqdHBM6GoV7dKPGnApRWd3VmXfWZs22AIIRO2yZ8ieT6dKVlJPjpNBgS3HHY6KIbobG4yWLuolCPDIEKFgYZsdd3JHiCWvuz6ggrcq8Z.jpg?r=9ac"
+                                    alt="케이팝 데몬 헌터스 싱어롱">
+                            </figure>
+                        </a>
+                    </article>
+                </li>
+
+                <li>
+                    <article>
+                        <a href="#">
+                            <figure>
+                                <img src="https://occ-0-988-993.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABcb_WLFgTdpJEbscq3gxsJPShDJsDs-4e2SX2MuiSdvFY2yazq4KBvK_A4PYqVB-6djHLe95Kr9Z2arcOwnREUU-xBW30VUDrOHp.webp?r=5c9"
+                                    alt="브로큰">
+                            </figure>
+                        </a>
+                    </article>
+                </li>
+            </ul>
+        </section>
+        <!-- 2nd pagination -->
+        <section class="row" aria-labelledby="row-ko-audio-desc">
+            <header>
+                <h2 id="row-ko-audio-desc">누구나 사랑하는 명작</h2>
+                <ul class="pagination-indicator">
+                    <li class="active"></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </header>
+
+            <!-- Flex-based horizontal list -->
+            <ul class="row-list" role="list">
+                <li>
+                    <article>
+                        <a href="#">
+                            <figure>
+                                <img src="https://occ-0-988-993.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABX51Gk1NYuRpTudvXkB8fw1YhMf93LdGy7xh81QARdsIIxTumuxbqPfzxx5JjlIlcagv34rgryqSeQTnfQJa3WjubJafVLPfcS7yj-yGRKsTFV2ww42ebQc11PfL0YdxHmjg.jpg?r=872"
+                                    alt="모태솔로지만 연애는 하고 싶어">
+                            </figure>
+                        </a>
+                    </article>
+                </li>
+
+                <li>
+                    <article>
+                        <a href="#">
+                            <figure>
+                                <img src="https://occ-0-988-993.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABYcDTPwpLKOm41r554TZih1XOz1axU4vvJ3nslSH-sZ9XvJePF33wbpvYTbgAhxVbOLp39S-fqw6EI3X9dR4rRH8WPJhOWAZ89VdggNd5PcYBpsFJGUNs7WPf-ra47THqD3Q.jpg?r=020"
+                                    alt="흑백요리사: 요리 계급 전쟁">
+                            </figure>
+                        </a>
+                    </article>
+                </li>
+
+                <li>
+                    <article>
+                        <a href="#">
+                            <figure>
+                                <img src="https://occ-0-988-993.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABcJ6ZqpkCdROzBtFGH6IqRoNCs19Fha0wsYv9t30Njz9IjFWqnItLCO0cHS8kGWwZf3TEi_Upb64c8o4TB7ktDjPPW7YDyx092t1SCPzkDzQbz_tLj8f-fV5TEjDddj02iWg.jpg?r=3d1"
+                                    alt="약한영웅">
+                            </figure>
+                        </a>
+                    </article>
+                </li>
+                <li>
+                    <article>
+                        <a href="#">
+                            <figure>
+                                <img src="https://occ-0-988-993.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABb9iUYuf2zFBMrBI209_XTCcLChX2nB8chbWqY8L-RqX-lqh7kmFxhFm5U6bPINGsKJxzVRLMrw-btcWwIO8UsnRHBAJ58Gu3NQ.webp?r=151"
+                                    alt="그린북">
+                            </figure>
+                        </a>
+                    </article>
+                </li>
+                <li>
+                    <article>
+                        <a href="#">
+                            <figure>
+                                <img src="https://occ-0-988-993.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABR0VbMCGuT4np2KujRzzwkZn-XVc05f9_i0VsRHksYjAthx5wG817IYADr-M3K0vELcyVf-14wZn5mJXk7ENc011mL0iwN8XlgEl7ZZRgR13ONBgkyndbJQi27cCabtAE8KK.jpg?r=5cc"
+                                    alt="F1 본능의 질주">
+                            </figure>
+                        </a>
+                    </article>
+                </li>
+                <li>
+                    <article>
+                        <a href="#">
+                            <figure>
+                                <img src="https://occ-0-988-993.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABcJ6ZqpkCdROzBtFGH6IqRoNCs19Fha0wsYv9t30Njz9IjFWqnItLCO0cHS8kGWwZf3TEi_Upb64c8o4TB7ktDjPPW7YDyx092t1SCPzkDzQbz_tLj8f-fV5TEjDddj02iWg.jpg?r=3d1"
+                                    alt="약한영웅">
+                            </figure>
+                        </a>
+                    </article>
+                </li>
+            </ul>
+        </section>
+        <!-- top 10 series -->
+        <section class="row" aria-labelledby="row-kr-top10">
+            <header>
+                <h2 id="row-kr-top10">오늘 대한민국의 TOP 10 시리즈</h2>
+                <ul class="pagination-indicator" aria-label="페이지네이션">
+                    <li class="active"></li>
+                    <li></li>
+                </ul>
+            </header>
+
+            <!-- Flex-based horizontal list -->
+            <ul class="row-list top10" role="list">
+                <li>
+                    <article>
+                        <a href="#">
+                            <figure>
+                                <img src="https://occ-0-988-993.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABefrVO8A3y9NCWwtiPH39guZundHIt0OJ8BFsN0rvIlbcNjrYsl2vlqv3-81YaKcZh7B4q2CLXk3NxkV4GqNISzQbnH2Ei-QX4VmIE0_SQ9WZP487XAhwkEk_QnuRf-aTcR6-SWe9Dps3qGQBYm9YqvdX06UjrQRdiRpZELgfrEZ.webp?r=646"
+                                    alt="야당">
+                            </figure>
+                        </a>
+                    </article>
+                </li>
+
+                <li>
+                    <article>
+                        <a href="#">
+                            <figure>
+                                <img src="https://occ-0-988-993.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABaBnbQmWTEi0rYomNX137ZmOOJpqX3JgS-Yry2Ihd_4JmrwslWv5NryUvZkzYNiLBeQVx4cMr6UkNnI8688LgPFwahEQkBKTUdALPHyZhuK50S4pk2ovDDoBM7mfpTj758dXVUuJO1qW1R9GkzA5rvgbo6XTuqHRf-CIualUv-vf.webp?r=254"
+                                    alt="크레이븐 더 헌터">
+                            </figure>
+                        </a>
+                    </article>
+                </li>
+
+                <li>
+                    <article>
+                        <a href="#">
+                            <figure>
+                                <img src="https://occ-0-988-993.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABcmiZG5KCI8KNXV82xHnG_Gu4J0Fr2iBsy474eBvkQqjK0VWn0ppBltqoeoX8Xk0cFshI-o-jy0Lo8ZU0eRYCYmL-doqBJCvVPg6GZh_O095Ke54qtbLxP1ZU_4bJ5uXJT5eJg.jpg?r=ff7"
+                                    alt="케이팝 데몬 헌터스">
+                            </figure>
+                        </a>
+                    </article>
+                </li>
+
+                <li>
+                    <article>
+                        <a href="#">
+                            <figure>
+                                <img src="https://occ-0-988-993.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABdRH3g3wmQXbRZiZCJEXszs92N-pgm7j5PCkBHIv9P1QOvRckufv82LVJ4SD1bRGmxVVhTJIZdH-Yb-FVswvlBJnqUj4OzN3t3jpYwhvYxUaPA2RU6_8YxG4YoSPEVh2ZQ6Q-rE6v_--TI4H0I3N_aOt200_XI-c_aGWjU1apnNI710QfZ1vVDy3pBlVxrZRm_frkGHT.jpg?r=4ca"
+                                    alt="고백의 역사">
+                            </figure>
+                        </a>
+                    </article>
+                </li>
+
+                <li>
+                    <article>
+                        <a href="#">
+                            <figure>
+                                <img src="https://occ-0-988-993.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABb_ZepWDRLLdrsFzkCLgcj3GuigbKz-l8MygI0dLPeBBzK2QIIt0bZPG5uhE6x7IMwUGVbw5-WakZVsPYAeVSSCW1ShjBGQ9eqdHBM6GoV7dKPGnApRWd3VmXfWZs22AIIRO2yZ8ieT6dKVlJPjpNBgS3HHY6KIbobG4yWLuolCPDIEKFgYZsdd3JHiCWvuz6ggrcq8Z.jpg?r=9ac"
+                                    alt="케이팝 데몬 헌터스 싱어롱">
+                            </figure>
+                        </a>
+                    </article>
+                </li>
+
+                <li>
+                    <article>
+                        <a href="#">
+                            <figure>
+                                <img src="https://occ-0-988-993.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABcb_WLFgTdpJEbscq3gxsJPShDJsDs-4e2SX2MuiSdvFY2yazq4KBvK_A4PYqVB-6djHLe95Kr9Z2arcOwnREUU-xBW30VUDrOHp.webp?r=5c9"
+                                    alt="브로큰">
+                            </figure>
+                        </a>
+                    </article>
+                </li>
+            </ul>
+        </section>
+
+        <!-- lots of other paginations... -->
+        <section class="row" aria-labelledby="row-ko-audio-desc">
+            <header>
+                <h2 id="row-ko-audio-desc">한국어 화면 해설</h2>
+                <ul class="pagination-indicator">
+                    <li class="active"></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </header>
+
+            <!-- Flex-based horizontal list -->
+            <ul class="row-list" role="list">
+                <li>
+                    <article>
+                        <a href="#">
+                            <figure>
+                                <img src="https://occ-0-988-993.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABX51Gk1NYuRpTudvXkB8fw1YhMf93LdGy7xh81QARdsIIxTumuxbqPfzxx5JjlIlcagv34rgryqSeQTnfQJa3WjubJafVLPfcS7yj-yGRKsTFV2ww42ebQc11PfL0YdxHmjg.jpg?r=872"
+                                    alt="모태솔로지만 연애는 하고 싶어">
+                            </figure>
+                        </a>
+                    </article>
+                </li>
+
+                <li>
+                    <article>
+                        <a href="#">
+                            <figure>
+                                <img src="https://occ-0-988-993.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABYcDTPwpLKOm41r554TZih1XOz1axU4vvJ3nslSH-sZ9XvJePF33wbpvYTbgAhxVbOLp39S-fqw6EI3X9dR4rRH8WPJhOWAZ89VdggNd5PcYBpsFJGUNs7WPf-ra47THqD3Q.jpg?r=020"
+                                    alt="흑백요리사: 요리 계급 전쟁">
+                            </figure>
+                        </a>
+                    </article>
+                </li>
+
+                <li>
+                    <article>
+                        <a href="#">
+                            <figure>
+                                <img src="https://occ-0-988-993.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABcJ6ZqpkCdROzBtFGH6IqRoNCs19Fha0wsYv9t30Njz9IjFWqnItLCO0cHS8kGWwZf3TEi_Upb64c8o4TB7ktDjPPW7YDyx092t1SCPzkDzQbz_tLj8f-fV5TEjDddj02iWg.jpg?r=3d1"
+                                    alt="약한영웅">
+                            </figure>
+                        </a>
+                    </article>
+                </li>
+                <li>
+                    <article>
+                        <a href="#">
+                            <figure>
+                                <img src="https://occ-0-988-993.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABb9iUYuf2zFBMrBI209_XTCcLChX2nB8chbWqY8L-RqX-lqh7kmFxhFm5U6bPINGsKJxzVRLMrw-btcWwIO8UsnRHBAJ58Gu3NQ.webp?r=151"
+                                    alt="그린북">
+                            </figure>
+                        </a>
+                    </article>
+                </li>
+                <li>
+                    <article>
+                        <a href="#">
+                            <figure>
+                                <img src="https://occ-0-988-993.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABR0VbMCGuT4np2KujRzzwkZn-XVc05f9_i0VsRHksYjAthx5wG817IYADr-M3K0vELcyVf-14wZn5mJXk7ENc011mL0iwN8XlgEl7ZZRgR13ONBgkyndbJQi27cCabtAE8KK.jpg?r=5cc"
+                                    alt="F1 본능의 질주">
+                            </figure>
+                        </a>
+                    </article>
+                </li>
+                <li>
+                    <article>
+                        <a href="#">
+                            <figure>
+                                <img src="https://occ-0-988-993.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABcJ6ZqpkCdROzBtFGH6IqRoNCs19Fha0wsYv9t30Njz9IjFWqnItLCO0cHS8kGWwZf3TEi_Upb64c8o4TB7ktDjPPW7YDyx092t1SCPzkDzQbz_tLj8f-fV5TEjDddj02iWg.jpg?r=3d1"
+                                    alt="약한영웅">
+                            </figure>
+                        </a>
+                    </article>
+                </li>
+            </ul>
+        </section>
+        <section class="row" aria-labelledby="row-ko-audio-desc">
+            <header>
+                <h2 id="row-ko-audio-desc">애니</h2>
+                <ul class="pagination-indicator">
+                    <li class="active"></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </header>
+
+            <!-- Flex-based horizontal list -->
+            <ul class="row-list" role="list">
+                <li>
+                    <article>
+                        <a href="#">
+                            <figure>
+                                <img src="https://occ-0-988-993.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABX51Gk1NYuRpTudvXkB8fw1YhMf93LdGy7xh81QARdsIIxTumuxbqPfzxx5JjlIlcagv34rgryqSeQTnfQJa3WjubJafVLPfcS7yj-yGRKsTFV2ww42ebQc11PfL0YdxHmjg.jpg?r=872"
+                                    alt="모태솔로지만 연애는 하고 싶어">
+                            </figure>
+                        </a>
+                    </article>
+                </li>
+
+                <li>
+                    <article>
+                        <a href="#">
+                            <figure>
+                                <img src="https://occ-0-988-993.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABYcDTPwpLKOm41r554TZih1XOz1axU4vvJ3nslSH-sZ9XvJePF33wbpvYTbgAhxVbOLp39S-fqw6EI3X9dR4rRH8WPJhOWAZ89VdggNd5PcYBpsFJGUNs7WPf-ra47THqD3Q.jpg?r=020"
+                                    alt="흑백요리사: 요리 계급 전쟁">
+                            </figure>
+                        </a>
+                    </article>
+                </li>
+
+                <li>
+                    <article>
+                        <a href="#">
+                            <figure>
+                                <img src="https://occ-0-988-993.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABcJ6ZqpkCdROzBtFGH6IqRoNCs19Fha0wsYv9t30Njz9IjFWqnItLCO0cHS8kGWwZf3TEi_Upb64c8o4TB7ktDjPPW7YDyx092t1SCPzkDzQbz_tLj8f-fV5TEjDddj02iWg.jpg?r=3d1"
+                                    alt="약한영웅">
+                            </figure>
+                        </a>
+                    </article>
+                </li>
+                <li>
+                    <article>
+                        <a href="#">
+                            <figure>
+                                <img src="https://occ-0-988-993.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABb9iUYuf2zFBMrBI209_XTCcLChX2nB8chbWqY8L-RqX-lqh7kmFxhFm5U6bPINGsKJxzVRLMrw-btcWwIO8UsnRHBAJ58Gu3NQ.webp?r=151"
+                                    alt="그린북">
+                            </figure>
+                        </a>
+                    </article>
+                </li>
+                <li>
+                    <article>
+                        <a href="#">
+                            <figure>
+                                <img src="https://occ-0-988-993.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABR0VbMCGuT4np2KujRzzwkZn-XVc05f9_i0VsRHksYjAthx5wG817IYADr-M3K0vELcyVf-14wZn5mJXk7ENc011mL0iwN8XlgEl7ZZRgR13ONBgkyndbJQi27cCabtAE8KK.jpg?r=5cc"
+                                    alt="F1 본능의 질주">
+                            </figure>
+                        </a>
+                    </article>
+                </li>
+                <li>
+                    <article>
+                        <a href="#">
+                            <figure>
+                                <img src="https://occ-0-988-993.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABcJ6ZqpkCdROzBtFGH6IqRoNCs19Fha0wsYv9t30Njz9IjFWqnItLCO0cHS8kGWwZf3TEi_Upb64c8o4TB7ktDjPPW7YDyx092t1SCPzkDzQbz_tLj8f-fV5TEjDddj02iWg.jpg?r=3d1"
+                                    alt="약한영웅">
+                            </figure>
+                        </a>
+                    </article>
+                </li>
+            </ul>
+        </section>
+
+        <footer class="site-footer">
+            <address>
+                Contact: <a href="mailto:support@streamio.example">support@netflix.example</a>
+            </address>
+            <nav aria-label="Footer">
+                <a href="/terms">Terms</a>
+                <a href="/privacy">Privacy</a>
+            </nav>
+            <small>&copy; Netflix </small>
+        </footer>
+    </main>
+</body>
+</main>
+
+</html>
