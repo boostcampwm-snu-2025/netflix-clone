@@ -92,6 +92,7 @@ ul {
   background-size: cover;
   display: flex;
   align-items: center;
+  margin-bottom: var(--space-4);
 }
 .hero__overlay {
   position: absolute;
@@ -125,4 +126,35 @@ ul {
 .btn--secondary {
   background: rgba(109, 109, 110, 0.7);
   color: #fff;
+}
+
+/* 카테고리 */
+.category {
+  margin-top: var(--space-3);
+}
+.category__title {
+  font-size: 20px;
+  margin-bottom: var(--space-2);
+}
+.row {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: nowrap; /* 줄바꿈 방지 */
+  gap: var(--space-2);
+  overflow-x: auto; /* 가로 스크롤 */
+  overflow-y: hidden; /* 세로 스크롤 숨김 */
+  padding-bottom: var(--space-2); /* 스크롤 여백 */
+}
+.card {
+  flex: 0 0 220px;
+  transition: transform 0.2s;
+}
+.card:hover {
+  transform: scale(1.1);
+}
+.card__img {
+  width: 100%;
+  border-radius: 50%;
+  object-fit: cover; /* 이미지 꽉 채우되 비율 유지 */
+  display: block; /* inline-gap 방지 */
 }
