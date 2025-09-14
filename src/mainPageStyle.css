@@ -1,0 +1,91 @@
+*{
+    color : white;
+}
+
+:root{
+    --page-width:1440px;
+    --page-margin:0 auto;
+
+    --header-height:72px;
+    
+    --all-margin:8px;
+    --all-padding:8px;
+    
+    --Menu-margin:16px;
+    
+    --Hero-margin:16px;    
+    
+    --Category-margin:16px;
+}
+
+.page > *{
+    width: var(--page-width);
+}
+
+#Menu {
+    display : flex;
+    flex-direction : row;
+    justify-content: space-between;
+    position:sticky; 
+    top:0;
+    background-color: rgba(255, 255, 255, 0.3);
+    
+}
+
+.MenuList{
+    display: flex;
+    flex-direction: row;
+    
+    margin: var(--Menu-margin);
+    align-items: center;
+    
+}
+
+.MenuList > * {
+    margin: var(--all-margin);
+}
+
+#Hero {
+    display: flex;
+    flex-direction: column;
+}
+
+#Hero > *:not(#HeroBackground) {
+    margin-left: var(--Hero-margin);
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: var(--all-padding);   
+}
+
+#HeroBackground{
+    position: absolute;
+    width: var(--page-width);
+    height: auto;
+    z-index: -1;
+}
+
+#HeroSubtitle > *{
+    margin-left: var(--all-margin);
+}
+
+.Category > *:not(.MovieList){
+    margin: var(--Category-margin);
+    padding: var(--all-padding);
+}
+
+.MovieList{
+    display: flex;
+    flex-direction: row;
+}
+
+.MovieCard{
+    aspect-ratio: 16/9;
+    overflow: hidden;
+    width: 300px;
+    height: auto;
+    margin: var(--all-margin);
+}
+
+.MovieCard:hover{
+    transform: translateY(-10px) scale(1.10);
+}
