@@ -1,0 +1,370 @@
+:root {
+    --white: rgba(255, 255, 255, 1.0);
+    --black: rgba(0, 0, 0, 1.0);
+    --gray: rgba(128, 128, 128, 1.0);
+    --trans-gray: rgba(128, 128, 128, 0.6);
+    --standard-border-radius: 5%;
+}
+
+body {
+    background-color: var(--black);
+    margin-top: 0px;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:focus-visible {
+    outline: 2px solid var(--white);
+    outline-offset: -1px;
+}
+
+.flex_container {
+    width: 1440px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+
+/* header 스타일 */
+.flex_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 40px;
+    background-color: var(--black);
+    overflow: hidden;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.flex_header_left {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 100px;
+    width: auto;
+    padding-left: 24px;
+    padding-right: 8px;
+}
+
+.logo_cutting {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    overflow: hidden;
+}
+
+.button_header {
+    background-color: var(--black);
+    border: none;
+    font-size: 13px; 
+    color: rgb(190, 190, 190, 1.0); 
+    margin-left: 8px;
+}
+
+.button_header:hover {
+    color: var(--white);
+}
+
+.flex_header_right {
+    display: flex;
+    align-items: center;
+}
+
+.magnifier {
+    height: 23px;
+    width: auto;
+}
+
+.bell {
+    height: 22px;
+    width: auto;
+    margin-left: 16px;
+}
+
+.basic_profile{
+    height: 26px;
+    width: auto;
+    margin-left: 16px;
+    border-radius: var(--standard-border-radius);
+}
+
+.triangle {
+    height: 8px;
+    width: auto;
+    margin-left: 8px;
+    margin-right: 40px;
+}
+
+
+/* hero 스타일 */
+.hero {
+    position: relative;
+    width: 1440px;
+    overflow: hidden;
+}
+
+.overlay_image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.overlay_upper {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    top: 30%;
+    left: 40px;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.overlay_1st_row {
+    width: 500px;
+    height: auto;
+    display: block;
+}
+
+.overlay_2nd_row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.overlay_2nd_row .top10_logo {
+    height: 30px;
+    width: auto;
+    border-radius: var(--standard-border-radius);
+}
+
+.overlay_2nd_row .rank {
+    font-size: 22px;
+    color: var(--white);
+}
+
+.overlay_3rd_row {
+    width: 470px;
+    height: auto;
+    font-size: 18px;
+    color: var(--white);
+}
+
+.overlay_4th_row {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 8px;
+}
+
+.overlay_4th_row .overlay_4th_left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.overlay_4th_row .overlay_4th_right {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.button_with_play {
+    border: none;
+    border-radius: var(--standard-border-radius);
+    background-color: var(--white);
+    font-size: 20px;
+    padding: 8px 24px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.play_sign {
+    height: 28px;
+    width: auto;
+}
+
+.button_with_info {
+    border: none;
+    border-radius: var(--standard-border-radius);
+    background-color: var(--trans-gray);
+    font-size: 20px;
+    padding: 8px 16px;
+    gap: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.info_sign {
+    height: 30px;
+    width: auto;
+}
+
+.info_font {
+    color: var(--white);
+}
+
+.sound_sign {
+    height: 40px;
+    width: auto;
+}
+
+.age_limit {
+    color: var(--white);
+    font-size: 16px;
+    background-color: rgba(128, 128, 128, 0.6);
+    border-left: 3.5px solid var(--white);
+    padding-top: 8px;
+    padding-right: 80px;
+    padding-bottom: 8px;
+    padding-left: 8px;
+}
+
+
+/*컨텐츠 스타일 */
+section {
+    width: 1400px;
+    overflow: hidden;    
+    margin-left: 40px;
+    margin-top: 24px;
+}
+
+.contents_option {
+    color: var(--white);
+    font-size: 20px;
+}
+
+
+/*회원 추천 컨텐츠 스타일 */
+.contents_for_user_img_flex {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.contents_for_user_img {
+    width: 220px;
+    height: auto;
+    border-radius: var(--standard-border-radius);
+}
+
+.contents_for_user_img:hover {
+    transform: scale(1.4);
+}
+
+/* top10 시리즈 스타일 */
+.top10_contents_img_flex {
+    display: flex;
+    align-items: center;
+    width: auto;
+    height: auto;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.top10_contents_img_inner_flex {
+    display: flex;
+    align-items: center;
+    height: 180px;
+    overflow: hidden;
+    border-radius: var(--standard-border-radius);
+} 
+
+.top10_contents_img_inner_flex:hover {
+    transform: scale(1.4);
+}
+
+.rank_font {
+    padding-left: 8px;
+    font-size: 150px;
+    color: var(--gray);
+    font-style: italic;
+}
+
+.top10_contents_img {
+    width: 128.75px; /* 카드 가로길이 220px 고정 */
+    height: auto;
+}
+
+
+/* 새로 올라온 컨텐츠 스타일 */
+.new_contents_img_flex {
+    display: flex;
+    align-items: center;
+    width: auto;
+    height: auto;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.new_contents_img {
+    width: 220px;
+    height: auto;
+    border-radius: var(--standard-border-radius);
+}
+
+.new_contents_img:hover {
+    transform: scale(1.4);
+}
+
+
+/* footer 스타일 */
+footer {
+    margin-top: 100px;
+    margin-left: 440px;
+    width: 700px;
+    font-size: 13px;
+    color: var(--gray);
+}
+
+.footer_logos {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: 28px;
+    overflow: hidden;
+    margin-bottom: 16px;
+}
+
+.footer_logos > img:nth-child(1) {
+    height: 28px;
+}
+
+.footer_logos > img:nth-child(2) {
+    height: 25px;
+    margin-left: 16px;
+}
+
+.footer_logos > img:nth-child(3) {
+    height: 30px;
+    margin-left: 16px;
+}
+
+.footer_logos > img:nth-child(4) {
+    height: 54px;
+}
+
+.footer_link {
+    display: grid;
+    height: 70px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    margin-bottom: 24px;
+}
+
+.footer_info {
+    font-size: 11px;
+    margin-bottom: 8px;
+}
