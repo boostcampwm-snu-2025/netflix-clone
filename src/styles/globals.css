@@ -1,0 +1,12 @@
+body {
+  font-family: 'Netflix Sans', sans-serif;
+  background-color: #000;
+  color: #fff;
+}
+
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
