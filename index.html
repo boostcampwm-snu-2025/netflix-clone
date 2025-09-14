@@ -17,11 +17,12 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
     <script src="scripts.js"></script>
 </head>
+
 <body>
     <header class="header">
         <div class="logo">
             <a href="/">
-            <img src="assets/Netflix_Logo.png" width="100" alt="Netflix Logo" class="logo-image">
+                <img src="assets/Netflix_Logo.png" width="100" alt="Netflix Logo" class="logo-image">
             </a>
         </div>
         <nav class="nav">
@@ -45,7 +46,7 @@
                     <a href="#" role="menuitem">계정</a>
                     <a href="#" role="menuitem">고객센터</a>
                     <hr class="dropdown-divider">
-                    <a href="#" role="menuitem">넷플릭스에서 로그아웃</a> 
+                    <a href="#" role="menuitem">넷플릭스에서 로그아웃</a>
                 </div>
             </div>
         </div>
@@ -55,14 +56,23 @@
             <img src="assets/hero-image.png" alt="Hero Image" class="hero-image">
             <div class="hero-content">
                 <img src="assets/hero-title.png" alt="Hero Title" class="hero-title">
-                <p class="hero-description">시간을 거슬러 과거로 가게 된 현대의 셰프가 폭군으로 악명 높은 왕을 만난다. 그녀는 탁월한 요리 솜씨로 왕의 마음과 입맛을 모두 사로잡을 수 있을까?</p>
-                <div class="hero-buttons">
-                    <button class="play-button">
-                        <i class="fa-solid fa-play"></i> 재생
-                    </button>
-                    <button class="info-button">
-                        <i class="fa-solid fa-circle-info"></i> 상세 정보
-                    </button>
+                <p class="hero-description">시간을 거슬러 과거로 가게 된 현대의 셰프가 폭군으로 악명 높은 왕을 만난다. 그녀는 탁월한 요리 솜씨로 왕의 마음과 입맛을 모두
+                    사로잡을 수 있을까?</p>
+                <div class="hero-actions">
+                    <div class="hero-buttons">
+                        <button disabled class="play-button">
+                            <i class="fa-solid fa-play"></i> 재생
+                        </button>
+                        <button disabled class="info-button">
+                            <i class="fa-solid fa-circle-info"></i> 상세 정보
+                        </button>
+                    </div>
+                    <div class="hero-controls">
+                            <button class="mute-btn" aria-label="음소거">
+                                <i class="fa-solid fa-volume-xmark"></i>
+                            </button>
+                            <span class="age-badge">15+</span>
+                    </div>
                 </div>
             </div>
         </section>
@@ -91,32 +101,36 @@
             <p class="section-title">해외 시리즈</p>
             <div class="recommendation-list">
                 <div class="recommendation-item">
-                    <img src="assets/recommendation7.png" alt="Recommendation 6">
+                    <img src="assets/recommendation7.png" alt="Recommendation 7">
                 </div>
                 <div class="recommendation-item">
-                    <img src="assets/recommendation8.png" alt="Recommendation 7">
+                    <img src="assets/recommendation8.png" alt="Recommendation 8">
                 </div>
                 <div class="recommendation-item">
-                    <img src="assets/recommendation9.png" alt="Recommendation 8">
+                    <img src="assets/recommendation9.png" alt="Recommendation 9">
                 </div>
                 <div class="recommendation-item">
-                    <img src="assets/recommendation10.png" alt="Recommendation 9">
+                    <img src="assets/recommendation10.png" alt="Recommendation 10">
                 </div>
                 <div class="recommendation-item">
-                    <img src="assets/recommendation11.png" alt="Recommendation 10">
+                    <img src="assets/recommendation11.png" alt="Recommendation 11">
                 </div>
                 <div class="recommendation-item">
-                    <img src="assets/recommendation12.png" alt="Recommendation 11">
+                    <img src="assets/recommendation12.png" alt="Recommendation 12">
                 </div>
             </div>
         </section>
         <footer class="footer">
             <div class="footer-inner">
                 <div class="social-links">
-                    <a href="https://www.facebook.com/NetflixKR" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="https://www.instagram.com/netflixkr/" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://twitter.com/NetflixKR" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
-                    <a href="https://www.youtube.com/channel/UCiEEF51uRAeZeCo8CJFhGWw/featured" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://www.facebook.com/NetflixKR" aria-label="Facebook"><i
+                            class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/netflixkr/" aria-label="Instagram"><i
+                            class="fa-brands fa-instagram"></i></a>
+                    <a href="https://twitter.com/NetflixKR" aria-label="Twitter"><i
+                            class="fa-brands fa-twitter"></i></a>
+                    <a href="https://www.youtube.com/channel/UCiEEF51uRAeZeCo8CJFhGWw/featured" aria-label="YouTube"><i
+                            class="fa-brands fa-youtube"></i></a>
                 </div>
                 <ul class="footer-links">
                     <li><a href="#">화면 해설</a></li>
@@ -140,8 +154,9 @@
                     <p>사업자등록번호: 165-87-00119</p>
                     <p>클라우드 호스팅: Amazon Web Services Inc.</p>
                     <a href="https://www.ftc.go.kr/bizCommPop.do?wrkr_no=1658700119">공정거래위원회 웹사이트</a>
-            </div>
+                </div>
         </footer>
     </main>
 </body>
+
 </html>
