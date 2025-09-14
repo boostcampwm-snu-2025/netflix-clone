@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Netflix Clone Project</title>
+    <link rel="stylesheet" href="/index.css" />
+    <link
+      rel="stylesheet"
+      as="style"
+      crossorigin
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard.css"
+    />
+  </head>
+
+  <body>
+    <main class="container">
+      <header class="header__container">
+        <section class="header__content-container">
+          <a href="/">
+            <img
+              class="header__logo"
+              src="/assets/header/logo.png"
+              alt="Netflix logo"
+            />
+          </a>
+          <nav class="header__navbar">
+            <ul class="header__nav-list">
+              <li><a class="header__text" href="#">홈</a></li>
+              <li><a class="header__text" href="#">시리즈</a></li>
+              <li><a class="header__text" href="#">영화</a></li>
+              <li><a class="header__text" href="#">게임</a></li>
+              <li>
+                <a class="header__text" href="#">NEW! 요즘 대세 콘텐츠</a>
+              </li>
+              <li><a class="header__text" href="#">내가 찜한 리스트</a></li>
+              <li><a class="header__text" href="#">언어별로 찾아보기</a></li>
+            </ul>
+          </nav>
+        </section>
+
+        <section class="header__content-container">
+          <a href="/">
+            <img
+              class="header__icon"
+              src="/assets/header/search-icon.svg"
+              alt="Search Icon"
+            />
+          </a>
+          <ul>
+            <li><a class="header__text" href="#">키즈</a></li>
+          </ul>
+          <a href="/">
+            <img
+              class="header__icon"
+              src="/assets/header/noti-icon.svg"
+              alt="Notification Icon"
+            />
+          </a>
+          <button class="header__profile-container" disabled>
+            <img
+              class="header__profile-image"
+              src="/assets/header/profile.png"
+            />
+            <img
+              class="header__chevron"
+              src="/assets/header/chevron-icon.svg"
+              alt="Chevron Icon"
+            />
+          </button>
+        </section>
+      </header>
+
+      <section class="hero__container">
+        <div class="hero__overlay">
+          <img class="hero__logo" src="assets/hero/logo.png" alt="Hero Logo" />
+
+          <section class="hero__rank-row">
+            <img
+              class="top-10-logo"
+              src="assets/top-10.png"
+              alt="Top 10 Logo"
+            />
+            오늘 시리즈 순위 2위
+          </section>
+          <p class="hero__description">
+            시간을 거슬러 과거로 가게 된 현대의 셰프가 폭군으로 악명 높은 왕을
+            만난다. 그녀는 탁월한 요리 솜씨로 왕의 마음과 입맛을 모두 사로잡을
+            수 있을까?
+          </p>
+
+          <section class="hero__button-row">
+            <button class="hero__button" disabled>
+              <img
+                class="hero__button-icon"
+                src="assets/hero/play-icon.svg"
+                alt="Play Icon"
+              />
+              재생
+            </button>
+            <button class="hero__button hero__button--info" disabled>
+              <img
+                class="hero__button-icon"
+                src="assets/hero/info-icon.svg"
+                alt="Info Icon"
+              />
+              상세 정보
+            </button>
+          </section>
+        </div>
+      </section>
+
+      <section class="content__container">
+        <section class="poster__row">
+          <div class="poster__container">
+            <img
+              class="poster__image"
+              src="assets/posters/horizontal/1-1.png"
+              alt="폭군의 셰프 Poster"
+            />
+            <div class="poster__overlay">
+              <button class="poster__button" disabled>새로운 에피소드</button>
+              <button class="poster__button poster__button--watch" disabled>
+                지금 시청하기
+              </button>
+            </div>
+            <img
+              class="top-10-logo poster__top-10-logo"
+              src="assets/top-10.png"
+              alt="Top 10 Logo"
+            />
+          </div>
+
+          <div class="poster__container">
+            <img
+              class="poster__image"
+              src="assets/posters/horizontal/1-2.png"
+              alt="에스콰이어 Poster"
+            />
+            <div class="poster__overlay">
+              <button class="poster__button" disabled>새로운 에피소드</button>
+              <button class="poster__button poster__button--watch" disabled>
+                지금 시청하기
+              </button>
+            </div>
+            <img
+              class="top-10-logo poster__top-10-logo"
+              src="assets/top-10.png"
+              alt="Top 10 Logo"
+            />
+          </div>
+
+          <div class="poster__container">
+            <img
+              class="poster__image"
+              src="assets/posters/horizontal/1-3.png"
+              alt="트리거 Poster"
+            />
+            <img
+              class="top-10-logo poster__top-10-logo"
+              src="assets/top-10.png"
+              alt="Top 10 Logo"
+            />
+          </div>
+
+          <div class="poster__container">
+            <img
+              class="poster__image"
+              src="assets/posters/horizontal/1-4.png"
+              alt="사마귀 Poster"
+            />
+            <div class="poster__overlay">
+              <button class="poster__button" disabled>새로운 에피소드</button>
+              <button class="poster__button poster__button--watch" disabled>
+                지금 시청하기
+              </button>
+            </div>
+            <img
+              class="top-10-logo poster__top-10-logo"
+              src="assets/top-10.png"
+              alt="Top 10 Logo"
+            />
+          </div>
+
+          <div class="poster__container">
+            <img
+              class="poster__image"
+              src="assets/posters/horizontal/1-5.png"
+              alt="케이팝 데몬 헌터스 Poster"
+            />
+            <img
+              class="top-10-logo poster__top-10-logo"
+              src="assets/top-10.png"
+              alt="Top 10 Logo"
+            />
+          </div>
+
+          <div class="poster__container">
+            <img
+              class="poster__image"
+              src="assets/posters/horizontal/1-6.png"
+              alt="폭싹 속았수다 Poster"
+            />
+          </div>
+
+          <h2 class="poster__row-title">밥친구</h2>
+        </section>
+
+        <section class="poster__row">
+          <div class="poster__container">
+            <img
+              class="poster__image"
+              src="assets/posters/horizontal/2-1.png"
+              alt="오징어게임 Poster"
+            />
+          </div>
+
+          <h2 class="poster__row-title">wowowow님이 시청 중인 콘텐츠</h2>
+        </section>
+
+        <section class="poster__row">
+          <div class="poster__container">
+            <img
+              class="poster__image"
+              src="assets/posters/horizontal/3-1.png"
+              alt="그 해 우리는 Poster"
+            />
+          </div>
+
+          <div class="poster__container">
+            <img
+              class="poster__image"
+              src="assets/posters/horizontal/3-2.png"
+              alt="고백의 역사 Poster"
+            />
+            <div class="poster__overlay">
+              <button class="poster__button" disabled>새로운 에피소드</button>
+              <button class="poster__button poster__button--watch" disabled>
+                지금 시청하기
+              </button>
+            </div>
+            <img
+              class="top-10-logo poster__top-10-logo"
+              src="assets/top-10.png"
+              alt="Top 10 Logo"
+            />
+          </div>
+
+          <div class="poster__container">
+            <img
+              class="poster__image"
+              src="assets/posters/horizontal/3-3.png"
+              alt="스타트업 Poster"
+            />
+          </div>
+
+          <div class="poster__container">
+            <img
+              class="poster__image"
+              src="assets/posters/horizontal/3-4.png"
+              alt="멜로무비 Poster"
+            />
+          </div>
+
+          <div class="poster__container">
+            <img
+              class="poster__image"
+              src="assets/posters/horizontal/3-5.png"
+              alt="미스터 선샤인 Poster"
+            />
+          </div>
+
+          <h2 class="poster__row-title">연애 세포를 깨우는 작품들</h2>
+        </section>
+      </section>
+
+      <footer class="footer__container">
+        <p class="footer__phone-number">
+          질문이 있으신가요? 문의 전화:
+          <u>010-1234-5678 (수신자 부담)</u>
+        </p>
+
+        <div class="footer__links-container">
+          <ul class="footer__grid">
+            <li><a href="#">자주 묻는 질문</a></li>
+            <li><a href="#">고객 센터</a></li>
+            <li><a href="#">계정</a></li>
+            <li><a href="#">미디어 센터</a></li>
+            <li><a href="#">투자 정보 (IR)</a></li>
+            <li><a href="#">입사 정보</a></li>
+            <li><a href="#">넷플릭스 지원 디바이스</a></li>
+            <li><a href="#">이용 약관</a></li>
+            <li><a href="#">개인정보 처리방침</a></li>
+            <li><a href="#">쿠키 설정</a></li>
+            <li><a href="#">회사 정보</a></li>
+            <li><a href="#">문의하기</a></li>
+            <li><a href="#">속도 테스트</a></li>
+            <li><a href="#">법적 고지</a></li>
+            <li><a href="#">오직 넷플릭스에서</a></li>
+          </ul>
+        </div>
+
+        <img
+          class="footer__logo"
+          src="assets/footer/logo.png"
+          alt="Netflix Logo"
+        />
+      </footer>
+    </main>
+  </body>
+</html>
