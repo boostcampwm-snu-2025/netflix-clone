@@ -8,9 +8,16 @@
   --fz-12: 12px; --fz-14: 14px; --fz-16: 16px; --fz-18: 18px;
   --fz-24: 24px; --fz-32: 32px; --fz-48: 48px;
 
-  --accent: #e50914;
-
   --r-6: 6px; --r-10: 10px; --r-12: 12px;
+
+  --accent: #e50914;
+  --surface: #181818;
+  --bg: #141414;
+  --text: #fff;
+
+  --shadow-sm: 0 2px 8px rgba(0,0,0,.35);
+  --card-gap: var(--space-16);
+  --card-scale: 1.08; /* hover scale */
 }
 
 * { box-sizing: border-box; }
@@ -146,3 +153,78 @@ a:focus-visible, button:focus-visible {
 .btn--secondary { background: rgba(255,255,255,.18); color: #fff; }
 .btn--secondary:hover { background: rgba(255,255,255,.28); }
 
+.section { padding: var(--space-24) 0 var(--space-8); }
+.section__title {
+  font-size: var(--fz-24);
+  margin: 0 0 var(--space-16) 0;
+}
+.row {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: var(--card-gap);
+}
+.card {
+  position: relative;
+  border-radius: var(--r-12);
+  overflow: hidden;
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+  transform: translateZ(0);
+  transition: transform 180ms ease;
+}
+.card__img {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  display: block;
+}
+.card:hover,
+.card:focus-within {
+  transform: scale(var(--card-scale));
+}
+.footer {
+  padding: 2.5rem 0 3rem;
+  background: var(--bg);
+  color: #9a9a9a;
+  font-size: .9rem;
+}
+.footer__inner {
+  width: min(1000px, 90%);
+  margin: 0 auto;
+}
+.footer__sns {
+  display: flex;
+  gap: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+.footer__sns img {
+  width: 28px; height: 28px;
+  display: block;
+  filter: grayscale(100%) brightness(80%);
+  transition: filter .2s ease;
+}
+.footer__sns a:hover img { filter: none; }
+.footer__nav {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: .8rem 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.footer__nav a {
+  color: #9a9a9a;
+  text-decoration: none;
+  font-size: .9rem;
+}
+.footer__nav a:hover {
+  text-decoration: underline;
+  color: #cfcfcf;
+}
+.footer__info {
+  font-size: .8rem;
+  line-height: 1.6;
+}
+.footer__info a {
+  color: #9a9a9a;
+  text-decoration: underline;
+}
+.footer__info a:hover { color: #cfcfcf; }
