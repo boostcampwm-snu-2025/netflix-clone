@@ -4,6 +4,139 @@
   gap: 40px;
 }
 
+body {
+  padding: 0;
+  margin: 0;
+}
+
+main {
+  padding: 0;
+}
+
+section:not(.hero) {
+  padding: 0 148px;
+}
+
+.background {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero {
+  position: relative;
+  height: 100vh;
+  text-align: center;
+  padding: 0 148px;
+}
+
+.hero header {
+  position: relative;
+  z-index: 2;
+  height: 88px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hero .content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -80%);
+  z-index: 1;
+  max-width: 800px;
+}
+
+.hero .content,
+.hero header {
+  position: relative;
+  z-index: 1;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(
+    7deg,
+    rgba(0, 0, 0, 0.85) 10%,
+    rgba(0, 0, 0, 0.8465) 17.25%,
+    rgba(0, 0, 0, 0.8361) 24.5%,
+    rgba(0, 0, 0, 0.8187) 31.75%,
+    rgba(0, 0, 0, 0.7944) 39%,
+    rgba(0, 0, 0, 0.7632) 46.25%,
+    rgba(0, 0, 0, 0.725) 53.5%,
+    rgba(0, 0, 0, 0.6868) 60.75%,
+    rgba(0, 0, 0, 0.6556) 68%,
+    rgba(0, 0, 0, 0.6312) 75.25%,
+    rgba(0, 0, 0, 0.6139) 82.5%,
+    rgba(0, 0, 0, 0.6035) 89.75%,
+    rgba(0, 0, 0, 0.6) 97%
+  );
+  z-index: 0;
+}
+
+.hero h1 {
+  font-size: 56px;
+  font-weight: 900;
+}
+
+.curve-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background: linear-gradient(
+    to right,
+    rgba(33, 13, 22, 1) 16%,
+    rgba(184, 40, 105, 1),
+    rgba(229, 9, 20, 1),
+    rgba(184, 40, 105, 1),
+    rgba(33, 13, 22, 1) 84%
+  );
+  border-top-left-radius: 50% 100%;
+  border-top-right-radius: 50% 100%;
+}
+
+.curve-container {
+  position: relative;
+  width: 100%;
+  height: 100px;
+  background: radial-gradient(
+    50% 500% at 50% -420%,
+    rgba(64, 97, 231, 0.4) 80%,
+    rgba(0, 0, 0, 0.1) 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero header {
+  height: 88px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hero header img {
+  height: 40px;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
 footer {
   color: rgba(255, 255, 255, 0.7);
   font-size: 16px;
