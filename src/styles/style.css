@@ -3,3 +3,78 @@
   display: flex;
   gap: 40px;
 }
+
+footer {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.footer-contact {
+  margin-bottom: 24px;
+}
+
+.footer-contact a {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: underline;
+}
+
+.footer-links {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.links-column {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.links-column a {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: underline;
+  font-size: 14px;
+}
+
+.footer-language {
+  margin: 24px 0;
+}
+
+.footer-info {
+  margin-top: 24px;
+}
+
+.footer-info > p {
+  margin-bottom: 16px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.company-details p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 12px;
+  line-height: 1.5;
+  letter-spacing: -0.2px;
+}
+
+.company-details a {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: underline;
+}
+
+.recaptcha-notice {
+  margin-top: 16px;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.recaptcha-notice a {
+  color: #0071eb;
+  text-decoration: none;
+}
+
+.recaptcha-notice a:hover {
+  text-decoration: underline;
+}
