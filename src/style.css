@@ -180,6 +180,7 @@ hero > img {
   margin-bottom: var(--spacing-32);
   padding: 0 var(--spacing-16);
   position: relative;
+  overflow-x: hidden;
 }
 
 .slider-title {
@@ -191,12 +192,32 @@ hero > img {
 
 .slider-container {
   display: flex;
-
+  
   gap: var(--spacing-8);
   overflow-x: auto;
   padding-bottom: var(--spacing-8);
   scroll-behavior: smooth;
+
+  /* 가로 스크롤 바 숨기기 */
+  -ms-overflow-style: none;  /* IE 및 Edge */
+  scrollbar-width: none;  /* Firefox */
 }
+
+.slider-container::-webkit-scrollbar {
+  display: none; /* 크롬, 사파리, 오페라 */
+}
+
+.slider-content {
+  display: flex;
+  gap: var(--spacing-8);
+  overflow-x: auto;
+  padding-bottom: var(--spacing-8);
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+
+
+}
+
 
 .slider-item {
   display: grid;
@@ -282,10 +303,18 @@ footer {
   margin-top: var(--spacing-32);
   margin-bottom: var(--spacing-16);
   transition: transform 0.3s ease;
-  :hover {
+}
+
+.social-links a {
+  transition: transform 0.3s ease;
+  &:hover {
     transform: scale(1.1);
   }
 }
+/* 
+.social-links a:hover {
+  transform: scale(1.1);
+} */
 
 .footer-links {
   display: grid;
