@@ -7,11 +7,13 @@
       넷플릭스&nbsp;대한민국 - 인터넷으로 시리즈와 영화를 시청하세요
     </title>
     <link rel="stylesheet" href="styles/globals.css" />
+    <link rel="stylesheet" href="styles/style.css" />
     <script
       type="module"
       src="components/languageSelect/languageSelect.js"
     ></script>
     <script type="module" src="components/appButton/appButton.js"></script>
+    <script type="module" src="components/movieCard/movieCard.js"></script>
   </head>
   <body>
     <main>
@@ -19,9 +21,7 @@
         <header>
           <img src="assets/images/logo.svg" alt="logo" />
           <language-select></language-select>
-          <app-button size="sm">
-            <p>로그인</p>
-          </app-button>
+          <app-button size="sm">로그인</app-button>
         </header>
         <div class="content">
           <h1>영화, 시리즈 등을 무제한으로</h1>
@@ -31,7 +31,7 @@
             주소를 입력하세요.
           </p>
           <app-button size="lg">
-            <p>시작하기</p>
+            시작하기
             <img src="assets/icons/arrow.svg" alt="arrow" />
           </app-button>
         </div>
@@ -45,6 +45,88 @@
       </section>
       <section class="top-contents">
         <h2>지금 뜨는 콘텐츠</h2>
+        <ol class="ranking-list">
+          <li>
+            <movie-card
+              src="assets/images/thumbnails/movie1.webp"
+              alt="movie1"
+              title="movie1"
+              rank="1"
+            ></movie-card>
+          </li>
+          <li>
+            <movie-card
+              src="assets/images/thumbnails/movie2.webp"
+              alt="movie2"
+              title="movie2"
+              rank="2"
+            ></movie-card>
+          </li>
+          <li>
+            <movie-card
+              src="assets/images/thumbnails/movie3.webp"
+              alt="movie3"
+              title="movie3"
+              rank="3"
+            ></movie-card>
+          </li>
+          <li>
+            <movie-card
+              src="assets/images/thumbnails/movie4.webp"
+              alt="movie4"
+              title="movie4"
+              rank="4"
+            ></movie-card>
+          </li>
+          <li>
+            <movie-card
+              src="assets/images/thumbnails/movie5.webp"
+              alt="movie5"
+              title="movie5"
+              rank="5"
+            ></movie-card>
+          </li>
+          <li>
+            <movie-card
+              src="assets/images/thumbnails/movie6.webp"
+              alt="movie6"
+              title="movie6"
+              rank="6"
+            ></movie-card>
+          </li>
+          <li>
+            <movie-card
+              src="assets/images/thumbnails/movie7.webp"
+              alt="movie7"
+              title="movie7"
+              rank="7"
+            ></movie-card>
+          </li>
+          <li>
+            <movie-card
+              src="assets/images/thumbnails/movie8.webp"
+              alt="movie8"
+              title="movie8"
+              rank="8"
+            ></movie-card>
+          </li>
+          <li>
+            <movie-card
+              src="assets/images/thumbnails/movie9.webp"
+              alt="movie9"
+              title="movie9"
+              rank="9"
+            ></movie-card>
+          </li>
+          <li>
+            <movie-card
+              src="assets/images/thumbnails/movie10.webp"
+              alt="movie10"
+              title="movie10"
+              rank="10"
+            ></movie-card>
+          </li>
+        </ol>
       </section>
       <section class="reasons">
         <h2>가입해야 하는 또 다른 이유</h2>
@@ -53,10 +135,10 @@
         <h2>자주 묻는 질문</h2>
       </section>
       <section class="email-input">
-        <h2>
+        <p>
           시청할 준비가 되셨나요? 멤버십을 등록하거나 재시작하려면 이메일 주소를
           입력하세요.
-        </h2>
+        </p>
       </section>
     </main>
     <footer></footer>
