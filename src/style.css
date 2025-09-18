@@ -129,7 +129,7 @@ main {
 }
 
 /* >>> hero part */
-hero {
+.hero {
   position: relative;
   align-items: center;
   margin-bottom: var(--spacing-32);
@@ -139,8 +139,20 @@ hero {
   overflow: hidden;
 }
 
-hero > img {
+.hero::before {
+  content: "";
   position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0) 60%);
+  z-index: 1;
+}
+
+.hero > img.hero-image {
+  position: absolute;
+  display: block;
   width: 100%;
   height: auto;
   object-fit: cover;
@@ -150,6 +162,7 @@ hero > img {
   z-index: 0;
 }
 
+
 .hero-overlay {
   position: absolute;
   width: calc(100% - var(--spacing-64) * 2);
@@ -157,6 +170,7 @@ hero > img {
   display: flex;
   flex-direction: column;
   padding: 0 var(--spacing-32);
+  z-index: 2;
 }
 
 .hero-content-container {
@@ -242,11 +256,10 @@ hero > img {
 }
 
 .top-10-rank-slider .slider-item svg,
-.top-10-rank-slider .slider-item img {
-  grid-area: 1 / 2; /* 같은 그리드 영역에 배치 */
-  width: 100%;
-  height: 100%;
+.top-10-rank-slider .slider-item a {
+  grid-area: 1 / 1; /* 같은 그리드 영역에 배치 */
 }
+
 
 .top-10-rank-slider .slider-item svg {
   position: absolute;
@@ -258,6 +271,7 @@ hero > img {
   transform: translateY(-50%);
   opacity: 0.9; /* 살짝 투명하게 */
 }
+
 
 #rank-1 {
   width: 105px; /* 1등은 더 크게 */
