@@ -123,6 +123,7 @@ nav ul {
 
 /* main part */
 main {
+  display: block;
   margin-top: var(--spacing-32);
   margin-bottom: var(--spacing-32);
   /* padding: 0 var(--spacing-32); */
@@ -158,12 +159,38 @@ main {
   object-fit: cover;
   /* border-radius: var(--radius); */
   box-shadow: var(--shadow);
-  margin-bottom: var(--spacing-32);
+  /* margin-bottom: var(--spacing-32); */
   z-index: 0;
 }
 
+.hero p {
+  margin-left: calc(var(--spacing-32));
+}
+
+.hero .play-button {
+  position: static;
+  display: block;
+  align-self: left;
+  size: 48px 200px;
+  background-color: var(--brand);
+  border: none;
+  border-radius: var(--radius);
+  color: var(--foreground);
+  cursor: pointer;
+  font-size: var(--fonts-lg);
+  font-weight: bold;
+  padding: var(--spacing-12) var(--spacing-24);
+  margin-left: calc(var(--spacing-32) * 5);
+  margin-bottom: var(--spacing-16);
+  transition: background-color 0.3s ease;
+}
+
+.hero .play-button:hover {
+  background-color: var(--overlay);
+}
 
 .hero-overlay {
+  display: flex;
   position: absolute;
   width: calc(100% - var(--spacing-64) * 2);
   bottom: 0;
@@ -177,12 +204,18 @@ main {
   position: static;
   bottom: var(--spacing-64);
   color: var(--foreground);
-  max-width: 60%; 
 }
 
 .hero-logo {
   max-width: 60%; /* 로고 크기 제한 */
   margin-bottom: var(--spacing-16);
+}
+
+.hero-description {
+  font-size: var(--fonts-lg);
+  max-width: 60%;
+  margin-bottom: var(--spacing-24);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 .slider-hero{
