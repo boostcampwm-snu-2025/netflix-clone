@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/global.css">
     <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/notification.css">
     <link rel="stylesheet" href="styles/profile.css">
     <link rel="stylesheet" href="styles/hero.css">
     <link rel="stylesheet" href="styles/recommendation.css">
@@ -38,7 +39,25 @@
         </nav>
         <div class="user-menu">
             <i class="fa-solid fa-magnifying-glass"></i>
-            <i class="fa-solid fa-bell"></i>
+            <div class="notification">
+                <i class="fa-solid fa-bell"></i>
+                <div class="notification-menu" aria-hidden="true">
+                    <div class ="notification-item">
+                        <img src="assets/notification1.png" alt="Notification 1">
+                        <div class="notification-text">
+                            <p class="notification-title">신규 컨텐츠<br>나는 생존자다</p>
+                            <p class="notification-time">1주 전</p>
+                        </div>
+                    </div>
+                    <div class ="notification-item">
+                        <img src="assets/notification2.png" alt="Notification 2">
+                        <div class="notification-text">
+                            <p class="notification-title">신규 컨텐츠<br>토요 미스테리 극장</p>
+                            <p class="notification-time">2주 전</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="profile" role="button" aria-haspopup="true" aria-expanded="false">
                 <img src="assets/profile.png" alt="Profile">
                 <i class="fa-solid fa-caret-down caret" aria-hidden="true"></i>

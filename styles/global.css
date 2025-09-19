@@ -1,7 +1,45 @@
 :root {
+	/* Typography */
 	--app-font: 'Pretendard', 'Inter', 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+	--font-size-xs: 12px;
+	--font-size-sm: 13px;
+	--font-size-base: 14px;
+	--font-size-md: 18px;
+	--font-size-lg: 22px;
+	--font-size-xl: 25px;
+
+	/* Layout */
 	--page-width: 1440px;
+	--space-2: 4px;
+	--space-3: 6px;
+	--space-4: 8px;
+	--space-5: 10px;
+	--space-6: 12px;
+	--space-7: 14px;
+	--space-8: 16px;
+	--space-10: 20px;
+	--space-12: 24px;
+	--space-15: 30px;
+	--space-20: 40px;
+
+	/* Colors */
 	--color-text: #fff;
+	--color-text-dim: rgba(255,255,255,0.9);
+	--color-text-light: rgba(255,255,255,0.8);
+	--color-text-muted: #757575;
+	--color-bg-body: #141414;
+	--color-bg-header: rgba(0,0,0,0.75);
+	--color-bg-overlay-strong: rgba(0,0,0,0.92);
+	--color-bg-overlay-soft: rgba(0,0,0,0.6);
+	--color-border-light: #a39f9f;
+
+	/* Effects */
+	--radius-xs: 4px;
+	--radius-sm: 6px;
+	--radius-md: 8px;
+	--shadow-pop: 0 6px 16px rgba(0,0,0,0.55);
+	--transition-fast: 120ms ease-out;
+	--transition-base: 0.3s ease;
 }
 
 
@@ -17,7 +55,7 @@
 }
 
 body {
-	background-color: #141414;
+	background-color: var(--color-bg-body);
 	font-family: var(--app-font);
 	color: var(--color-text);
 }

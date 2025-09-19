@@ -1,26 +1,29 @@
+
 .recommendation-container {
-    padding: 0 20px;
-    margin-bottom: 40px;
+    padding: 0 var(--space-10);
+    margin-bottom: var(--space-20);
 }
+
 
 .section-title {
-    font-size: 25px;
+    font-size: var(--font-size-xl);
     font-weight: bold;
-    margin-left: 20px;
+    margin-left: var(--space-10);
     margin-bottom: 15px;
-    color: #fff;
+    color: var(--color-text);
 }
 
+
 .recommendation-list {
-        display: flex;
-        gap: 15px;
-        overflow-x: hidden;
-        padding: 10px 0 15px;
-        scroll-behavior: smooth;
-        user-select: none;
-        -webkit-user-select: none;
-        cursor: grab;
-        position: relative;
+    display: flex;
+    gap: 15px;
+    overflow-x: hidden;
+    padding: var(--space-5) 0 15px;
+    scroll-behavior: smooth;
+    user-select: none;
+    -webkit-user-select: none;
+    cursor: grab;
+    position: relative;
 }
 
 .recommendation-list:active {
@@ -31,13 +34,14 @@
         --fade-width: 40px;
 }
 
+
 .recommendation-item {
     min-width: 100px;
     flex: 0 0 auto;
-    border-radius: 8px;
+    border-radius: var(--radius-md);
     overflow: hidden;
     cursor: pointer;
-    transition: transform 0.3s;
+    transition: transform var(--transition-base);
 }
 
 .recommendation-item:hover {

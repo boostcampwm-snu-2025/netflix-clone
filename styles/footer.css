@@ -1,8 +1,9 @@
+
 .footer {
-    background: #141414;
-    color: #757575;
+    background: var(--color-bg-body);
+    color: var(--color-text-muted);
     padding: 50px 4vw 60px;
-    font-size: 13px;
+    font-size: var(--font-size-sm);
 }
 
 .footer-inner {
@@ -55,7 +56,7 @@
 }
 
 .footer-links li { line-height: 1.4; }
-.footer-links a { color: #757575; text-decoration: none; font-size: 13px; }
+.footer-links a { color: var(--color-text-muted); text-decoration: none; font-size: var(--font-size-sm); }
 .footer-links a:hover { text-decoration: underline; color: #fff; }
 
 
