@@ -1,11 +1,26 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-	const lists = document.querySelectorAll('.recommendation-list');
-	lists.forEach(list => {
+	const carousels = document.querySelectorAll('.carousel');
+	carousels.forEach(wrapper => {
+		const list = wrapper.querySelector('.recommendation-list');
+		if (!list) return;
 		let isDragging = false;
 		let startX = 0;
 		let scrollStart = 0;
 		let moved = false;
+
+		const handlePrev = wrapper.querySelector('.handlePrev');
+		const handleNext = wrapper.querySelector('.handleNext');
+
+		const scrollByAmount = (dir) => {
+			const item = list.querySelector('.recommendation-item');
+			const gap = 15;
+			const step = item.getBoundingClientRect().width + gap;
+			list.scrollTo({ left: list.scrollLeft + step * dir * 6, behavior: 'smooth' });
+		};
+
+		if (handlePrev) handlePrev.addEventListener('click', () => scrollByAmount(-1));
+		if (handleNext) handleNext.addEventListener('click', () => scrollByAmount(1));
 
 		const onPointerDown = (e) => {
 			if (e.button !== undefined && e.button !== 0) return;
@@ -34,10 +49,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		list.addEventListener('pointerdown', onPointerDown);
 		list.addEventListener('pointermove', onPointerMove);
 		list.addEventListener('pointerup', onPointerUp);
-		list.addEventListener('pointercancel', onPointerUp);
-		list.addEventListener('pointerleave', (e) => {
-			if (isDragging) onPointerUp(e);
-		});
 	});
 
 
