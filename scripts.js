@@ -7,16 +7,19 @@ document.addEventListener('DOMContentLoaded', () => {
 		const prevBtn = wrapper.querySelector('.handlePrev');
 		const nextBtn = wrapper.querySelector('.handleNext');
 
-		const originalSlides = track.querySelectorAll('.recommendation-item');
+		const originalSlides = Array.from(track.querySelectorAll('.recommendation-item'));
 		const N = originalSlides.length;
 		if (N === 0) return;
+		// Triple track: original + clone + clone
 		if (track.querySelectorAll('.recommendation-item').length === N) {
 			const frag = document.createDocumentFragment();
-			originalSlides.forEach(slide => frag.appendChild(slide.cloneNode(true)));
+			for (let r = 0; r < 2; r++) {
+				originalSlides.forEach(slide => frag.appendChild(slide.cloneNode(true)));
+			}
 			track.appendChild(frag);
 		}
 
-		let index = 0;
+		let index = N; // start in middle block to avoid immediate wrap on prev
 		const VISIBLE = 5;
 		const pages = Math.ceil(N / VISIBLE);
 
@@ -31,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 		const updateIndicator = () => {
 			if (!indicatorTrack) return;
-			const baseIndex = ((index % N) + N) % N; // 0..N-1
+			const baseIndex = ((index % N) + N) % N;
 			const currentPage = Math.floor(baseIndex / VISIBLE);
 			const dots = indicatorTrack.querySelectorAll('.pi-dot');
 			dots.forEach((d, i) => {
@@ -52,10 +55,10 @@ document.addEventListener('DOMContentLoaded', () => {
 		requestAnimationFrame(() => applyTransform(false));
 
 		const normalizeIndex = () => {
-			if (index >= N) {
+			if (index >= 2 * N) {
 				index -= N;
 				applyTransform(false);
-			} else if (index < 0) {
+			} else if (index < N) {
 				index += N;
 				applyTransform(false);
 			}
@@ -64,17 +67,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		let locking = false;
 		const step = (dir) => {
 			if (locking) return;
-			if (dir === 'prev' && index === 0) {
-				locking = true;
-				index += N;
-				applyTransform(false);
-				index -= Math.min(VISIBLE, N);
-				requestAnimationFrame(() => {
-					applyTransform(true);
-					updateIndicator();
-				});
-				return;
-			}
 			locking = true;
 			const stepSize = Math.min(VISIBLE, N);
 			index += dir === 'next' ? stepSize : -stepSize;
