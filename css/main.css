@@ -1,4 +1,5 @@
 section {
+    position: relative;
     width: 1400px;
     overflow: hidden;    
     margin-left: 40px;
@@ -10,6 +11,34 @@ section {
     font-size: 20px;
 }
 
+.carousel-container {
+    position: relative; /* 화살표 위치의 기준점 */
+    width: 1400px;
+    overflow: hidden;
+    margin-top: 8px;
+}
+
+.page-indicator {
+    position: absolute;
+    top: 20px; /* 제목과 캐러셀 사이의 적절한 위치로 조절 */
+    right: 10px;
+    display: flex;
+    gap: 4px;
+    z-index: 50;
+}
+
+.indicator-dot {
+    width: 8px;  /* 너비 증가 (예: 15px -> 12px) - 아래 is-active와 차별화 */
+    height: 5px;  /* 높이 증가 (예: 3px -> 4px) */
+    background-color: #555;
+    border-radius: 2px;
+    transition: all 0.4s ease; /* transition 속성을 all로 변경 */
+}
+
+.indicator-dot.is-active {
+    width: 10px; /* ◀◀◀ 활성화 시 너비를 더 넓게 설정 */
+    background-color: #fff;
+}
 
 /*회원 추천 컨텐츠 스타일 */
 .contents_for_user_img_flex {
@@ -30,13 +59,6 @@ section {
 }
 
 /* top10 시리즈 스타일 */
-.carousel-container {
-    position: relative; /* 화살표 위치의 기준점 */
-    width: 1400px;
-    overflow: hidden;
-    margin-top: 8px;
-}
-
 .top10_contents_img_flex {
     display: flex;
     align-items: center;
