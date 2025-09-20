@@ -2,33 +2,67 @@
 <html>
     <head>
         <meta charset = "UTF-8">
-        <title>Netflix-clone-dynamic</title>
+        <title>Netflix-Clone-Dynamic</title>
         <link rel="stylesheet" href="css/global.css">
         <link rel="stylesheet" href="css/header.css">
         <link rel="stylesheet" href="css/hero.css">
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/footer.css">
+        <script src="main.js" defer></script>
     </head>
 
     <body>
         <div class="flex_container">
             <header class="flex_header">
-                <div class="flex_header_left">
+                <nav class="flex_header_left">
                     <a href="#"><div class="logo_cutting"><img src="./assets/img_header/logo.png" class="logo" alt="netflix_logo"></div></a>
-                    <button class="button_header">홈</button>
-                    <button class="button_header">시리즈</button>
-                    <button class="button_header">영화</button>
-                    <button class="button_header">게임</button>
-                    <button class="button_header">NEW! 요즘 대세 컨텐츠</button>
-                    <button class="button_header">내가 찜한 리스트</button>
-                    <button class="button_header">언어별로 찾아보기</button>
-                </div>
-                <div class="flex_header_right">
-                    <img src="./assets/img_header/magnifier.png" class="magnifier" alt="magnifier_logo">
-                    <img src="./assets/img_header/bell.png" class="bell" alt="bell_logo"> 
-                    <img src="./assets/img_header/basic_profile.jpg" class="basic_profile" alt="profile_logo">
-                    <img src="./assets/img_header/triangle.png" class="triangle" alt="triangle_logo">
-                </div>
+                    <ul class = header-tabs>
+                        <li class="li-header">홈</li>
+                        <li class="li-header">시리즈</li>
+                        <li class="li-header">영화</li>
+                        <li class="li-header">게임</li>
+                        <li class="li-header">NEW! 요즘 대세 컨텐츠</li>
+                        <li class="li-header">내가 찜한 리스트</li>
+                        <li class="li-header">언어별로 찾아보기</li>
+                    </ul>
+                </nav>
+                <nav class="flex_header_right">
+                    <ul class = header-tabs>
+                        <li><img src="./assets/img_header/magnifier.png" class="magnifier" alt="magnifier_logo"></li>
+                        <li>
+                            <div class="bell-wrapper">
+                                <img src="./assets/img_header/bell.png" class="bell" alt="bell_logo">
+                                <div class="modal__bell">
+                                    <img src="assets/img_modal_bell/1.jpg">
+                                    <div class="modal__font">최신 등록 콘텐츠!<br>새로 공개된 모든 에피소드를<br>시청하세요.<br><span class="date-late">2주 전</span></div>
+                                    <img src="assets/img_modal_bell/2.jpg">
+                                    <div class="modal__font">잊지 못할 최고의 장면을 한 번 더!<br>내가 봤던 콘텐츠를 살펴보세요<br><span class="date-late">1개월</span></div>
+                                    <img src="assets/img_modal_bell/1.jpg">
+                                    <div class="modal__font">최신 등록 콘텐츠!<br>시즌 2<br><span class="date-late">1개월</span></div>
+                                    <img src="assets/img_modal_bell/3.jpg">
+                                    <div class="modal__font">신규 콘텐츠<br>거룩한 밤: 데몬 헌터스<br><span class="date-late">1개월</span></div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="profile-wrapper">
+                                <img src="./assets/img_header/basic_profile.jpg" class="basic_profile" alt="profile_logo">
+                                <div class="modal__profile">
+                                    <img src="assets/img_modal_profile/1.png">
+                                    <div class="modal__font2">유저 1</div>
+                                    <img src="assets/img_modal_profile/2.png">
+                                    <div class="modal__font2">유저 2</div>
+                                    <img src="assets/img_modal_profile/3.png">
+                                    <div class="modal__font2">유저 3</div>
+                                    <img src="assets/img_modal_profile/4.png">
+                                    <div class="modal__font2">유저 4</div>
+                                </div>
+                            </div>
+                        </li>
+                        <li><img src="./assets/img_header/triangle.png" class="triangle" alt="triangle_logo"></li>
+                    </ul>
+                </nav>
+                
             </header>
 
             <hero class="hero">
