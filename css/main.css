@@ -1,0 +1,85 @@
+section {
+    width: 1400px;
+    overflow: hidden;    
+    margin-left: 40px;
+    margin-top: 24px;
+}
+
+.contents_option {
+    color: var(--white);
+    font-size: 20px;
+}
+
+
+/*회원 추천 컨텐츠 스타일 */
+.contents_for_user_img_flex {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.contents_for_user_img {
+    width: 220px;
+    height: auto;
+    border-radius: var(--standard-border-radius);
+}
+
+.contents_for_user_img:hover {
+    transform: scale(1.4);
+}
+
+/* top10 시리즈 스타일 */
+.top10_contents_img_flex {
+    display: flex;
+    align-items: center;
+    width: auto;
+    height: auto;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.top10_contents_img_inner_flex {
+    display: flex;
+    align-items: center;
+    height: 180px;
+    overflow: hidden;
+    border-radius: var(--standard-border-radius);
+} 
+
+.top10_contents_img_inner_flex:hover {
+    transform: scale(1.4);
+}
+
+.rank_font {
+    padding-left: 8px;
+    font-size: 150px;
+    color: var(--gray);
+    font-style: italic;
+}
+
+.top10_contents_img {
+    width: 128.75px; /* 카드 가로길이 220px 고정 */
+    height: auto;
+}
+
+
+/* 새로 올라온 컨텐츠 스타일 */
+.new_contents_img_flex {
+    display: flex;
+    align-items: center;
+    width: auto;
+    height: auto;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.new_contents_img {
+    width: 220px;
+    height: auto;
+    border-radius: var(--standard-border-radius);
+}
+
+.new_contents_img:hover {
+    transform: scale(1.4);
+}
