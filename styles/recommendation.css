@@ -49,22 +49,17 @@
 .recommendation-list {
     display: flex;
     gap: 15px;
-    overflow-x: hidden;
     padding: var(--space-5) 0 15px;
-    scroll-behavior: smooth;
     user-select: none;
     -webkit-user-select: none;
-    cursor: grab;
     position: relative;
+    will-change: transform;
 }
 
 .carousel {
     position: relative;
     width: 100%;
-}
-
-.recommendation-list:active {
-        cursor: grabbing;
+    overflow: hidden;
 }
 
 .recommendation-container {
