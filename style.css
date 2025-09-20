@@ -79,6 +79,21 @@ ul {
   border-radius: 50%;
 }
 
+.modal {
+  position: absolute;
+  top: 50px;
+  right: 10px;
+  background: #222;
+  border: 1px solid #444;
+  border-radius: 4px;
+  padding: var(--space-2);
+  display: none; /* 기본적으로 숨김 */
+}
+
+.modal.show {
+  display: block; /* show 클래스가 있으면 보이도록 */
+}
+
 /* 메인 */
 .main {
   padding-top: var(--header-h);

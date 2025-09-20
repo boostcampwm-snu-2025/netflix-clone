@@ -24,11 +24,18 @@
         </nav>
         <div class="header__actions">
           <!-- 검색 -->
-          <span>🔍</span>
+          <span id="search-icon">🔍</span>
           <!-- 알림 -->
-          <span>🔔</span>
+          <span id="notif-icon">🔔</span>
+          <div class="modal" id="notif-modal">알림 모달</div>
           <!-- 프로필-->
-          <img class="profile" src="./src/profile.png" alt="프로필" />
+          <img
+            id="profile-icon"
+            class="profile"
+            src="./src/profile.png"
+            alt="프로필"
+          />
+          <div class="modal" id="profile-modal">프로필 모달</div>
         </div>
       </div>
     </header>
@@ -139,5 +146,6 @@
         <small class="footer__copy">© 2025 Netflix Clone</small>
       </div>
     </footer>
+    <script type="module" src="./app.js"></script>
   </body>
 </html>
