@@ -2,140 +2,120 @@
 // 무한 슬라이더 구현
 // - HTML 구조: .slider > .slider-content > (.prev-button, .next-button, .slider-container > .slider-item*)
 (function () {
-  const SLIDE_FRACTION = 0.9;  // 버튼 클릭 시 '한 번 이동' 비율(컨테이너의 90%)
+  const CARDS_PER_STEP = 3;     // ✅ 정확히 3장씩
+  const SCROLL_SETTLE_MS = 140; // 스크롤 안정화 대기
 
-  // 유틸: 디바운스(스크롤 끝 판별용)
-  function debounce(fn, ms=120) {
-    let t = null;
-    return (...args) => {
-      clearTimeout(t);
-      t = setTimeout(() => fn(...args), ms);
-    };
-  }
-
-  // 가시 카드 수 추정: 컨테이너 폭 / 카드+갭 폭
-  function estimateVisibleCount(container, gapPx) {
-    const first = container.querySelector('.slider-item');
-    if (!first) return 1;
-    const itemWidth = first.getBoundingClientRect().width;
-    const w = container.clientWidth;
-    const approx = Math.max(1, Math.floor((w + gapPx) / (itemWidth + gapPx)));
-    return approx;
-  }
+  function debounce(fn, ms=120){ let t; return (...a)=>{clearTimeout(t); t=setTimeout(()=>fn(...a),ms);} }
 
   function initInfiniteSlider(sliderEl) {
-    const content   = sliderEl.querySelector('.slider-content');
     const container = sliderEl.querySelector('.slider-container');
     const prevBtn   = sliderEl.querySelector('.prev-button');
     const nextBtn   = sliderEl.querySelector('.next-button');
+    if (!container || !prevBtn || !nextBtn) return;
 
-    if (!content || !container || !prevBtn || !nextBtn) return;
-
-    // 현재 gap 읽기(없으면 8px 가정)
-    const style = getComputedStyle(container);
-    const gapPx = parseFloat(style.columnGap || style.gap || '8') || 8;
-
-    // 1) 클론 준비
-    let N = estimateVisibleCount(container, gapPx); // 앞뒤 클론 개수
-    let items = Array.from(container.querySelectorAll('.slider-item'));
-    if (items.length === 0) return;
-
-    // 중복 초기화 방지
+    // 이미 초기화된 슬라이더는 패스
     if (container.dataset.infinite === 'on') return;
     container.dataset.infinite = 'on';
 
-    // 앞뒤 클론 생성
+    // 1) 초기 목록과 클론 구성
+    let items = Array.from(container.querySelectorAll('.slider-item'));
+    const style = getComputedStyle(container);
+    const gapPx = parseFloat(style.columnGap || style.gap || '8') || 8;
+
+    // 화면에 보이는 카드 수 추정(N) → 앞뒤로 N개씩 클론
+    const N = estimateVisibleCount(container, items[0], gapPx);
     const headClones = items.slice(-N).map(cloneItem);
-    const tailClones = items.slice(0, N).map(cloneItem);
+    const tailClones = items.slice(0,  N).map(cloneItem);
+    headClones.forEach(c => container.insertBefore(c, container.firstChild));
+    tailClones.forEach(c => container.appendChild(c));
 
-    // DOM에 삽입
-    headClones.forEach(cl => container.insertBefore(cl, container.firstChild));
-    tailClones.forEach(cl => container.appendChild(cl));
-
-    // 새 목록/길이 재계산
-    items = Array.from(container.querySelectorAll('.slider-item'));
+    items = Array.from(container.querySelectorAll('.slider-item')); // 클론 포함 전체
     const total = items.length;
+    const ORIGINAL_LEN = total - 2*N;
 
-    // 2) 시작 위치: 첫 원본(index N)으로 이동(스냅 유지)
-    // 스냅 기준으로 안전하게 이동하기 위해 해당 카드의 offsetLeft로 점프
-    function jumpToIndex(i, smooth=false) {
-      const target = items[i];
-      if (!target) return;
-      const left = target.offsetLeft;
-      container.scrollTo({ left, behavior: smooth ? 'smooth' : 'auto' });
+    // 2) 시작 위치: 클론 뒤 첫 원본으로
+    function jumpToIndex(i, smooth = false) {
+      const t = items[i];
+      if (!t) return;
+
+      if (smooth) {
+        container.style.scrollBehavior = 'smooth';
+        container.scrollTo({ left: t.offsetLeft, behavior: 'smooth' });
+        return;
+      }
+
+      const prevSnap = container.style.scrollSnapType;
+      const prevBehv = container.style.scrollBehavior;
+
+      container.style.scrollSnapType = 'none';
+      container.style.setProperty('scroll-behavior', 'auto', 'important');
+
+      container.scrollLeft = t.offsetLeft;
+      container.offsetHeight; // force reflow
+
+      requestAnimationFrame(() => {
+        container.style.scrollSnapType = prevSnap || '';
+        container.style.scrollBehavior = prevBehv || 'smooth';
+      });
     }
     jumpToIndex(N, false);
 
-    // 3) 버튼 클릭 시 한 화면씩 이동
-    function getStep() { return Math.max(1, Math.floor(container.clientWidth * SLIDE_FRACTION)); }
-    function scrollByDir(dir) {
-      container.scrollBy({ left: dir * getStep(), behavior: 'smooth' });
-    }
-    prevBtn.addEventListener('click', () => scrollByDir(-1));
-    nextBtn.addEventListener('click', () => scrollByDir( 1));
-
-    // 4) 무한 루프: 스크롤이 클론 영역에 들어가면 순간 이동
-    const onScrollSettled = debounce(() => {
-      const x = container.scrollLeft;
-      const w = container.clientWidth;
-
-      // 현재 가장 가까운 카드 index 추정(스냅 덕분에 start에 맞음)
-      let i = findNearestIndex(items, x);
-
-      // 왼쪽 클론 영역(0 ~ N-1)
-      if (i < N) {
-        // 같은 시각의 원본 인덱스: i + (원본 길이)
-        const originalI = i + (total - 2*N);
-        jumpToIndex(originalI, false); // 순간 이동(애니메이션 없음)
-        return;
-      }
-      // 오른쪽 클론 영역(원본 뒤: total-N ~ total-1)
-      if (i >= total - N) {
-        const originalI = i - (total - 2*N);
-        jumpToIndex(originalI, false);
-        return;
-      }
-      // 그 외: 아무 것도 하지 않음(스냅 유지)
-    }, 140);
-
-    container.addEventListener('scroll', onScrollSettled, { passive: true });
-
-    // 5) 접근성/키보드/드래그(선택)
-    sliderEl.tabIndex = 0;
-    sliderEl.addEventListener('keydown', (e) => {
-      if (e.key === 'ArrowLeft')  { e.preventDefault(); scrollByDir(-1); }
-      if (e.key === 'ArrowRight') { e.preventDefault(); scrollByDir( 1); }
-    });
-
-    // 반응형: 리사이즈 시 클론 개수 재산정하고 재초기화가 필요하다면,
-    // 간단히 페이지 새로고침 없이 적용하려면 더 복잡해진다.
-    // 우선은 버튼 step 재계산만.
-    window.addEventListener('resize', () => {
-      // 스크롤 스냅 자체는 반응하지만, 버튼 step은 컨테이너 폭에 의존하므로 자동 반영.
-    });
-
-    // --- 내부 유틸 ---
-    function cloneItem(node) {
-      const c = node.cloneNode(true);
-      c.setAttribute('data-clone', 'true');
-      return c;
-    }
-
-    function findNearestIndex(nodes, scrollLeft) {
-      // nodes[i].offsetLeft와 가장 가까운 index
-      // (스냅 덕분에 거의 딱 맞지만, 미세오차 대비)
-      let lo = 0, hi = nodes.length - 1, best = 0, bestDiff = Infinity;
-      while (lo <= hi) {
-        const mid = (lo + hi) >> 1;
-        const x = nodes[mid].offsetLeft;
-        const diff = Math.abs(x - scrollLeft);
-        if (diff < bestDiff) { bestDiff = diff; best = mid; }
-        if (x < scrollLeft) lo = mid + 1; else hi = mid - 1;
+    // 3) index 기반으로 "정확히 3장씩" 이동
+    let isAnimating = false; // ✅ 스무스 중엔 보정 금지
+    function nearestIndex() {
+      // offsetLeft가 scrollLeft에 가장 가까운 index (스냅 덕분에 거의 일치)
+      let lo=0, hi=items.length-1, best=0, bestDiff=1e9, x0=container.scrollLeft;
+      while (lo<=hi){ const mid=(lo+hi)>>1, x=items[mid].offsetLeft, d=Math.abs(x-x0);
+        if(d<bestDiff){bestDiff=d; best=mid;}
+        x<x0? lo=mid+1: hi=mid-1;
       }
       return best;
     }
+
+    function moveByCards(dir) {
+      const cur = nearestIndex();
+      let target = cur + dir * CARDS_PER_STEP;
+      // 범위를 벗어나도 일단 부드럽게 스크롤 → 끝나면 보정 로직이 처리
+      target = Math.max(0, Math.min(items.length - 1, target));
+      isAnimating = true;                    // ✅ 애니메이션 시작
+      jumpToIndex(target, true);
+    }
+
+    prevBtn.addEventListener('click', () => moveByCards(-1));
+    nextBtn.addEventListener('click', () => moveByCards( 1));
+
+    // 4) 스크롤 안정화 후에만 클론 보정
+    const onScrollSettled = debounce(() => {
+      if (isAnimating) {                     // 스무스가 끝났을 타이밍
+        isAnimating = false;
+      }
+      const i = nearestIndex();
+
+      // 왼쪽 클론(0 ~ N-1) → 동일 카드의 오른쪽 원본으로 점프
+      if (i < N) {
+        const originalI = i + ORIGINAL_LEN;  // 같은 카드의 원본 인덱스
+        jumpToIndex(originalI, false);       // 순간 이동(스냅 유지)
+        return;
+      }
+      // 오른쪽 클론(total-N ~ total-1) → 동일 카드의 왼쪽 원본으로 점프
+      if (i >= total - N) {
+        const originalI = i - ORIGINAL_LEN;
+        jumpToIndex(originalI, false);
+        return;
+      }
+    }, SCROLL_SETTLE_MS);
+
+    container.addEventListener('scroll', onScrollSettled, { passive: true });
+
+    // --- helpers ---
+    function cloneItem(node) { const c = node.cloneNode(true); c.dataset.clone='true'; return c; }
+    function estimateVisibleCount(container, firstItem, gapPx){
+      if(!firstItem) return 1;
+      const w = firstItem.getBoundingClientRect().width;
+      const cw = container.clientWidth;
+      return Math.max(1, Math.floor((cw + gapPx) / (w + gapPx)));
+    }
   }
 
-  // 모든 슬라이더에 적용
   document.querySelectorAll('.slider').forEach(initInfiniteSlider);
 })();
