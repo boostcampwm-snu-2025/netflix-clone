@@ -19,3 +19,10 @@ profile_modal.addEventListener("mouseover", () => {
 profile_modal.addEventListener("mouseout", () => { 
     profile_modal_body.style.display = "none";
 })
+
+import { InitSliders } from './slider.js';
+InitSliders(document.querySelectorAll(".MovieIndicator"),
+    document.querySelectorAll(".MovieList"),
+    document.querySelectorAll(".LeftButton"), 
+    document.querySelectorAll(".RightButton")
+);

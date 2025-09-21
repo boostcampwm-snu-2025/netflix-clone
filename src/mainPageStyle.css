@@ -75,9 +75,19 @@
 }
 
 .MovieSlider{
-    display: flex;
+    position: relative;
+}
+
+.MovieIndicator{
+    position: absolute;
+}
+
+.MovieList{
     position:relative;
+    display: flex;
     flex-direction: row;
+    overflow: hidden;
+    transition: transform 1s ease;
 }
 
 .MovieSliderButton{
@@ -89,12 +99,19 @@
     border: none;
     padding: 10px;
     cursor: pointer;
-    z-index: 5;
+    z-index: 10;
+}
+
+.LeftButton{
+    left: 10px;
+}
+
+.RightButton {
+    right: 10px;
 }
 
 .MovieCard{
     aspect-ratio: 16/9;
-    overflow: hidden;
     width: calc((var(--page-width)/4) - 2*var(--all-margin));
     height: auto;
     margin: var(--all-margin);
