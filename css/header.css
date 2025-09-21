@@ -57,8 +57,9 @@
 .bell {
     height: 22px;
     width: auto;
-    padding: 9px;
+    padding: 0px;
     cursor: pointer;
+    margin: 2px 9px;
 }
 
 .bell-wrapper::before {
@@ -81,7 +82,7 @@
     background-color: rgba(20, 20, 20, 0.9);
     position: absolute; 
     top: 52px;
-    right: -15px; 
+    right: -10px; 
     width: 400px;
     height: auto;
     border: 1px solid #555;
@@ -132,7 +133,7 @@
 .basic_profile{
     height: 26px;
     width: auto;
-    margin-left: 16px;
+    margin-left: 0px;
     border-radius: var(--standard-border-radius);
 }
 

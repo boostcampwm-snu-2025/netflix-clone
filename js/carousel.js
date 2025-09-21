@@ -1,35 +1,5 @@
-const modalProfile = document.querySelector('.profile-wrapper');
-const transTriangle = document.querySelector('.triangle');
-
-// 'addEventListener'로 수정
-modalProfile.addEventListener("mouseover", function(){
-    transTriangle.classList.add('on');
-});
-
-// 'addEventListener'로 수정
-modalProfile.addEventListener("mouseout", function(){
-    transTriangle.classList.remove('on');
-});
-
-
-// 페이지 로드 완료 후 모든 캐러셀 실행
-window.addEventListener('load', setupAllCarousels);
-
-// 페이지의 모든 캐러셀을 설정하는 메인 함수
-function setupAllCarousels() {
-    // '회원님 추천 콘텐츠' 캐러셀에는 '유한' 캐러셀 함수를 적용
-    initializeFiniteCarousel('.for_user-carousel', { visible: 6, move: 5 });
-
-    // Top 10, New_content 캐러셀에는 '무한' 캐러셀 함수를 적용
-    initializeInfiniteCarousel('.top10-carousel', { move: 5 });
-    initializeInfiniteCarousel('.new-carousel', { move: 5 });
-}
-
-
-// ───────────────────────────────────────────────────────────────────
-// ## 유한 캐러셀 (Finite Carousel: 양 끝에서 멈추는 방식)
-// ───────────────────────────────────────────────────────────────────
-function initializeFiniteCarousel(containerSelector, options) {
+// 유한 캐러셀
+export function initializeFiniteCarousel(containerSelector, options) {
     const container = document.querySelector(containerSelector);
     if (!container) return;
 
@@ -49,7 +19,6 @@ function initializeFiniteCarousel(containerSelector, options) {
         return;
     }
 
-    // --- 페이지네이션 로직 추가 ---
     const TOTAL_PAGES = Math.ceil(TOTAL_CARDS / SLIDES_TO_MOVE);
     if (indicator) {
         for (let i = 0; i < TOTAL_PAGES; i++) {
@@ -62,12 +31,18 @@ function initializeFiniteCarousel(containerSelector, options) {
     
     const updateIndicator = () => {
         if (!indicatorDots) return;
-        const currentPage = Math.floor(currentIndex / SLIDES_TO_MOVE);
+        let currentPage;
+        
+        if (currentIndex === MAX_INDEX) {
+            currentPage = TOTAL_PAGES - 1; 
+        } else {
+            currentPage = Math.floor(currentIndex / SLIDES_TO_MOVE);
+        }
+        
         indicatorDots.forEach((dot, i) => {
             dot.classList.toggle('is-active', i === currentPage);
         });
     };
-    // ---------------------------------
 
     const MAX_INDEX = TOTAL_CARDS - VISIBLE_SLIDES;
     let currentIndex = 0;
@@ -76,7 +51,7 @@ function initializeFiniteCarousel(containerSelector, options) {
 
     wrapper.style.transform = `translateX(0px)`;
     updateButtonStates();
-    updateIndicator(); // 초기 인디케이터 활성화
+    updateIndicator();
 
     nextBtn.addEventListener('click', () => {
         if (isMoving) return;
@@ -84,16 +59,22 @@ function initializeFiniteCarousel(containerSelector, options) {
         currentIndex = Math.min(currentIndex + SLIDES_TO_MOVE, MAX_INDEX);
         wrapper.style.transition = 'transform 0.5s ease-out';
         wrapper.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
-        updateIndicator(); // 이동 시 인디케이터 업데이트
+        updateIndicator(); 
     });
 
     prevBtn.addEventListener('click', () => {
         if (isMoving) return;
         isMoving = true;
-        currentIndex = Math.max(currentIndex - SLIDES_TO_MOVE, 0);
+
+        if (currentIndex === MAX_INDEX) {
+            currentIndex = Math.floor((currentIndex - 1) / SLIDES_TO_MOVE) * SLIDES_TO_MOVE;
+        } else {
+            currentIndex = Math.max(currentIndex - SLIDES_TO_MOVE, 0);
+        }
+        
         wrapper.style.transition = 'transform 0.5s ease-out';
         wrapper.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
-        updateIndicator(); // 이동 시 인디케이터 업데이트
+        updateIndicator();
     });
 
     wrapper.addEventListener('transitionend', () => {
@@ -110,11 +91,11 @@ function initializeFiniteCarousel(containerSelector, options) {
 
 
 /**
- * 페이지네이션이 포함된 무한 캐러셀을 초기화하는 최종 함수
+무한 캐러셀
  * @param {string} containerSelector - 캐러셀 컨테이너의 CSS 선택자
  * @param {object} options - 옵션 객체 { move: 한번에 이동할 카드 수 }
  */
-function initializeInfiniteCarousel(containerSelector, options) {
+export function initializeInfiniteCarousel(containerSelector, options) {
     const container = document.querySelector(containerSelector);
     if (!container) return;
 
@@ -149,15 +130,11 @@ function initializeInfiniteCarousel(containerSelector, options) {
     let isMoving = false;
     let slideWidth = 0;
 
-    // ================== ✨ 여기가 수정된 부분입니다 ✨ ==================
     const applyTransform = (animate = true) => {
         const offset = currentIndex * slideWidth;
         
-        // 애니메이션이 없는 '순간이동'일 경우
         if (!animate) {
-            wrapper.style.transition = 'none'; // 먼저 애니메이션을 비활성화
-            // setTimeout으로 위치 변경을 아주 살짝 지연시켜 브라우저가
-            // 'transition: none'을 확실히 적용할 시간을 줍니다.
+            wrapper.style.transition = 'none';
             setTimeout(() => {
                 wrapper.style.transform = `translateX(-${offset}px)`;
             }, 0);
@@ -167,7 +144,6 @@ function initializeInfiniteCarousel(containerSelector, options) {
             wrapper.style.transform = `translateX(-${offset}px)`;
         }
     };
-    // =================================================================
 
     const updateIndicator = () => {
         if (!indicatorDots) return;
@@ -207,7 +183,7 @@ function initializeInfiniteCarousel(containerSelector, options) {
 
     wrapper.addEventListener('transitionend', () => {
         isMoving = false; // 위치를 먼저 풀어주고
-        normalizeIndex(); // 인덱스 정규화를 수행합니다.
+        normalizeIndex(); // 인덱스 정규화를 수행
         updateIndicator();
     });
 
