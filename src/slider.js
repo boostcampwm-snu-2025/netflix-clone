@@ -1,4 +1,5 @@
 const positions = new Map();
+const sliderIndex = new Map();
 export function InitSliders(indicators, movieLists, leftButtons, rightButtons) {
     for (let i = 0; i < indicators.length; i++) {
         InitSlider(indicators[i], movieLists[i], leftButtons[i], rightButtons[i]);
@@ -19,24 +20,45 @@ function InitSlider(indicator, movieList, leftButton, rightButton) {
 }
 
 function MovetoLeft(indicator, movieList) {
+    let sI = sliderIndex.get(movieList) || 0;
+    sI += 1;
+    if(sI >= (movieList.children.length)/4){ //TODO : replace hardcoding
+        sI = 0;
+    }
+    sliderIndex.set(movieList, sI)
+    
     let current = positions.get(movieList) || 0;
     current += 100; // 왼쪽으로 100%
     positions.set(movieList, current);
     
-    movieList.style.transform = `translateX(${current}%)`;
+    movieList.style.transform = `translateX(${sI*100}%)`;
 }
 function MovetoRight(indicator, movieList) {
+    let sI = sliderIndex.get(movieList) || 0;
+    sI += 1;
+    if(sI >= (movieList.children.length)/4){ //TODO : replace hardcoding
+        sI = 0;
+    }
+    sliderIndex.set(movieList, sI)
     
     let current = positions.get(movieList) || 0;
     current -= 100; // 오른쪽으로 100%
     positions.set(movieList, current);
+    
+    movieList.style.transform = `translateX(${-sI*100}%)`;
+    movieList.style.transition = `${sI === 0?'none':'transform 0.5s ease-in-out'}`;
+    if(sI === 0) {
+        setTimeout(() => MovetoRight(indicator, movieList), 10);
 
-    movieList.style.transform = `translateX(${current}%)`;
-}
-
+    }}
 function UpdateIndicator(indicator, movieList) {
     const current = positions.get(movieList) || 0;
-    const index = Math.abs(current / 100);
-
-    indicator.src = `../asset/dummy/index${index}.png`;
-} 
+    let sI = sliderIndex.get(movieList) || 0;
+    
+    if(sI >= (movieList.children.length)/4){ //TODO : replace hardcoding
+        sI = 0;
+    }
+    console.log("move"+sI);
+    
+    indicator.src = `../asset/dummy/index${sI}.png`;
+}
