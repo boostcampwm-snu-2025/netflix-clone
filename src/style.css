@@ -24,6 +24,7 @@
 
   /* card */
   --card-aspect: 2 / 3; /* or 16 / 9 */
+  --card-wide-aspect: 16 / 9;
 }
 
 
@@ -180,7 +181,7 @@ main {
   font-size: var(--fonts-lg);
   font-weight: bold;
   padding: var(--spacing-12) var(--spacing-24);
-  margin-left: calc(var(--spacing-32) * 5);
+  margin-left: calc(var(--spacing-32) * 2);
   margin-bottom: var(--spacing-16);
   transition: background-color 0.3s ease;
 }
@@ -192,11 +193,11 @@ main {
 .hero-overlay {
   display: flex;
   position: absolute;
-  width: calc(100% - var(--spacing-64) * 2);
+  width: calc(100% - var(--spacing-64));
   bottom: 0;
   display: flex;
   flex-direction: column;
-  padding: 0 var(--spacing-32);
+  padding-left: var(--spacing-32);
   z-index: 2;
 }
 
@@ -206,9 +207,13 @@ main {
   color: var(--foreground);
 }
 
-.hero-logo {
-  max-width: 60%; /* 로고 크기 제한 */
+.hero-content-container p {
   margin-bottom: var(--spacing-16);
+  font-size: 0.875rem;
+}
+
+.hero-logo {
+  max-width: 40%; /* 로고 크기 제한 */
 }
 
 .hero-description {
@@ -227,6 +232,8 @@ main {
 
 .slider {
   margin-bottom: var(--spacing-32);
+  margin-left: var(--spacing-16);
+  margin-right: var(--spacing-16);
   padding: 0 var(--spacing-16);
   position: relative;
   overflow-x: hidden;
@@ -267,6 +274,28 @@ main {
 
 }
 
+
+.slider-button {
+  position: absolute;
+  top: 56%;
+  transform: translateY(-50%);
+  background-color: var(--overlay);
+  border: none;
+  width: 60px;
+  height: 190px;
+  cursor: pointer;
+  z-index: 10;
+  transition: background-color 0.3s ease;
+}
+.slider-button:hover {
+  background-color: var(--muted);
+  opacity: 0.8;
+}
+.prev-button {
+  left: 0;
+  border-top-right-radius: var(--radius);
+  border-bottom-right-radius: var(--radius);
+}
 
 .slider-item {
   display: grid;
@@ -347,6 +376,7 @@ footer {
 
 .social-links {
   display: flex;
+  margin: 0 var(--spacing-32);
   gap: var(--spacing-16);
   justify-content: baseline;
   margin-top: var(--spacing-32);
@@ -369,6 +399,7 @@ footer {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: var(--spacing-16);
+  margin: 0 var(--spacing-32);
   margin-bottom: var(--spacing-24);
   transition: background-color 0.3s ease;
   :hover {
