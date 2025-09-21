@@ -4,6 +4,7 @@ import { MainHeaderKidsButton } from "./components/header/main-header-kids-butto
 import { MainHeaderMyProfileButton } from "./components/header/main-header-my-profile-button.js";
 import { MainHeaderNotificationButton } from "./components/header/main-header-notification-button.js";
 import { MainHeaderSearchButton } from "./components/header/main-header-search-button.js";
+import { MainHeaderNotificationModal } from "./components/header/main-header-notification-modal.js";
 
 customElements.define("main-header", MainHeader);
 customElements.define("main-header-menu", MainHeaderMenu);
@@ -17,3 +18,7 @@ customElements.define(
   MainHeaderNotificationButton
 );
 customElements.define("main-header-search-button", MainHeaderSearchButton);
+customElements.define(
+  "main-header-notification-modal",
+  MainHeaderNotificationModal
+);

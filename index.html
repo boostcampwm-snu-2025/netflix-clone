@@ -10,6 +10,7 @@
     <link href="/style/hero.css" rel="stylesheet" />
     <link href="/style/recommendation.css" rel="stylesheet" />
     <link href="/style/topten.css" rel="stylesheet" />
+    <link href="/style/notification-modal.css" rel="stylesheet" />
     <title>연우의 넷플릭스</title>
   </head>
   <body>
@@ -48,54 +49,71 @@
         <div class="recommendation-float-wrapper">
           <div class="recommendation-contents-wrapper">
             <p>밥 친구</p>
-            <div class="recommendation-contents-list-inner">
-              <div class="recommendation-contents-inner">
-                <img
-                  src="/assets/chef_thumbnail.webp"
-                  class="recommendation-thumbnail"
-                />
-                <div class="recommendation-new-episode">
-                  <span>새로운 에피소드</span>
-                  <span>지금 시청하기</span>
+            <div class="pagination-container" id="pagination1"></div>
+            <div class="carousel-wrapper">
+              <button
+                class="carousel-nav prev"
+                onclick="slideCarousel('carousel1', -1)"
+              >
+                ‹
+              </button>
+              <button
+                class="carousel-nav next"
+                onclick="slideCarousel('carousel1', 1)"
+              >
+                ›
+              </button>
+              <div class="carousel-track" id="carousel1">
+                <div class="recommendation-contents-list-inner">
+                  <div class="recommendation-contents-inner">
+                    <img
+                      src="/assets/chef_thumbnail.webp"
+                      class="recommendation-thumbnail"
+                    />
+                    <div class="recommendation-new-episode">
+                      <span>새로운 에피소드</span>
+                      <span>지금 시청하기</span>
+                    </div>
+                  </div>
+                  <div class="recommendation-contents-inner">
+                    <img
+                      src="/assets/esquire_thumbnail.webp"
+                      class="recommendation-thumbnail"
+                    />
+                    <div class="recommendation-new-episode">
+                      <span>새로운 에피소드</span>
+                      <span>지금 시청하기</span>
+                    </div>
+                  </div>
+                  <div class="recommendation-contents-inner">
+                    <img
+                      src="/assets/trigger_thumbnail.webp"
+                      class="recommendation-thumbnail"
+                    />
+                  </div>
+                  <div class="recommendation-contents-inner">
+                    <img
+                      src="/assets/samagui_thumbnail.webp"
+                      class="recommendation-thumbnail"
+                    />
+                    <div class="recommendation-new-episode">
+                      <span>새로운 에피소드</span>
+                      <span>지금 시청하기</span>
+                    </div>
+                  </div>
+                  <div class="recommendation-contents-inner">
+                    <img
+                      src="/assets/pokssak_thumbnail.webp"
+                      class="recommendation-thumbnail"
+                    />
+                  </div>
+                  <div class="recommendation-contents-inner">
+                    <img
+                      src="/assets/try_thumbnail.webp"
+                      class="recommendation-thumbnail"
+                    />
+                  </div>
                 </div>
-              </div>
-              <div class="recommendation-contents-inner">
-                <img
-                  src="/assets/esquire_thumbnail.webp"
-                  class="recommendation-thumbnail"
-                />
-                <div class="recommendation-new-episode">
-                  <span>새로운 에피소드</span>
-                  <span>지금 시청하기</span>
-                </div>
-              </div>
-              <div class="recommendation-contents-inner">
-                <img
-                  src="/assets/trigger_thumbnail.webp"
-                  class="recommendation-thumbnail"
-                />
-              </div>
-              <div class="recommendation-contents-inner">
-                <img
-                  src="/assets/samagui_thumbnail.webp"
-                  class="recommendation-thumbnail"
-                />
-                <div class="recommendation-new-episode">
-                  <span>새로운 에피소드</span>
-                  <span>지금 시청하기</span>
-                </div>
-              </div>
-              <div class="recommendation-contents-inner">
-                <img
-                  src="/assets/pokssak_thumbnail.webp"
-                  class="recommendation-thumbnail"
-                />
-              </div>
-              <div class="recommendation-contents-inner">
-                <img
-                  src="/assets/try_thumbnail.webp"
-                  class="recommendation-thumbnail"
-                />
               </div>
             </div>
           </div>
@@ -219,4 +237,5 @@
     </div>
   </body>
   <script type="module" src="/src/main.js"></script>
+  <script src="/src/carousel.js"></script>
 </html>

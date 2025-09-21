@@ -1,5 +1,13 @@
 import { ASSET_PATH } from "../../entity/asset.js";
 import { HEADER_DATA } from "../../entity/main-header-data.js";
+import { HEADER_NOTIFICATION } from "../../entity/main-header-data.js";
+
+const notificationNumber = HEADER_NOTIFICATION.filter((n) => n.unread).length;
+const API_VALUE = {
+  NOTIFICATION_NUMBER: notificationNumber,
+  PROFILE_IMG: ASSET_PATH.MY_PROFILE,
+  ALT: "김연우의 프로필 사진",
+};
 
 export class MainHeader extends HTMLElement {
   constructor() {
@@ -7,18 +15,13 @@ export class MainHeader extends HTMLElement {
   }
 
   connectedCallback() {
-    const API_VALUE = {
-      NOTIFICATION_NUMBER: "10",
-      PROFILE_IMG: ASSET_PATH.MY_PROFILE,
-      ALT: "김연우의 프로필 사진",
-    };
-
-    this.innerHTML = this._generateHeader(API_VALUE);
+    this.innerHTML = this._render(API_VALUE);
+    this._setupEventListeners();
   }
 
-  _generateHeader(apiValue) {
-    const navMenus = this._generateMenus();
-    const navIcons = this._generateIcons(apiValue);
+  _render(apiValue) {
+    const navMenus = this._renderMenus();
+    const navIcons = this._renderIcons(apiValue);
     return `
       <header class="header-container">
         <div class="header-left-wrapper">
@@ -31,12 +34,13 @@ export class MainHeader extends HTMLElement {
         </div>
         <div class="header-right-wrapper">
           ${navIcons}
+          <main-header-notification-modal></main-header-notification-modal />
         </div>
       </header>
     `;
   }
 
-  _generateMenus() {
+  _renderMenus() {
     return HEADER_DATA.navItems
       .map(
         (item) => `
@@ -50,7 +54,7 @@ export class MainHeader extends HTMLElement {
       .join("");
   }
 
-  _generateIcons(apiValue) {
+  _renderIcons(apiValue) {
     return `
       <div class="header-icons-container">
         <main-header-search-button></main-header-search-button>
@@ -64,5 +68,23 @@ export class MainHeader extends HTMLElement {
         </main-header-my-profile-button>
       </div>
     `;
+  }
+
+  _setupEventListeners() {
+    const headerRightWrapper = this.querySelector(".header-right-wrapper");
+    headerRightWrapper.addEventListener("notification-click", (e) => {
+      const { totalCount } = e.detail;
+      console.log(e.detail);
+      this._updateBadgeCount(totalCount);
+    });
+  }
+
+  _updateBadgeCount(count) {
+    const notificationButton = this.querySelector(
+      "main-header-notification-button"
+    );
+    if (notificationButton) {
+      notificationButton.setAttribute("notification-number", count);
+    }
   }
 }
