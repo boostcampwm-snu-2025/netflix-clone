@@ -1,0 +1,21 @@
+.arrow-button {
+  border: none;
+  padding: 0;
+  outline: none;
+  height: 120px;
+  width: 24px;
+  border-radius: 8px;
+  background-color: rgba(80, 80, 80);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.arrow-button[direction='left'] {
+  transform: rotate(180deg);
+}
+
+.arrow-button[direction='right'] {
+  transform: rotate(0deg);
+}

@@ -111,12 +111,17 @@ main > *:not(.hero__background) {
   gap: 24px;
 }
 
+.top-contents__container {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
 .top-contents__list {
   display: flex;
   gap: 22px;
   overflow-x: auto;
   height: auto;
-  padding: 0 22px;
 }
 
 .reasons {
@@ -171,6 +176,7 @@ main > *:not(.hero__background) {
   top: 0;
   left: 0;
   width: 100%;
+  max-width: 100vw;
   height: 8px;
   background: linear-gradient(
     to right,
