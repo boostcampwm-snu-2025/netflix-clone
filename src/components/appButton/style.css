@@ -1,4 +1,4 @@
-app-button button {
+.button {
   background-color: rgb(229, 9, 20);
   cursor: pointer;
   transition: background-color cubic-bezier(0.4, 0, 0.68, 0.06) 0.25s;
@@ -13,18 +13,18 @@ app-button button {
   gap: 12px;
 }
 
-app-button button[size='lg'] {
+.button[size='lg'] {
   width: 167px;
   height: 56px;
   font-size: 24px;
 }
 
-app-button button[size='sm'] {
+.button[size='sm'] {
   width: 68px;
   height: 32px;
   font-size: 14px;
 }
 
-app-button button:hover {
+.button:hover {
   background-color: rgb(195, 0, 10);
 }

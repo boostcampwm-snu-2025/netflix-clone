@@ -20,7 +20,7 @@ class AppButton extends HTMLElement {
     processTextSlot(this);
 
     if (this._pendingSize) {
-      const button = this.querySelector('button');
+      const button = this.querySelector('.button');
       button.setAttribute('size', this._pendingSize);
       this._pendingSize = null;
     }
@@ -28,7 +28,7 @@ class AppButton extends HTMLElement {
 
   attributeChangedCallback(name, oldValue, newValue) {
     if (name === 'size' && newValue !== oldValue) {
-      const btn = this.querySelector('button');
+      const btn = this.querySelector('.button');
       if (btn) {
         btn.setAttribute('size', newValue);
       } else {
