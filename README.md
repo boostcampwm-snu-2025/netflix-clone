@@ -19,8 +19,8 @@
     - [ ] 무한 캐러셀
 #### 프로그래밍 요구 사항
 - [ ] ES Modules 사용
-- [ ] DOM, Event 사용
-    - [ ] DOM 사용
-    - [ ] Event 사용
+- [x] DOM, Event 사용
+    - [x] DOM 사용
+    - [x] Event 사용
 - [ ] 애니메이션
 - [ ] 슬라이더 모듈

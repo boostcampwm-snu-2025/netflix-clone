@@ -69,14 +69,27 @@
     margin-left: var(--all-margin);
 }
 
-.Category > *:not(.MovieList){
+.Category > *:not(.MovieSlider){
     margin: var(--Category-margin);
     padding: var(--all-padding);
 }
 
-.MovieList{
+.MovieSlider{
     display: flex;
+    position:relative;
     flex-direction: row;
+}
+
+.MovieSliderButton{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 5;
 }
 
 .MovieCard{
@@ -130,5 +143,5 @@
     overflow: hidden;
     width: 100px;
     height: 100px;
-    
 }
+
