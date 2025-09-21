@@ -17,13 +17,15 @@ class MovieModal extends HTMLElement {
     this.appendChild(template.content.cloneNode(true));
 
     this.addEventListener('click', e => {
-      if (
-        e.target.closest('.movie-modal') ||
-        e.target.closest('.movie-modal__close')
-      ) {
+      if (e.target.closest('.movie-modal')) {
         this.close();
         this._isOpen = false;
       }
+    });
+
+    const closeButton = this.querySelector('.movie-modal__close');
+    closeButton?.addEventListener('click', () => {
+      this.close();
     });
 
     document.addEventListener('keydown', e => {
