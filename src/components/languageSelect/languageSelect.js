@@ -12,8 +12,8 @@ class LanguageSelect extends HTMLElement {
 
     this.appendChild(template.content.cloneNode(true));
 
-    const selectWrapper = this.querySelector('.select-wrapper');
-    const select = this.querySelector('.select-wrapper select');
+    const selectWrapper = this.querySelector('.language-select');
+    const select = this.querySelector('.language-select__dropdown');
 
     selectWrapper.addEventListener('click', () => {
       select.focus();

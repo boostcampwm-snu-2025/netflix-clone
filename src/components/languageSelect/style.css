@@ -1,4 +1,4 @@
-language-select .select-wrapper {
+.language-select {
   width: 54px;
   height: 20px;
   padding: 6px 36px;
@@ -13,16 +13,16 @@ language-select .select-wrapper {
   font-size: var(--text-sm);
 }
 
-language-select .select-wrapper select:focus {
+.language-select__dropdown:focus {
   outline: none;
 }
 
-language-select .select-wrapper:focus-within {
+.language-select:focus-within {
   outline: 2px solid #fff;
   outline-offset: 2px;
 }
 
-language-select .select-wrapper select {
+.language-select__dropdown {
   flex: 1;
   background: transparent;
   color: #fff;
@@ -31,7 +31,7 @@ language-select .select-wrapper select {
   margin-left: -4px;
 }
 
-language-select .select-wrapper img {
+language-select img {
   pointer-events: none;
   width: 16px;
 }
