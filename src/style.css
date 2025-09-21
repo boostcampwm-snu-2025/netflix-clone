@@ -114,6 +114,67 @@ nav ul {
   position: relative;
 }
 
+/* 공통 래퍼: 아이콘 주변이 기준이 됨 */
+.dropdown { position: relative; }
+
+/* 패널: 처음엔 숨김 */
+.dropdown-panel {
+  position: absolute;
+  top: calc(100% + 8px);   /* 아이콘 아래 8px */
+  right: 0;                /* 오른쪽 정렬(넷플릭스 스타일) */
+  width: min(360px, 90vw);
+  max-height: 70vh;
+  overflow-y: auto;
+
+  background: rgba(0,0,0,0.85);
+  backdrop-filter: blur(2px);
+  color: var(--foreground);
+  border-radius: 12px;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.45);
+  padding: 8px;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: opacity .18s ease, transform .18s ease, visibility .18s;
+  z-index: 1100; /* 헤더 위 */
+  pointer-events: none;     /* 숨김 상태 클릭 방지 */
+}
+
+/* 호버/포커스-위딘 시 표시 */
+.dropdown:hover .dropdown-panel,
+.dropdown:focus-within .dropdown-panel,
+.dropdown.open .dropdown-panel {   /* JS 토글용 */
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* 리스트 스타일 */
+.dropdown-list { display: grid; gap: 6px; }
+.dropdown-item {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 10px;
+  align-items: center;
+  padding: 10px;
+  border-radius: 8px;
+}
+.dropdown-item:hover { background: rgba(255,255,255,0.06); }
+.dropdown-item img {
+  width: 56px; height: 56px; object-fit: cover; border-radius: 6px;
+}
+.dropdown-item .title { font-weight: 700; margin: 0 0 2px; }
+.dropdown-item .desc  { color: var(--muted); font-size: 14px; margin: 0; }
+
+/* 아이콘 버튼(시각적 리셋) */
+.icon-btn {
+  background: transparent; border: 0; padding: 6px; cursor: pointer;
+  color: var(--foreground);
+}
+
+
 .user img {
   width: 32px;
   height: 32px;
@@ -429,3 +490,6 @@ footer {
   margin-bottom: var(--spacing-32);
   text-align: center;
 }
+
+
+
