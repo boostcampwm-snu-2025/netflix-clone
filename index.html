@@ -3,6 +3,7 @@
     <head>
         <link rel="stylesheet" href="css/style.css">
         <title>Hyungyu Jung's Static Netflix Clone Webpage</title>
+        <script src="app.js" defer></script>
     </head>
     <body class="page">
         <header class="header">
@@ -22,8 +23,22 @@
             </div>
             <div class="header_right">
                 <div class="search_icon"><a href="#">검색</a></div>
-                <div class="notification_icon"><a href="#">알림</a></div>
-                <div class="profile_icon"><a href="#">프로필</a></div>
+                <div class="notification_icon">
+                    <a href="#">알림</a>
+                    <div class="modal notification_modal">
+                        <p>새로운 알림이 없습니다.</p>
+                    </div>
+                </div>
+                <div class="profile_icon">
+                    <a href="#">프로필</a>
+                    <div class="modal profile_modal">
+                        <ul>
+                            <li><a href="#">계정</a></li>
+                            <li><a href="#">고객 센터</a></li>
+                            <li><a href="#">넷플릭스에서 로그아웃</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </header>
         <main class="main">
@@ -45,214 +60,200 @@
 
 			<section class="custom_list">
                 <h2 class="list_title">위시 콘텐츠</h2>
-                <div class = "list">
-                    <a href="#">
-                        <div class="movie_card1">
+                <div class="slide_wrapper">
+                    <ul class="slides">
+                        <li class="movie_card1">
                             <img src="/img/before_sunrise_1.jpg" alt="Before Sunrise">
-                            <h3>Before Sunrise</h3>
-                        </div>
-                    </a>
-                    <a href="#">
-                        <div class="movie_card1">
+                            <h3>Before Sunset</h3>
+                        </li>
+                        <li class="movie_card1">
                             <img src="/img/before_midnight_1.jpg" alt="Before Midnight">
                             <h3>Before Midnight</h3>
-                        </div>
-                    </a>
-                    <a href="#">
-                        <div class="movie_card1">
+                        </li>
+                        <li class="movie_card1">
                             <img src="/img/default.jpg" alt="Default movie icon.">
                             <h3>Default Movie Card</h3>
-                        </div>
-                    </a>
-                    <a href="#">
-                        <div class="movie_card1">
+                        </li>
+                        <li class="movie_card1">
                             <img src="/img/default.jpg" alt="Default movie icon.">
                             <h3>Default Movie Card</h3>
-                        </div>
-                    </a>
-                    <a href="#">
-                        <div class="movie_card1">
+                        </li>
+                        <li class="movie_card1">
                             <img src="/img/default.jpg" alt="Default movie icon.">
                             <h3>Default Movie Card</h3>
-                        </div>
-                    </a>
-                    <a href="#">
-                        <div class="movie_card1">
+                        </li>
+                        <li class="movie_card1">
                             <img src="/img/default.jpg" alt="Default movie icon.">
                             <h3>Default Movie Card</h3>
-                        </div>
-                    </a>
+                        </li>
+                        <li class="movie_card1">
+                            <img src="/img/default.jpg" alt="Default movie icon.">
+                            <h3>Default Movie Card</h3>
+                        </li>
+                    </ul>
+                    <p class="controller">
+                        <span class="prev">&lang;</span>  
+                        <span class="next">&rang;</span>
+                    </p>
                 </div>
             </section>
 
             <section class="watching_list">
                 <h2 class="list_title">.님이 시청 중인 콘텐츠</h2>
-                <div class = "list">
-                    <a href="#">
-                        <div class="movie_card1">
+                <div class = "slide_wrapper">
+                    <ul class="slides">
+                        <li class="movie_card1">
                             <img src="/img/everything_everywhere_all_at_once_1.jpg" alt="Everything Everywhere All at Once">
                             <h3>Everything Everywhere All at Once </h3>
-                        </div>
-                    </a>
-                    <a href="#">
-                        <div class="movie_card1">
+                        </li>
+                        <li class="movie_card1">
                             <img src="/img/the_shawshank_redemption_1.jpg" alt="The Shawshank Redemption">
-                            <h3>The Shawshank Redemption</h3>                 
-                        </div>
-                    </a>
-                    <a href="#">
-                        <div class="movie_card1">
+                            <h3>The Shawshank Redemption</h3>
+                        </li>
+                        <li class="movie_card1">
                             <img src="/img/default.jpg" alt="Default movie icon.">
                             <h3>Default Movie Card</h3>
-                        </div>
-                    </a>
-                    <a href="#">
-                        <div class="movie_card1">
+                        </li>
+                        <li class="movie_card1">
                             <img src="/img/default.jpg" alt="Default movie icon.">
                             <h3>Default Movie Card</h3>
-                        </div>
-                    </a>
-                    <a href="#">
-                        <div class="movie_card1">
+                        </li>
+                        <li class="movie_card1">
                             <img src="/img/default.jpg" alt="Default movie icon.">
                             <h3>Default Movie Card</h3>
-                        </div>
-                    </a>
-                    <a href="#">
-                        <div class="movie_card1">
+                        </li>
+                        <li class="movie_card1">
                             <img src="/img/default.jpg" alt="Default movie icon.">
                             <h3>Default Movie Card</h3>
-                        </div>
-                    </a>
+                        </li>
+                        <li class="movie_card1">
+                            <img src="/img/default.jpg" alt="Default movie icon.">
+                            <h3>Default Movie Card</h3>
+                        </li>
+                        <li class="movie_card1">
+                            <img src="/img/default.jpg" alt="Default movie icon.">
+                            <h3>Default Movie Card</h3>
+                        </li>
+                        <li class="movie_card1">
+                            <img src="/img/default.jpg" alt="Default movie icon.">
+                            <h3>Default Movie Card</h3>
+                        </li>
+                    </ul>
+                    <p class="controller">
+                        <span class="prev">&lang;</span>  
+                        <span class="next">&rang;</span>
+                    </p>
                 </div>              
             </section>
 
             <section class="recommends">
                 <h2 class="list_title">추천 콘텐츠</h2>
-                <div class = "list">
-                    <a href="#">
-                        <div class="movie_card1">
+                <div class = "slide_wrapper">
+                    <ul class="slides">
+                        <li class="movie_card1">
                             <img class="movie_card1" src="/img/inglourious_basterds_1.jpg" alt="Inglourious Basterds">
                             <h3>Inglourious Basterds</h3>
-                        </div>
-                    </a>
-                    <a href="#">
-                        <div class="movie_card1">
+                        </li>
+                        <li class="movie_card1">
                             <img class="movie_card1" src="/img/the_dark_night_1.jpg" alt="The Dark Night">
                             <h3>The Dark Night</h3>
-                        </div>
-                    </a>
-                    <a href="#">
-                        <div class="movie_card1">
+                        </li>
+                        <li class="movie_card1">
                             <img src="/img/default.jpg" alt="Default movie icon.">
                             <h3>Default Movie Card</h3>
-                        </div>
-                    </a>
-                    <a href="#">
-                        <div class="movie_card1">
+                        </li>
+                        <li class="movie_card1">
                             <img src="/img/default.jpg" alt="Default movie icon.">
                             <h3>Default Movie Card</h3>
-                        </div>
-                    </a>
-                    <a href="#">
-                        <div class="movie_card1">
+                        </li>
+                        <li class="movie_card1">
                             <img src="/img/default.jpg" alt="Default movie icon.">
                             <h3>Default Movie Card</h3>
-                        </div>
-                    </a>
-                    <a href="#">
-                        <div class="movie_card1">
+                        </li>
+                        <li class="movie_card1">
                             <img src="/img/default.jpg" alt="Default movie icon.">
                             <h3>Default Movie Card</h3>
-                        </div>
-                    </a>
+                        </li>
+                        <li class="movie_card1">
+                            <img src="/img/default.jpg" alt="Default movie icon.">
+                            <h3>Default Movie Card</h3>
+                        </li>
+                        <li class="movie_card1">
+                            <img src="/img/default.jpg" alt="Default movie icon.">
+                            <h3>Default Movie Card</h3>
+                        </li>
+                        <li class="movie_card1">
+                            <img src="/img/default.jpg" alt="Default movie icon.">
+                            <h3>Default Movie Card</h3>
+                        </li>
+                    </ul>
+                    <p class="controller">
+                        <span class="prev">&lang;</span>  
+                        <span class="next">&rang;</span>
+                    </p>
                 </div>
             </section>
             
             <section class="top10_list_section">
                 <h2 class="list_title">오늘 대한민국의 TOP 10 콘텐츠</h2>
-                <div class="list">
-
-                    <a href="#">
-                        <div class="movie_card2">
-                                <span class="rank">1</span>
-                                <img src="/img/before_sunrise_2.jpg" alt="Before Sunrise">
-                                <!-- <h3>Before Sunrise</h3> -->
-                        </div>
-                    </a>
-
-                    <a href="#">
-                        <div class="movie_card2">
+                <div class = "slide_wrapper">
+                    <ul class="slides">
+                        <li class="movie_card2">
+                            <span class="rank">1</span>
+                            <img src="/img/before_sunrise_2.jpg" alt="Before Sunrise">
+                            <!-- <h3>Before Sunrise</h3> -->
+                        </li>
+                        <li class="movie_card2">
                             <span class="rank">2</span>
                             <img src="/img/before_sunset_2.jpg" alt="Before Sunset">
                             <!-- <h3>Before Sunset</h3> -->
-                        </div>
-                    </a>
-
-                    <a href="#">
-                        <div class="movie_card2">
+                        </li>
+                        <li class="movie_card2">
                             <span class="rank">3</span>
                             <img src="/img/before_midnight_2.jpg" alt="Before Midnight">
                             <!-- <h3>Before Midnight</h3> -->
-                        </div>
-                    </a>
-
-                    <a href="#">
-                        <div class="movie_card2">
+                        </li>
+                        <li class="movie_card2">
                                 <span class="rank">4</span>
                                 <img src="/img/everything_everywhere_all_at_once_2.jpg" alt="Everything Everywhere All at Once">
                                 <!-- <h3>Everything Everywhere All at Once</h3> -->
-                        </div>
-                    </a>
-                    
-                    <a href="#">
-                        <div class="movie_card2">
+                        </li>
+                        <li class="movie_card2">
                             <span class="rank">5</span>
                             <img src="/img/the_shawshank_redemption_2.jpg" alt="The Shawshank Redemption">
                             <!-- <h3>The Shawshank Redemption</h3> -->
-                        </div>
-                    </a>
-                    
-                    <a href="#">
-                        <div class="movie_card2">
-                                <span class="rank">6</span>
-                                <img src="/img/inglourious_basterds_2.jpg" alt="Inglourious Basterds">
-                                <!-- <h3>Inglourious Basterds</h3> -->
-                        </div>
-                    </a>
-
-                    <a href="#">
-                        <div class="movie_card2">
+                        </li>
+                        <li class="movie_card2">
+                            <span class="rank">6</span>
+                            <img src="/img/inglourious_basterds_2.jpg" alt="Inglourious Basterds">
+                            <!-- <h3>Inglourious Basterds</h3> -->
+                        </li>
+                        <li class="movie_card2">
                             <span class="rank">7</span>
                             <img src="/img/the_dark_night_2.jpg" alt="The Dark Night">
                             <!-- <h3>The Dark Night</h3> -->
-                        </div>
-                    </a>
-                    <a href="#">
-                        <div class="movie_card2">
+                        </li>
+                        <li class="movie_card2">
                             <span class="rank">8</span>
                             <img src="/img/whiplash_2.jpg" alt="Whiplash">
                             <!-- <h3>Whiplash</h3> -->
-                        </div>
-                    </a>
-                    
-                    <a href="#">
-                        <div class="movie_card2">
+                        </li>
+                        <li class="movie_card2">
                             <span class="rank">9</span>
                             <img src="/img/million_dollor_baby_2.jpg" alt="Million Dollar Baby">
                             <!-- <h3>Million Dollar Baby</h3> -->
-                    </div>
-                    </a>
-                    
-                    <a href="#">
-                        <div class="movie_card2">
+                        </li>
+                        <li class="movie_card2">
                             <span class="rank">10</span>
                             <img src="/img/la_la_land_2.jpg" alt="La La Land">
                             <!-- <h3>La La Land</h3> -->
-                        </div>
-                    </a>
-
-                </div>
+                        </li>
+                    </ul>
+                    <p class="controller">
+                        <span class="prev">&lang;</span>  
+                        <span class="next">&rang;</span>
+                    </p>
+                </div>    
             </section>
         </main>
         <footer class = "footer">

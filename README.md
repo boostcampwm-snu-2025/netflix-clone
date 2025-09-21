@@ -1,5 +1,9 @@
 # netflix-clone
 넷플릭스 클론 프로젝트
 
-결과 페이지
-<img src="./img/netflix_clone_page.png"  width="387" height="537">
+3주차: 반응형 넷플릭스
+
+-[] 헤더 영역에 호버로 모달 기능 구현하기
+-[] 카드형 콘텐츠 슬라이딩 기능 추가하기
+-[] ESM 방식 개발 적용하기
+-[] DOM, Event, 웹애니메이션 공부하기

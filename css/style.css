@@ -47,6 +47,65 @@
     color: inherit;
 }
 
+/* =================================
+   Header Hover Modal Styles
+   ================================= */
+
+/* to position the modal */
+.notification_icon, .profile_icon {
+    position: relative;
+}
+
+/* modal styles */
+.modal {
+    display: none; /* hide normal */
+    position: absolute;
+    top: 150%; 
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 1rem;
+    min-width: 200px; 
+    z-index: 20;
+    border-radius: 4px;
+}
+
+/* hover modal */
+.notification_icon:hover .modal,
+.profile_icon:hover .modal {
+    display: block;
+}
+
+.profile_modal ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.profile_modal ul li {
+    margin-bottom: 10px;
+}
+
+.profile_modal ul li:last-child {
+    margin-bottom: 0;
+}
+
+.profile_modal ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.profile_modal ul li a:hover {
+    text-decoration: underline;
+}
+
+.notification_modal p {
+    color: white;
+    margin: 0;
+    font-size: 0.9rem;
+}
+
 /* overall main layout (by flex box) */
 .main{
 	display: flex;
@@ -116,16 +175,61 @@
     margin-bottom: 30px;
 }
 
-/* card list styles */
-.list{
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
+/* slide css styles : overflow hidden is important! */
+.list_title{
+    color:aliceblue;
+    font-size: large;
 }
-.list_title{color:aliceblue; font-size:large;}
-.list a {
-    text-decoration: none;
-    color: inherit;
+.slide_wrapper {
+    width: 1440px;
+    height: 200px;
+    position: relative;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.slides {
+  display: flex;
+  height: 200px;
+  padding: 0;
+  margin: 0; 
+  list-style: none; 
+}
+.slides li {
+  flex: 0 0 224px;
+  margin-right: 10px;
+}
+
+/* controller styles (prev, next buttons) */
+.controller {
+    position: absolute;
+    top: 40%;
+    left: 0;
+    width: 100%;
+    display: flex; 
+    justify-content: space-between;
+    align-items: center; 
+    transform: translateY(-50%); 
+    pointer-events: none; 
+    z-index: 10; 
+}
+.controller span {
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.5); 
+    color: white;
+    font-size: 2em;
+    padding: 10px 15px;
+    border-radius: 5px;
+    user-select: none; 
+    pointer-events: auto; 
+}
+.controller span.prev {
+    margin-left: 10px; 
+}
+.controller span.next {
+    margin-right: 10px; 
+}
+.controller span:hover {
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 /* movie card1 styles (except ranking row) */
@@ -134,17 +238,17 @@
 	margin: 8px;
 }
 .movie_card1 img {
-    width: 100%; /* 부모(.movie_card)의 너비에 꽉 채웁니다. (240px) */
+    width: 100%; 
     height: 144px;
-    object-fit: cover; /* 이미지 비율이 깨지지 않도록 채워줍니다. */
-    display: block; /* 이미지 아래에 생기는 미세한 공백을 제거합니다. */
+    object-fit: cover; 
+    display: block; 
 }
 
-/* 영화 카드 안의 제목 스타일 */
+/* title style in movie card 1 */
 .movie_card1 h3 {
-    color: white; /* 넷플릭스처럼 글자색을 밝게 */
+    color: white; 
     font-size: 16px;
-    margin-top: 8px; /* 이미지와의 간격 */
+    margin-top: 8px; 
 }
 
 /* movie card2 styles (ranking row) */
@@ -156,25 +260,24 @@
 }
 
 .movie_card2 .rank {
-    font-size: 8rem; /* 숫자를 매우 크게 */
+    font-size: 6rem; 
     font-weight: bold;
-    color: #555;      /* 너무 튀지 않는 색상 */
-    /* 숫자가 이미지 왼쪽으로 살짝 겹치게 하는 효과 */
+    color: #555;      
     margin-right: -20px;
     z-index: -1; 
 }
 .movie_card2 img {
-    width:120px; /* 부모(.movie_card)의 너비에 꽉 채웁니다. (240px) */
+    width:120px; 
     height: 180px;
-    object-fit: cover; /* 이미지 비율이 깨지지 않도록 채워줍니다. */
-    display: block; /* 이미지 아래에 생기는 미세한 공백을 제거합니다. */
+    object-fit: cover; 
+    display: block; 
 }
 
-/* 영화 카드 안의 제목 스타일 */
+/* title style in movie card 2 */
 .movie_card2 h3 {
-    color: white; /* 넷플릭스처럼 글자색을 밝게 */
+    color: white; 
     font-size: 16px;
-    margin-top: 8px; /* 이미지와의 간격 */
+    margin-top: 8px; 
 }
 
 /* card hover effect */
