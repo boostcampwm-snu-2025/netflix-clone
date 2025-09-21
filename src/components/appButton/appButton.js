@@ -1,4 +1,4 @@
-import { loadTemplate, loadStyle } from '../utils.js';
+import { loadTemplate, loadStyle, processTextSlot } from '../utils.js';
 
 class AppButton extends HTMLElement {
   static get observedAttributes() {
@@ -7,27 +7,28 @@ class AppButton extends HTMLElement {
 
   constructor() {
     super();
-    this.attachShadow({ mode: 'open' });
     this._pendingSize = null;
   }
 
   async connectedCallback() {
     const template = await loadTemplate('./template.html', import.meta.url);
-    this.shadowRoot.appendChild(template.content.cloneNode(true));
-
     const style = await loadStyle('./style.css', import.meta.url);
-    this.shadowRoot.appendChild(style);
+    document.head.appendChild(style);
+
+    this.appendChild(template.content.cloneNode(true));
+
+    processTextSlot(this);
 
     if (this._pendingSize) {
-      const btn = this.shadowRoot.querySelector('button');
-      btn.setAttribute('size', this._pendingSize);
+      const button = this.querySelector('button');
+      button.setAttribute('size', this._pendingSize);
       this._pendingSize = null;
     }
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
     if (name === 'size' && newValue !== oldValue) {
-      const btn = this.shadowRoot.querySelector('button');
+      const btn = this.querySelector('button');
       if (btn) {
         btn.setAttribute('size', newValue);
       } else {

@@ -1,4 +1,4 @@
-.feature-card {
+feature-card .feature-card {
   padding: 24px 16px;
   width: 242px;
   height: 315px;
@@ -16,18 +16,18 @@
   gap: 16px;
 }
 
-::slotted(h3) {
+feature-card h3 {
   font-size: 24px;
   line-height: 1.5;
 }
 
-::slotted(p) {
+feature-card p {
   font-size: 16px;
   color: rgba(255, 255, 255, 0.7);
   word-break: keep-all;
 }
 
-::slotted(img) {
+feature-card img {
   width: 72px;
   height: 72px;
   align-self: flex-end;
