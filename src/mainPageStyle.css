@@ -69,6 +69,10 @@
     margin-left: var(--all-margin);
 }
 
+.Category{
+    position : relative;
+}
+
 .Category > *:not(.MovieSlider){
     margin: var(--Category-margin);
     padding: var(--all-padding);
@@ -76,17 +80,21 @@
 
 .MovieSlider{
     position: relative;
+    overflow: hidden;
 }
 
 .MovieIndicator{
     position: absolute;
+    width: 50px;
+    height: 10px;
+    top : 0px;
+    right: 10px;
 }
 
 .MovieList{
     position:relative;
     display: flex;
     flex-direction: row;
-    overflow: hidden;
     transition: transform 1s ease;
 }
 
