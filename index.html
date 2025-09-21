@@ -10,12 +10,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/global.css">
     <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/notification.css">
     <link rel="stylesheet" href="styles/profile.css">
     <link rel="stylesheet" href="styles/hero.css">
     <link rel="stylesheet" href="styles/recommendation.css">
     <link rel="stylesheet" href="styles/footer.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
-    <script src="scripts.js"></script>
+    <script type="module" src="./js/main.js"></script>
 </head>
 
 <body>
@@ -38,7 +39,25 @@
         </nav>
         <div class="user-menu">
             <i class="fa-solid fa-magnifying-glass"></i>
-            <i class="fa-solid fa-bell"></i>
+            <div class="notification">
+                <i class="fa-solid fa-bell"></i>
+                <div class="notification-menu" aria-hidden="true">
+                    <div class="notification-item">
+                        <img src="assets/notification1.png" alt="Notification 1">
+                        <div class="notification-text">
+                            <p class="notification-title">신규 컨텐츠<br>나는 생존자다</p>
+                            <p class="notification-time">1주 전</p>
+                        </div>
+                    </div>
+                    <div class="notification-item">
+                        <img src="assets/notification2.png" alt="Notification 2">
+                        <div class="notification-text">
+                            <p class="notification-title">신규 컨텐츠<br>토요 미스테리 극장</p>
+                            <p class="notification-time">2주 전</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="profile" role="button" aria-haspopup="true" aria-expanded="false">
                 <img src="assets/profile.png" alt="Profile">
                 <i class="fa-solid fa-caret-down caret" aria-hidden="true"></i>
@@ -68,55 +87,122 @@
                         </button>
                     </div>
                     <div class="hero-controls">
-                            <button class="mute-btn" aria-label="음소거">
-                                <i class="fa-solid fa-volume-xmark"></i>
-                            </button>
-                            <span class="age-badge">15+</span>
+                        <button class="mute-btn" aria-label="음소거">
+                            <i class="fa-solid fa-volume-xmark"></i>
+                        </button>
+                        <span class="age-badge">15+</span>
                     </div>
                 </div>
             </div>
         </section>
         <section class="recommendation-container">
-            <p class="section-title">누구나 사랑하는 명작</p>
-            <div class="recommendation-list">
-                <div class="recommendation-item">
-                    <img src="assets/recommendation1.png" alt="Recommendation 1">
-                </div>
-                <div class="recommendation-item">
-                    <img src="assets/recommendation2.png" alt="Recommendation 2">
-                </div>
-                <div class="recommendation-item">
-                    <img src="assets/recommendation3.png" alt="Recommendation 3">
-                </div>
-                <div class="recommendation-item">
-                    <img src="assets/recommendation4.png" alt="Recommendation 4">
-                </div>
-                <div class="recommendation-item">
-                    <img src="assets/recommendation5.png" alt="Recommendation 5">
-                </div>
-                <div class="recommendation-item">
-                    <img src="assets/recommendation6.png" alt="Recommendation 6">
+            <div>
+                <p class="section-title with-indicator">누구나 사랑하는 명작
+                    <span class="page-indicator" aria-hidden="true">
+                        <span class="pi-track">
+                        </span>
+                    </span>
+                </p>
+                <div class="carousel" data-infinite="true">
+                    <span class="handle handlePrev" aria-hidden="true">
+                        <b class="handle-icon fa-solid fa-chevron-left"></b>
+                    </span>
+                    <div class="recommendation-list">
+                        <div class="recommendation-item" data-index="1">
+                            <img src="assets/recommendation1_1.png" alt="Recommendation 1">
+                        </div>
+                        <div class="recommendation-item" data-index="2">
+                            <img src="assets/recommendation1_2.png" alt="Recommendation 2">
+                        </div>
+                        <div class="recommendation-item" data-index="3">
+                            <img src="assets/recommendation1_3.png" alt="Recommendation 3">
+                        </div>
+                        <div class="recommendation-item" data-index="4">
+                            <img src="assets/recommendation1_4.png" alt="Recommendation 4">
+                        </div>
+                        <div class="recommendation-item" data-index="5">
+                            <img src="assets/recommendation1_5.png" alt="Recommendation 5">
+                        </div>
+                        <div class="recommendation-item" data-index="6">
+                            <img src="assets/recommendation1_6.png" alt="Recommendation 6">
+                        </div>
+                        <div class="recommendation-item" data-index="7">
+                            <img src="assets/recommendation1_7.png" alt="Recommendation 7">
+                        </div>
+                        <div class="recommendation-item" data-index="8">
+                            <img src="assets/recommendation1_8.png" alt="Recommendation 8">
+                        </div>
+                        <div class="recommendation-item" data-index="9">
+                            <img src="assets/recommendation1_9.png" alt="Recommendation 9">
+                        </div>
+                        <div class="recommendation-item" data-index="10">
+                            <img src="assets/recommendation1_10.png" alt="Recommendation 10">
+                        </div>
+                        <div class="recommendation-item" data-index="11">
+                            <img src="assets/recommendation1_11.png" alt="Recommendation 11">
+                        </div>
+                        <div class="recommendation-item" data-index="12">
+                            <img src="assets/recommendation1_12.png" alt="Recommendation 12">
+                        </div>
+
+                    </div>
+                    <span class="handle handleNext" aria-hidden="true">
+                        <b class="handle-icon fa-solid fa-chevron-right"></b>
+                    </span>
                 </div>
             </div>
-            <p class="section-title">해외 시리즈</p>
-            <div class="recommendation-list">
-                <div class="recommendation-item">
-                    <img src="assets/recommendation7.png" alt="Recommendation 7">
-                </div>
-                <div class="recommendation-item">
-                    <img src="assets/recommendation8.png" alt="Recommendation 8">
-                </div>
-                <div class="recommendation-item">
-                    <img src="assets/recommendation9.png" alt="Recommendation 9">
-                </div>
-                <div class="recommendation-item">
-                    <img src="assets/recommendation10.png" alt="Recommendation 10">
-                </div>
-                <div class="recommendation-item">
-                    <img src="assets/recommendation11.png" alt="Recommendation 11">
-                </div>
-                <div class="recommendation-item">
-                    <img src="assets/recommendation12.png" alt="Recommendation 12">
+            <div>
+                <p class="section-title with-indicator">해외 시리즈
+                    <span class="page-indicator" aria-hidden="true">
+                        <span class="pi-track">
+                        </span>
+                    </span>
+                </p>
+                <div class="carousel" data-infinite="true">
+                    <span class="handle handlePrev" aria-hidden="true">
+                        <b class="handle-icon fa-solid fa-chevron-left"></b>
+                    </span>
+                    <div class="recommendation-list">
+                        <div class="recommendation-item" data-index="1">
+                            <img src="assets/recommendation2_1.png" alt="Recommendation 1">
+                        </div>
+                        <div class="recommendation-item" data-index="2">
+                            <img src="assets/recommendation2_2.png" alt="Recommendation 2">
+                        </div>
+                        <div class="recommendation-item" data-index="3">
+                            <img src="assets/recommendation2_3.png" alt="Recommendation 3">
+                        </div>
+                        <div class="recommendation-item" data-index="4">
+                            <img src="assets/recommendation2_4.png" alt="Recommendation 4">
+                        </div>
+                        <div class="recommendation-item" data-index="5">
+                            <img src="assets/recommendation2_5.png" alt="Recommendation 5">
+                        </div>
+                        <div class="recommendation-item" data-index="6">
+                            <img src="assets/recommendation2_6.png" alt="Recommendation 6">
+                        </div>
+                        <div class="recommendation-item" data-index="7">
+                            <img src="assets/recommendation2_7.png" alt="Recommendation 7">
+                        </div>
+                        <div class="recommendation-item" data-index="8">
+                            <img src="assets/recommendation2_8.png" alt="Recommendation 8">
+                        </div>
+                        <div class="recommendation-item" data-index="9">
+                            <img src="assets/recommendation2_9.png" alt="Recommendation 9">
+                        </div>
+                        <div class="recommendation-item" data-index="10">
+                            <img src="assets/recommendation2_10.png" alt="Recommendation 10">
+                        </div>
+                        <div class="recommendation-item" data-index="11">
+                            <img src="assets/recommendation2_11.png" alt="Recommendation 11">
+                        </div>
+                        <div class="recommendation-item" data-index="12">
+                            <img src="assets/recommendation2_12.png" alt="Recommendation 12">
+                        </div>
+                    </div>
+                    <span class="handle handleNext" aria-hidden="true">
+                        <b class="handle-icon fa-solid fa-chevron-right"></b>
+                    </span>
                 </div>
             </div>
         </section>

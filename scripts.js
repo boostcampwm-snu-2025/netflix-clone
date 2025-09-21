@@ -1,92 +1,103 @@
 document.addEventListener('DOMContentLoaded', () => {
-	const profile = document.querySelector('.profile');
-	if (profile) {
-		const toggle = () => {
-			const isOpen = profile.classList.toggle('open');
-			profile.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-			if (isOpen) {
-				setTimeout(() => {
-					const first = profile.querySelector('.dropdown a');
-					first && first.focus();
-				}, 0);
+	const carousels = document.querySelectorAll('.carousel');
+
+	carousels.forEach(wrapper => {
+		const track = wrapper.querySelector('.recommendation-list');
+		if (!track) return;
+		const prevBtn = wrapper.querySelector('.handlePrev');
+		const nextBtn = wrapper.querySelector('.handleNext');
+
+		const originalSlides = Array.from(track.querySelectorAll('.recommendation-item'));
+		const N = originalSlides.length;
+		if (N === 0) return;
+		// Triple track: original + clone + clone
+		if (track.querySelectorAll('.recommendation-item').length === N) {
+			const frag = document.createDocumentFragment();
+			for (let r = 0; r < 2; r++) {
+				originalSlides.forEach(slide => frag.appendChild(slide.cloneNode(true)));
 			}
-		};
+			track.appendChild(frag);
+		}
 
-		profile.addEventListener('click', (e) => {
-			toggle();
-			e.stopPropagation();
-		});
+		let index = N; // start in middle block to avoid immediate wrap on prev
+		const VISIBLE = 5;
+		const pages = Math.ceil(N / VISIBLE);
 
-		profile.querySelectorAll('.dropdown a').forEach(a => {
-			a.addEventListener('click', () => {
-				profile.classList.remove('open');
-				profile.setAttribute('aria-expanded', 'false');
+		const indicatorTrack = wrapper.parentElement?.querySelector('.page-indicator .pi-track');
+		if (indicatorTrack) {
+			indicatorTrack.innerHTML = '';
+			for (let i = 0; i < pages; i++) {
+				const dot = document.createElement('span');
+				dot.className = 'pi-dot' + (i === 0 ? ' is-active' : '');
+				indicatorTrack.appendChild(dot);
+			}
+		}
+		const updateIndicator = () => {
+			if (!indicatorTrack) return;
+			const baseIndex = ((index % N) + N) % N;
+			const currentPage = Math.floor(baseIndex / VISIBLE);
+			const dots = indicatorTrack.querySelectorAll('.pi-dot');
+			dots.forEach((d, i) => {
+				if (i === currentPage) d.classList.add('is-active'); else d.classList.remove('is-active');
 			});
-		});
+		};
+		const transitionCSS = 'transform 0.5s ease';
+		const slidesAll = () => track.querySelectorAll('.recommendation-item');
+		const gap = 15;
+		const getWidth = () => slidesAll()[0].offsetWidth;
+		const applyTransform = (animate = true) => {
+			track.style.transition = animate ? transitionCSS : 'none';
+			const w = getWidth();
+			const offset = index * (w + gap);
+			track.style.transform = `translateX(-${offset}px)`;
+		};
 
-		document.addEventListener('click', (e) => {
-			if (profile.classList.contains('open') && !profile.contains(e.target)) {
-				profile.classList.remove('open');
-				profile.setAttribute('aria-expanded', 'false');
+		requestAnimationFrame(() => applyTransform(false));
+
+		const normalizeIndex = () => {
+			if (index >= 2 * N) {
+				index -= N;
+				applyTransform(false);
+			} else if (index < N) {
+				index += N;
+				applyTransform(false);
 			}
+		};
+
+		let locking = false;
+		const step = (dir) => {
+			if (locking) return;
+			locking = true;
+			const stepSize = Math.min(VISIBLE, N);
+			index += dir === 'next' ? stepSize : -stepSize;
+			applyTransform(true);
+			updateIndicator();
+		};
+
+		nextBtn?.addEventListener('click', () => step('next'));
+		prevBtn?.addEventListener('click', () => step('prev'));
+
+		track.addEventListener('transitionend', e => {
+			if (e.propertyName !== 'transform') return;
+			normalizeIndex();
+			updateIndicator();
+			requestAnimationFrame(() => { locking = false; });
 		});
-	}
 
-	const lists = document.querySelectorAll('.recommendation-list');
-	lists.forEach(list => {
-		let isDragging = false;
-		let startX = 0;
-		let scrollStart = 0;
-		let moved = false;
+		updateIndicator();
 
-		const onPointerDown = (e) => {
-			if (e.button !== undefined && e.button !== 0) return;
-			isDragging = true;
-			moved = false;
-			startX = e.clientX;
-			scrollStart = list.scrollLeft;
-			list.setPointerCapture(e.pointerId);
-			list.classList.add('dragging');
-		};
-
-		const onPointerMove = (e) => {
-			if (!isDragging) return;
-			const dx = e.clientX - startX;
-			if (Math.abs(dx) > 5) moved = true;
-			list.scrollLeft = scrollStart - dx;
-		};
-
-		const onPointerUp = (e) => {
-			if (!isDragging) return;
-			isDragging = false;
-			list.classList.remove('dragging');
-			list.releasePointerCapture(e.pointerId);
-		};
-
-		list.addEventListener('pointerdown', onPointerDown);
-		list.addEventListener('pointermove', onPointerMove);
-		list.addEventListener('pointerup', onPointerUp);
-		list.addEventListener('pointercancel', onPointerUp);
-		list.addEventListener('pointerleave', (e) => {
-			if (isDragging) onPointerUp(e);
-		});
+		const muteBtn = document.querySelector('.mute-btn');
+		if (muteBtn) {
+			const icon = muteBtn.querySelector('i');
+			let muted = true;
+			muteBtn.addEventListener('click', () => {
+				muted = !muted;
+				if (icon) {
+					icon.className = muted ? 'fa-solid fa-volume-xmark' : 'fa-solid fa-volume-high';
+				}
+				muteBtn.setAttribute('aria-pressed', muted ? 'true' : 'false');
+				muteBtn.setAttribute('aria-label', muted ? '음소거 해제' : '음소거');
+			});
+		}
 	});
-
-
-	const muteBtn = document.querySelector('.mute-btn');
-	if (muteBtn) {
-		const icon = muteBtn.querySelector('i');
-		let muted = true; // 초기 상태: 음소거 (volume-xmark 아이콘 가정)
-		muteBtn.addEventListener('click', () => {
-			muted = !muted;
-			if (icon) {
-				// Font Awesome 아이콘 클래스 교체
-				icon.className = muted ? 'fa-solid fa-volume-xmark' : 'fa-solid fa-volume-high';
-			}
-			// 접근성용 상태 속성 (screen reader)
-			muteBtn.setAttribute('aria-pressed', muted ? 'true' : 'false');
-			muteBtn.setAttribute('aria-label', muted ? '음소거 해제' : '음소거');
-		});
-	}
 });
-
