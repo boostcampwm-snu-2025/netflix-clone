@@ -10,16 +10,30 @@
     <link rel="stylesheet" href="styles/style.css" />
     <script
       type="module"
+      defer
       src="components/languageSelect/languageSelect.js"
     ></script>
-    <script type="module" src="components/appButton/appButton.js"></script>
-    <script type="module" src="components/movieCard/movieCard.js"></script>
-    <script type="module" src="components/featureCard/featureCard.js"></script>
     <script
       type="module"
+      defer
+      src="components/appButton/appButton.js"
+    ></script>
+    <script
+      type="module"
+      defer
+      src="components/movieCard/movieCard.js"
+    ></script>
+    <script
+      type="module"
+      defer
+      src="components/featureCard/featureCard.js"
+    ></script>
+    <script
+      type="module"
+      defer
       src="components/faqAccordion/faqAccordion.js"
     ></script>
-    <script type="module" src="scripts/index.js"></script>
+    <script type="module" defer src="scripts/index.js"></script>
   </head>
   <body>
     <main>
@@ -29,11 +43,13 @@
           src="assets/images/background.jpg"
           alt="background"
         />
-        <header>
-          <img src="assets/images/logo.svg" alt="logo" />
-          <div class="header-right">
-            <language-select></language-select>
-            <app-button size="sm">로그인</app-button>
+        <header class="header">
+          <img class="header__logo" src="assets/images/logo.svg" alt="logo" />
+          <div class="header__actions">
+            <language-select class="header__language-select"></language-select>
+            <app-button class="header__login-button" size="sm"
+              >로그인</app-button
+            >
           </div>
         </header>
         <div class="content">
