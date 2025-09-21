@@ -246,6 +246,18 @@ main {
   margin-top: 0;
 }
 
+.slider-content {
+  position: inherit;
+  display: flex;
+  gap: var(--spacing-8);
+  overflow-x: auto;
+  padding-bottom: var(--spacing-8);
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+
+
+}
+
 .slider-container {
   display: flex;
   
@@ -263,33 +275,32 @@ main {
   display: none; /* 크롬, 사파리, 오페라 */
 }
 
-.slider-content {
-  display: flex;
-  gap: var(--spacing-8);
-  overflow-x: auto;
-  padding-bottom: var(--spacing-8);
-  scroll-behavior: smooth;
-  overflow-x: hidden;
-
-
-}
 
 
 .slider-button {
   position: absolute;
-  top: 56%;
+  top: 45%;
   transform: translateY(-50%);
   background-color: var(--overlay);
   border: none;
-  width: 60px;
+  width: 40px;
   height: 190px;
   cursor: pointer;
-  z-index: 10;
+  z-index: 3;
   transition: background-color 0.3s ease;
 }
-.slider-button:hover {
-  background-color: var(--muted);
-  opacity: 0.8;
+
+.hero .slider-button.prev-button { left: 0;  border-top-right-radius: var(--radius); border-bottom-right-radius: var(--radius); }
+.hero .slider-button.next-button { right: 0; border-top-left-radius:  var(--radius); border-bottom-left-radius:  var(--radius); }
+
+.hero .slider-button:hover { background-color: var(--muted); opacity: 0.9; }
+
+.slider-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  fill: var(--foreground);
 }
 .prev-button {
   left: 0;
