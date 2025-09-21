@@ -1,0 +1,208 @@
+.flex_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--black);
+    position: sticky;
+    top: 0;
+    z-index: 3;
+}
+
+.flex_header_left {
+    display: flex;
+    align-items: center;
+}
+
+.header-tabs {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.logo {
+    height: 100px;
+    width: auto;
+    padding-left: 24px;
+    padding-right: 8px;
+}
+
+.logo_cutting {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    overflow: hidden;
+}
+
+.li-header {
+    font-size: 13px; 
+    color: rgb(190, 190, 190, 1.0); 
+    margin-left: 8px;
+}
+
+.li-header:hover {
+    color: var(--white);
+}
+
+.magnifier {
+    height: 23px;
+    width: auto;
+}
+
+.bell-wrapper {
+  position: relative; 
+  display: flex;
+  align-items: center;
+}
+
+.bell {
+    height: 22px;
+    width: auto;
+    padding: 0px;
+    cursor: pointer;
+    margin: 2px 9px;
+}
+
+.bell-wrapper::before {
+  content: '';
+  position: absolute;
+  
+  /* 위치: 아이콘 바로 아래부터 시작 */
+  top: 100%; 
+  left: 0;
+  right: 0;
+  
+  height: 16px; 
+}
+
+.modal__bell {
+    display: none;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    gap: 16px 20px;
+    background-color: rgba(20, 20, 20, 0.9);
+    position: absolute; 
+    top: 52px;
+    right: -10px; 
+    width: 400px;
+    height: auto;
+    border: 1px solid #555;
+    padding-top: 12px;
+    padding-left: 12px;
+    z-index: 100;
+}
+
+.modal__bell::after {
+  /* 가상 요소 필수 속성 */
+  content: ''; 
+  
+  /* container를 기준으로 위치를 잡기 위해 absolute 사용 */
+  position: absolute; 
+  
+  /* 위치 조정 */
+  top: -10px;  /* 컨테이너 위쪽(- 방향)으로 10px 이동 */
+  right: 15px; /* 컨테이너 오른쪽에서 15px 떨어진 곳에 배치 */
+
+  /* 삼각형 모양 만들기 */
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;  /* 왼쪽 투명 테두리 */
+  border-right: 10px solid transparent; /* 오른쪽 투명 테두리 */
+  border-bottom: 10px solid rgba(255, 255, 255, 0.9); /* 아래쪽 테두리에 색상을 주어 삼각형을 만듦 */
+}
+
+.bell-wrapper:hover .modal__bell {
+  display: grid;
+}
+
+.modal__font {
+    color: var(--white);
+    font-size: 15px;
+}
+
+.date-late {
+    color: var(--gray);
+    font-size: 10px;
+}
+
+.profile-wrapper {
+  position: relative; 
+  display: flex;
+  align-items: center;
+}
+
+.basic_profile{
+    height: 26px;
+    width: auto;
+    margin-left: 0px;
+    border-radius: var(--standard-border-radius);
+}
+
+.profile-wrapper::before {
+  content: '';
+  position: absolute;
+  
+  /* 위치: 아이콘 바로 아래부터 시작 */
+  top: 100%; 
+  left: 0;
+  right: 0;
+  
+  height: 16px; 
+}
+
+.modal__profile {
+    display: none;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    gap: 16px 20px;
+    background-color: rgba(20, 20, 20, 0.9);
+    position: absolute; 
+    top: 52px;
+    right: -15px; 
+    width: 200px;
+    height: auto;
+    border: 1px solid #555;
+    padding-top: 12px;
+    padding-left: 12px;
+    z-index: 100;
+}
+
+.modal__profile::after {
+  /* 가상 요소 필수 속성 */
+  content: ''; 
+  
+  /* container를 기준으로 위치를 잡기 위해 absolute 사용 */
+  position: absolute; 
+  
+  /* 위치 조정 */
+  top: -10px;  /* 컨테이너 위쪽(- 방향)으로 10px 이동 */
+  right: 15px; /* 컨테이너 오른쪽에서 15px 떨어진 곳에 배치 */
+
+  /* 삼각형 모양 만들기 */
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;  /* 왼쪽 투명 테두리 */
+  border-right: 10px solid transparent; /* 오른쪽 투명 테두리 */
+  border-bottom: 10px solid rgba(255, 255, 255, 0.9); /* 아래쪽 테두리에 색상을 주어 삼각형을 만듦 */
+}
+
+.profile-wrapper:hover .modal__profile {
+  display: grid;
+}
+
+.modal__font2 {
+    color: var(--white);
+    font-size: 12px;
+}
+
+.triangle {
+    height: 8px;
+    width: auto;
+    margin-left: 8px;
+    margin-right: 40px;
+    transition: transform 0.3s ease;
+}
+
+.triangle.on {
+    transform: rotate(180deg);
+}
+
