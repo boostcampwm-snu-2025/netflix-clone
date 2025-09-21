@@ -105,12 +105,19 @@ main > *:not(.hero__background) {
   font-weight: 400;
 }
 
-.ranking-list {
+.top-contents {
   display: flex;
-  gap: 40px;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.top-contents__list {
+  display: flex;
+  gap: 22px;
   width: 100%;
   overflow-x: auto;
-  height: fit-content;
+  height: auto;
+  padding: 0 22px;
 }
 
 .feature-list {
@@ -122,11 +129,6 @@ main > *:not(.hero__background) {
   display: flex;
   flex-direction: column;
   gap: 8px;
-}
-
-h2 {
-  font-size: 24px;
-  font-weight: 500;
 }
 
 .hero::before {
