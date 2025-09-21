@@ -290,10 +290,12 @@ main {
   transition: background-color 0.3s ease;
 }
 
-.hero .slider-button.prev-button { left: 0;  border-top-right-radius: var(--radius); border-bottom-right-radius: var(--radius); }
-.hero .slider-button.next-button { right: 0; border-top-left-radius:  var(--radius); border-bottom-left-radius:  var(--radius); }
+.slider-button.prev-button { left: 0;  border-top-right-radius: var(--radius); border-bottom-right-radius: var(--radius); }
+.slider-button.next-button { right: 0; border-top-left-radius:  var(--radius); border-bottom-left-radius:  var(--radius); }
 
-.hero .slider-button:hover { background-color: var(--muted); opacity: 0.9; }
+.slider-button:hover { background-color: var(--muted); opacity: 0.9; }
+
+.top-10-rank-slider .slider-button { height: 250px; top: 48%; }
 
 .slider-icon {
   position: absolute;
