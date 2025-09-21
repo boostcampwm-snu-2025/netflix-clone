@@ -281,7 +281,7 @@ a:focus-visible, button:focus-visible {
   filter: drop-shadow(0 -1px 0 rgba(255,255,255,0.08));
 }
 
-/* 열림 상태 (hover & focus-in) */
+/* 열림 상태 */
 .menu:hover .menu__panel,
 .menu:focus-within .menu__panel {
   opacity: 1; visibility: visible; pointer-events: auto;
@@ -348,18 +348,17 @@ a:focus-visible, button:focus-visible {
   padding-inline: 2px; 
 }
 
-/* 트랙: 캐러셀 내부에서는 flex 가로 스크롤로 전환 */
 .carousel .carousel__track {
-  display: flex;
+  display: flex; 
   gap: var(--card-gap);
   will-change: transform;
   transform: translate3d(0,0,0);
   transition: transform 380ms ease;
 }
 
-/* 아이템 너비: per-view에 따라 JS로 width% 지정됨 */
 .carousel .card {
   flex: 0 0 auto;
+  width: auto;
 }
 
 .carousel__btn {
