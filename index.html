@@ -25,17 +25,52 @@
         <div class="header__actions">
           <!-- 검색 -->
           <span id="search-icon">🔍</span>
+
           <!-- 알림 -->
           <span id="notif-icon">🔔</span>
-          <div class="modal" id="notif-modal">알림 모달</div>
-          <!-- 프로필-->
+          <div class="modal notification-modal" id="notif-modal">
+            <div class="modal-header">최근 알림</div>
+            <ul class="modal-list">
+              <li>
+                <img src="src/cat.png" alt="thumb" />
+                <div class="modal-text">
+                  <p class="title">9월 12일 공개</p>
+                  <p class="desc">지금 예고편을 시청하세요</p>
+                </div>
+              </li>
+              <li>
+                <img src="src/cat.png" alt="thumb" />
+                <div class="modal-text">
+                  <p class="title">신규 콘텐츠</p>
+                  <p class="desc">나는 생존자다</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- 프로필 -->
           <img
             id="profile-icon"
             class="profile"
             src="./src/profile.png"
             alt="프로필"
           />
-          <div class="modal" id="profile-modal">프로필 모달</div>
+          <div class="modal profile-modal" id="profile-modal">
+            <ul class="profile-list">
+              <li><img src="src/cat.png" alt="kids" /><span>키즈</span></li>
+              <li>
+                <img src="src/cat.png" alt="edit" /><span>프로필 관리</span>
+              </li>
+              <li>
+                <img src="src/cat.png" alt="switch" /><span>프로필 이전</span>
+              </li>
+              <li><img src="src/cat.png" alt="account" /><span>계정</span></li>
+              <li>
+                <img src="src/cat.png" alt="help" /><span>고객 센터</span>
+              </li>
+            </ul>
+            <div class="logout">넷플릭스에서 로그아웃</div>
+          </div>
         </div>
       </div>
     </header>
