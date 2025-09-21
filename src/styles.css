@@ -18,6 +18,8 @@
   --shadow-sm: 0 2px 8px rgba(0,0,0,.35);
   --card-gap: var(--space-16);
   --card-scale: 1.08; /* hover scale */
+
+  --menu-gap: 12px;
 }
 
 * { box-sizing: border-box; }
@@ -238,10 +240,18 @@ a:focus-visible, button:focus-visible {
 
 .menu { position: relative; }
 .menu__trigger { display: inline-flex; align-items: center; }
-
+.menu::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  height: var(--menu-gap);   /* 갭과 동일 */
+  z-index: 2999;
+}
 .menu__panel {
   position: absolute;
-  top: calc(100% + 12px);
+  top: calc(100% + var(--menu-gap));
   left: 0; /* 기본은 왼쪽 정렬 */
   min-width: 320px;
   max-height: min(70vh, 560px);
