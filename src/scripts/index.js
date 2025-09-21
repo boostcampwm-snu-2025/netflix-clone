@@ -27,12 +27,12 @@ document.addEventListener('DOMContentLoaded', () => {
       movieList.appendChild(clonedCard);
     }
 
-    let currentScrollPosition = 0;
     const cardWidth = 180 + 32;
     const originalTotalCards = originalCards.length;
     const resetPoint = originalTotalCards * cardWidth;
 
     const autoScrollInterval = setInterval(() => {
+      let currentScrollPosition = movieList.scrollLeft;
       currentScrollPosition += cardWidth;
 
       movieList.scrollTo({
@@ -42,13 +42,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
       setTimeout(() => {
         if (currentScrollPosition >= resetPoint) {
-          currentScrollPosition = 0;
           movieList.scrollTo({
-            left: currentScrollPosition,
+            left: 0,
             behavior: 'auto',
           });
         }
-      }, 1000);
+      }, 600);
     }, 2500);
   }
 });
