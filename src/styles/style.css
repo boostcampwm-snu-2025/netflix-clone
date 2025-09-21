@@ -122,6 +122,15 @@ main > *:not(.hero__background) {
   gap: 22px;
   overflow-x: auto;
   height: auto;
+  -ms-overflow-style: none;
+}
+
+.top-contents__list::-webkit-scrollbar {
+  display: none;
+}
+
+.top-contents__list {
+  overscroll-behavior-x: none;
 }
 
 .reasons {

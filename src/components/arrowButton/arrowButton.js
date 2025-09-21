@@ -22,6 +22,30 @@ class ArrowButton extends HTMLElement {
       button.setAttribute('direction', this._pendingDirection);
       this._pendingDirection = null;
     }
+
+    this.querySelector('.arrow-button').addEventListener('click', () => {
+      this.scrollMovieCards();
+    });
+  }
+
+  scrollMovieCards() {
+    const direction = this.getAttribute('direction');
+    const container = this.closest('.top-contents__container');
+    const movieList = container.querySelector('.top-contents__list');
+
+    const firstCard = movieList.querySelector('.top-contents__item');
+    if (firstCard) {
+      const cardWidth = firstCard.offsetWidth;
+
+      const listStyle = getComputedStyle(movieList);
+      const gap = parseInt(listStyle.columnGap || listStyle.gap || 0);
+
+      const totalWidth = cardWidth + gap;
+
+      const scrollAmount = totalWidth * (direction === 'left' ? -1 : 1);
+
+      movieList.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    }
   }
 
   attributeChangedCallback(name, oldValue, newValue) {

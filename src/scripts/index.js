@@ -6,4 +6,16 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  const movieList = document.querySelector('.top-contents__list');
+
+  if (movieList) {
+    movieList.addEventListener(
+      'wheel',
+      e => {
+        e.preventDefault();
+      },
+      { passive: false }
+    );
+  }
 });
