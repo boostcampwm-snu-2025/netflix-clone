@@ -3,6 +3,7 @@ const profile_modal = document.querySelector("#profile_modal");
 
 const alarm_modal_body = document.querySelector("#alarm_modal_body");
 const profile_modal_body = document.querySelector("#profile_modal_body");
+
 alarm_modal.addEventListener("mouseover", () => {
     alarm_modal_body.style.display = "flex";
 })

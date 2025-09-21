@@ -95,7 +95,7 @@
 .MovieCard{
     aspect-ratio: 16/9;
     overflow: hidden;
-    width: 300px;
+    width: calc((var(--page-width)/4) - 2*var(--all-margin));
     height: auto;
     margin: var(--all-margin);
 }
