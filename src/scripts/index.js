@@ -17,5 +17,38 @@ document.addEventListener('DOMContentLoaded', () => {
       },
       { passive: false }
     );
+
+    const originalCards = Array.from(movieList.children);
+    const cardsToClone = 5;
+
+    for (let i = 0; i < cardsToClone; i++) {
+      const clonedCard = originalCards[i].cloneNode(true);
+      clonedCard.classList.add('cloned-card');
+      movieList.appendChild(clonedCard);
+    }
+
+    let currentScrollPosition = 0;
+    const cardWidth = 180 + 32;
+    const originalTotalCards = originalCards.length;
+    const resetPoint = originalTotalCards * cardWidth;
+
+    const autoScrollInterval = setInterval(() => {
+      currentScrollPosition += cardWidth;
+
+      movieList.scrollTo({
+        left: currentScrollPosition,
+        behavior: 'smooth',
+      });
+
+      setTimeout(() => {
+        if (currentScrollPosition >= resetPoint) {
+          currentScrollPosition = 0;
+          movieList.scrollTo({
+            left: currentScrollPosition,
+            behavior: 'auto',
+          });
+        }
+      }, 1000);
+    }, 2500);
   }
 });
