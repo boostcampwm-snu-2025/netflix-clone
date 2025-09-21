@@ -114,10 +114,21 @@ main > *:not(.hero__background) {
 .top-contents__list {
   display: flex;
   gap: 22px;
-  width: 100%;
   overflow-x: auto;
   height: auto;
   padding: 0 22px;
+}
+
+.reasons {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.reasons__list {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
 }
 
 .feature-list {
