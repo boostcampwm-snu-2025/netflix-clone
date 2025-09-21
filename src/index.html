@@ -146,19 +146,34 @@
         </div>
       </div>
     </section>
-    
+
     <!-- 섹션 1: 회원님을 위해 엄선한 오늘의 콘텐츠 -->
     <section class="section page" aria-labelledby="recommend">
-      <h2 id="recommend" class="section__title">회원님을 위해 엄선한 오늘의 콘텐츠</h2>
-      <div class="row">
-        <article class="card"><a href="#" aria-label="귀멸의 칼날"><img class="card__img" src="https://placehold.co/600x400/jpg" alt="귀멸의 칼날 포스터" /></a></article>
-        <article class="card"><a href="#" aria-label="트리거"><img class="card__img" src="https://placehold.co/600x400/jpg" alt="트리거 포스터" /></a></article>
-        <article class="card"><a href="#" aria-label="미션 임파서블"><img class="card__img" src="https://placehold.co/600x400/jpg" alt="미션 임파서블 포스터" /></a></article>
-        <article class="card"><a href="#" aria-label="폭싹 속았수다"><img class="card__img" src="https://placehold.co/600x400/jpg" alt="폭싹 속았수다 포스터" /></a></article>
-        <article class="card"><a href="#" aria-label="브레이킹 배드"><img class="card__img" src="https://placehold.co/600x400/jpg" alt="브레이킹 배드 포스터" /></a></article>
-        <article class="card"><a href="#" aria-label="폭군의 셰프"><img class="card__img" src="https://placehold.co/600x400/jpg" alt="폭군의 셰프 포스터" /></a></article>
+      <div class="carousel" data-per-view="6" data-step="6">
+        <div class="carousel__head">
+          <h2 id="recommend" class="section__title">회원님을 위해 엄선한 오늘의 콘텐츠</h2>
+          <div class="carousel__pager" aria-hidden="true"></div>
+        </div>
+        <div class="carousel__viewport" role="region" aria-label="회원님을 위해 엄선한 오늘의 콘텐츠">
+          <div class="row carousel__track"> <!--처음 입력했던 6개 카드 복사함(캐러셀 확인)-->
+            <article class="card"><a href="#" aria-label="귀멸의 칼날"><img class="card__img" src="https://placehold.co/600x400?text=1"jpg" alt="귀멸의 칼날 포스터" /></a></article>
+            <article class="card"><a href="#" aria-label="트리거"><img class="card__img" src="https://placehold.co/600x400?text=2" alt="트리거 포스터" /></a></article>
+            <article class="card"><a href="#" aria-label="미션 임파서블"><img class="card__img" src="https://placehold.co/600x400?text=3" alt="미션 임파서블 포스터" /></a></article>
+            <article class="card"><a href="#" aria-label="폭싹 속았수다"><img class="card__img" src="https://placehold.co/600x400?text=4" alt="폭싹 속았수다 포스터" /></a></article>
+            <article class="card"><a href="#" aria-label="브레이킹 배드"><img class="card__img" src="https://placehold.co/600x400?text=5" alt="브레이킹 배드 포스터" /></a></article>
+            <article class="card"><a href="#" aria-label="폭군의 셰프"><img class="card__img" src="https://placehold.co/600x400?text=6" alt="폭군의 셰프 포스터" /></a></article>
+            <article class="card"><a href="#" aria-label="귀멸의 칼날"><img class="card__img" src="https://placehold.co/600x400?text=7" alt="귀멸의 칼날 포스터" /></a></article>
+            <article class="card"><a href="#" aria-label="트리거"><img class="card__img" src="https://placehold.co/600x400?text=8" alt="트리거 포스터" /></a></article>
+            <article class="card"><a href="#" aria-label="미션 임파서블"><img class="card__img" src="https://placehold.co/600x400?text=9" alt="미션 임파서블 포스터" /></a></article>
+            <article class="card"><a href="#" aria-label="폭싹 속았수다"><img class="card__img" src="https://placehold.co/600x400?text=10" alt="폭싹 속았수다 포스터" /></a></article>
+            <article class="card"><a href="#" aria-label="브레이킹 배드"><img class="card__img" src="https://placehold.co/600x400?text=11" alt="브레이킹 배드 포스터" /></a></article>
+            <article class="card"><a href="#" aria-label="폭군의 셰프"><img class="card__img" src="https://placehold.co/600x400?text=12" alt="폭군의 셰프 포스터" /></a></article>
+          </div>
+        </div>
+        <button class="carousel__btn carousel__btn--prev" aria-label="이전">‹</button>
+        <button class="carousel__btn carousel__btn--next" aria-label="다음">›</button>
       </div>
-    </section>  
+    </section>
 
     <!-- 섹션 2: 연애 세포를 깨우는 작품들 -->
     <section class="section page" aria-labelledby="lovely-videos">

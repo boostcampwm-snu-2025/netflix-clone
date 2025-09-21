@@ -334,3 +334,66 @@ a:focus-visible, button:focus-visible {
 @media (prefers-reduced-motion: reduce) {
   .menu__panel { transition: none; }
 }
+
+.carousel { position: relative; }
+.carousel__head {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: var(--space-16);
+}
+.carousel__viewport {
+  overflow: hidden;
+  position: relative;
+  padding-inline: 2px; /* 미세한 잘림 방지 */
+}
+
+/* 트랙: 캐러셀 내부에서는 flex 가로 스크롤로 전환 */
+.carousel .carousel__track {
+  display: flex;
+  gap: var(--card-gap);
+  will-change: transform;
+  transform: translate3d(0,0,0);
+  transition: transform 380ms ease;
+}
+
+/* 아이템 너비: per-view에 따라 JS로 width% 지정됨 */
+.carousel .card {
+  flex: 0 0 auto;
+}
+
+/* 네비 버튼 */
+.carousel__btn {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  width: 48px; height: 64px;
+  display: grid; place-items: center;
+  font-size: 28px; font-weight: 700;
+  color: #fff; background: rgba(0,0,0,.35);
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,.15);
+  cursor: pointer;
+  opacity: 0; pointer-events: none;
+  transition: opacity .18s ease; background: .18s ease;
+  z-index: 10;
+}
+.carousel__btn--prev { left: -8px; }
+.carousel__btn--next { right: -8px; }
+.carousel:hover .carousel__btn { opacity: 1; pointer-events: auto; }
+.carousel__btn:hover { background: rgba(0,0,0,.55); }
+
+/* 페이지 인디케이터 (우상단 바들) */
+.carousel__pager {
+  display: inline-flex; gap: 8px; align-items: center;
+  opacity: .9;
+}
+.carousel__pager .dot {
+  width: 44px; height: 3px; border-radius: 999px;
+  background: rgba(255,255,255,.25);
+  transform: translateZ(0);
+}
+.carousel__pager .dot.is-active {
+  background: #fff;
+}
+
+@media (max-width: 1280px) {
+  .carousel__btn { width: 42px; height: 56px; }
+  .carousel__pager .dot { width: 36px; }
+}
