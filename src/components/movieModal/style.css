@@ -89,3 +89,15 @@
 .movie-modal__play-button {
   align-self: flex-start;
 }
+
+.movie-modal__close {
+  position: absolute;
+  top: 16px;
+  right: 24px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+  width: 24px;
+  height: 24px;
+}
