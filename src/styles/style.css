@@ -1,3 +1,20 @@
+.header {
+  display: flex;
+  height: 88px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__logo {
+  height: 40px;
+}
+
+.header__actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
 .ranking-list {
   display: flex;
   gap: 40px;
@@ -15,11 +32,6 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
-}
-
-body {
-  padding: 0;
-  margin: 0;
 }
 
 main {
@@ -55,15 +67,6 @@ section:not(.hero) {
   padding: 0 148px;
 }
 
-.hero header {
-  position: relative;
-  z-index: 2;
-  height: 88px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
 .hero .content {
   position: absolute;
   top: 50%;
@@ -73,8 +76,7 @@ section:not(.hero) {
   max-width: 800px;
 }
 
-.hero .content,
-.hero header {
+.hero .content {
   position: relative;
   z-index: 1;
 }
@@ -139,23 +141,6 @@ section:not(.hero) {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-}
-
-.hero header {
-  height: 88px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.hero header img {
-  height: 40px;
-}
-
-.header-right {
-  display: flex;
-  align-items: center;
-  gap: 16px;
 }
 
 footer {
