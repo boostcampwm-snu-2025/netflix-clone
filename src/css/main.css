@@ -5,6 +5,7 @@ main {
 
 .hero {
     position: relative;
+    z-index: 1;
 }
 
 .hero .background {
@@ -37,8 +38,6 @@ main {
     margin-left: 0;
     margin-bottom: 1rem;
     margin-right: 1rem;
-    background-color: white;
-    color: black;
     border: 0px;
     border-radius: 4px;
     padding: 0.8rem 2rem;
@@ -89,13 +88,35 @@ main {
 }
 
 .categories {
+    z-index: 2;
     margin-top: -200px;
+}
+
+.categories h2 {
     padding: 0 var(--page-padding);
+}
+
+.categories .slider {
+    display: grid;
+    grid-template-columns: var(--page-padding) 1360px var(--page-padding);
+}
+
+.slider button {
+    z-index: 3;
+    background-color: rgba(20, 20, 20, 0.5);
+    border: none;
+    height: 100%;
+    color: #fff;
+    font-size: 2.5vw;
+}
+
+.slider button:hover {
+    background-color: rgba(20, 20, 20, 0.8);
 }
 
 .categories ol, .categories ul {
     display: flex;
-    overflow-y: scroll;
+    transition: transform 0.5s ease-in-out;
 }
 
 .categories .rank a {
@@ -122,8 +143,25 @@ main {
 }
 
 .categories .regular img {
-    width: 272px;
+    width: 264px;
     margin: 4px;
     aspect-ratio: 341/192;
     border-radius: 4px;
+}
+
+.page-indicator {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 var(--page-padding);
+  gap: 4px;
+}
+
+.page-indicator span {
+  width: 12px;
+  height: 2px;
+  background-color: #555;
+}
+
+.page-indicator span.active {
+  background-color: #fff;
 }

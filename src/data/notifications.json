@@ -1,0 +1,20 @@
+[
+  {
+    "order": 1,
+    "title": "오늘 밤, 딱 좋은 추천 콘텐츠",
+    "description": "맞춤 추천작을 둘러보세요.",
+    "age": "1일"
+  },
+  {
+    "order": 2,
+    "title": "오늘의 대한민국 TOP 10 콘텐츠",
+    "description": "모두 시청하기",
+    "age": "5일"
+  },
+  {
+    "order": 3,
+    "title": "신규 콘텐츠",
+    "description": "은중과 상연",
+    "age": "1주 전"
+  }
+]
