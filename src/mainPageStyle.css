@@ -29,6 +29,7 @@
     position:sticky; 
     top:0;
     background-color: rgba(255, 255, 255, 0.3);
+    z-index: 10;
     
 }
 
@@ -88,4 +89,46 @@
 
 .MovieCard:hover{
     transform: translateY(-10px) scale(1.10);
+}
+
+
+.menu_modal{
+    position: relative;
+    display: inline-block;
+}
+
+.modal{
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    
+    padding: var(--all-padding);
+    height: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    
+    top: 100%;
+    right: 0;
+    z-index: 100;
+}
+
+.modal_alarm{
+    width: 400px;
+}
+
+.modal_profile{
+    width: 180px;
+}
+
+.alarm_img{
+    aspect-ratio: 16/9;
+    overflow: hidden;
+    width: 250px;
+    height: auto;
+}
+
+.profile_img{
+    overflow: hidden;
+    width: 100px;
+    height: 100px;
+    
 }
