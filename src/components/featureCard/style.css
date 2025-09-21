@@ -2,7 +2,6 @@
   padding: 24px 16px;
   width: 242px;
   height: 315px;
-  padding: 16px;
   background: linear-gradient(149deg, #192247 0%, #210e17 96.86%);
   background-image: linear-gradient(
     149deg,
@@ -13,21 +12,25 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 16px;
 }
 
-::slotted(h3) {
+.feature-card__content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.feature-card__title {
   font-size: 24px;
-  line-height: 1.5;
 }
 
-::slotted(p) {
+.feature-card__description {
   font-size: 16px;
   color: rgba(255, 255, 255, 0.7);
   word-break: keep-all;
 }
 
-::slotted(img) {
+.feature-card__image {
   width: 72px;
   height: 72px;
   align-self: flex-end;

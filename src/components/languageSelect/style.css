@@ -1,4 +1,4 @@
-.select-wrapper {
+.language-select {
   width: 54px;
   height: 20px;
   padding: 6px 36px;
@@ -13,16 +13,16 @@
   font-size: var(--text-sm);
 }
 
-.select-wrapper select:focus {
+.language-select__dropdown:focus {
   outline: none;
 }
 
-.select-wrapper:focus-within {
+.language-select:focus-within {
   outline: 2px solid #fff;
   outline-offset: 2px;
 }
 
-.select-wrapper select {
+.language-select__dropdown {
   flex: 1;
   background: transparent;
   color: #fff;
@@ -31,6 +31,7 @@
   margin-left: -4px;
 }
 
-.select-wrapper img {
+language-select img {
   pointer-events: none;
+  width: 16px;
 }

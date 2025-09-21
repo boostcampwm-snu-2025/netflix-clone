@@ -10,137 +10,183 @@
     <link rel="stylesheet" href="styles/style.css" />
     <script
       type="module"
+      defer
       src="components/languageSelect/languageSelect.js"
     ></script>
-    <script type="module" src="components/appButton/appButton.js"></script>
-    <script type="module" src="components/movieCard/movieCard.js"></script>
-    <script type="module" src="components/featureCard/featureCard.js"></script>
     <script
       type="module"
+      defer
+      src="components/appButton/appButton.js"
+    ></script>
+    <script
+      type="module"
+      defer
+      src="components/movieCard/movieCard.js"
+    ></script>
+    <script
+      type="module"
+      defer
+      src="components/featureCard/featureCard.js"
+    ></script>
+    <script
+      type="module"
+      defer
       src="components/faqAccordion/faqAccordion.js"
     ></script>
-    <script type="module" src="scripts/index.js"></script>
+    <script
+      type="module"
+      defer
+      src="components/arrowButton/arrowButton.js"
+    ></script>
+    <script
+      type="module"
+      defer
+      src="components/movieModal/movieModal.js"
+    ></script>
+    <script type="module" defer src="scripts/index.js"></script>
   </head>
   <body>
     <main>
       <section class="hero">
         <img
-          class="background"
+          class="hero__background"
           src="assets/images/background.jpg"
           alt="background"
         />
-        <header>
-          <img src="assets/images/logo.svg" alt="logo" />
-          <div class="header-right">
-            <language-select></language-select>
-            <app-button size="sm">로그인</app-button>
+        <header class="header">
+          <img class="header__logo" src="assets/images/logo.svg" alt="logo" />
+          <div class="header__actions">
+            <language-select class="header__language-select"></language-select>
+            <app-button class="header__login-button" size="sm"
+              >로그인</app-button
+            >
           </div>
         </header>
-        <div class="content">
-          <h1>
+        <div class="hero__content">
+          <h1 class="hero__title">
             영화, 시리즈 등을 <br />
             무제한으로
           </h1>
-          <p>7,000원으로 시작하세요. 멤버십은 언제든지 해지 가능합니다.</p>
+          <p class="hero__description">
+            7,000원으로 시작하세요. 멤버십은 언제든지 해지 가능합니다.
+          </p>
         </div>
       </section>
       <div class="curve-container"></div>
       <section class="promo">
-        <p>
-          7,000원이면 만날 수 있는 넷플릭스. 가장 경제적인 광고형 멤버십을
-          이용해 보세요.
-        </p>
+        <img
+          class="promo__icon"
+          src="assets/images/popcorn.svg"
+          alt="popcorn"
+        />
+        <div class="promo__content">
+          <div class="promo__description">
+            <h3 class="promo__description-title">
+              7,000원이면 만날 수 있는 넷플릭스.
+            </h3>
+            <p class="promo__description-text">
+              가장 경제적인 광고형 멤버십을 이용해 보세요.
+            </p>
+          </div>
+          <app-button class="promo__button" size="md" variant="secondary"
+            >자세히 알아보기</app-button
+          >
+        </div>
       </section>
       <section class="top-contents">
-        <h2>지금 뜨는 콘텐츠</h2>
-        <ol class="ranking-list">
-          <li>
-            <movie-card
-              src="assets/images/thumbnails/movie1.webp"
-              alt="movie1"
-              title="movie1"
-              rank="1"
-            ></movie-card>
-          </li>
-          <li>
-            <movie-card
-              src="assets/images/thumbnails/movie2.webp"
-              alt="movie2"
-              title="movie2"
-              rank="2"
-            ></movie-card>
-          </li>
-          <li>
-            <movie-card
-              src="assets/images/thumbnails/movie3.webp"
-              alt="movie3"
-              title="movie3"
-              rank="3"
-            ></movie-card>
-          </li>
-          <li>
-            <movie-card
-              src="assets/images/thumbnails/movie4.webp"
-              alt="movie4"
-              title="movie4"
-              rank="4"
-            ></movie-card>
-          </li>
-          <li>
-            <movie-card
-              src="assets/images/thumbnails/movie5.webp"
-              alt="movie5"
-              title="movie5"
-              rank="5"
-            ></movie-card>
-          </li>
-          <li>
-            <movie-card
-              src="assets/images/thumbnails/movie6.webp"
-              alt="movie6"
-              title="movie6"
-              rank="6"
-            ></movie-card>
-          </li>
-          <li>
-            <movie-card
-              src="assets/images/thumbnails/movie7.webp"
-              alt="movie7"
-              title="movie7"
-              rank="7"
-            ></movie-card>
-          </li>
-          <li>
-            <movie-card
-              src="assets/images/thumbnails/movie8.webp"
-              alt="movie8"
-              title="movie8"
-              rank="8"
-            ></movie-card>
-          </li>
-          <li>
-            <movie-card
-              src="assets/images/thumbnails/movie9.webp"
-              alt="movie9"
-              title="movie9"
-              rank="9"
-            ></movie-card>
-          </li>
-          <li>
-            <movie-card
-              src="assets/images/thumbnails/movie10.webp"
-              alt="movie10"
-              title="movie10"
-              rank="10"
-            ></movie-card>
-          </li>
-        </ol>
+        <h2 class="top-contents__title">지금 뜨는 콘텐츠</h2>
+        <div class="top-contents__container">
+          <arrow-button direction="left"></arrow-button>
+          <ol class="top-contents__list">
+            <li class="top-contents__item">
+              <movie-card
+                src="assets/images/thumbnails/movie1.webp"
+                alt="movie1"
+                title="movie1"
+                rank="1"
+              ></movie-card>
+            </li>
+            <li class="top-contents__item">
+              <movie-card
+                src="assets/images/thumbnails/movie2.webp"
+                alt="movie2"
+                title="movie2"
+                rank="2"
+              ></movie-card>
+            </li>
+            <li class="top-contents__item">
+              <movie-card
+                src="assets/images/thumbnails/movie3.webp"
+                alt="movie3"
+                title="movie3"
+                rank="3"
+              ></movie-card>
+            </li>
+            <li class="top-contents__item">
+              <movie-card
+                src="assets/images/thumbnails/movie4.webp"
+                alt="movie4"
+                title="movie4"
+                rank="4"
+              ></movie-card>
+            </li>
+            <li class="top-contents__item">
+              <movie-card
+                src="assets/images/thumbnails/movie5.webp"
+                alt="movie5"
+                title="movie5"
+                rank="5"
+              ></movie-card>
+            </li>
+            <li class="top-contents__item">
+              <movie-card
+                src="assets/images/thumbnails/movie6.webp"
+                alt="movie6"
+                title="movie6"
+                rank="6"
+              ></movie-card>
+            </li>
+            <li class="top-contents__item">
+              <movie-card
+                src="assets/images/thumbnails/movie7.webp"
+                alt="movie7"
+                title="movie7"
+                rank="7"
+              ></movie-card>
+            </li>
+            <li class="top-contents__item">
+              <movie-card
+                src="assets/images/thumbnails/movie8.webp"
+                alt="movie8"
+                title="movie8"
+                rank="8"
+              ></movie-card>
+            </li>
+            <li class="top-contents__item">
+              <movie-card
+                src="assets/images/thumbnails/movie9.webp"
+                alt="movie9"
+                title="movie9"
+                rank="9"
+              ></movie-card>
+            </li>
+            <li class="top-contents__item">
+              <movie-card
+                src="assets/images/thumbnails/movie10.webp"
+                alt="movie10"
+                title="movie10"
+                rank="10"
+              ></movie-card>
+            </li>
+          </ol>
+          <arrow-button direction="right"></arrow-button>
+        </div>
       </section>
       <section class="reasons">
-        <h2>가입해야 하는 또 다른 이유</h2>
-        <ul class="feature-list">
-          <li>
-            <feature-card>
+        <h2 class="reasons__title">가입해야 하는 또 다른 이유</h2>
+        <ul class="reasons__list">
+          <li class="reasons__item">
+            <feature-card class="reasons__feature-card">
               <h3 slot="title">TV로 즐기세요</h3>
               <p slot="description">
                 스마트 TV, PlayStation, Xbox, Chromecast, Apple TV, 블루레이
@@ -153,8 +199,8 @@
               />
             </feature-card>
           </li>
-          <li>
-            <feature-card>
+          <li class="reasons__item">
+            <feature-card class="reasons__feature-card">
               <h3 slot="title">
                 즐겨 보는 콘텐츠를 <br />
                 저장해 오프라인으로 <br />
@@ -168,8 +214,8 @@
               />
             </feature-card>
           </li>
-          <li>
-            <feature-card>
+          <li class="reasons__item">
+            <feature-card class="reasons__feature-card">
               <h3 slot="title">
                 다양한 디바이스로 <br />
                 시청하세요
@@ -185,8 +231,8 @@
               />
             </feature-card>
           </li>
-          <li>
-            <feature-card>
+          <li class="reasons__item">
+            <feature-card class="reasons__feature-card">
               <h3 slot="title">
                 어린이 전용 프로필을 <br />
                 만들어 보세요
@@ -365,5 +411,6 @@
         </p>
       </div>
     </footer>
+    <movie-modal></movie-modal>
   </body>
 </html>

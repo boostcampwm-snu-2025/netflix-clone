@@ -6,4 +6,65 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  const movieList = document.querySelector('.top-contents__list');
+
+  if (movieList) {
+    movieList.addEventListener(
+      'wheel',
+      e => {
+        e.preventDefault();
+      },
+      { passive: false }
+    );
+
+    const originalCards = Array.from(movieList.children);
+    const cardsToClone = 5;
+
+    for (let i = 0; i < cardsToClone; i++) {
+      const clonedCard = originalCards[i].cloneNode(true);
+      clonedCard.classList.add('cloned-card');
+      movieList.appendChild(clonedCard);
+    }
+
+    const cardWidth = 180 + 32;
+    const originalTotalCards = originalCards.length;
+    const resetPoint = originalTotalCards * cardWidth;
+
+    const autoScrollInterval = setInterval(() => {
+      let currentScrollPosition = movieList.scrollLeft;
+      currentScrollPosition += cardWidth;
+
+      movieList.scrollTo({
+        left: currentScrollPosition,
+        behavior: 'smooth',
+      });
+
+      setTimeout(() => {
+        if (currentScrollPosition >= resetPoint) {
+          movieList.scrollTo({
+            left: 0,
+            behavior: 'auto',
+          });
+        }
+      }, 600);
+    }, 2500);
+  }
+
+  const movieModal = document.querySelector('movie-modal');
+
+  document.querySelectorAll('movie-card').forEach(card => {
+    card.addEventListener('open-movie-detail', e => {
+      const title = e.detail.title;
+
+      const movieData = {
+        image: `assets/images/movieDetailImg.webp`,
+        icon: `assets/images/movieDetailIcon.webp`,
+        category: ['추천 콘텐츠', '시리즈'],
+        description: `${title}의 상세 설명입니다.`,
+      };
+
+      movieModal.open(movieData);
+    });
+  });
 });

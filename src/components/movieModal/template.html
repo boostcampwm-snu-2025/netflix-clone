@@ -1,0 +1,20 @@
+<div class="movie-modal">
+  <div class="movie-modal__content">
+    <button class="movie-modal__close">
+      <img src="../../assets/icons/close.svg" alt="close" />
+    </button>
+    <div class="movie-modal__image-container">
+      <img class="movie-modal__image" data-slot="image" alt="movie image" />
+      <div class="movie-modal__overlay-content">
+        <img class="movie-modal__icon" data-slot="icon" alt="movie icon" />
+      </div>
+    </div>
+    <div class="movie-modal__info">
+      <div class="movie-modal__category" data-slot="category"></div>
+      <p class="movie-modal__description" data-slot="description"></p>
+      <app-button class="movie-modal__play-button" size="lg" variant="primary"
+        >시작하기</app-button
+      >
+    </div>
+  </div>
+</div>

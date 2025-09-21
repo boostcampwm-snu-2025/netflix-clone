@@ -1,4 +1,4 @@
-button {
+faq-accordion button {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -13,20 +13,20 @@ button {
   transition: background-color cubic-bezier(0.4, 0, 0.68, 0.06) 0.25s;
 }
 
-button:hover {
+faq-accordion button:hover {
   background-color: rgb(65, 65, 65);
 }
 
-::slotted(h3) {
+faq-accordion h3 {
   font-size: 24px;
   font-weight: 400;
 }
 
-::slotted(p) {
+faq-accordion p {
   word-break: keep-all;
 }
 
-.answer {
+faq-accordion .answer {
   padding: 24px;
   background-color: rgb(45, 45, 45);
   color: #fff;
@@ -38,6 +38,6 @@ button:hover {
   margin-top: 1px;
 }
 
-img {
+faq-accordion img {
   transition: transform cubic-bezier(0.32, 0.94, 0.6, 1) 0.32s;
 }
