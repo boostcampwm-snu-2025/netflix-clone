@@ -13,18 +13,39 @@
   gap: 12px;
 }
 
+.button[variant='secondary'] {
+  background-color: rgb(80, 80, 80);
+}
+
 .button[size='lg'] {
-  width: 167px;
-  height: 56px;
+  width: fit-content;
+  padding: 0 24px;
+  min-height: 56px;
   font-size: 24px;
 }
 
+.button[size='md'] {
+  width: fit-content;
+  padding: 0 20px;
+  min-height: 40px;
+  font-size: 16px;
+}
+
 .button[size='sm'] {
-  width: 68px;
-  height: 32px;
+  width: fit-content;
+  padding: 0 16px;
+  min-height: 32px;
   font-size: 14px;
 }
 
 .button:hover {
   background-color: rgb(195, 0, 10);
+}
+
+.button[variant='secondary']:hover {
+  background-color: rgb(100, 100, 100);
+}
+
+.button[variant='ghost']:hover {
+  background-color: rgba(255, 255, 255, 0.1);
 }

@@ -2,12 +2,13 @@ import { loadTemplate, loadStyle, processTextSlot } from '../utils.js';
 
 class AppButton extends HTMLElement {
   static get observedAttributes() {
-    return ['size'];
+    return ['size', 'variant'];
   }
 
   constructor() {
     super();
     this._pendingSize = null;
+    this._pendingVariant = null;
   }
 
   async connectedCallback() {
@@ -24,6 +25,12 @@ class AppButton extends HTMLElement {
       button.setAttribute('size', this._pendingSize);
       this._pendingSize = null;
     }
+
+    if (this._pendingVariant) {
+      const button = this.querySelector('.button');
+      button.setAttribute('variant', this._pendingVariant);
+      this._pendingVariant = null;
+    }
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
@@ -33,6 +40,15 @@ class AppButton extends HTMLElement {
         btn.setAttribute('size', newValue);
       } else {
         this._pendingSize = newValue;
+      }
+    }
+
+    if (name === 'variant' && newValue !== oldValue) {
+      const btn = this.querySelector('.button');
+      if (btn) {
+        this.setAttribute('variant', newValue);
+      } else {
+        this._pendingVariant = newValue;
       }
     }
   }
