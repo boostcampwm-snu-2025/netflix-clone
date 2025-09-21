@@ -1,4 +1,4 @@
-feature-card .feature-card {
+.feature-card {
   padding: 24px 16px;
   width: 242px;
   height: 315px;
@@ -16,18 +16,24 @@ feature-card .feature-card {
   gap: 16px;
 }
 
-feature-card h3 {
+.feature-card__content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.feature-card__title {
   font-size: 24px;
   line-height: 1.5;
 }
 
-feature-card p {
+.feature-card__description {
   font-size: 16px;
   color: rgba(255, 255, 255, 0.7);
   word-break: keep-all;
 }
 
-feature-card img {
+.feature-card__image {
   width: 72px;
   height: 72px;
   align-self: flex-end;
