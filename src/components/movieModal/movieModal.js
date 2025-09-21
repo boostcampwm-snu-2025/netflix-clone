@@ -17,7 +17,10 @@ class MovieModal extends HTMLElement {
     this.appendChild(template.content.cloneNode(true));
 
     this.addEventListener('click', e => {
-      if (e.target === this) {
+      if (
+        e.target.closest('.movie-modal') ||
+        e.target.closest('.movie-modal__close')
+      ) {
         this.close();
         this._isOpen = false;
       }
@@ -28,6 +31,9 @@ class MovieModal extends HTMLElement {
         this.close();
       }
     });
+
+    const content = this.querySelector('.movie-modal__content');
+    content?.addEventListener('click', e => e.stopPropagation());
   }
 
   open(movieData) {
