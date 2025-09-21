@@ -123,3 +123,17 @@ export function processSlots(component, template) {
     }
   }
 }
+
+export function updateSlotData(component, data) {
+  Object.entries(data).forEach(([key, value]) => {
+    const slotElement = component.querySelector(`[data-slot="${key}"]`);
+    if (!slotElement || value === undefined || value === null) return;
+
+    if (slotElement.tagName === 'IMG') {
+      slotElement.src = value;
+      slotElement.alt = slotElement.alt || `${key} image`;
+    } else {
+      slotElement.textContent = value;
+    }
+  });
+}

@@ -50,4 +50,21 @@ document.addEventListener('DOMContentLoaded', () => {
       }, 600);
     }, 2500);
   }
+
+  const movieModal = document.querySelector('movie-modal');
+
+  document.querySelectorAll('movie-card').forEach(card => {
+    card.addEventListener('open-movie-detail', e => {
+      const title = e.detail.title;
+
+      const movieData = {
+        image: `assets/images/movieDetailImg.webp`,
+        icon: `assets/images/movieDetailIcon.webp`,
+        category: ['추천 콘텐츠', '시리즈'],
+        description: `${title}의 상세 설명입니다.`,
+      };
+
+      movieModal.open(movieData);
+    });
+  });
 });
