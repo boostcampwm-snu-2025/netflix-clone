@@ -4,6 +4,7 @@
   <meta charset="utf-8" />
   <title>홈 - 넷플릭스 클론</title>
   <link rel="stylesheet" href="styles.css" />
+  <script type="module" src="./js/app.js"></script>
 </head>
 <body>
   <header class="header" role="banner">
@@ -38,20 +39,78 @@
         <!--키즈 메뉴-->
         <a class="kids" href="#">키즈</a>
         <!--알림 버튼-->
-        <button class="icon-btn bell" aria-label="알림" disabled>
-          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
-            <path d="M12 22a2 2 0 002-2h-4a2 2 0 002 2zm6-6v-5a6 6 0 10-12 0v5l-2 2v1h16v-1l-2-2z" fill="currentColor"/>
-          </svg>
-          <span class="badge" aria-hidden="true">00</span>
-        </button>
-        <!--프로필 버튼-->
-        <button class="profile" aria-label="프로필 메뉴" disabled>
-          <!--AI로부터 더미 이미지 사이트 추천받아 사용함-->
-          <img src="https://placehold.co/28x28" alt="프로필 사진" />
-          <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
-            <path d="M7 10l5 5 5-5z" fill="currentColor"/>
-          </svg>
-        </button>
+        <div class="menu" data-menu="notifications">
+          <button class="icon-btn bell menu__trigger"
+                  aria-label="알림"
+                  aria-haspopup="menu"
+                  aria-expanded="false"
+                  aria-controls="notif-menu">
+            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+              <path d="M12 22a2 2 0 002-2h-4a2 2 0 002 2zm6-6v-5a6 6 0 10-12 0v5l-2 2v1h16v-1l-2-2z" fill="currentColor"/>
+            </svg>
+            <span class="badge" aria-hidden="true">6</span>
+          </button>
+      
+          <div id="notif-menu" class="menu__panel menu__panel--right" role="menu" aria-label="알림 목록">
+            <ul class="menu__list">
+              <li role="none">
+                <a role="menuitem" class="notif" href="#">
+                  <img class="notif__thumb" src="https://placehold.co/64x40?text=N" alt="" />
+                  <div class="notif__body">
+                    <strong class="notif__title">9월 12일 공개 – 지금 예고편을 시청하세요</strong>
+                    <span class="notif__time">오늘</span>
+                  </div>
+                </a>
+              </li>
+              <li role="none">
+                <a role="menuitem" class="notif" href="#">
+                  <img class="notif__thumb" src="https://placehold.co/64x40?text=N" alt="" />
+                  <div class="notif__body">
+                    <strong class="notif__title">신규 콘텐츠 가이드 공개 예정작을 살펴보세요</strong>
+                    <span class="notif__time">4일 전</span>
+                  </div>
+                </a>
+              </li>
+              <!-- 필요 항목 더 추가 가능 -->
+            </ul>
+          </div>
+        </div>
+      
+        <!-- 프로필 메뉴 -->
+        <div class="menu" data-menu="profile">
+          <button class="profile menu__trigger"
+                  aria-label="프로필 메뉴"
+                  aria-haspopup="menu"
+                  aria-expanded="false"
+                  aria-controls="profile-menu">
+            <img src="https://placehold.co/28x28" alt="프로필 사진" />
+            <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+              <path d="M7 10l5 5 5-5z" fill="currentColor"/>
+            </svg>
+          </button>
+      
+          <div id="profile-menu" class="menu__panel menu__panel--right" role="menu" aria-label="프로필 메뉴">
+            <ul class="menu__list">
+              <li role="none">
+                <a role="menuitem" class="profile__item" href="#"><span class="profile__icon">✏️</span>프로필 관리</a>
+              </li>
+              <li role="none">
+                <a role="menuitem" class="profile__item" href="#"><span class="profile__icon">↗️</span>프로필에서 나가기</a>
+              </li>
+              <li role="none">
+                <a role="menuitem" class="profile__item" href="#"><span class="profile__icon">🙂</span>프로필 이전</a>
+              </li>
+              <li role="none">
+                <a role="menuitem" class="profile__item" href="#"><span class="profile__icon">👤</span>계정</a>
+              </li>
+              <li role="none">
+                <a role="menuitem" class="profile__item" href="#"><span class="profile__icon">❓</span>고객 센터</a>
+              </li>
+            </ul>
+            <div class="menu__divider" role="none"></div>
+            <a role="menuitem" class="profile__logout" href="#">넷플릭스에서 로그아웃</a>
+          </div>
+        </div>
       </div>
     </div>
   </header>
@@ -87,45 +146,86 @@
         </div>
       </div>
     </section>
-    
+
     <!-- 섹션 1: 회원님을 위해 엄선한 오늘의 콘텐츠 -->
     <section class="section page" aria-labelledby="recommend">
-      <h2 id="recommend" class="section__title">회원님을 위해 엄선한 오늘의 콘텐츠</h2>
-      <div class="row">
-        <article class="card"><a href="#" aria-label="귀멸의 칼날"><img class="card__img" src="https://placehold.co/600x400/jpg" alt="귀멸의 칼날 포스터" /></a></article>
-        <article class="card"><a href="#" aria-label="트리거"><img class="card__img" src="https://placehold.co/600x400/jpg" alt="트리거 포스터" /></a></article>
-        <article class="card"><a href="#" aria-label="미션 임파서블"><img class="card__img" src="https://placehold.co/600x400/jpg" alt="미션 임파서블 포스터" /></a></article>
-        <article class="card"><a href="#" aria-label="폭싹 속았수다"><img class="card__img" src="https://placehold.co/600x400/jpg" alt="폭싹 속았수다 포스터" /></a></article>
-        <article class="card"><a href="#" aria-label="브레이킹 배드"><img class="card__img" src="https://placehold.co/600x400/jpg" alt="브레이킹 배드 포스터" /></a></article>
-        <article class="card"><a href="#" aria-label="폭군의 셰프"><img class="card__img" src="https://placehold.co/600x400/jpg" alt="폭군의 셰프 포스터" /></a></article>
+      <div class="carousel" data-per-view="6" data-step="6">
+        <div class="carousel__head">
+          <h2 id="recommend" class="section__title">회원님을 위해 엄선한 오늘의 콘텐츠</h2>
+          <div class="carousel__pager" aria-hidden="true"></div>
+        </div>
+        <div class="carousel__viewport" role="region" aria-label="회원님을 위해 엄선한 오늘의 콘텐츠">
+          <div class="row carousel__track">
+            <article class="card"><a href="#" aria-label="귀멸의 칼날"><img class="card__img" src="https://placehold.co/600x400?text=1" alt="귀멸의 칼날 포스터" /></a></article>
+            <article class="card"><a href="#" aria-label="트리거"><img class="card__img" src="https://placehold.co/600x400?text=2" alt="트리거 포스터" /></a></article>
+            <article class="card"><a href="#" aria-label="미션 임파서블"><img class="card__img" src="https://placehold.co/600x400?text=3" alt="미션 임파서블 포스터" /></a></article>
+            <article class="card"><a href="#" aria-label="폭싹 속았수다"><img class="card__img" src="https://placehold.co/600x400?text=4" alt="폭싹 속았수다 포스터" /></a></article>
+            <article class="card"><a href="#" aria-label="브레이킹 배드"><img class="card__img" src="https://placehold.co/600x400?text=5" alt="브레이킹 배드 포스터" /></a></article>
+            <article class="card"><a href="#" aria-label="폭군의 셰프"><img class="card__img" src="https://placehold.co/600x400?text=6" alt="폭군의 셰프 포스터" /></a></article>
+            <article class="card"><a href="#" aria-label="터미널"><img class="card__img" src="https://placehold.co/600x400?text=7" alt="터미널 포스터" /></a></article>
+            <article class="card"><a href="#" aria-label="다운사이징"><img class="card__img" src="https://placehold.co/600x400?text=8" alt="다운사이징 포스터" /></a></article>
+            <article class="card"><a href="#" aria-label="언내추럴"><img class="card__img" src="https://placehold.co/600x400?text=9" alt="언내추럴 포스터" /></a></article>
+            <article class="card"><a href="#" aria-label="삼국지"><img class="card__img" src="https://placehold.co/600x400?text=10" alt="삼국지 포스터" /></a></article>
+            <article class="card"><a href="#" aria-label="설국열차"><img class="card__img" src="https://placehold.co/600x400?text=11" alt="설국열차 포스터" /></a></article>
+            <article class="card"><a href="#" aria-label="고스트 워"><img class="card__img" src="https://placehold.co/600x400?text=12" alt="고스트 워 포스터" /></a></article>
+          </div>
+        </div>
+        <button class="carousel__btn carousel__btn--prev" aria-label="이전">‹</button>
+        <button class="carousel__btn carousel__btn--next" aria-label="다음">›</button>
       </div>
-    </section>  
+    </section>
 
     <!-- 섹션 2: 연애 세포를 깨우는 작품들 -->
     <section class="section page" aria-labelledby="lovely-videos">
-      <h2 id="lovely-videos" class="section__title">연애 세포를 깨우는 작품들</h2>
-      <div class="row">
-        <article class="card"><a href="#" aria-label="고백의 역사"><img class="card__img" src="https://placehold.co/600x400/jpg" alt="고백의 역사 포스터" /></a></article>
-        <article class="card"><a href="#" aria-label="스타트업"><img class="card__img" src="https://placehold.co/600x400/jpg" alt="스타트업 포스터" /></a></article>
-        <article class="card"><a href="#" aria-label="미스터션샤인"><img class="card__img" src="https://placehold.co/600x400/jpg" alt="미스터션샤인 포스터" /></a></article>
-        <article class="card"><a href="#" aria-label="난홍"><img class="card__img" src="https://placehold.co/600x400/jpg" alt="난홍 포스터" /></a></article>
-        <article class="card"><a href="#" aria-label="어느 날 월터 형제들과 살게 됐다"><img class="card__img" src="https://placehold.co/600x400/jpg" alt="어느 날 월터 형제들과 살게 됐다 포스터" /></a></article>
-        <article class="card"><a href="#" aria-label="트라이"><img class="card__img" src="https://placehold.co/600x400/jpg" alt="트라이 포스터" /></a></article>
+      <div class="carousel" data-per-view="6" data-step="3">
+        <div class="carousel__head">
+          <h2 id="lovely-videos" class="section__title">연애 세포를 깨우는 작품들</h2>
+          <div class="carousel__pager" aria-hidden="true"></div>
+        </div>
+        <div class="carousel__viewport" role="region" aria-label="연애 세포를 깨우는 작품들">
+          <div class="row carousel__track">
+            <article class="card"><a href="#" aria-label="고백의 역사"><img class="card__img" src="https://placehold.co/600x400?text=1" alt="고백의 역사 포스터" /></a></article>
+            <article class="card"><a href="#" aria-label="스타트업"><img class="card__img" src="https://placehold.co/600x400?text=2" alt="스타트업 포스터" /></a></article>
+            <article class="card"><a href="#" aria-label="미스터션샤인"><img class="card__img" src="https://placehold.co/600x400?text=3" alt="미스터션샤인 포스터" /></a></article>
+            <article class="card"><a href="#" aria-label="난홍"><img class="card__img" src="https://placehold.co/600x400?text=4" alt="난홍 포스터" /></a></article>
+            <article class="card"><a href="#" aria-label="어느 날 월터 형제들과 살게 됐다"><img class="card__img" src="https://placehold.co/600x400?text=5" alt="어느 날 월터 형제들과 살게 됐다 포스터" /></a></article>
+            <article class="card"><a href="#" aria-label="트라이"><img class="card__img" src="https://placehold.co/600x400?text=6" alt="트라이 포스터" /></a></article>
+            <article class="card"><a href="#" aria-label="승부"><img class="card__img" src="https://placehold.co/600x400?text=7" alt="승부 포스터" /></a></article>
+            <article class="card"><a href="#" aria-label="천문"><img class="card__img" src="https://placehold.co/600x400?text=8" alt="천문 포스터" /></a></article>
+            <article class="card"><a href="#" aria-label="미생"><img class="card__img" src="https://placehold.co/600x400?text=9" alt="미생 포스터" /></a></article>
+          </div>
+        </div>
+        <button class="carousel__btn carousel__btn--prev" aria-label="이전">‹</button>
+        <button class="carousel__btn carousel__btn--next" aria-label="다음">›</button>
       </div>
-    </section>  
+    </section>
 
     <!-- 섹션 3: 오늘 대한민국의 TOP 10 시리즈 -->
+
     <section class="section page" aria-labelledby="top10-series">
-      <h2 id="top10-series" class="section__title">오늘 대한민국의 TOP 10 시리즈</h2>
-      <div class="row">
-        <article class="card"><a href="#" aria-label="사마귀"><img class="card__img" src="https://placehold.co/600x400/jpg" alt="사마귀 포스터" /></a></article>
-        <article class="card"><a href="#" aria-label="폭군의 셰프"><img class="card__img" src="https://placehold.co/600x400/jpg" alt="폭군의 셰프 포스터" /></a></article>
-        <article class="card"><a href="#" aria-label="에스콰이어"><img class="card__img" src="https://placehold.co/600x400/jpg" alt="에스콰이어 포스터" /></a></article>
-        <article class="card"><a href="#" aria-label="애마"><img class="card__img" src="https://placehold.co/600x400/jpg" alt="애마 포스터" /></a></article>
-        <article class="card"><a href="#" aria-label="나는 SOLO"><img class="card__img" src="https://placehold.co/600x400/jpg" alt="나는 SOLO 포스터" /></a></article>
-        <article class="card"><a href="#" aria-label="귀멸의 칼날"><img class="card__img" src="https://placehold.co/600x400/jpg" alt="귀멸의 칼날 포스터" /></a></article>
+      <div class="carousel" data-per-view="6" data-step="5">
+        <div class="carousel__head">
+          <h2 id="top10-series" class="section__title">오늘 대한민국의 TOP 10 시리즈</h2>
+          <div class="carousel__pager" aria-hidden="true"></div>
+        </div>
+        <div class="carousel__viewport" role="region" aria-label="오늘 대한민국의 TOP 10 시리즈">
+          <div class="row carousel__track">
+            <article class="card"><a href="#" aria-label="사마귀"><img class="card__img" src="https://placehold.co/600x400?text=1" alt="사마귀 포스터" /></a></article>
+            <article class="card"><a href="#" aria-label="폭군의 셰프"><img class="card__img" src="https://placehold.co/600x400?text=2" alt="폭군의 셰프 포스터" /></a></article>
+            <article class="card"><a href="#" aria-label="에스콰이어"><img class="card__img" src="https://placehold.co/600x400?text=3" alt="에스콰이어 포스터" /></a></article>
+            <article class="card"><a href="#" aria-label="애마"><img class="card__img" src="https://placehold.co/600x400?text=4" alt="애마 포스터" /></a></article>
+            <article class="card"><a href="#" aria-label="나는 SOLO"><img class="card__img" src="https://placehold.co/600x400?text=5" alt="나는 SOLO 포스터" /></a></article>
+            <article class="card"><a href="#" aria-label="귀멸의 칼날"><img class="card__img" src="https://placehold.co/600x400?text=6" alt="귀멸의 칼날 포스터" /></a></article>
+            <article class="card"><a href="#" aria-label="은중과 상연"><img class="card__img" src="https://placehold.co/600x400?text=7" alt="은중과 상연 포스터" /></a></article>
+            <article class="card"><a href="#" aria-label="마이턴"><img class="card__img" src="https://placehold.co/600x400?text=8" alt="마이턴 포스터" /></a></article>
+            <article class="card"><a href="#" aria-label="괴수 8호"><img class="card__img" src="https://placehold.co/600x400?text=9" alt="괴수 8호 포스터" /></a></article>
+            <article class="card"><a href="#" aria-label="소용없어 거짓말"><img class="card__img" src="https://placehold.co/600x400?text=10" alt="소용없어 거짓말 포스터" /></a></article>
+          </div>
+        </div>
+        <button class="carousel__btn carousel__btn--prev" aria-label="이전">‹</button>
+        <button class="carousel__btn carousel__btn--next" aria-label="다음">›</button>
       </div>
-    </section>    
+    </section>   
   </main>
 
   <footer class="footer" role="contentinfo">
@@ -176,6 +276,5 @@
   
     </div>
   </footer>
-  
 </body>
 </html>
