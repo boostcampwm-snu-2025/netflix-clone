@@ -1,9 +1,16 @@
+<!--       _
+       .__(.)< (MEOW)
+        \___)   
+ ~~~~~~~~~~~~~~~~~~-->
 <!DOCTYPE html>
 <html lang="kr">
     <head>
         <title>넷플릭스 클론</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="styles.css">
+        <script type = "module" defer src="./components/slider.js"></script>
+        <script type = "module" defer src="./components/dropdown.js"></script>
+
     </head>
     <body>
         <header>
@@ -39,9 +46,26 @@
                     </a>
                     <a href="" class = "nav-element">
                         <i class="fa fa-bell"></i>
+                        <div class="dropdown">
+                            <p>No notifications.</p>
+                        </div>
                     </a>
-                    <a href="" class = "nav-element">
+                    <a href="" class = "nav-element profile">
                         <img src="./img/profile.png">
+                        <div class = "dropdown">
+                            <div class = "other-profile">
+                                <img src="./img/profile.png">
+                                Mom
+                            </div>
+                            <div class = "other-profile">
+                                <img src="./img/profile.png">
+                                Dad
+                            </div>
+                            <div class = "other-profile">
+                                <img src="./img/profile.png">
+                                Kids
+                            </div>
+                        </div>
                     </a>
                 </div>
                 </div>
@@ -81,89 +105,63 @@
             </section>
             <section class="content-row first">
                 <h1>New on Netflix</h1>
-                <div class="row-container">
-                    <a href="">
-                        <img src="./img/rick-and-morty.webp">
-                    </a>
-                    <a href="">
-                        <img src="./img/rick-and-morty.webp">
-                    </a>
-                    <a href="">
-                        <img src="./img/rick-and-morty.webp">
-                    </a>
-                    <a href="">
-                        <img src="./img/rick-and-morty.webp">
-                    </a>
-                    <a href="">
-                        <img src="./img/rick-and-morty.webp">
-                    </a>
-                    <a href="">
-                        <img src="./img/rick-and-morty.webp">
-                    </a>
-                    <a href="">
-                        <img src="./img/rick-and-morty.webp">
-                    </a>
-                    <a href="">
-                        <img src="./img/rick-and-morty.webp">
-                    </a>
+                <div class = "outer-carousel">
+                <button class="prev"></button>
+                <div class="carousel">                    
+                    <div class="row-container">
+                        <a href="">
+                            <img src="./img/cat.jpg">
+                        </a>
+                        <a href="">
+                            <img src="./img/inside-job.jpg">
+                        </a>
+                        <a href="">
+                            <img src="./img/rick-and-morty.webp">
+                        </a>
+                        <a href="">
+                            <img src="./img/breaking-bad.webp">
+                        </a>
+                        <a href="">
+                            <img src="./img/dexter.webp">
+                        </a>
+                        <a href="">
+                            <img src="./img/gossip-girl.webp">
+                        </a>
+                        <a href="">
+                            <img src="./img/knives-out.webp">
+                        </a>
+                        <a href="">
+                            <img src="./img/rick-and-morty.webp">
+                        </a>
+                    </div>
+                </div>
+                <button class="next"></button>
                 </div>
             </section>
             <section class="content-row">
-                <h1>Critically Acclaimed TV Shows</h1>
-                <div class="row-container">
-                    <a href="">
-                        <img src="./img/rick-and-morty.webp">
-                    </a>
-                    <a href="">
-                        <img src="./img/rick-and-morty.webp">
-                    </a>
-                    <a href="">
-                        <img src="./img/rick-and-morty.webp">
-                    </a>
-                    <a href="">
-                        <img src="./img/rick-and-morty.webp">
-                    </a>
-                    <a href="">
-                        <img src="./img/rick-and-morty.webp">
-                    </a>
-                    <a href="">
-                        <img src="./img/rick-and-morty.webp">
-                    </a>
-                    <a href="">
-                        <img src="./img/rick-and-morty.webp">
-                    </a>
-                    <a href="">
-                        <img src="./img/rick-and-morty.webp">
-                    </a>
+                <h1>New on Netflix</h1>
+                <div class = "outer-carousel">
+                <button class="prev"></button>
+                <div class="carousel">                    
+                    <div class="row-container">
+                        <a href="">
+                            <img src="./img/cat.jpg">
+                        </a>
+                        <a href="">
+                            <img src="./img/inside-job.jpg">
+                        </a>
+                        <a href="">
+                            <img src="./img/rick-and-morty.webp">
+                        </a>
+                        <a href="">
+                            <img src="./img/breaking-bad.webp">
+                        </a>
+                        <a href="">
+                            <img src="./img/dexter.webp">
+                        </a>
+                    </div>
                 </div>
-            </section>
-            <section class="content-row">
-                <h1>Critically Acclaimed TV Shows</h1>
-                <div class="row-container">
-                    <a href="">
-                        <img src="./img/rick-and-morty.webp">
-                    </a>
-                    <a href="">
-                        <img src="./img/rick-and-morty.webp">
-                    </a>
-                    <a href="">
-                        <img src="./img/rick-and-morty.webp">
-                    </a>
-                    <a href="">
-                        <img src="./img/rick-and-morty.webp">
-                    </a>
-                    <a href="">
-                        <img src="./img/rick-and-morty.webp">
-                    </a>
-                    <a href="">
-                        <img src="./img/rick-and-morty.webp">
-                    </a>
-                    <a href="">
-                        <img src="./img/rick-and-morty.webp">
-                    </a>
-                    <a href="">
-                        <img src="./img/rick-and-morty.webp">
-                    </a>
+                <button class="next"></button>
                 </div>
             </section>
         </main>
