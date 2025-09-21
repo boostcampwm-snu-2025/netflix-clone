@@ -1,4 +1,4 @@
-movie-card .sr-only {
+.movie-card__title--sr-only {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -10,7 +10,7 @@ movie-card .sr-only {
   border: 0;
 }
 
-movie-card .card {
+.movie-card {
   border: none;
   padding: 0;
   outline: none;
@@ -21,17 +21,17 @@ movie-card .card {
   transition: transform 0.4s ease;
 }
 
-movie-card .card:hover {
+.movie-card:hover {
   transform: scale(1.05);
 }
 
-movie-card .card img {
+.movie-card__image {
   border-radius: 8px;
   width: 180px;
   height: 252px;
 }
 
-movie-card .rank {
+.movie-card__rank {
   display: inline-flex;
   position: absolute;
   bottom: 10px;
