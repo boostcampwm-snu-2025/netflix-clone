@@ -16,38 +16,47 @@ export function handleSlider(slider) {
 
   const itemsPerScreen = 5;
   const totalItems = items.length;
-  let currentItem = 0;
 
   slideStates.set(slider, { currentItem: 0 });
 
   function updatePageIndicator() {
     const indicators = Array.from(pageIndicator.querySelectorAll("span"));
+    const { currentItem = 0 } = slideStates.get(slider) || {};
+    const currentPage = Math.ceil((currentItem % totalItems) / itemsPerScreen);
     indicators.forEach((indicator, index) => {
-      indicator.classList.toggle("active", index === currentItem);
+      indicator.classList.toggle("active", index === currentPage);
     });
   }
 
   function slide() {
-    const offset = currentItem * (items[0].offsetWidth + 10);
+    list.style.transition = "transform 0.5s ease-in-out";
+    const { currentItem = 0 } = slideStates.get(slider) || {};
+    const offset = currentItem * (items[0].offsetWidth);
     list.style.transform = `translateX(-${offset}px)`;
   }
 
   leftButton.addEventListener("click", () => {
-    if (currentItem > 0) {
-      currentItem--;
+    let { currentItem = 0 } = slideStates.get(slider) || {};
+    if ((currentItem % totalItems) % itemsPerScreen === 0) {
+      currentItem -= itemsPerScreen;
     } else {
-      currentItem = totalItems - itemsPerScreen;
+      currentItem -= (currentItem % totalItems) % itemsPerScreen;
     }
+    slideStates.set(slider, { currentItem });
     slide();
     updatePageIndicator();
   });
 
   rightButton.addEventListener("click", () => {
-    if (currentItem < totalItems - itemsPerScreen) {
-      currentItem++;
+    let { currentItem = 0 } = slideStates.get(slider) || {};
+    if ((currentItem % totalItems + itemsPerScreen) % totalItems === 0) {
+      currentItem += itemsPerScreen;
     } else {
-      currentItem = 0;
+      currentItem += totalItems % itemsPerScreen;
+      const clone = items.map((item) => item.cloneNode(true));
+      list.append(...clone);
     }
+    slideStates.set(slider, { currentItem });
     slide();
     updatePageIndicator();
   });

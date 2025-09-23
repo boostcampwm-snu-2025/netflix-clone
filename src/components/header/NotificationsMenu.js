@@ -19,7 +19,7 @@ export async function NotificationsMenu() {
 <div class="menu">
   <div class="topbar"></div>
   <ul class="notifications-container">
-    ${notifications.map((item) => NotificationItem(item)).join("\n    ")}
+    ${notifications.map((item) => NotificationItem(item)).join("")}
   </ul>
 </div>
 `.trim();

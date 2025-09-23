@@ -93,6 +93,8 @@ main {
 }
 
 .categories h2 {
+    font-size: 1.4vw;
+    line-height: 1.25vw;
     padding: 0 var(--page-padding);
 }
 
@@ -153,15 +155,15 @@ main {
   display: flex;
   justify-content: flex-end;
   padding: 0 var(--page-padding);
-  gap: 4px;
+  gap: 2px;
 }
 
 .page-indicator span {
   width: 12px;
   height: 2px;
-  background-color: #555;
+  background-color: #4d4d4d;
 }
 
 .page-indicator span.active {
-  background-color: #fff;
+  background-color: #aaa;
 }
