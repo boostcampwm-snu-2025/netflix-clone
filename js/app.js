@@ -12,7 +12,7 @@ function setupAllCarousels() {
     // '회원님 추천 콘텐츠' 캐러셀에는 '유한' 캐러셀 함수를 적용
     initializeFiniteCarousel('.carousel-container__for-user', { visible: 6, move: 5 });
 
-    // Top 10, New_content 캐러셀에는 '무한' 캐러셀 함수를 적용
-    initializeInfiniteCarousel('.carousel-container__top10', { move: 5 });
+    // Top 10, New_content 캐러셀에는 '무한' 캐러셀 함수를 적용, to-do: 캐러셀 개선 필요
+    initializeFiniteCarousel('.carousel-container__top10', { move: 5 });
     initializeInfiniteCarousel('.carousel-container__new', { move: 5 });
 }
