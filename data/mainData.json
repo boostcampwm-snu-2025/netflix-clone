@@ -1,0 +1,77 @@
+[
+  {
+    "title": "회원님을 위해 엄선한 오늘의 콘텐츠",
+    "containerClass": "carousel-container__for-user",
+    "wrapperClass": "carousel-wrapper__for-user",
+    "cardType": "default",
+    "items": [
+      { "imgSrc": "./assets/img_for_user_contents/1.jpg", "alt": "웬즈데이", "cardClass": "card__for-user" },
+      { "imgSrc": "./assets/img_for_user_contents/2.jpg", "alt": "귀멸의 칼날", "cardClass": "card__for-user" },
+      { "imgSrc": "./assets/img_for_user_contents/3.jpg", "alt": "폭군의 셰프", "cardClass": "card__for-user" },
+      { "imgSrc": "./assets/img_for_user_contents/4.jpg", "alt": "야당", "cardClass": "card__for-user" },
+      { "imgSrc": "./assets/img_for_user_contents/5.jpg", "alt": "에스콰이어", "cardClass": "card__for-user" },
+      { "imgSrc": "./assets/img_for_user_contents/6.jpg", "alt": "폭싹 속았수다", "cardClass": "card__for-user" },
+      { "imgSrc": "./assets/img_for_user_contents/7.jpg", "alt": "케이팝 데몬 헌터스", "cardClass": "card__for-user" },
+      { "imgSrc": "./assets/img_for_user_contents/8.jpg", "alt": "케이팝 데몬 헌터스", "cardClass": "card__for-user" },
+      { "imgSrc": "./assets/img_for_user_contents/9.jpg", "alt": "케이팝 데몬 헌터스", "cardClass": "card__for-user" },
+      { "imgSrc": "./assets/img_for_user_contents/10.jpg", "alt": "케이팝 데몬 헌터스", "cardClass": "card__for-user" },
+      { "imgSrc": "./assets/img_for_user_contents/11.jpg", "alt": "케이팝 데몬 헌터스", "cardClass": "card__for-user" },
+      { "imgSrc": "./assets/img_for_user_contents/12.jpg", "alt": "케이팝 데몬 헌터스", "cardClass": "card__for-user" },
+      { "imgSrc": "./assets/img_for_user_contents/13.jpg", "alt": "케이팝 데몬 헌터스", "cardClass": "card__for-user" },
+      { "imgSrc": "./assets/img_for_user_contents/14.jpg", "alt": "케이팝 데몬 헌터스", "cardClass": "card__for-user" },
+      { "imgSrc": "./assets/img_for_user_contents/15.jpg", "alt": "케이팝 데몬 헌터스", "cardClass": "card__for-user" },
+      { "imgSrc": "./assets/img_for_user_contents/16.jpg", "alt": "케이팝 데몬 헌터스", "cardClass": "card__for-user" },
+      { "imgSrc": "./assets/img_for_user_contents/17.jpg", "alt": "케이팝 데몬 헌터스", "cardClass": "card__for-user" },
+      { "imgSrc": "./assets/img_for_user_contents/18.jpg", "alt": "케이팝 데몬 헌터스", "cardClass": "card__for-user" }
+    ]
+  },
+  {
+    "title": "오늘 대한민국의 top 10 시리즈",
+    "containerClass": "carousel-container__top10",
+    "wrapperClass": "carousel-wrapper__top10",
+    "cardType": "rank",
+    "items": [
+      { "rank": 1, "imgSrc": "./assets/img_top10_contents/1.jpg", "alt": "사마귀" },
+      { "rank": 2, "imgSrc": "./assets/img_top10_contents/2.jpg", "alt": "폭군의 셰프" },
+      { "rank": 3, "imgSrc": "./assets/img_top10_contents/3.jpg", "alt": "에스콰이어" },
+      { "rank": 4, "imgSrc": "./assets/img_top10_contents/4.jpg", "alt": "애마" },
+      { "rank": 5, "imgSrc": "./assets/img_top10_contents/5.jpg", "alt": "나는 SOLO" },
+      { "rank": 6, "imgSrc": "./assets/img_top10_contents/6.jpg", "alt": "귀멸의 칼날" },
+      { "rank": 7, "imgSrc": "./assets/img_top10_contents/7.jpg", "alt": "귀멸의 칼날" },
+      { "rank": 8, "imgSrc": "./assets/img_top10_contents/8.jpg", "alt": "귀멸의 칼날" },
+      { "rank": 9, "imgSrc": "./assets/img_top10_contents/9.jpg", "alt": "귀멸의 칼날" },
+      { "rank": 10, "imgSrc": "./assets/img_top10_contents/10.jpg", "alt": "귀멸의 칼날" }
+    ]
+  },
+  {
+    "title": "넷플릭스에 새로 올라온 콘텐츠",
+    "containerClass": "carousel-container__new",
+    "wrapperClass": "carousel-wrapper__new",
+    "cardType": "default",
+    "items": [
+      { "imgSrc": "./assets/img_new_contents/1.jpg", "alt": "야당", "cardClass": "card__new" },
+      { "imgSrc": "./assets/img_new_contents/2.jpg", "alt": "사마귀", "cardClass": "card__new" },
+      { "imgSrc": "./assets/img_new_contents/3.jpg", "alt": "크레이븐", "cardClass": "card__new" },
+      { "imgSrc": "./assets/img_new_contents/4.jpg", "alt": "999 -형사전문변호사-", "cardClass": "card__new" },
+      { "imgSrc": "./assets/img_new_contents/5.jpg", "alt": "데스 키스 게임", "cardClass": "card__new" },
+      { "imgSrc": "./assets/img_new_contents/6.jpg", "alt": "crazy/beautiful", "cardClass": "card__new" },
+      { "imgSrc": "./assets/img_new_contents/7.jpg", "alt": "X맨", "cardClass": "card__new" },
+      { "imgSrc": "./assets/img_new_contents/8.jpg", "alt": "X맨", "cardClass": "card__new" },
+      { "imgSrc": "./assets/img_new_contents/9.jpg", "alt": "X맨", "cardClass": "card__new" },
+      { "imgSrc": "./assets/img_new_contents/10.jpg", "alt": "X맨", "cardClass": "card__new" },
+      { "imgSrc": "./assets/img_new_contents/11.jpg", "alt": "X맨", "cardClass": "card__new" },
+      { "imgSrc": "./assets/img_new_contents/12.jpg", "alt": "X맨", "cardClass": "card__new" },
+      { "imgSrc": "./assets/img_new_contents/13.jpg", "alt": "X맨", "cardClass": "card__new" },
+      { "imgSrc": "./assets/img_new_contents/14.jpg", "alt": "X맨", "cardClass": "card__new" },
+      { "imgSrc": "./assets/img_new_contents/15.jpg", "alt": "X맨", "cardClass": "card__new" },
+      { "imgSrc": "./assets/img_new_contents/16.jpg", "alt": "X맨", "cardClass": "card__new" },
+      { "imgSrc": "./assets/img_new_contents/17.jpg", "alt": "X맨", "cardClass": "card__new" },
+      { "imgSrc": "./assets/img_new_contents/18.jpg", "alt": "X맨", "cardClass": "card__new" },
+      { "imgSrc": "./assets/img_new_contents/19.jpg", "alt": "X맨", "cardClass": "card__new" },
+      { "imgSrc": "./assets/img_new_contents/20.jpg", "alt": "X맨", "cardClass": "card__new" },
+      { "imgSrc": "./assets/img_new_contents/21.jpg", "alt": "X맨", "cardClass": "card__new" },
+      { "imgSrc": "./assets/img_new_contents/22.jpg", "alt": "X맨", "cardClass": "card__new" },
+      { "imgSrc": "./assets/img_new_contents/23.jpg", "alt": "X맨", "cardClass": "card__new" }
+    ]
+  }
+]

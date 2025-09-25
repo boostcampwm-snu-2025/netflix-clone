@@ -1,8 +1,9 @@
-import { footerData } from '../data/footerData.js';
-
-export function footerRender() {
+export async function footerRender() {
     const container = document.getElementById('footer-container');
     if (!container) return;
+
+    const response = await fetch('./data/footerData.json');
+    const footerData = await response.json();
 
     const socialLogosHtml = footerData.socialLogos.map(logo => `<a href="#"><img src="${logo.src}" alt="${logo.alt}"></a>`).join('');
     const linksHtml = footerData.links.map(link => `<a href="#">${link}</a>`).join('');
