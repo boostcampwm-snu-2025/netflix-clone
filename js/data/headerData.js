@@ -1,0 +1,41 @@
+export const headerData = {
+  logo: {
+    src: "./assets/img_header/logo.png",
+    alt: "netflix_logo",
+  },
+  tabs: ["홈", "시리즈", "영화", "게임", "NEW! 요즘 대세 컨텐츠", "내가 찜한 리스트", "언어별로 찾아보기"],
+  icons: {
+    magnifier: { src: "./assets/img_header/magnifier.png", alt: "magnifier_logo" },
+    bell: { src: "./assets/img_header/bell.png", alt: "bell_logo" },
+    profile: { src: "./assets/img_header/basic_profile.jpg", alt: "profile_logo" },
+    triangle: { src: "./assets/img_header/triangle.png", alt: "triangle_logo" },
+  },
+  notifications: [
+    {
+      imgSrc: "assets/img_modal_notification/1.jpg",
+      text: "최신 등록 콘텐츠!<br>새로 공개된 모든 에피소드를<br>시청하세요.",
+      time: "2주 전",
+    },
+    {
+      imgSrc: "assets/img_modal_notification/2.jpg",
+      text: "잊지 못할 최고의 장면을 한 번 더!<br>내가 봤던 콘텐츠를 살펴보세요",
+      time: "1개월",
+    },
+    {
+      imgSrc: "assets/img_modal_notification/1.jpg",
+      text: "최신 등록 콘텐츠!<br>시즌 2",
+      time: "1개월",
+    },
+    {
+      imgSrc: "assets/img_modal_notification/3.jpg",
+      text: "신규 콘텐츠<br>거룩한 밤: 데몬 헌터스",
+      time: "1개월",
+    },
+  ],
+  profiles: [
+    { imgSrc: "assets/img_modal_profile/1.png", name: "유저 1" },
+    { imgSrc: "assets/img_modal_profile/2.png", name: "유저 2" },
+    { imgSrc: "assets/img_modal_profile/3.png", name: "유저 3" },
+    { imgSrc: "assets/img_modal_profile/4.png", name: "유저 4" },
+  ],
+};
