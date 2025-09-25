@@ -4,8 +4,8 @@ export function initializeFiniteCarousel(containerSelector, options) {
     if (!container) return;
 
     const wrapper = container.querySelector('.carousel-wrapper');
-    const prevBtn = container.querySelector('.prev-btn');
-    const nextBtn = container.querySelector('.next-btn');
+    const prevBtn = container.querySelector('.carousel__btn--prev');
+    const nextBtn = container.querySelector('.carousel__btn--next');
     const cards = wrapper.querySelectorAll('.card');
     const indicator = container.previousElementSibling;
 
@@ -100,8 +100,8 @@ export function initializeInfiniteCarousel(containerSelector, options) {
     if (!container) return;
 
     const wrapper = container.querySelector('.carousel-wrapper');
-    const prevBtn = container.querySelector('.prev-btn');
-    const nextBtn = container.querySelector('.next-btn');
+    const prevBtn = container.querySelector('.carousel__btn--prev');
+    const nextBtn = container.querySelector('.carousel__btn--next');
     const originalCards = Array.from(wrapper.querySelectorAll('.card'));
     const indicator = container.previousElementSibling;
 

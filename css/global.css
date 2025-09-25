@@ -3,7 +3,7 @@
     --black: rgba(0, 0, 0, 1.0);
     --gray: rgba(128, 128, 128, 1.0);
     --trans-gray: rgba(128, 128, 128, 0.6);
-    --standard-border-radius: 5%;
+    --standard-border-radius: 4px;
 }
 
 ul, ol {
@@ -14,7 +14,8 @@ ul, ol {
 
 body {
     background-color: var(--black);
-    margin-top: 0px;
+    margin: 0px;
+    font-family: sans-serif;
 }
 
 a {
@@ -26,9 +27,11 @@ a:focus-visible {
     outline-offset: -1px;
 }
 
-.flex_container {
+.container {
     width: 1440px;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     gap: 8px;
+    overflow-x: hidden;
 }

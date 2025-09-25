@@ -4,13 +4,14 @@
     overflow: hidden;
 }
 
-.overlay_image {
+.hero__background {
     width: 100%;
     height: auto;
+    object-fit: cover;
     display: block;
 }
 
-.overlay_upper {
+.hero__content {
     position: absolute;
     width: 100%;
     height: auto;
@@ -23,37 +24,38 @@
     gap: 16px;
 }
 
-.overlay_1st_row {
+.hero__title-img {
     width: 500px;
     height: auto;
     display: block;
 }
 
-.overlay_2nd_row {
+.hero__ranking {
     display: flex;
     align-items: center;
     gap: 8px;
 }
 
-.overlay_2nd_row .top10_logo {
+.hero__ranking-badge {
     height: 30px;
     width: auto;
     border-radius: var(--standard-border-radius);
 }
 
-.overlay_2nd_row .rank {
+.hero__ranking-text {
     font-size: 22px;
     color: var(--white);
 }
 
-.overlay_3rd_row {
+.hero__description {
     width: 470px;
     height: auto;
     font-size: 18px;
     color: var(--white);
+    line-height: 1.5;
 }
 
-.overlay_4th_row {
+.hero__actions {
     display: flex;
     align-items: center;
     width: 100%;
@@ -61,19 +63,19 @@
     margin-top: 8px;
 }
 
-.overlay_4th_row .overlay_4th_left {
+.hero__actions--button {
     display: flex;
     align-items: center;
     gap: 8px;
 }
 
-.overlay_4th_row .overlay_4th_right {
+.hero__actions--meta {
     display: flex;
     align-items: center;
     gap: 24px;
 }
 
-.button_with_play {
+.button--play {
     border: none;
     border-radius: var(--standard-border-radius);
     background-color: var(--white);
@@ -84,12 +86,12 @@
     gap: 8px;
 }
 
-.play_sign {
+.button--play--img {
     height: 28px;
     width: auto;
 }
 
-.button_with_info {
+.button--info {
     border: none;
     border-radius: var(--standard-border-radius);
     background-color: var(--trans-gray);
@@ -100,21 +102,21 @@
     align-items: center;
 }
 
-.info_sign {
+.button--info--img {
     height: 30px;
     width: auto;
 }
 
-.info_font {
+.button--info--text {
     color: var(--white);
 }
 
-.sound_sign {
+.hero__sound-icon {
     height: 40px;
     width: auto;
 }
 
-.age_limit {
+.hero__age-rating {
     color: var(--white);
     font-size: 16px;
     background-color: rgba(128, 128, 128, 0.6);

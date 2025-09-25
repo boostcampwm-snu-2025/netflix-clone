@@ -1,4 +1,4 @@
-footer {
+.footer {
     margin-top: 100px;
     margin-left: 440px;
     width: 700px;
@@ -6,7 +6,7 @@ footer {
     color: var(--gray);
 }
 
-.footer_logos {
+.footer__logos {
     display: flex;
     align-items: center;
     gap: 8px;
@@ -15,25 +15,25 @@ footer {
     margin-bottom: 16px;
 }
 
-.footer_logos > img:nth-child(1) {
+.footer__logos > img:nth-child(1) {
     height: 28px;
 }
 
-.footer_logos > img:nth-child(2) {
+.footer__logos > img:nth-child(2) {
     height: 25px;
     margin-left: 16px;
 }
 
-.footer_logos > img:nth-child(3) {
+.footer__logos > img:nth-child(3) {
     height: 30px;
     margin-left: 16px;
 }
 
-.footer_logos > img:nth-child(4) {
+.footer__logos > img:nth-child(4) {
     height: 54px;
 }
 
-.footer_link {
+.footer__nav {
     display: grid;
     height: 70px;
     grid-template-columns: repeat(4, 1fr);
@@ -41,7 +41,7 @@ footer {
     margin-bottom: 24px;
 }
 
-.footer_info {
+.footer__info {
     font-size: 11px;
     margin-bottom: 8px;
 }

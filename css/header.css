@@ -1,68 +1,65 @@
-.flex_header {
+.header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     background-color: var(--black);
     position: sticky;
+    padding: 0px;
+    height: 70px;
     top: 0;
-    z-index: 3;
+    z-index: 100;
 }
 
-.flex_header_left {
+.header__nav {
     display: flex;
     align-items: center;
+    gap: 0px;
 }
 
-.header-tabs {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.logo {
+.header__logo--netflix {
     height: 100px;
     width: auto;
     padding-left: 24px;
     padding-right: 8px;
 }
 
-.logo_cutting {
+.header__logo--cutting {
     display: flex;
     align-items: center;
     height: 40px;
     overflow: hidden;
 }
 
-.li-header {
-    font-size: 13px; 
-    color: rgb(190, 190, 190, 1.0); 
-    margin-left: 8px;
+.header__tab-list, .header__icon-list {
+    display: flex;
+    align-items: center;
+    gap: 12px;
 }
 
-.li-header:hover {
+.header__tab-item {
+    font-size: 13px; 
+    color: rgba(190, 190, 190, 1.0); 
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.header__tab-item:hover {
     color: var(--white);
 }
 
-.magnifier {
+.header__icon--magnifier {
     height: 23px;
     width: auto;
+    cursor: pointer;
 }
 
-.bell-wrapper {
+.modal-wrapper--notification {
   position: relative; 
   display: flex;
   align-items: center;
 }
 
-.bell {
-    height: 22px;
-    width: auto;
-    padding: 0px;
-    cursor: pointer;
-    margin: 2px 9px;
-}
-
-.bell-wrapper::before {
+.modal-wrapper--notification::before {
   content: '';
   position: absolute;
   
@@ -74,7 +71,15 @@
   height: 16px; 
 }
 
-.modal__bell {
+.header__item--notification {
+    height: 22px;
+    width: auto;
+    padding: 0px;
+    cursor: pointer;
+    margin: 2px 9px;
+}
+
+.modal--notification {
     display: none;
     grid-template-columns: auto 1fr;
     grid-template-rows: repeat(4, 1fr);
@@ -91,7 +96,7 @@
     z-index: 100;
 }
 
-.modal__bell::after {
+.modal--notification::after {
   /* 가상 요소 필수 속성 */
   content: ''; 
   
@@ -110,34 +115,27 @@
   border-bottom: 10px solid rgba(255, 255, 255, 0.9); /* 아래쪽 테두리에 색상을 주어 삼각형을 만듦 */
 }
 
-.bell-wrapper:hover .modal__bell {
+.modal-wrapper--notification:hover .modal--notification {
   display: grid;
 }
 
-.modal__font {
+.modal__font--notification {
     color: var(--white);
     font-size: 15px;
 }
 
-.date-late {
+.modal__text--time {
     color: var(--gray);
     font-size: 10px;
 }
 
-.profile-wrapper {
+.modal-wrapper--profile {
   position: relative; 
   display: flex;
   align-items: center;
 }
 
-.basic_profile{
-    height: 26px;
-    width: auto;
-    margin-left: 0px;
-    border-radius: var(--standard-border-radius);
-}
-
-.profile-wrapper::before {
+.modal-wrapper--profile::before {
   content: '';
   position: absolute;
   
@@ -149,7 +147,14 @@
   height: 16px; 
 }
 
-.modal__profile {
+.header__icon--basic_profile{
+    height: 26px;
+    width: auto;
+    margin-left: 0px;
+    border-radius: var(--standard-border-radius);
+}
+
+.modal--profile {
     display: none;
     grid-template-columns: auto 1fr;
     grid-template-rows: repeat(4, 1fr);
@@ -166,7 +171,7 @@
     z-index: 100;
 }
 
-.modal__profile::after {
+.modal--profile::after {
   /* 가상 요소 필수 속성 */
   content: ''; 
   
@@ -185,16 +190,16 @@
   border-bottom: 10px solid rgba(255, 255, 255, 0.9); /* 아래쪽 테두리에 색상을 주어 삼각형을 만듦 */
 }
 
-.profile-wrapper:hover .modal__profile {
+.modal-wrapper--profile:hover .modal--profile {
   display: grid;
 }
 
-.modal__font2 {
+.modal__font--profile {
     color: var(--white);
     font-size: 12px;
 }
 
-.triangle {
+.header__icon--triangle {
     height: 8px;
     width: auto;
     margin-left: 8px;
@@ -202,7 +207,7 @@
     transition: transform 0.3s ease;
 }
 
-.triangle.on {
+.header__icon--triangle.on {
     transform: rotate(180deg);
 }
 

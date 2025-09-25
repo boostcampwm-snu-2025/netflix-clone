@@ -1,6 +1,6 @@
 export function initializeHeaderInteraction() {
-    const modalProfile = document.querySelector('.profile-wrapper');
-    const transTriangle = document.querySelector('.triangle');
+    const modalProfile = document.querySelector('.modal-wrapper--profile');
+    const transTriangle = document.querySelector('.header__icon--triangle');
 
     if (!modalProfile || !transTriangle) return;
 
