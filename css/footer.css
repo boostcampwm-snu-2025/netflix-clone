@@ -15,21 +15,21 @@
     margin-bottom: 16px;
 }
 
-.footer__logos > img:nth-child(1) {
+.footer__logos a:nth-child(1) img {
     height: 28px;
 }
 
-.footer__logos > img:nth-child(2) {
+.footer__logos a:nth-child(2) img {
     height: 25px;
     margin-left: 16px;
 }
 
-.footer__logos > img:nth-child(3) {
+.footer__logos a:nth-child(3) img {
     height: 30px;
     margin-left: 16px;
 }
 
-.footer__logos > img:nth-child(4) {
+.footer__logos a:nth-child(4) img {
     height: 54px;
 }
 
@@ -39,6 +39,10 @@
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(3, 1fr);
     margin-bottom: 24px;
+}
+
+.footer a {
+  color: inherit;
 }
 
 .footer__info {
