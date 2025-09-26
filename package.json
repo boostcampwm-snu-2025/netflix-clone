@@ -34,5 +34,10 @@
     "javascript"
   ],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "msw": {
+    "workerDirectory": [
+      "public"
+    ]
+  }
 }
