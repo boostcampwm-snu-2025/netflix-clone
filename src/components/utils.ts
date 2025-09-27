@@ -1,4 +1,7 @@
-export async function loadTemplate(path, baseUrl = import.meta.url) {
+export async function loadTemplate(
+  path: string,
+  baseUrl: string = import.meta.url
+): Promise<HTMLTemplateElement> {
   const res = await fetch(new URL(path, baseUrl));
   const html = await res.text();
 
@@ -8,7 +11,10 @@ export async function loadTemplate(path, baseUrl = import.meta.url) {
   return template;
 }
 
-export async function loadStyle(path, baseUrl = import.meta.url) {
+export async function loadStyle(
+  path: string,
+  baseUrl: string = import.meta.url
+): Promise<HTMLStyleElement> {
   const res = await fetch(new URL(path, baseUrl));
   const css = await res.text();
 
@@ -18,7 +24,10 @@ export async function loadStyle(path, baseUrl = import.meta.url) {
   return style;
 }
 
-export function processDefaultSlot(component, slotSelector = '[data-slot]') {
+export function processDefaultSlot(
+  component: HTMLElement,
+  slotSelector: string = '[data-slot]'
+): void {
   const slotElement = component.querySelector(slotSelector);
   if (!slotElement) return;
 
@@ -31,7 +40,7 @@ export function processDefaultSlot(component, slotSelector = '[data-slot]') {
   });
 }
 
-export function processNamedSlots(component) {
+export function processNamedSlots(component: HTMLElement): void {
   const slots = component.querySelectorAll('[data-slot]');
 
   const slottedElements = Array.from(component.children).filter(
@@ -67,17 +76,20 @@ export function processNamedSlots(component) {
   }
 }
 
-export function processTextSlot(component, slotSelector = '[data-slot]') {
+export function processTextSlot(
+  component: HTMLElement,
+  slotSelector: string = '[data-slot]'
+): void {
   const slotElement = component.querySelector(slotSelector);
   if (!slotElement) return;
 
-  const textContent = component.textContent.trim();
+  const textContent = component.textContent?.trim() || '';
 
   Array.from(component.childNodes).forEach(node => {
     if (
       node.nodeType === Node.TEXT_NODE ||
       (node.nodeType === Node.ELEMENT_NODE &&
-        !node.hasAttribute('data-template'))
+        !(node as Element).hasAttribute('data-template'))
     ) {
       if (!slotElement.contains(node)) {
         component.removeChild(node);
@@ -88,7 +100,10 @@ export function processTextSlot(component, slotSelector = '[data-slot]') {
   slotElement.textContent = textContent;
 }
 
-export function processSlots(component, template) {
+export function processSlots(
+  component: HTMLElement,
+  template: DocumentFragment
+): void {
   const originalContent = Array.from(component.childNodes);
 
   component.innerHTML = '';
@@ -114,7 +129,7 @@ export function processSlots(component, template) {
     const defaultSlot = component.querySelector('[data-slot]');
     if (defaultSlot && originalContent.length > 0) {
       originalContent.forEach(node => {
-        if (node.nodeType === Node.TEXT_NODE && node.textContent.trim()) {
+        if (node.nodeType === Node.TEXT_NODE && node.textContent?.trim()) {
           defaultSlot.appendChild(document.createTextNode(node.textContent));
         } else if (node.nodeType === Node.ELEMENT_NODE) {
           defaultSlot.appendChild(node.cloneNode(true));
@@ -124,16 +139,20 @@ export function processSlots(component, template) {
   }
 }
 
-export function updateSlotData(component, data) {
+export function updateSlotData(
+  component: HTMLElement,
+  data: Record<string, string | number | undefined | null>
+): void {
   Object.entries(data).forEach(([key, value]) => {
     const slotElement = component.querySelector(`[data-slot="${key}"]`);
     if (!slotElement || value === undefined || value === null) return;
 
     if (slotElement.tagName === 'IMG') {
-      slotElement.src = value;
-      slotElement.alt = slotElement.alt || `${key} image`;
+      const imgElement = slotElement as HTMLImageElement;
+      imgElement.src = String(value);
+      imgElement.alt = imgElement.alt || `${key} image`;
     } else {
-      slotElement.textContent = value;
+      slotElement.textContent = String(value);
     }
   });
 }
