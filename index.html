@@ -6,55 +6,55 @@
     <title>
       넷플릭스&nbsp;대한민국 - 인터넷으로 시리즈와 영화를 시청하세요
     </title>
-    <link rel="stylesheet" href="styles/globals.css" />
-    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="src/styles/globals.css" />
+    <link rel="stylesheet" href="src/styles/style.css" />
     <script
       type="module"
       defer
-      src="components/languageSelect/languageSelect.js"
+      src="src/components/languageSelect/languageSelect.ts"
     ></script>
     <script
       type="module"
       defer
-      src="components/appButton/appButton.js"
+      src="src/components/appButton/appButton.ts"
     ></script>
     <script
       type="module"
       defer
-      src="components/movieCard/movieCard.js"
+      src="src/components/movieCard/movieCard.ts"
     ></script>
     <script
       type="module"
       defer
-      src="components/featureCard/featureCard.js"
+      src="src/components/featureCard/featureCard.ts"
     ></script>
     <script
       type="module"
       defer
-      src="components/faqAccordion/faqAccordion.js"
+      src="src/components/faqAccordion/faqAccordion.ts"
     ></script>
     <script
       type="module"
       defer
-      src="components/arrowButton/arrowButton.js"
+      src="src/components/arrowButton/arrowButton.ts"
     ></script>
     <script
       type="module"
       defer
-      src="components/movieModal/movieModal.js"
+      src="src/components/movieModal/movieModal.ts"
     ></script>
-    <script type="module" defer src="scripts/index.js"></script>
+    <script type="module" defer src="src/main.ts"></script>
   </head>
   <body>
     <main>
       <section class="hero">
         <img
           class="hero__background"
-          src="assets/images/background.jpg"
+          src="/images/background.jpg"
           alt="background"
         />
         <header class="header">
-          <img class="header__logo" src="assets/images/logo.svg" alt="logo" />
+          <img class="header__logo" src="/images/logo.svg" alt="logo" />
           <div class="header__actions">
             <language-select class="header__language-select"></language-select>
             <app-button class="header__login-button" size="sm"
@@ -74,11 +74,7 @@
       </section>
       <div class="curve-container"></div>
       <section class="promo">
-        <img
-          class="promo__icon"
-          src="assets/images/popcorn.svg"
-          alt="popcorn"
-        />
+        <img class="promo__icon" src="/images/popcorn.svg" alt="popcorn" />
         <div class="promo__content">
           <div class="promo__description">
             <h3 class="promo__description-title">
@@ -100,7 +96,7 @@
           <ol class="top-contents__list">
             <li class="top-contents__item">
               <movie-card
-                src="assets/images/thumbnails/movie1.webp"
+                src="/images/thumbnails/movie1.webp"
                 alt="movie1"
                 title="movie1"
                 rank="1"
@@ -108,7 +104,7 @@
             </li>
             <li class="top-contents__item">
               <movie-card
-                src="assets/images/thumbnails/movie2.webp"
+                src="/images/thumbnails/movie2.webp"
                 alt="movie2"
                 title="movie2"
                 rank="2"
@@ -116,7 +112,7 @@
             </li>
             <li class="top-contents__item">
               <movie-card
-                src="assets/images/thumbnails/movie3.webp"
+                src="/images/thumbnails/movie3.webp"
                 alt="movie3"
                 title="movie3"
                 rank="3"
@@ -124,7 +120,7 @@
             </li>
             <li class="top-contents__item">
               <movie-card
-                src="assets/images/thumbnails/movie4.webp"
+                src="/images/thumbnails/movie4.webp"
                 alt="movie4"
                 title="movie4"
                 rank="4"
@@ -132,7 +128,7 @@
             </li>
             <li class="top-contents__item">
               <movie-card
-                src="assets/images/thumbnails/movie5.webp"
+                src="/images/thumbnails/movie5.webp"
                 alt="movie5"
                 title="movie5"
                 rank="5"
@@ -140,7 +136,7 @@
             </li>
             <li class="top-contents__item">
               <movie-card
-                src="assets/images/thumbnails/movie6.webp"
+                src="/images/thumbnails/movie6.webp"
                 alt="movie6"
                 title="movie6"
                 rank="6"
@@ -148,7 +144,7 @@
             </li>
             <li class="top-contents__item">
               <movie-card
-                src="assets/images/thumbnails/movie7.webp"
+                src="/images/thumbnails/movie7.webp"
                 alt="movie7"
                 title="movie7"
                 rank="7"
@@ -156,7 +152,7 @@
             </li>
             <li class="top-contents__item">
               <movie-card
-                src="assets/images/thumbnails/movie8.webp"
+                src="/images/thumbnails/movie8.webp"
                 alt="movie8"
                 title="movie8"
                 rank="8"
@@ -164,7 +160,7 @@
             </li>
             <li class="top-contents__item">
               <movie-card
-                src="assets/images/thumbnails/movie9.webp"
+                src="/images/thumbnails/movie9.webp"
                 alt="movie9"
                 title="movie9"
                 rank="9"
@@ -172,7 +168,7 @@
             </li>
             <li class="top-contents__item">
               <movie-card
-                src="assets/images/thumbnails/movie10.webp"
+                src="/images/thumbnails/movie10.webp"
                 alt="movie10"
                 title="movie10"
                 rank="10"
@@ -192,11 +188,7 @@
                 스마트 TV, PlayStation, Xbox, Chromecast, Apple TV, 블루레이
                 플레이어 등 다양한 디바이스에서 시청하세요.
               </p>
-              <img
-                slot="image"
-                src="assets/images/television.svg"
-                alt="television"
-              />
+              <img slot="image" src="/images/television.svg" alt="television" />
             </feature-card>
           </li>
           <li class="reasons__item">
@@ -207,11 +199,7 @@
                 시청하세요
               </h3>
               <p slot="description">간편하게 저장하고 빈틈없이 즐겨보세요.</p>
-              <img
-                slot="image"
-                src="assets/images/download.svg"
-                alt="download"
-              />
+              <img slot="image" src="/images/download.svg" alt="download" />
             </feature-card>
           </li>
           <li class="reasons__item">
@@ -224,11 +212,7 @@
                 각종 영화와 시리즈를 스마트폰, 태블릿, 노트북, TV에서 무제한으로
                 스트리밍하세요.
               </p>
-              <img
-                slot="image"
-                src="assets/images/telescope.svg"
-                alt="telescope"
-              />
+              <img slot="image" src="/images/telescope.svg" alt="telescope" />
             </feature-card>
           </li>
           <li class="reasons__item">
@@ -241,11 +225,7 @@
                 자기만의 공간에서 좋아하는 캐릭터와 즐기는 신나는 모험. 자녀에게
                 이 특별한 경험을 선물하세요. 넷플릭스 회원이라면 무료입니다.
               </p>
-              <img
-                slot="image"
-                src="assets/images/childern.svg"
-                alt="children"
-              />
+              <img slot="image" src="/images/childern.svg" alt="children" />
             </feature-card>
           </li>
         </ul>
