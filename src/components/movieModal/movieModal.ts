@@ -1,4 +1,5 @@
-import { loadTemplate, loadStyle, updateSlotData } from '../utils.ts';
+import { loadTemplate, updateSlotData } from '../utils.ts';
+import './style.css';
 
 interface MovieData {
   [key: string]: string | number | undefined | null;
@@ -13,8 +14,6 @@ class MovieModal extends HTMLElement {
 
   async connectedCallback(): Promise<void> {
     const template = await loadTemplate('./template.html', import.meta.url);
-    const style = await loadStyle('./style.css', import.meta.url);
-    document.head.appendChild(style);
     this.appendChild(template.content.cloneNode(true));
 
     this.addEventListener('click', (e: Event) => {

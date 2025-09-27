@@ -1,4 +1,5 @@
-import { loadTemplate, loadStyle, processTextSlot } from '../utils.ts';
+import { loadTemplate, processTextSlot } from '../utils.ts';
+import './style.css';
 
 type ButtonSize = 'small' | 'medium' | 'large';
 
@@ -18,9 +19,6 @@ class AppButton extends HTMLElement {
 
   async connectedCallback(): Promise<void> {
     const template = await loadTemplate('./template.html', import.meta.url);
-    const style = await loadStyle('./style.css', import.meta.url);
-    document.head.appendChild(style);
-
     this.appendChild(template.content.cloneNode(true));
 
     processTextSlot(this);

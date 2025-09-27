@@ -1,4 +1,5 @@
-import { loadTemplate, loadStyle, processNamedSlots } from '../utils.ts';
+import { loadTemplate, processNamedSlots } from '../utils.ts';
+import './style.css';
 
 class FaqAccordion extends HTMLElement {
   constructor() {
@@ -7,9 +8,6 @@ class FaqAccordion extends HTMLElement {
 
   async connectedCallback(): Promise<void> {
     const template = await loadTemplate('./template.html', import.meta.url);
-    const style = await loadStyle('./style.css', import.meta.url);
-    document.head.appendChild(style);
-
     this.appendChild(template.content.cloneNode(true));
     processNamedSlots(this);
 

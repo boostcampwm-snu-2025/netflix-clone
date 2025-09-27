@@ -11,19 +11,6 @@ export async function loadTemplate(
   return template;
 }
 
-export async function loadStyle(
-  path: string,
-  baseUrl: string = import.meta.url
-): Promise<HTMLStyleElement> {
-  const res = await fetch(new URL(path, baseUrl));
-  const css = await res.text();
-
-  const style = document.createElement('style');
-  style.textContent = css.trim();
-
-  return style;
-}
-
 export function processDefaultSlot(
   component: HTMLElement,
   slotSelector: string = '[data-slot]'
