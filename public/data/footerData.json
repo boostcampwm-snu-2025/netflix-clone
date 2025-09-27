@@ -1,9 +1,9 @@
 {
   "socialLogos": [
-    { "src": "./assets/img_footer/facebook.png", "class": "logos__facebook", "alt": "facebook_logo" },
-    { "src": "./assets/img_footer/instagram.png", "class": "logos__instagram", "alt": "instagram_logo" },
-    { "src": "./assets/img_footer/x.png", "class": "logos__x", "alt": "x_logo" },
-    { "src": "./assets/img_footer/youtube.png", "class": "logos__youtube", "alt": "youtube_logo" }
+    { "src": "../assets/img_footer/facebook.png", "class": "logos__facebook", "alt": "facebook_logo" },
+    { "src": "../assets/img_footer/instagram.png", "class": "logos__instagram", "alt": "instagram_logo" },
+    { "src": "../assets/img_footer/x.png", "class": "logos__x", "alt": "x_logo" },
+    { "src": "../assets/img_footer/youtube.png", "class": "logos__youtube", "alt": "youtube_logo" }
   ],
   "links": ["화면 해설", "고객 센터", "기프트카드", "미디어 센터", "투자 정보(IR)", "입사 정보", "이용 약관", "개인정보", "법적 고지", "쿠키 설정", "회사 정보", "문의하기"],
   "info": [
