@@ -3,7 +3,7 @@
 // - HTML 구조: .slider > .slider-content > (.prev-button, .next-button, .slider-container > .slider-item*)
 (function () {
   const CARDS_PER_STEP = 3;     // ✅ 정확히 3장씩
-  const SCROLL_SETTLE_MS = 140; // 스크롤 안정화 대기
+  const SCROLL_SETTLE_MS = 200; // 스크롤 안정화 대기
 
   function debounce(fn, ms=120){ let t; return (...a)=>{clearTimeout(t); t=setTimeout(()=>fn(...a),ms);} }
 
