@@ -109,25 +109,57 @@ export function initCarousels(): void {
       return Number.isFinite(g) ? g : 0;
     };
 
-    const translateToIndex = (i: number, animate = true) => {
+    const setTransform = (i: number) => {
       const offset = i * (slideW + getGap());
-      if (!animate) track.style.transition = 'none';
+      track.style.transform = `translate3d(${-offset}px,0,0)`;
+    };
+    
+    // transition 끄고 즉시 점프 > 리플로우로 고정 > transition 복구
+    const preJump = (i: number) => {
+      track.style.transition = 'none';
+      setTransform(i);
+      // 강제 리플로우로 브라우저가 이 상태를 확정하게 함
+      void (track as HTMLElement).offsetWidth;
+      track.style.transition = ''; // CSS에 선언된 transition 복구
+    };
+    
+    // 일반 애니메이션
+    const animateTo = (i: number) => {
+      setTransform(i); // transition이 켜진 상태에서 transform만 바꾸면 부드럽게 이동
+    };
+
+    const jumpTo = (i: number) => {
+      track.style.transition = 'none';
+      setTransform(i);
+      // 다음 프레임에 transition 되살림
       raf(() => {
-        track.style.transform = `translate3d(${-offset}px,0,0)`;
-        if (!animate)
-          raf(() => {
-            track.style.transition = '';
-          });
+        track.style.transition = '';
       });
     };
 
-    const jumpTo = (i: number) => translateToIndex(i, false);
+    const maxIndex = perView + N - 1;
 
     const go = (dir: Direction) => {
       if (isAnimating) return;
       isAnimating = true;
-      index += dir === 'next' ? step : -step;
-      translateToIndex(index, true);
+      if (dir === 'prev') {
+        // 왼쪽 이동 시, 경계를 넘기 전에 미리 실데이터 구간으로 점프하여
+        // 클론 구간이 화면에 보이지 않도록 함.
+        if (index - step < perView) {
+          index += N;   // 같은 화면을 보존한 채 실데이터 영역으로 이동
+          preJump(index);
+        }
+        index -= step;  // 실제 이동
+        animateTo(index);
+      } else {
+        // 오른쪽 이동 시, 끝 경계를 넘기 전에 미리 반대편 실데이터 구간으로 점프
+        if (index + step > maxIndex) {
+          index -= N;   // 같은 화면을 보존한 채 실데이터 영역으로 이동
+          preJump(index);
+        }
+        index += step;  // 실제 이동
+        animateTo(index);
+      }
     };
 
     // === 크기 계산/적용 ===
@@ -150,13 +182,12 @@ export function initCarousels(): void {
 
     // === transition 끝나면 클론 보정 ===
     track.addEventListener('transitionend', () => {
-      const maxIndex = perView + N - 1;
       if (index < perView) {
         index = perView + ((index - perView) % N + N) % N;
-        jumpTo(index);
+        preJump(index);
       } else if (index > maxIndex) {
         index = perView + ((index - perView) % N + N) % N;
-        jumpTo(index);
+        preJump(index);
       }
       setActivePager();
       isAnimating = false;
@@ -169,7 +200,7 @@ export function initCarousels(): void {
       const ro = new ResizeObserver(() => onResize());
       ro.observe(viewport);
     } else {
-      addEventListener('resize', () => onResize());
+      (globalThis as Window & typeof globalThis).addEventListener('resize', () => onResize());
     }
 
     // === 초기화 ===
