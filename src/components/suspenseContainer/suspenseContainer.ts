@@ -40,19 +40,57 @@ class SuspenseContainer extends HTMLElement {
       .then(data => {
         this.#resolved.set(key, data);
         this.#pending.delete(key);
-        // Only set loading to false if no other promises are pending
         if (this.#pending.size === 0) {
           this.#loading = false;
         }
       })
       .catch(error => {
         this.#pending.delete(key);
-        // Only set loading to false if no other promises are pending
         if (this.#pending.size === 0) {
           this.#loading = false;
         }
         ErrorBoundary.reportError(error);
       });
+  }
+
+  renderContent(resource: { read(): unknown }) {
+    const slotEl = this.querySelector(`[slot="content"]`);
+    if (slotEl) {
+      slotEl.innerHTML = resource.read() as string;
+    }
+  }
+
+  registerResource(key: string, resource: { read(): unknown }) {
+    let promise: Promise<unknown> | null = null;
+    try {
+      resource.read();
+      this.#resolved.set(key, resource);
+    } catch (e) {
+      if (e instanceof Promise) {
+        promise = e;
+      } else {
+        ErrorBoundary.reportError(e);
+        return;
+      }
+    }
+
+    if (promise) {
+      this.#pending.set(key, promise);
+      this.#loading = true;
+
+      promise
+        .then(() => {
+          this.#resolved.set(key, resource);
+          this.#pending.delete(key);
+          this.renderContent(resource);
+          if (this.#pending.size === 0) this.#loading = false;
+        })
+        .catch(error => {
+          this.#pending.delete(key);
+          if (this.#pending.size === 0) this.#loading = false;
+          ErrorBoundary.reportError(error);
+        });
+    }
   }
 }
 
