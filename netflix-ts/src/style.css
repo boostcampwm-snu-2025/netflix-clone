@@ -227,10 +227,10 @@ a:focus-visible, button:focus-visible {
 .card { position: relative; }
 .card .card__actions {
   position: absolute;
-  left: 8px;
+  left: 33.33%;
   bottom: 8px;
   display: flex;
-  gap: 6px;
+  gap: var(--space-8);
   opacity: 0;
   visibility: hidden;
   transform: translateY(4px);

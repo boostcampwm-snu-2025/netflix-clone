@@ -13,7 +13,7 @@ function cardHTML(item: Item) {
         <img class="card__img" src="${item.thumb ?? ''}" alt="${item.name} 포스터"
              onerror="this.style.background='#444'; this.removeAttribute('src')"/>
       </a>
-      <div class="card__actions" style="position:absolute;left:8px;bottom:8px;display:flex;gap:6px;">
+      <div class="card__actions">
         <button class="btn-like" aria-pressed="${liked}"  aria-label="좋아요">❤</button>
         <button class="btn-wish" aria-pressed="${wished}" aria-label="찜하기">★</button>
       </div>
