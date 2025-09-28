@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+@theme {
+  --color-base: rgb(20, 20, 20);
+  --spacing-wrapper-wide: 60px;
+  /* --spacing-wrapper-narrow: 4%; */
+  --spacing-header-wide: 68px;
+  --spacing-header-narrow: 41px;
+  --spacing-nav: 20px;
+  --breakpoint-netflix: 950px;
+}

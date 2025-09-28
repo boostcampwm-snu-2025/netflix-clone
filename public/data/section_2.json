@@ -1,0 +1,96 @@
+{
+  "title": "Sample2",
+  "pageSize": 3,
+  "data": [
+    {
+      "id": "40dec59b-f8ec-4d58-8955-92aadda728d2",
+      "href": "#",
+      "src": "/section/section_2_1.webp"
+    },
+    {
+      "id": "5a2dc7ac-bbe2-435b-b7d8-361549a72c6f",
+      "href": "#",
+      "src": "/section/section_2_2.webp"
+    },
+    {
+      "id": "f8eb524e-e7d1-457d-b617-d5987596c70c",
+      "href": "#",
+      "src": "/section/section_2_3.webp"
+    },
+    {
+      "id": "b75873f9-21df-4c0c-bb8c-d05382cd3010",
+      "href": "#",
+      "src": "/section/section_2_4.webp"
+    },
+    {
+      "id": "69edab28-d02b-47bf-9f0d-1442ae003a6a",
+      "href": "#",
+      "src": "/section/section_2_5.webp"
+    },
+    {
+      "id": "1a1e0095-2a2b-4e48-91df-a039a91fcda6",
+      "href": "#",
+      "src": "/section/section_2_6.webp"
+    },
+    {
+      "id": "602a116d-a860-4b71-b3eb-e0d944273879",
+      "href": "#",
+      "src": "/section/section_3_1.webp"
+    },
+    {
+      "id": "3c598b82-336e-4d64-8c02-fc97b22f60c8",
+      "href": "#",
+      "src": "/section/section_3_2.webp"
+    },
+    {
+      "id": "8953b1c6-8714-462d-a6ed-bce8d802fc79",
+      "href": "#",
+      "src": "/section/section_3_3.webp"
+    },
+    {
+      "id": "3fce8d75-7344-4e46-9617-574cde270d22",
+      "href": "#",
+      "src": "/section/section_3_4.webp"
+    },
+    {
+      "id": "0317755a-21d1-421e-9c41-ff73197a5324",
+      "href": "#",
+      "src": "/section/section_3_5.webp"
+    },
+    {
+      "id": "95637260-1703-4248-bfee-d91455078ee6",
+      "href": "#",
+      "src": "/section/section_3_6.webp"
+    },
+    {
+      "id": "322faf67-d008-4548-acb1-8826e5d454e9",
+      "href": "#",
+      "src": "/section/section_1_1.webp"
+    },
+    {
+      "id": "92f08581-bcd8-449e-bc1e-982266e7032b",
+      "href": "#",
+      "src": "/section/section_1_2.webp"
+    },
+    {
+      "id": "f8c64a51-8a8c-45a1-98e8-ad8441c1dd28",
+      "href": "#",
+      "src": "/section/section_1_3.webp"
+    },
+    {
+      "id": "e097ef71-60ba-42a8-bf86-a16ee99fb009",
+      "href": "#",
+      "src": "/section/section_1_4.webp"
+    },
+    {
+      "id": "5f0ccf19-4de0-4427-9256-0a51ddd970a6",
+      "href": "#",
+      "src": "/section/section_1_5.webp"
+    },
+    {
+      "id": "40dec59b-f8ec-4d58-8955-92aadda728d2",
+      "href": "#",
+      "src": "/section/section_1_6.webp"
+    }
+  ]
+}

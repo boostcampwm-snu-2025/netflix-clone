@@ -1,0 +1,10 @@
+{
+  "background": {
+    "src": "/section/hero_bg.webp"
+  },
+  "overlay": {
+    "src": "/section/hero_overlay.webp",
+    "title": "시청자 추천",
+    "description": "직업이 없는 싱글 여성. 예상치 못한 사건들을 겪은 후, 연애 경험이 없는\n샐러리맨을 위해 일하게 된다. 직책이 뭐냐고? 그건 바로 그의 아내."
+  }
+}

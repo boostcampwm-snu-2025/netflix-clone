@@ -36,8 +36,5 @@ Temporary Items
 
 # End of https://www.toptal.com/developers/gitignore/api/macos
 
-sync_tailwind.sh
-app.css
-package.json
-package-lock.json
 node_modules/
+dist/

@@ -1,0 +1,32 @@
+[
+  {
+    "src": "/header/noti1.webp",
+    "detail": "넷플릭스 '신규 콘텐츠 가이드'\n공개 예정작을 살펴보세요.",
+    "date": "2주 전"
+  },
+  {
+    "src": "/header/noti2.webp",
+    "detail": "신규 콘텐츠\n폭군의 셰프",
+    "date": "3주 전"
+  },
+  {
+    "src": "/header/noti3.webp",
+    "detail": "대한민국의 TOP 10 시리즈\n인기 콘텐츠를 확인해 보세요.",
+    "date": "1개월"
+  },
+  {
+    "src": "/header/noti4.webp",
+    "detail": "신규 콘텐츠\n파이널 드래프트",
+    "date": "1개월"
+  },
+  {
+    "src": "/header/noti5.webp",
+    "detail": "<브람스를 좋아하세요?> 시청 완료!\n다음으로는 뭘 볼까요?",
+    "date": "1개월"
+  },
+  {
+    "src": "/header/noti6.webp",
+    "detail": "사카모토 데이즈\n새로운 에피소드 등록 알림",
+    "date": "1개월"
+  }
+]
