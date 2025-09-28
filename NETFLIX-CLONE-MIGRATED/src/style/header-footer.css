@@ -144,7 +144,7 @@ footer {
   align-self: initial;
   align-items: center;
   filter: invert(1);
-  filter: webkit-invert(1);
+  -webkit-filter: invert(1);
 }
 
 .social-links {
