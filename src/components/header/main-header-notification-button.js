@@ -38,7 +38,7 @@ export class MainHeaderNotificationButton extends HTMLElement {
     this.innerHTML = `
     <button class="header-icon-notification" 
             type="button">
-      <img src="${ASSET_PATH.NOTIFICATON}" alt="알림"  />
+      <img src="${ASSET_PATH.NOTIFICATON}" alt="알림" />
       ${
         showBadge
           ? `

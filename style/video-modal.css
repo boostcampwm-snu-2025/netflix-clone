@@ -1,0 +1,266 @@
+/* 모달 오버레이 (전체 화면 위에 위치) */
+.video-hover-modal-overlay {
+  position: absolute;
+  z-index: 1000;
+  opacity: 0;
+  transform: translateY(20px) scale(0.9);
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  pointer-events: none;
+}
+
+.video-hover-modal-overlay.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+.video-hover-modal-overlay.hide {
+  opacity: 0;
+  transform: translateY(-20px) scale(0.9);
+  pointer-events: none;
+}
+
+/* 메인 모달 컨테이너 */
+.video-hover-modal {
+  width: 400px;
+  height: 500px;
+  background: #141414;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  color: white;
+  border: 1px solid #333;
+}
+
+/* 썸네일 섹션 */
+.modal-thumbnail-section {
+  position: relative;
+  height: 225px; /* 16:9 비율 */
+  overflow: hidden;
+}
+
+.modal-large-thumbnail {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.modal-controls-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.2) 0%,
+    rgba(0, 0, 0, 0.1) 50%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.modal-thumbnail-section:hover .modal-controls-overlay {
+  opacity: 1;
+}
+
+/* 큰 재생 버튼 */
+.modal-play-button {
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 50%;
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: #333;
+}
+
+.modal-play-button:hover {
+  background: white;
+  transform: scale(1.1);
+}
+
+/* 콘텐츠 섹션 */
+.modal-content-section {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* 헤더 (제목 + 좋아요) */
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.modal-title {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.3;
+  margin: 0;
+  flex: 1;
+}
+
+.modal-like-button {
+  background: transparent;
+  border: 2px solid #666;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: white;
+  flex-shrink: 0;
+}
+
+.modal-like-button:hover {
+  border-color: white;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.modal-like-button.liked {
+  background: #e50914;
+  border-color: #e50914;
+  color: white;
+}
+
+/* 정보 섹션 */
+.modal-info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+/* 배지들 */
+.modal-badges {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.badge {
+  background: #e50914;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.badge.new {
+  background: #46d369;
+}
+
+.badge.episode {
+  background: #0080ff;
+}
+
+.badge.season {
+  background: #ffa500;
+}
+
+/* 설명 */
+.modal-description {
+  font-size: 14px;
+  line-height: 1.4;
+  color: #ccc;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* 액션 버튼들 */
+.modal-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.modal-action-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 16px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.modal-action-button.primary {
+  background: #e50914;
+  color: white;
+}
+
+.modal-action-button.primary:hover {
+  background: #f40612;
+}
+
+.modal-action-button.secondary {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 1px solid #666;
+}
+
+.modal-action-button.secondary:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: white;
+}
+
+/* 원본 썸네일 컨테이너 */
+.recommendation-contents-inner {
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.recommendation-contents-inner:hover {
+  transform: scale(1.02);
+}
+
+/* 모달과 트리거 요소 사이의 연결 영역 생성 */
+.video-hover-modal-overlay::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  background: transparent;
+  z-index: -1;
+}
+
+/* 모달 호버 상태에서 더 부드러운 전환 */
+.video-hover-modal {
+  transition: all 0.2s ease;
+}
+
+.video-hover-modal:hover {
+  transform: scale(1.02);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.8);
+}

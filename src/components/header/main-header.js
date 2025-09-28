@@ -4,9 +4,9 @@ import { HEADER_NOTIFICATION } from "../../entity/main-header-data.js";
 
 const notificationNumber = HEADER_NOTIFICATION.filter((n) => n.unread).length;
 const API_VALUE = {
-  NOTIFICATION_NUMBER: notificationNumber,
-  PROFILE_IMG: ASSET_PATH.MY_PROFILE,
-  ALT: "김연우의 프로필 사진",
+  notification_number: notificationNumber,
+  profile_img: ASSET_PATH.MY_PROFILE,
+  alt: "김연우의 프로필 사진",
 };
 
 export class MainHeader extends HTMLElement {
@@ -60,11 +60,11 @@ export class MainHeader extends HTMLElement {
         <main-header-search-button></main-header-search-button>
         <main-header-kids-button></main-header-kids-button>
         <main-header-notification-button 
-          notification-number="${apiValue.NOTIFICATION_NUMBER}">
+          notification-number="${apiValue.notification_number}">
         </main-header-notification-button>
         <main-header-my-profile-button 
-          profile-img="${apiValue.PROFILE_IMG}" 
-          alt="${apiValue.ALT}">
+          profile-img="${apiValue.profile_img}" 
+          alt="${apiValue.alt}">
         </main-header-my-profile-button>
       </div>
     `;
@@ -74,7 +74,6 @@ export class MainHeader extends HTMLElement {
     const headerRightWrapper = this.querySelector(".header-right-wrapper");
     headerRightWrapper.addEventListener("notification-click", (e) => {
       const { totalCount } = e.detail;
-      console.log(e.detail);
       this._updateBadgeCount(totalCount);
     });
   }

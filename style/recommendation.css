@@ -1,7 +1,7 @@
 .recommendation-container {
   position: relative;
   width: 100%;
-  height: 1200px;
+  padding-bottom: 30px;
 }
 
 .recommendation-contents-wrapper {
@@ -11,6 +11,13 @@
   padding-left: 54px;
   width: 100%;
   gap: 24px;
+}
+
+.recommendation-contents-wrapper:first-child > p {
+  position: absolute;
+  top: -36px;
+  left: 52px;
+  z-index: 10;
 }
 
 .recommendation-contents-wrapper p {
@@ -87,20 +94,12 @@
   will-change: transform;
 }
 
-.recommendation-float-wrapper {
-  position: absolute;
-  top: -80px;
-  z-index: 3;
-  display: flex;
-  flex-direction: column;
-  gap: 48px;
-}
-
 .recommendation-contents-list-inner {
   display: flex;
   width: calc(100vw - 72px);
+  height: 100%;
+  overflow-x: scroll;
   gap: 8px;
-  overflow-x: auto;
   padding-bottom: 10px;
 }
 
