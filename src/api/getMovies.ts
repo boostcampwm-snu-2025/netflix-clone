@@ -15,6 +15,8 @@ export interface MoviesResponse {
 }
 
 export async function getTrendingMovies(): Promise<Movie[]> {
+  await new Promise(resolve => setTimeout(resolve, 10000));
+
   try {
     const response = await fetch('/api/trending');
 
