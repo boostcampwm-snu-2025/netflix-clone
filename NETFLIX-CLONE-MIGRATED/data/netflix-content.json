@@ -1,0 +1,275 @@
+{
+  "hero": {
+    "title": "진격의 거인",
+    "description": "인류의 마지막 거주지인 거대한 성벽 안에서 평화롭게 살아가던 인류는 어느 날 갑작스러운 거인의 출현으로 인해 일상을 잃고 만다. 에렌 예거와 그의 친구들은 거인과의 싸움에 뛰어들어 인류의 생존을 위해 싸운다.",
+    "backgroundImage": "../img/attack-on-titan.png",
+    "logoImage": "../img/banner-attack-on-titan.webp"
+  },
+  "sliders": [
+    {
+      "id": "award-winning-hero",
+      "title": "어워드 수상! 몰아보기 추천 시리즈",
+      "type": "hero",
+      "items": [
+        {
+          "id": "demon-slayer",
+          "title": "귀멸의 칼날",
+          "image": "../img/poster/demon-slayer.webp",
+          "rating": "15+",
+          "year": 2023,
+          "genre": ["액션", "애니메이션"],
+          "description": "대정시대를 배경으로 한 귀멸의 칼날"
+        },
+        {
+          "id": "breaking-bad",
+          "title": "브레이킹 배드",
+          "image": "../img/poster/breaking-bad.webp",
+          "rating": "18+",
+          "year": 2013,
+          "genre": ["드라마", "범죄"],
+          "description": "고등학교 화학 교사 월터 화이트의 이야기"
+        },
+        {
+          "id": "wednesday",
+          "title": "웬즈데이",
+          "image": "../img/poster/wednesday.jpg",
+          "rating": "12+",
+          "year": 2022,
+          "genre": ["판타지", "코미디"],
+          "description": "네베르모어 아카데미에 입학한 웬즈데이"
+        },
+        {
+          "id": "adolescence",
+          "title": "소년의 시간",
+          "image": "../img/poster/adolescence.jpg",
+          "rating": "15+",
+          "year": 2021,
+          "genre": ["드라마", "청춘"],
+          "description": "사춘기 소년의 이야기"
+        },
+        {
+          "id": "better-call-saul",
+          "title": "베터 콜 사울",
+          "image": "../img/poster/better-call-saul.jpg",
+          "rating": "18+",
+          "year": 2022,
+          "genre": ["드라마", "범죄"],
+          "description": "변호사 사울 굿맨의 과거 이야기"
+        },
+        {
+          "id": "signal",
+          "title": "시그널",
+          "image": "../img/poster/signal.webp",
+          "rating": "15+",
+          "year": 2016,
+          "genre": ["드라마", "스릴러"],
+          "description": "과거와 현재를 잇는 무전기"
+        },
+        {
+          "id": "the-glory",
+          "title": "더 글로리",
+          "image": "../img/poster/the-glory.jpg",
+          "rating": "18+",
+          "year": 2022,
+          "genre": ["드라마", "스릴러"],
+          "description": "학폭 가해자들에게 복수하는 이야기"
+        },
+        {
+          "id": "suriname",
+          "title": "수리남",
+          "image": "../img/poster/suriname.jpg",
+          "rating": "18+",
+          "year": 2022,
+          "genre": ["드라마", "액션"],
+          "description": "마약 조직과의 치열한 대결"
+        }
+      ]
+    },
+    {
+      "id": "top-10-korea",
+      "title": "오늘 대한민국의 TOP 10 시리즈",
+      "type": "ranking",
+      "items": [
+        {
+          "id": "queen-mantis",
+          "title": "여왕가재",
+          "image": "../img/poster/queen-mantis.webp",
+          "rank": 1,
+          "rating": "15+",
+          "year": 2024,
+          "genre": ["드라마", "로맨스"],
+          "description": "궁중 요리사의 이야기"
+        },
+        {
+          "id": "bon-appetit",
+          "title": "맛있게 드세요, 폐하",
+          "image": "../img/poster/bon-appétit--Your-majesty.webp",
+          "rank": 2,
+          "rating": "12+",
+          "year": 2024,
+          "genre": ["사극", "로맨스"],
+          "description": "조선시대 궁중 로맨스"
+        },
+        {
+          "id": "esquire",
+          "title": "에스콰이어",
+          "image": "../img/poster/esquire.webp",
+          "rank": 3,
+          "rating": "18+",
+          "year": 2024,
+          "genre": ["드라마", "스릴러"],
+          "description": "변호사 사무소의 어두운 비밀"
+        },
+        {
+          "id": "aema",
+          "title": "애마",
+          "image": "../img/poster/aema.jpg",
+          "rank": 4,
+          "rating": "18+",
+          "year": 2024,
+          "genre": ["드라마", "멜로"],
+          "description": "복잡한 사랑 이야기"
+        },
+        {
+          "id": "eunjung-sangyeon",
+          "title": "은정과 상연",
+          "image": "../img/poster/eunjung-and-sangyeon.jpg",
+          "rank": 5,
+          "rating": "15+",
+          "year": 2024,
+          "genre": ["드라마", "로맨스"],
+          "description": "운명적 사랑 이야기"
+        },
+        {
+          "id": "my-turn",
+          "title": "마이 턴",
+          "image": "../img/poster/my-turn.webp",
+          "rank": 6,
+          "rating": "15+",
+          "year": 2024,
+          "genre": ["드라마", "성장"],
+          "description": "청춘 성장 드라마"
+        },
+        {
+          "id": "demon-slayer-vertical",
+          "title": "귀멸의 칼날",
+          "image": "../img/poster/demon-slayer-vertical.webp",
+          "rank": 7,
+          "rating": "15+",
+          "year": 2023,
+          "genre": ["액션", "애니메이션"],
+          "description": "귀멸의 칼날 시즌 4"
+        },
+        {
+          "id": "wednesday-vertical",
+          "title": "웬즈데이",
+          "image": "../img/poster/wednesday-vertical.jpg",
+          "rank": 8,
+          "rating": "12+",
+          "year": 2022,
+          "genre": ["판타지", "코미디"],
+          "description": "아담스 패밀리의 웬즈데이"
+        },
+        {
+          "id": "trigger",
+          "title": "트리거",
+          "image": "../img/poster/trigger.jpg",
+          "rank": 9,
+          "rating": "18+",
+          "year": 2024,
+          "genre": ["액션", "스릴러"],
+          "description": "긴장감 넘치는 액션 스릴러"
+        },
+        {
+          "id": "little-island-hero",
+          "title": "작은 섬의 큰 영웅",
+          "image": "../img/poster/little-island-big-hero.webp",
+          "rank": 10,
+          "rating": "12+",
+          "year": 2024,
+          "genre": ["모험", "가족"],
+          "description": "작은 섬에서 펼쳐지는 모험"
+        }
+      ]
+    },
+    {
+      "id": "crime-dramas",
+      "title": "범죄 TV 드라마 수상작",
+      "type": "normal",
+      "items": [
+        {
+          "id": "demon-slayer-crime",
+          "title": "귀멸의 칼날",
+          "image": "../img/poster/demon-slayer.webp",
+          "rating": "15+",
+          "year": 2023,
+          "genre": ["액션", "애니메이션"],
+          "description": "대정시대를 배경으로 한 액션 애니메이션"
+        },
+        {
+          "id": "better-call-saul-crime",
+          "title": "베터 콜 사울",
+          "image": "../img/poster/better-call-saul.jpg",
+          "rating": "18+",
+          "year": 2022,
+          "genre": ["드라마", "범죄"],
+          "description": "브레이킹 배드의 프리퀄"
+        },
+        {
+          "id": "signal-crime",
+          "title": "시그널",
+          "image": "../img/poster/signal.webp",
+          "rating": "15+",
+          "year": 2016,
+          "genre": ["드라마", "스릴러"],
+          "description": "시공간을 넘나드는 수사 드라마"
+        },
+        {
+          "id": "suriname-crime",
+          "title": "수리남",
+          "image": "../img/poster/suriname.jpg",
+          "rating": "18+",
+          "year": 2022,
+          "genre": ["드라마", "액션"],
+          "description": "남미 마약 조직 침투 작전"
+        },
+        {
+          "id": "designated-survivor",
+          "title": "지정생존자",
+          "image": "../img/poster/designated-survivor.jpg",
+          "rating": "15+",
+          "year": 2019,
+          "genre": ["드라마", "정치"],
+          "description": "정치 스릴러 드라마"
+        },
+        {
+          "id": "secret-forest",
+          "title": "비밀의 숲",
+          "image": "../img/poster/the-secrete-forest.webp",
+          "rating": "15+",
+          "year": 2017,
+          "genre": ["드라마", "미스터리"],
+          "description": "검찰과 경찰의 부패 척결"
+        },
+        {
+          "id": "adolescence-crime",
+          "title": "사춘기 메들리",
+          "image": "../img/poster/adolescence.jpg",
+          "rating": "15+",
+          "year": 2021,
+          "genre": ["드라마", "청춘"],
+          "description": "청소년 범죄와 성장 이야기"
+        },
+        {
+          "id": "breaking-bad-crime",
+          "title": "브레이킹 배드",
+          "image": "../img/poster/breaking-bad.webp",
+          "rating": "18+",
+          "year": 2013,
+          "genre": ["드라마", "범죄"],
+          "description": "마약 제조업자가 된 화학 교사"
+        }
+      ]
+    }
+  ]
+}
