@@ -23,7 +23,7 @@
     const gapPx = parseFloat(style.columnGap || style.gap || '8') || 8;
 
     // 화면에 보이는 카드 수 추정(N) → 앞뒤로 N개씩 클론
-    const N = 5;
+    const N = 8;
     const headClones = items.slice(-N).map(cloneItem);
     const tailClones = items.slice(0, N).map(cloneItem);
     headClones.reverse(); // append 순서 보정
@@ -90,7 +90,8 @@
         if (target <= originalEnd && lastVisible >= cloneStart) {
           // 클론영역 직전에서 멈춤
           target = cloneStart - visibleCards + 1;
-        } else if (target > originalEnd) {
+        }
+        if (target > originalEnd || cur >= originalEnd - visibleCards + 1) {
           // 완전히 클론 영역으로 이동
           target = cloneStart;
         }
@@ -100,13 +101,13 @@
         const cloneEnd = N - 1;
         
         // 원본과 클론이 섞여서 보이게 되는 상황이면 조정
-        if (target <= cloneEnd && lastVisible >= originalStart) {
-          // 완전히 클론 영역으로 이동
-          target = Math.max(0, originalStart - visibleCards);
-        } else if (lastVisible < originalStart) {
+        if (cur === originalStart && target < originalStart) {
           // 클론영역 직후에서 멈춤
           target = Math.max(0, cloneEnd - visibleCards + 1);
-        }
+        } else if (target <= cloneEnd && lastVisible > originalStart) {
+          // 클론영역 직전에서 멈춤
+          target = originalStart;
+        } 
       }
       
       // 전체 범위 내에서 제한
