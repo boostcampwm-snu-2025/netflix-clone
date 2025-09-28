@@ -2,32 +2,38 @@
 
 전기정보공학부 김희원 넷플릭스 클론 프로젝트
 
+### Branch info
+
+- feature : 과제 2 & 3 개발용
+- feature-vite : 과제 4 개발용
+
 ### How to run this project
 
-Run `index.html` via VS Code
+```bash
+# move to the project directory
+cd vite-netflix-clone-project
 
-### Directory Structure
+# install dependencies if needed
+npm install
 
-- `index.html`
-- `styles.css`
-- assets/
-- `app.js`
+# run this project
+npm run dev
+```
 
-Material UI icons are used for this project
+This project will open at `http://localhost:5173`
 
 ### Checkpoint
 
-- 알람 hover 시 모달 노출 V
-- 프로필 hover 시 모달 노출 V
-- 카드형 콘텐츠 무한 Carousel 구현 V
-- pagination V
+- init vite project V
+- code migration V
+- 2.1 use fetch API to render card content V
+- 2.2 like button (locally store info) V
+- 2.3 mock server ?
+- Fix card carousel functionality: 옆으로 스크롤해도 card 안보이게 하기 V
+- (Z index 조절) card hover 시 pagination bar 안보이도록 수정 V
 
-#### More stuff to do
+### 개발 노트
 
-- 카테고리별 카드 개수 다르게 설정
-- `app.js`를 ESM 방식으로 재구현
-- 카드형 콘텐츠 위에 숫자 라벨 표시
+- [Troubleshooting 과정](./TROUBLESHOOTING_NOTES.md)
 
-### 개발 과정 정리된 문서
-
-[Notes](./NOTES.md)
+- [프로젝트 구조, 코드 등 정리](./CODE_NOTES.md)

@@ -1,0 +1,135 @@
+{
+	"hero": {
+		"rank": "오늘 시리즈 순위 2위",
+		"description": "대한민국을 대표하는 장수 예능 프로그램. 팀을 이룬 연예인 출연자들이 다양한 미션을 해결하기 위해 여러 유명 장소를 열심히 뛰어다닌다.",
+		"image": "/assets/runningman.png"
+	},
+	"notifications": [
+		{
+			"image": "/assets/runningman.png",
+			"alt": "알림1",
+			"title": "9월 12일 공개",
+			"desc": "지금 예고편을 시청하세요"
+		},
+		{
+			"image": "/assets/runningman.png",
+			"alt": "알림2",
+			"title": "넷플릭스 '신규 콘텐츠 가이드'",
+			"desc": "공개 예정작을 살펴보세요"
+		},
+		{
+			"image": "/assets/runningman.png",
+			"alt": "알림3",
+			"title": "신규 콘텐츠",
+			"desc": "나는 생존자다"
+		},
+		{
+			"image": "/assets/runningman.png",
+			"alt": "알림4",
+			"title": "웬즈데이 시즌 2",
+			"desc": "손맛이 다른 세계가 온다"
+		}
+	],
+	"profiles": [
+		{ "name": "사용자1", "avatar": "/assets/runningman.png" },
+		{ "name": "사용자2", "avatar": "/assets/runningman.png" },
+		{ "name": "키즈", "avatar": "/assets/runningman.png" }
+	],
+	"carousels": [
+		{
+			"id": "bobfriends",
+			"title": "밥친구",
+			"items": [
+				{ "image": "/assets/runningman.png", "alt": "밥친구 1" },
+				{ "image": "/assets/runningman.png", "alt": "밥친구 2" },
+				{ "image": "/assets/runningman.png", "alt": "밥친구 3" },
+				{ "image": "/assets/runningman.png", "alt": "밥친구 4" },
+				{ "image": "/assets/runningman.png", "alt": "밥친구 5" },
+				{ "image": "/assets/runningman.png", "alt": "밥친구 6" },
+				{ "image": "/assets/runningman.png", "alt": "밥친구 7" },
+				{ "image": "/assets/runningman.png", "alt": "밥친구 8" },
+				{ "image": "/assets/runningman.png", "alt": "밥친구 9" }
+			]
+		},
+		{
+			"id": "watching",
+			"title": ".님이 시청 중인 콘텐츠",
+			"items": [
+				{
+					"image": "/assets/runningman.png",
+					"alt": "시청 중인 콘텐츠 1"
+				},
+				{
+					"image": "/assets/runningman.png",
+					"alt": "시청 중인 콘텐츠 2"
+				},
+				{
+					"image": "/assets/runningman.png",
+					"alt": "시청 중인 콘텐츠 3"
+				},
+				{
+					"image": "/assets/runningman.png",
+					"alt": "시청 중인 콘텐츠 4"
+				},
+				{
+					"image": "/assets/runningman.png",
+					"alt": "시청 중인 콘텐츠 5"
+				},
+				{
+					"image": "/assets/runningman.png",
+					"alt": "시청 중인 콘텐츠 6"
+				},
+				{
+					"image": "/assets/runningman.png",
+					"alt": "시청 중인 콘텐츠 7"
+				},
+				{
+					"image": "/assets/runningman.png",
+					"alt": "시청 중인 콘텐츠 8"
+				},
+				{
+					"image": "/assets/runningman.png",
+					"alt": "시청 중인 콘텐츠 9"
+				},
+				{
+					"image": "/assets/runningman.png",
+					"alt": "시청 중인 콘텐츠 10"
+				},
+				{
+					"image": "/assets/runningman.png",
+					"alt": "시청 중인 콘텐츠 11"
+				},
+				{
+					"image": "/assets/runningman.png",
+					"alt": "시청 중인 콘텐츠 12"
+				}
+			]
+		},
+		{
+			"id": "romance",
+			"title": "연애 세포를 깨우는 작품들",
+			"items": [
+				{ "image": "/assets/runningman.png", "alt": "연애 작품 1" },
+				{ "image": "/assets/runningman.png", "alt": "연애 작품 2" },
+				{ "image": "/assets/runningman.png", "alt": "연애 작품 3" },
+				{ "image": "/assets/runningman.png", "alt": "연애 작품 4" },
+				{ "image": "/assets/runningman.png", "alt": "연애 작품 5" },
+				{ "image": "/assets/runningman.png", "alt": "연애 작품 6" },
+				{ "image": "/assets/runningman.png", "alt": "연애 작품 7" },
+				{ "image": "/assets/runningman.png", "alt": "연애 작품 8" }
+			]
+		}
+	],
+	"top10": [
+		{ "image": "/assets/kpop_demon_hunters.png", "alt": "1" },
+		{ "image": "/assets/kpop_demon_hunters.png", "alt": "2" },
+		{ "image": "/assets/kpop_demon_hunters.png", "alt": "3" },
+		{ "image": "/assets/kpop_demon_hunters.png", "alt": "4" },
+		{ "image": "/assets/kpop_demon_hunters.png", "alt": "5" },
+		{ "image": "/assets/kpop_demon_hunters.png", "alt": "6" },
+		{ "image": "/assets/kpop_demon_hunters.png", "alt": "7" },
+		{ "image": "/assets/kpop_demon_hunters.png", "alt": "8" },
+		{ "image": "/assets/kpop_demon_hunters.png", "alt": "9" },
+		{ "image": "/assets/kpop_demon_hunters.png", "alt": "10" }
+	]
+}
