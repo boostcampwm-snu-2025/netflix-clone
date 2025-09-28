@@ -1,0 +1,158 @@
+{
+  "categories": [
+    {
+      "id": "cat1",
+      "title": "밥친구",
+      "movies": [
+        {
+          "title": "치킨의 전설",
+          "description": "밤마다 펼쳐지는 치킨 배달 전쟁",
+          "image": "src/hero.png"
+        },
+
+        {
+          "title": "삼겹살 파티",
+          "description": "불판 위에서 피어나는 우정",
+          "image": "src/poster.png"
+        },
+        {
+          "title": "초밥의 꿈",
+          "description": "일류 스시 셰프를 향한 여정",
+          "image": "src/poster.png"
+        },
+        {
+          "title": "비빔밥 스토리",
+          "description": "다양한 재료가 어우러진 인생 이야기",
+          "image": "src/poster.png"
+        },
+        {
+          "title": "햄버거 타임",
+          "description": "패스트푸드점에서 만난 청춘들",
+          "image": "src/poster.png"
+        },
+        {
+          "title": "피자 헌터",
+          "description": "완벽한 피자를 찾아 떠나는 모험",
+          "image": "src/poster.png"
+        },
+        {
+          "title": "국밥로드",
+          "description": "따뜻한 국밥 한 그릇이 주는 위로",
+          "image": "src/poster.png"
+        }
+      ]
+    },
+    {
+      "id": "cat2",
+      "title": "시청 중인 콘텐츠",
+      "movies": [
+        {
+          "title": "시간 여행자",
+          "description": "과거와 미래를 넘나드는 모험",
+          "image": "src/poster.png"
+        },
+        {
+          "title": "우주 탐험대",
+          "description": "미지의 행성을 향한 여정",
+          "image": "src/poster.png"
+        },
+        {
+          "title": "마법 학교",
+          "description": "비밀스러운 주문과 성장의 기록",
+          "image": "src/poster.png"
+        },
+        {
+          "title": "정글 어드벤처",
+          "description": "야생 속에서 펼쳐지는 생존 게임",
+          "image": "src/poster.png"
+        },
+        {
+          "title": "로봇 전쟁",
+          "description": "인류와 기계의 마지막 대결",
+          "image": "src/poster.png"
+        },
+        {
+          "title": "바다의 신비",
+          "description": "깊은 바다에서 펼쳐지는 다큐멘터리",
+          "image": "src/poster.png"
+        },
+        {
+          "title": "좀비 아포칼립스",
+          "description": "생존자들의 처절한 사투",
+          "image": "src/poster.png"
+        },
+        {
+          "title": "스파이 시티",
+          "description": "첩보 작전과 이중 스파이의 음모",
+          "image": "src/poster.png"
+        },
+        {
+          "title": "미래 도시",
+          "description": "기술이 지배하는 세상에서의 삶",
+          "image": "src/poster.png"
+        },
+        {
+          "title": "사막의 전사",
+          "description": "끝없는 모래밭을 건너는 여정",
+          "image": "src/poster.png"
+        }
+      ]
+    },
+    {
+      "id": "cat3",
+      "title": "연애 세포를 깨우는 작품들",
+      "movies": [
+        {
+          "title": "첫사랑의 기억",
+          "description": "설렘 가득한 첫사랑 이야기",
+          "image": "src/poster.png"
+        },
+        {
+          "title": "달빛 고백",
+          "description": "달빛 아래서 피어나는 로맨스",
+          "image": "src/poster.png"
+        },
+        {
+          "title": "비밀 연애",
+          "description": "애틋한 두 사람의 이야기",
+          "image": "src/poster.png"
+        },
+        {
+          "title": "사랑의 속삭임",
+          "description": "귓가에 맴도는 달콤한 고백",
+          "image": "src/poster.png"
+        },
+        {
+          "title": "겨울 연가",
+          "description": "하얀 눈처럼 순수한 사랑",
+          "image": "src/poster.png"
+        },
+        {
+          "title": "여름 바람",
+          "description": "해변가에서 시작된 우연한 만남",
+          "image": "src/poster.png"
+        },
+        {
+          "title": "비 오는 날의 약속",
+          "description": "우산 속에 피어난 두근거림",
+          "image": "src/poster.png"
+        },
+        {
+          "title": "하트 시그널",
+          "description": "엇갈린 시그널 속 진짜 사랑 찾기",
+          "image": "src/poster.png"
+        },
+        {
+          "title": "별빛 아래",
+          "description": "밤하늘의 별처럼 빛나는 사랑",
+          "image": "src/poster.png"
+        },
+        {
+          "title": "봄날의 기적",
+          "description": "따스한 봄날에 찾아온 인연",
+          "image": "src/poster.png"
+        }
+      ]
+    }
+  ]
+}

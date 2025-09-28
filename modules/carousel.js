@@ -29,6 +29,7 @@ export function initCarousel() {
       const cardWidth = cards[0].offsetWidth + 16; // 카드 너비 + gap
       const offset = -(pageIndex * visible * cardWidth);
       track.style.transform = `translateX(${offset}px)`;
+      //여기에, 만약에 보이는 페이지가 visible 변수보다 작으면 처음 페이지의 카드들을 바로 가져다 붙이는 작업이 필요할 것 같은데(당연히 가져다 붙인 카드들은 두 번째 페이지에선 제외되어야겠지..!), 어떻게 구현을 하면 좋을까?
 
       dots.forEach((dot) => dot.classList.remove("active"));
       dots[pageIndex % totalPages].classList.add("active");
