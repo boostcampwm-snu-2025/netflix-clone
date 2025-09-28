@@ -1,0 +1,215 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--black);
+    position: sticky;
+    padding: 0px;
+    height: 40px;
+    top: 0;
+    z-index: 100;
+}
+
+.header__nav {
+    display: flex;
+    align-items: center;
+    gap: 0px;
+}
+
+.header__logo--netflix {
+    height: 100px;
+    width: auto;
+    padding-left: 24px;
+    padding-right: 8px;
+}
+
+.header__logo--cutting {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    overflow: hidden;
+}
+
+.header__tab-list, .header__icon-list {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.header__tab-item {
+    font-size: 13px; 
+    color: rgba(190, 190, 190, 1.0); 
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.header__tab-item:hover {
+    color: var(--white);
+}
+
+.header__icon--magnifier {
+    height: 23px;
+    width: auto;
+    cursor: pointer;
+}
+
+.modal-wrapper--notification {
+  position: relative; 
+  display: flex;
+  align-items: center;
+}
+
+.modal-wrapper--notification::before {
+  content: '';
+  position: absolute;
+  
+  /* 위치: 아이콘 바로 아래부터 시작 */
+  top: 100%; 
+  left: 0;
+  right: 0;
+  
+  height: 16px; 
+}
+
+.header__item--notification {
+    height: 22px;
+    width: auto;
+    padding: 0px;
+    cursor: pointer;
+    margin: 2px 9px;
+}
+
+.modal--notification {
+    display: none;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    gap: 16px 20px;
+    background-color: rgba(20, 20, 20, 0.9);
+    position: absolute; 
+    top: 52px;
+    right: -10px; 
+    width: 400px;
+    height: auto;
+    border: 1px solid #555;
+    padding-top: 12px;
+    padding-left: 12px;
+    padding-bottom: 12px;
+    z-index: 100;
+}
+
+.modal--notification::after {
+  /* 가상 요소 필수 속성 */
+  content: ''; 
+  
+  /* container를 기준으로 위치를 잡기 위해 absolute 사용 */
+  position: absolute; 
+  
+  /* 위치 조정 */
+  top: -10px;  /* 컨테이너 위쪽(- 방향)으로 10px 이동 */
+  right: 15px; /* 컨테이너 오른쪽에서 15px 떨어진 곳에 배치 */
+
+  /* 삼각형 모양 만들기 */
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;  /* 왼쪽 투명 테두리 */
+  border-right: 10px solid transparent; /* 오른쪽 투명 테두리 */
+  border-bottom: 10px solid rgba(255, 255, 255, 0.9); /* 아래쪽 테두리에 색상을 주어 삼각형을 만듦 */
+}
+
+.modal-wrapper--notification:hover .modal--notification {
+  display: grid;
+}
+
+.modal__font--notification {
+    color: var(--white);
+    font-size: 15px;
+}
+
+.modal__text--time {
+    color: var(--gray);
+    font-size: 10px;
+}
+
+.modal-wrapper--profile {
+  position: relative; 
+  display: flex;
+  align-items: center;
+}
+
+.modal-wrapper--profile::before {
+  content: '';
+  position: absolute;
+  
+  /* 위치: 아이콘 바로 아래부터 시작 */
+  top: 100%; 
+  left: 0;
+  right: 0;
+  
+  height: 16px; 
+}
+
+.header__icon--basic_profile{
+    height: 26px;
+    width: auto;
+    margin-left: 0px;
+    border-radius: var(--standard-border-radius);
+}
+
+.modal--profile {
+    display: none;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    gap: 16px 20px;
+    background-color: rgba(20, 20, 20, 0.9);
+    position: absolute; 
+    top: 52px;
+    right: -15px; 
+    width: 200px;
+    height: auto;
+    border: 1px solid #555;
+    padding-top: 12px;
+    padding-left: 12px;
+    padding-bottom: 12px;
+    z-index: 100;
+}
+
+.modal--profile::after {
+  /* 가상 요소 필수 속성 */
+  content: ''; 
+  
+  /* container를 기준으로 위치를 잡기 위해 absolute 사용 */
+  position: absolute; 
+  
+  /* 위치 조정 */
+  top: -10px;  /* 컨테이너 위쪽(- 방향)으로 10px 이동 */
+  right: 15px; /* 컨테이너 오른쪽에서 15px 떨어진 곳에 배치 */
+
+  /* 삼각형 모양 만들기 */
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;  /* 왼쪽 투명 테두리 */
+  border-right: 10px solid transparent; /* 오른쪽 투명 테두리 */
+  border-bottom: 10px solid rgba(255, 255, 255, 0.9); /* 아래쪽 테두리에 색상을 주어 삼각형을 만듦 */
+}
+
+.modal-wrapper--profile:hover .modal--profile {
+  display: grid;
+}
+
+.modal__font--profile {
+    color: var(--white);
+    font-size: 12px;
+}
+
+.header__icon--triangle {
+    height: 8px;
+    width: auto;
+    margin-left: 8px;
+    margin-right: 40px;
+    transition: transform 0.3s ease;
+}
+
+.header__icon--triangle.on {
+    transform: rotate(180deg);
+}
+

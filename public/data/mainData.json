@@ -1,0 +1,76 @@
+[
+  {
+    "title": "회원님을 위해 엄선한 오늘의 콘텐츠",
+    "containerClass": "carousel-container__for-user",
+    "wrapperClass": "carousel-wrapper__for-user",
+    "cardType": "default",
+    "items": [
+      { "id": "user-wednesday", "imgSrc": "../assets/img_for_user_contents/1.jpg", "alt": "웬즈데이", "cardClass": "card__for-user" },
+      { "id": "user-demon-slayer", "imgSrc": "../assets/img_for_user_contents/2.jpg", "alt": "귀멸의 칼날", "cardClass": "card__for-user" },
+      { "id": "user-tyrants-chef", "imgSrc": "../assets/img_for_user_contents/3.jpg", "alt": "폭군의 셰프", "cardClass": "card__for-user" },
+      { "id": "user-yadang", "imgSrc": "../assets/img_for_user_contents/4.jpg", "alt": "야당", "cardClass": "card__for-user" },
+      { "id": "user-esquire", "imgSrc": "../assets/img_for_user_contents/5.jpg", "alt": "에스콰이어", "cardClass": "card__for-user" },
+      { "id": "user-fools", "imgSrc": "../assets/img_for_user_contents/6.jpg", "alt": "폭싹 속았수다", "cardClass": "card__for-user" },
+      { "id": "user-kpop-demon-hunters", "imgSrc": "../assets/img_for_user_contents/7.jpg", "alt": "케이팝 데몬 헌터스", "cardClass": "card__for-user" },
+      { "id": "user-jujutsu-kaisen", "imgSrc": "../assets/img_for_user_contents/8.jpg", "alt": "주술회전", "cardClass": "card__for-user" },
+      { "id": "user-apothecary-diaries", "imgSrc": "../assets/img_for_user_contents/9.jpg", "alt": "약사의 혼잣말", "cardClass": "card__for-user" },
+      { "id": "user-sakamoto-days", "imgSrc": "../assets/img_for_user_contents/10.jpg", "alt": "사카모토 데이즈", "cardClass": "card__for-user" },
+      { "id": "user-our-blues", "imgSrc": "../assets/img_for_user_contents/11.jpg", "alt": "우리들의 블루스", "cardClass": "card__for-user" },
+      { "id": "user-cyberpunk", "imgSrc": "../assets/img_for_user_contents/12.jpg", "alt": "사이버펑크", "cardClass": "card__for-user" },
+      { "id": "user-dandadan", "imgSrc": "../assets/img_for_user_contents/13.jpg", "alt": "단다단", "cardClass": "card__for-user" },
+      { "id": "user-history-of-confession", "imgSrc": "../assets/img_for_user_contents/14.jpg", "alt": "고백의 역사", "cardClass": "card__for-user" },
+      { "id": "user-solo-leveling", "imgSrc": "../assets/img_for_user_contents/15.jpg", "alt": "나 혼자만 레벨업", "cardClass": "card__for-user" },
+      { "id": "user-severe-trauma-center", "imgSrc": "../assets/img_for_user_contents/16.jpg", "alt": "중증외상센터", "cardClass": "card__for-user" },
+      { "id": "user-dr-stone", "imgSrc": "../assets/img_for_user_contents/17.jpg", "alt": "닥터 스톤", "cardClass": "card__for-user" },
+      { "id": "user-miseng", "imgSrc": "../assets/img_for_user_contents/18.jpg", "alt": "미생", "cardClass": "card__for-user" }
+    ]
+  },
+  {
+    "title": "오늘 대한민국의 top 10 시리즈",
+    "containerClass": "carousel-container__top10",
+    "wrapperClass": "carousel-wrapper__top10",
+    "cardType": "rank",
+    "items": [
+      { "id": "top10-the-mantis", "rank": 1, "imgSrc": "../assets/img_top10_contents/1.jpg", "alt": "사마귀" },
+      { "id": "top10-tyrants-chef", "rank": 2, "imgSrc": "../assets/img_top10_contents/2.jpg", "alt": "폭군의 셰프" },
+      { "id": "top10-esquire", "rank": 3, "imgSrc": "../assets/img_top10_contents/3.jpg", "alt": "에스콰이어" },
+      { "id": "top10-aema", "rank": 4, "imgSrc": "../assets/img_top10_contents/4.jpg", "alt": "애마" },
+      { "id": "top10-i-am-solo", "rank": 5, "imgSrc": "../assets/img_top10_contents/5.jpg", "alt": "나는 SOLO" },
+      { "id": "top10-demon-slayer", "rank": 6, "imgSrc": "../assets/img_top10_contents/6.jpg", "alt": "귀멸의 칼날" },
+      { "id": "top10-my-turn", "rank": 7, "imgSrc": "../assets/img_top10_contents/7.jpg", "alt": "마이턴" },
+      { "id": "top10-eunjung-and-sangyeon", "rank": 8, "imgSrc": "../assets/img_top10_contents/8.jpg", "alt": "은중과 상연" },
+      { "id": "top10-divorce-camp", "rank": 9, "imgSrc": "../assets/img_top10_contents/9.jpg", "alt": "이혼숙려캠프" },
+      { "id": "top10-kaiju-no-8", "rank": 10, "imgSrc": "../assets/img_top10_contents/10.jpg", "alt": "괴수 8호" }
+    ]
+  },
+  {
+    "title": "넷플릭스에 새로 올라온 콘텐츠",
+    "containerClass": "carousel-container__new",
+    "wrapperClass": "carousel-wrapper__new",
+    "cardType": "default",
+    "items": [
+      { "id": "new-yadang", "imgSrc": "../assets/img_new_contents/1.jpg", "alt": "야당", "cardClass": "card__new" },
+      { "id": "new-the-mantis", "imgSrc": "../assets/img_new_contents/2.jpg", "alt": "사마귀", "cardClass": "card__new" },
+      { "id": "new-craven", "imgSrc": "../assets/img_new_contents/3.jpg", "alt": "크레이븐", "cardClass": "card__new" },
+      { "id": "new-999-lawyer", "imgSrc": "../assets/img_new_contents/4.jpg", "alt": "999 -형사전문변호사-", "cardClass": "card__new" },
+      { "id": "new-death-kiss-game", "imgSrc": "../assets/img_new_contents/5.jpg", "alt": "데스 키스 게임", "cardClass": "card__new" },
+      { "id": "new-crazy-beautiful", "imgSrc": "../assets/img_new_contents/6.jpg", "alt": "crazy/beautiful", "cardClass": "card__new" },
+      { "id": "new-x-men", "imgSrc": "../assets/img_new_contents/7.jpg", "alt": "X맨", "cardClass": "card__new" },
+      { "id": "new-my-lovely-liar", "imgSrc": "../assets/img_new_contents/8.jpg", "alt": "소용없어 거짓말", "cardClass": "card__new" },
+      { "id": "new-jangdodoribari", "imgSrc": "../assets/img_new_contents/9.jpg", "alt": "장도바리바리", "cardClass": "card__new" },
+      { "id": "new-great-indian-comedy-show", "imgSrc": "../assets/img_new_contents/10.jpg", "alt": "위대한 인도 코미디쇼", "cardClass": "card__new" },
+      { "id": "new-haunted-hotel", "imgSrc": "../assets/img_new_contents/11.jpg", "alt": "헌티드호텔", "cardClass": "card__new" },
+      { "id": "new-a-sleepless-day", "imgSrc": "../assets/img_new_contents/12.jpg", "alt": "잠들 수 없는 하루", "cardClass": "card__new" },
+      { "id": "new-anpanman-dollie", "imgSrc": "../assets/img_new_contents/13.jpg", "alt": "Anpanman: Star Spirited Dollie", "cardClass": "card__new" },
+      { "id": "new-immaculate", "imgSrc": "../assets/img_new_contents/14.jpg", "alt": "이매큘레이트", "cardClass": "card__new" },
+      { "id": "new-next-gen-chef", "imgSrc": "../assets/img_new_contents/15.jpg", "alt": "넥스트젠 셰프", "cardClass": "card__new" },
+      { "id": "new-just-between-lovers", "imgSrc": "../assets/img_new_contents/16.jpg", "alt": "사랑하는 사이", "cardClass": "card__new" },
+      { "id": "new-someday-with-someone", "imgSrc": "../assets/img_new_contents/17.jpg", "alt": "세임데이 위드 썸원", "cardClass": "card__new" },
+      { "id": "new-anpanman-banana", "imgSrc": "../assets/img_new_contents/18.jpg", "alt": "Anpanman: Banana Islan", "cardClass": "card__new" },
+      { "id": "new-april-come-she-will", "imgSrc": "../assets/img_new_contents/19.jpg", "alt": "4월이 되면 그녀는", "cardClass": "card__new" },
+      { "id": "new-canelo-vs-crawford", "imgSrc": "../assets/img_new_contents/20.jpg", "alt": "카넬로 알바레스 vs 테렌스 크로포드", "cardClass": "card__new" },
+      { "id": "new-grimm-brothers", "imgSrc": "../assets/img_new_contents/21.jpg", "alt": "그림형제", "cardClass": "card__new" },
+      { "id": "new-billionaire-bunker", "imgSrc": "../assets/img_new_contents/22.jpg", "alt": "억만장자들의 벙커", "cardClass": "card__new" }
+    ]
+  }
+]
