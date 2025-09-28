@@ -176,13 +176,39 @@
 }
 
 /* slide css styles : overflow hidden is important! */
-.list_title{
-    color:aliceblue;
-    font-size: large;
+.list_title_row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
 }
+
+.list_title {
+    color: aliceblue;
+    font-size: large;
+    margin: 20px 0 0 16px;
+}
+
+.pagination {
+    color: #fff;
+    font-size: 1rem;
+    margin: 20px 0 0 16px;
+    min-width: 60px;
+    text-align: right;
+}
+.pagination .dot {
+    color: #888;
+    font-size: 0.8rem;
+    margin: 0 2px;
+}
+.pagination .dot.active {
+    color: #fff;
+}
+
 .slide_wrapper {
+    padding-top: 8px;
     width: 1440px;
-    height: 200px;
+    height: 240px;
     position: relative;
     margin: 0 auto;
     overflow: hidden;
@@ -194,9 +220,15 @@
   margin: 0; 
   list-style: none; 
 }
-.slides li {
+
+.slides li.movie_card1 {
   flex: 0 0 224px;
-  margin-right: 10px;
+  width: 224px;
+}
+
+.slides li.movie_card2 {
+  flex: 0 0 180px;
+  width: 180px;
 }
 
 /* controller styles (prev, next buttons) */
@@ -252,10 +284,12 @@
 }
 
 /* movie card2 styles (ranking row) */
-.movie_card2{
+/* .movie_card2{
 	display: flex;
 	align-items:center;
+    flex-direction: column;
 	flex-wrap: wrap;
+    width: 180px;
 	margin: 8px;
 }
 
@@ -271,6 +305,40 @@
     height: 180px;
     object-fit: cover; 
     display: block; 
+} */
+
+.movie_card2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 180px;
+    height: 180px;
+    margin: 8px;
+    position: relative;
+    justify-content: flex-start;
+    background: transparent;
+    overflow: hidden;
+}
+
+.movie_card2 .rank {
+    font-size: 5rem;
+    font-weight: bold;
+    color: #555;
+    width: 25px;         
+    text-align: left;
+    margin: 0 0 0 0;  
+    flex-shrink: 0;
+    z-index: 1;
+}
+
+.movie_card2 img {
+    width:120px; 
+    height: 180px;
+    object-fit: cover;
+    display: block;
+    margin: 0 0 0 auto; 
+    flex-shrink: 0;
+    z-index: 2;
 }
 
 /* title style in movie card 2 */
