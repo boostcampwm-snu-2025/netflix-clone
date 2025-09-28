@@ -3,7 +3,6 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=1200" />
-    <!-- 고정 너비 -->
     <title>Netflix UI Clone</title>
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -74,10 +73,10 @@
         </div>
       </div>
     </header>
+
     <main class="main">
       <!-- hero: 상단의 대표 섹션 -->
       <section class="hero">
-        <!-- overlay: 배경 이미지 위를 살짝 어둡게 덮음 (가독성 높임) -->
         <div class="hero__overlay"></div>
         <div class="container">
           <div class="hero__content">
@@ -94,78 +93,10 @@
           </div>
         </div>
       </section>
-      <!-- Category 1 -->
-      <section class="category">
-        <h3 id="cat1" class="category__title">
-          밥친구
-          <div class="pagination"></div>
-        </h3>
-        <div class="carousel-container" data-visible="5">
-          <button class="prev">〈</button>
-          <ul class="carousel-track row">
-            <li class="card"><img src="src/poster.png" alt="영화 포스터" /></li>
-            <li class="card"><img src="src/poster.png" alt="영화 포스터" /></li>
-            <li class="card"><img src="src/poster.png" alt="영화 포스터" /></li>
-            <li class="card"><img src="src/poster.png" alt="영화 포스터" /></li>
-            <li class="card"><img src="src/poster.png" alt="영화 포스터" /></li>
-            <li class="card"><img src="src/poster.png" alt="영화 포스터" /></li>
-            <li class="card"><img src="src/poster.png" alt="영화 포스터" /></li>
-            <li class="card"><img src="src/poster.png" alt="영화 포스터" /></li>
-            <li class="card"><img src="src/poster.png" alt="영화 포스터" /></li>
-            <li class="card"><img src="src/poster.png" alt="영화 포스터" /></li>
-            <li class="card"><img src="src/poster.png" alt="영화 포스터" /></li>
-            <li class="card"><img src="src/poster.png" alt="영화 포스터" /></li>
-            <li class="card"><img src="src/poster.png" alt="영화 포스터" /></li>
-            <li class="card"><img src="src/poster.png" alt="영화 포스터" /></li>
-            <li class="card"><img src="src/poster.png" alt="영화 포스터" /></li>
-            <li class="card"><img src="src/poster.png" alt="영화 포스터" /></li>
-            <li class="card"><img src="src/poster.png" alt="영화 포스터" /></li>
-            <li class="card"><img src="src/poster.png" alt="영화 포스터" /></li>
-          </ul>
-          <button class="next">〉</button>
-        </div>
-      </section>
 
-      <!-- Category 2 -->
-      <section class="category">
-        <h3 id="cat2" class="category__title">
-          시청 중인 콘텐츠
-          <div class="pagination"></div>
-        </h3>
-        <div class="carousel-container" data-visible="5">
-          <button class="prev">〈</button>
-          <ul class="carousel-track row">
-            <li class="card"><img src="src/poster.png" alt="영화 포스터" /></li>
-            <li class="card"><img src="src/poster.png" alt="영화 포스터" /></li>
-            <li class="card"><img src="src/poster.png" alt="영화 포스터" /></li>
-            <li class="card"><img src="src/poster.png" alt="영화 포스터" /></li>
-            <li class="card"><img src="src/poster.png" alt="영화 포스터" /></li>
-            <li class="card"><img src="src/poster.png" alt="영화 포스터" /></li>
-          </ul>
-          <button class="next">〉</button>
-        </div>
-      </section>
-
-      <!-- Category 3 -->
-      <section class="category">
-        <h3 id="cat3" class="category__title">
-          연애 세포를 깨우는 작품들
-          <div class="pagination"></div>
-        </h3>
-        <div class="carousel-container" data-visible="4">
-          <button class="prev">〈</button>
-          <ul class="carousel-track row">
-            <li class="card"><img src="src/poster.png" alt="영화 포스터" /></li>
-            <li class="card"><img src="src/poster.png" alt="영화 포스터" /></li>
-            <li class="card"><img src="src/poster.png" alt="영화 포스터" /></li>
-            <li class="card"><img src="src/poster.png" alt="영화 포스터" /></li>
-            <li class="card"><img src="src/poster.png" alt="영화 포스터" /></li>
-            <li class="card"><img src="src/poster.png" alt="영화 포스터" /></li>
-          </ul>
-          <button class="next">〉</button>
-        </div>
-      </section>
+      <!-- 카테고리는 JS(fetch)로 동적으로 생성 -->
     </main>
+
     <!-- 푸터 -->
     <footer class="footer">
       <div class="footer__inner">
@@ -177,6 +108,7 @@
         <small class="footer__copy">© 2025 Netflix Clone</small>
       </div>
     </footer>
+
     <script type="module" src="./app.js"></script>
   </body>
 </html>
