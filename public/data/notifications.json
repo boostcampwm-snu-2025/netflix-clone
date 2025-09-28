@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "title": "오늘 밤, 딱 좋은 추천 콘텐츠",
+    "description": "맞춤 추천작을 둘러보세요.",
+    "notifiedTime": "2025-09-27T18:30:00Z"
+  },
+  {
+    "id": 2,
+    "title": "오늘의 대한민국 TOP 10 콘텐츠",
+    "description": "모두 시청하기",
+    "notifiedTime": "2025-09-22T12:00:00Z"
+  },
+  {
+    "id": 3,
+    "title": "신규 콘텐츠",
+    "description": "은중과 상연",
+    "notifiedTime": "2025-09-20T09:00:00Z"
+  }
+]

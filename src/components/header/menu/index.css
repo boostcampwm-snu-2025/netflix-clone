@@ -1,0 +1,24 @@
+.menu {
+    top: 38px;
+    background-color: inherit;
+    position: absolute;
+    border: 1px solid hsla(0, 0%, 100%, .15);
+    box-sizing: border-box;
+    color: #fff;
+    cursor: default;
+    right: 0;
+    visibility: hidden;
+}
+
+.menu.active {
+    visibility: visible;
+}
+
+.topbar {
+    height: 2px;
+    background-color: #e5e5e5;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -2px;
+}

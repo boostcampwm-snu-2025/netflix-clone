@@ -1,0 +1,22 @@
+.rank-card {
+    display: block;
+    width: 272px;
+    height: 200px;
+    position: relative;
+}
+
+.rank-card img {
+    position: absolute;
+    width: 50%;
+    aspect-ratio: 284/398;
+}
+
+.rank-card img.rank {
+    left: 0;
+    right: auto;
+}
+
+.rank-card img.thumbnail {
+    left: auto;
+    right: 0;
+}

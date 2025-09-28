@@ -1,0 +1,21 @@
+.carousel {
+    position: relative;
+}
+
+.carousel .slider {
+    display: grid;
+    grid-template-columns: 40px 1360px 40px;
+}
+
+.carousel .slider button {
+    z-index: 3;
+    background-color: rgba(20, 20, 20, 0.5);
+    border: none;
+    height: 100%;
+    color: #fff;
+    font-size: 2.5vw;
+}
+
+.carousel .slider button:hover {
+    background-color: rgba(20, 20, 20, 0.8);
+}

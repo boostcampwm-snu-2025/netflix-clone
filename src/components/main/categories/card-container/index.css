@@ -1,0 +1,22 @@
+.card-container {
+    position: relative;
+}
+
+.card-container .like {
+    position: absolute;
+    top: auto;
+    bottom: 12px;
+    right: 4px;
+    width: 32px;
+    height: 32px;
+}
+
+.card-container .like-button {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 50%;
+}

@@ -1,0 +1,14 @@
+.categories {
+    z-index: 2;
+    margin-top: -200px;
+}
+
+.categories h2 {
+    font-size: 1.4vw;
+    line-height: 1.25vw;
+    padding: 0 40px;
+}
+
+.categories ol {
+    display: flex;
+}

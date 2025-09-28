@@ -1,0 +1,6 @@
+.regular-card img {
+    width: 264px;
+    margin: 4px;
+    aspect-ratio: 341/192;
+    border-radius: 4px;
+}
