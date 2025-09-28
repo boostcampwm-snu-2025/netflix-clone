@@ -2,7 +2,7 @@
 // 무한 슬라이더 구현
 // - HTML 구조: .slider > .slider-content > (.prev-button, .next-button, .slider-container > .slider-item*)
 (function () {
-  const SCROLL_SETTLE_MS = 200; // 스크롤 안정화 대기
+  const SCROLL_SETTLE_MS = 120; // 스크롤 안정화 대기
   const CARDS_PER_STEP = 3;     
   
   function debounce(fn, ms=120){ let t; return (...a)=>{clearTimeout(t); t=setTimeout(()=>fn(...a),ms);} }
@@ -73,6 +73,87 @@
       return best;
     }
 
+    // 3) 페이지 인디케이터 관련 함수들
+    function createPageIndicators() {
+      const existingIndicator = sliderEl.querySelector('.page-indicators');
+      if (existingIndicator) {
+        existingIndicator.remove();
+      }
+      
+      const visibleCards = estimateVisibleCount(container, items[N], gapPx);
+      const totalPages = Math.ceil(ORIGINAL_LEN / CARDS_PER_STEP);
+      
+      if (totalPages <= 1) return null; // 페이지가 1개 이하면 인디케이터 불필요
+      
+      const indicatorContainer = document.createElement('div');
+      indicatorContainer.className = 'page-indicators';
+      indicatorContainer.style.cssText = `
+        position: absolute;
+        top: 32px;
+        right: 16px;
+        display: flex;
+        gap: 8px;
+        z-index: 10;
+        transition: all 0.3s ease;
+        border-radius: 20px;
+        padding: 6px 10px;
+      `;
+      
+      for (let i = 0; i < totalPages; i++) {
+        const dot = document.createElement('div');
+        dot.className = 'page-dot';
+        dot.dataset.page = i;
+        dot.style.cssText = `
+          width: 12px;
+          height: 3px;
+          background-color: rgba(255, 255, 255, 0.4);
+          cursor: pointer;
+          transition: all 0.3s ease;
+          border: 2px solid transparent;
+        `;
+        
+        dot.addEventListener('click', () => {
+          const targetIndex = N + (i * CARDS_PER_STEP);
+          isAnimating = true;
+          jumpToIndex(targetIndex, true);
+        });
+        
+        indicatorContainer.appendChild(dot);
+      }
+      
+      sliderEl.style.position = 'relative';
+      sliderEl.appendChild(indicatorContainer);
+      
+      return indicatorContainer;
+    }
+    
+    function updateActiveIndicator() {
+      const indicators = sliderEl.querySelectorAll('.page-dot');
+      if (!indicators.length) return;
+      
+      const currentIndex = nearestIndex();
+      let originalIndex = currentIndex;
+      
+      if (currentIndex < N) {
+        originalIndex = currentIndex + ORIGINAL_LEN;
+      } else if (currentIndex >= N + ORIGINAL_LEN) {
+        originalIndex = currentIndex - ORIGINAL_LEN;
+      }
+      
+      const relativeIndex = originalIndex - N;
+      const currentPage = Math.floor(relativeIndex / CARDS_PER_STEP);
+      
+      indicators.forEach((dot, index) => {
+        const isActive = index === currentPage;
+        dot.style.backgroundColor = isActive 
+          ? 'rgba(255, 255, 255, 0.9)' 
+          : 'rgba(255, 255, 255, 0.4)';
+        dot.style.transform = isActive ? 'scale(1.2)' : 'scale(1)';
+        dot.style.borderColor = isActive ? 'rgba(255, 255, 255, 0.6)' : 'transparent';
+      });
+    }
+
+
     function moveByCards(dir) {
       const cur = nearestIndex();
       let target = cur + dir * CARDS_PER_STEP;
@@ -139,9 +220,15 @@
         jumpToIndex(originalI, false);
         return;
       }
+
+      updateActiveIndicator();
     }, SCROLL_SETTLE_MS);
 
     container.addEventListener('scroll', onScrollSettled, { passive: true });
+
+    // 초기화 - 여기가 핵심!
+    createPageIndicators(); // 인디케이터 생성 호출
+    updateActiveIndicator(); //초기 활성 상태 설정
 
     // --- helpers ---
     function cloneItem(node) { const c = node.cloneNode(true); c.dataset.clone='true'; return c; }
@@ -151,6 +238,42 @@
       const cw = container.clientWidth;
       return Math.max(1, Math.floor((cw + gapPx) / (w + gapPx)));
     }
+  }
+
+  // CSS 스타일 추가
+  if (!document.querySelector('#page-indicator-styles')) {
+    const styleElement = document.createElement('style');
+    styleElement.id = 'page-indicator-styles';
+    styleElement.textContent = `
+      .page-indicators {
+        pointer-events: auto;
+      }
+      
+      .page-dot:hover {
+        background-color: rgba(255, 255, 255, 0.7) !important;
+        transform: scale(1.1) !important;
+      }
+      
+      .slider:hover .page-indicators {
+        background-color: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(8px);
+      }
+      
+      @media (max-width: 768px) {
+        .page-indicators {
+          bottom: 8px !important;
+          right: 8px !important;
+          gap: 6px !important;
+          padding: 4px 8px !important;
+        }
+        
+        .page-dot {
+          width: 8px !important;
+          height: 8px !important;
+        }
+      }
+    `;
+    document.head.appendChild(styleElement);
   }
 
   document.querySelectorAll('.slider').forEach(initInfiniteSlider);
