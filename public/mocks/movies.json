@@ -6,12 +6,12 @@
       "movies": [
         {
           "title": "라면의 정석",
-          "description": "라면 한 그릇으로 시작된 우정과 사랑",
+          "description": "라면으로 시작된 사랑",
           "image": "src/poster.png"
         },
         {
           "title": "도시락의 비밀",
-          "description": "매일 다른 도시락에서 발견되는 특별한 이야기",
+          "description": "도시락에서 발견되는 미스테리",
           "image": "src/poster.png"
         },
         {
@@ -128,7 +128,7 @@
         },
         {
           "title": "비밀 연애",
-          "description": "남몰래 피어나는 두 사람의 이야기",
+          "description": "애틋한 두 사람의 이야기",
           "image": "src/poster.png"
         },
         {

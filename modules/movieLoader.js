@@ -1,6 +1,7 @@
 export async function loadMovies() {
   const res = await fetch("/mocks/movies.json");
   const data = await res.json();
+  //
 
   const main = document.querySelector(".main");
 
@@ -29,6 +30,8 @@ export async function loadMovies() {
         <img src="${movie.image}" alt="${movie.title}" />
         <p class="movie-title">${movie.title}</p>
         <p class="movie-desc">${movie.description}</p>
+        <button class="like-btn">🤍</button>
+        <button class="bookmark-btn">찜하기</button>
       `;
       track.appendChild(li);
     });
