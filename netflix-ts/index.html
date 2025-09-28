@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <title>홈 - 넷플릭스 클론</title>
+</head>
+<body>
+  <header class="header" role="banner">
+    <div class="header__inner page">
+      <!--AI로부터 로고 디자인 도움 받음-->
+      <a class="logo" href="#" aria-label="넷플릭스 홈">
+        <svg viewBox="0 0 512 128" width="92" height="24" aria-hidden="true" focusable="false">
+          <rect width="512" height="128" fill="none"/>
+          <text x="0" y="92" font-size="100" font-weight="800" fill="#e50914"
+                font-family="Arial Black, Arial, Helvetica, sans-serif" letter-spacing="3">NETFLIX</text>
+        </svg>
+      </a>
+      <!--상단 메뉴-->
+      <nav class="nav" aria-label="주 메뉴">
+        <a href="#" aria-current="page">홈</a>
+        <a href="#">시리즈</a>
+        <a href="#">영화</a>
+        <a href="#">게임</a>
+        <a href="#">NEW! 요즘 대세 콘텐츠</a>
+        <a href="#">내가 찜한 리스트</a>
+        <a href="#">언어별로 찾아보기</a>
+      </nav>
+  
+      <div class="actions" aria-label="헤더 액션">
+        <!--검색 버튼-->
+        <button class="icon-btn" aria-label="검색" disabled>
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+            <!--AI 활용하여 svg 이미지 생성 (이하 svg에도 마찬가지)-->
+            <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 5 1.49-1.49-5-5zM9.5 14A4.5 4.5 0 119.5 5a4.5 4.5 0 010 9z" fill="currentColor"/>
+          </svg>
+        </button>
+        <!--키즈 메뉴-->
+        <a class="kids" href="#">키즈</a>
+        <!--알림 버튼-->
+        <div class="menu" data-menu="notifications">
+          <button class="icon-btn bell menu__trigger"
+                  aria-label="알림"
+                  aria-haspopup="menu"
+                  aria-expanded="false"
+                  aria-controls="notif-menu">
+            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+              <path d="M12 22a2 2 0 002-2h-4a2 2 0 002 2zm6-6v-5a6 6 0 10-12 0v5l-2 2v1h16v-1l-2-2z" fill="currentColor"/>
+            </svg>
+            <span class="badge" aria-hidden="true">6</span>
+          </button>
+      
+          <div id="notif-menu" class="menu__panel menu__panel--right" role="menu" aria-label="알림 목록">
+            <ul class="menu__list">
+              <li role="none">
+                <a role="menuitem" class="notif" href="#">
+                  <img class="notif__thumb" src="https://placehold.co/64x40?text=N" alt="" />
+                  <div class="notif__body">
+                    <strong class="notif__title">9월 12일 공개 – 지금 예고편을 시청하세요</strong>
+                    <span class="notif__time">오늘</span>
+                  </div>
+                </a>
+              </li>
+              <li role="none">
+                <a role="menuitem" class="notif" href="#">
+                  <img class="notif__thumb" src="https://placehold.co/64x40?text=N" alt="" />
+                  <div class="notif__body">
+                    <strong class="notif__title">신규 콘텐츠 가이드 공개 예정작을 살펴보세요</strong>
+                    <span class="notif__time">4일 전</span>
+                  </div>
+                </a>
+              </li>
+              <!-- 필요 항목 더 추가 가능 -->
+            </ul>
+          </div>
+        </div>
+      
+        <!-- 프로필 메뉴 -->
+        <div class="menu" data-menu="profile">
+          <button class="profile menu__trigger"
+                  aria-label="프로필 메뉴"
+                  aria-haspopup="menu"
+                  aria-expanded="false"
+                  aria-controls="profile-menu">
+            <img src="https://placehold.co/28x28" alt="프로필 사진" />
+            <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+              <path d="M7 10l5 5 5-5z" fill="currentColor"/>
+            </svg>
+          </button>
+      
+          <div id="profile-menu" class="menu__panel menu__panel--right" role="menu" aria-label="프로필 메뉴">
+            <ul class="menu__list">
+              <li role="none">
+                <a role="menuitem" class="profile__item" href="#"><span class="profile__icon">✏️</span>프로필 관리</a>
+              </li>
+              <li role="none">
+                <a role="menuitem" class="profile__item" href="#"><span class="profile__icon">↗️</span>프로필에서 나가기</a>
+              </li>
+              <li role="none">
+                <a role="menuitem" class="profile__item" href="#"><span class="profile__icon">🙂</span>프로필 이전</a>
+              </li>
+              <li role="none">
+                <a role="menuitem" class="profile__item" href="#"><span class="profile__icon">👤</span>계정</a>
+              </li>
+              <li role="none">
+                <a role="menuitem" class="profile__item" href="#"><span class="profile__icon">❓</span>고객 센터</a>
+              </li>
+            </ul>
+            <div class="menu__divider" role="none"></div>
+            <a role="menuitem" class="profile__logout" href="#">넷플릭스에서 로그아웃</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-label="히어로 배너">
+      <div class="hero__inner page">
+        <div class="hero__content">
+          <div class="hero__logo">
+            <img src="https://placehold.co/1x1?text=LOGO" alt="히어로 로고" />
+          </div>
+
+          <div class="hero__rank">
+            <span class="chip chip--top10"><span>TOP</span><span>10</span></span>
+            <span class="rank-text">오늘 시리즈 순위 <strong></strong>위</span>
+          </div>
+    
+          <div class="hero__desc-box">
+            <p class="hero__desc"></p>
+          </div>
+    
+          <div class="hero__actions">
+            <a href="#" class="btn btn--primary" aria-label="재생">
+              <span class="icon">▶</span> 재생
+            </a>
+            <a href="#" class="btn btn--secondary" aria-label="상세 정보">
+              <span class="icon">i</span> 상세 정보
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 섹션 1: 회원님을 위해 엄선한 오늘의 콘텐츠 -->
+    <section class="section page" aria-labelledby="recommend">
+      <div class="carousel" data-per-view="6" data-step="6">
+        <div class="carousel__head">
+          <h2 id="recommend" class="section__title">회원님을 위해 엄선한 오늘의 콘텐츠</h2>
+          <div class="carousel__pager" aria-hidden="true"></div>
+        </div>
+        <div class="carousel__viewport" role="region" aria-label="회원님을 위해 엄선한 오늘의 콘텐츠">
+          <div class="row carousel__track"></div>
+        </div>
+        <button class="carousel__btn carousel__btn--prev" aria-label="이전">‹</button>
+        <button class="carousel__btn carousel__btn--next" aria-label="다음">›</button>
+      </div>
+    </section>
+
+    <!-- 섹션 2: 연애 세포를 깨우는 작품들 -->
+    <section class="section page" aria-labelledby="lovely-videos">
+      <div class="carousel" data-per-view="6" data-step="3">
+        <div class="carousel__head">
+          <h2 id="lovely-videos" class="section__title">연애 세포를 깨우는 작품들</h2>
+          <div class="carousel__pager" aria-hidden="true"></div>
+        </div>
+        <div class="carousel__viewport" role="region" aria-label="연애 세포를 깨우는 작품들">
+          <div class="row carousel__track"></div>
+        </div>
+        <button class="carousel__btn carousel__btn--prev" aria-label="이전">‹</button>
+        <button class="carousel__btn carousel__btn--next" aria-label="다음">›</button>
+      </div>
+    </section>
+
+    <!-- 섹션 3: 오늘 대한민국의 TOP 10 시리즈 -->
+    <section class="section page" aria-labelledby="top10-series">
+      <div class="carousel" data-per-view="6" data-step="5">
+        <div class="carousel__head">
+          <h2 id="top10-series" class="section__title">오늘 대한민국의 TOP 10 시리즈</h2>
+          <div class="carousel__pager" aria-hidden="true"></div>
+        </div>
+        <div class="carousel__viewport" role="region" aria-label="오늘 대한민국의 TOP 10 시리즈">
+          <div class="row carousel__track"></div>
+        </div>
+        <button class="carousel__btn carousel__btn--prev" aria-label="이전">‹</button>
+        <button class="carousel__btn carousel__btn--next" aria-label="다음">›</button>
+      </div>
+    </section>   
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="footer__inner page">
+  
+      <!-- SNS 아이콘 -->
+      <div class="footer__sns">
+        <a href="#" aria-label="Facebook">
+          <img src="https://placehold.co/28x28" alt="Facebook 아이콘" />
+        </a>
+        <a href="#" aria-label="Instagram">
+          <img src="https://placehold.co/28x28" alt="Instagram 아이콘" />
+        </a>
+        <a href="#" aria-label="Twitter">
+          <img src="https://placehold.co/28x28" alt="Twitter 아이콘" />
+        </a>
+        <a href="#" aria-label="YouTube">
+          <img src="https://placehold.co/28x28" alt="YouTube 아이콘" />
+        </a>
+      </div>
+  
+      <!-- 푸터 링크 -->
+      <nav class="footer__nav" aria-label="footer links">
+        <div><a href="#">화면 해설</a></div>
+        <div><a href="#">고객 센터</a></div>
+        <div><a href="#">기프트카드</a></div>
+        <div><a href="#">미디어 센터</a></div>
+        <div><a href="#">투자 정보(IR)</a></div>
+        <div><a href="#">입사 정보</a></div>
+        <div><a href="#">이용 약관</a></div>
+        <div><a href="#">개인정보</a></div>
+        <div><a href="#">법적 고지</a></div>
+        <div><a href="#">쿠키 설정</a></div>
+        <div><a href="#">회사 정보</a></div>
+        <div><a href="#">문의하기</a></div>
+      </nav>
+  
+      <!-- 회사 정보 -->
+      <div class="footer__info">
+        <p>넷플릭스서비시스코리아 유한회사 통신판매업신고번호: 제2018-서울종로-0426호 전화번호: 00-308-321-0161 (수신자 부담)</p>
+        <p>대표: 레지널드 숀 톰프슨</p>
+        <p>이메일 주소: korea@netflix.com</p>
+        <p>주소: 대한민국 서울특별시 종로구 우정국로 26, 센트로폴리스 A동 20층 우편번호 03161</p>
+        <p>사업자등록번호: 165-87-00119</p>
+        <p>클라우드 호스팅: Amazon Web Services Inc.</p>
+        <p><a href="#">공정거래위원회 웹사이트</a></p>
+      </div>
+  
+    </div>
+  </footer>
+  <script type="module" src="./src/app.ts"></script>
+</body>
+</html>

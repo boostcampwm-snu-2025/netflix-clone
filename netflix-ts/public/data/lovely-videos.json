@@ -1,0 +1,51 @@
+{
+  "sectionId": "lovely-videos",
+  "title": "연애 세포를 깨우는 작품들",
+  "items": [
+    {
+      "id": "lov-01",
+      "name": "고백의 역사",
+      "thumb": "https://placehold.co/600x400?text=1"
+    },
+    {
+      "id": "lov-02",
+      "name": "스타트업",
+      "thumb": "https://placehold.co/600x400?text=2"
+    },
+    {
+      "id": "lov-03",
+      "name": "미스터션샤인",
+      "thumb": "https://placehold.co/600x400?text=3"
+    },
+    {
+      "id": "lov-04",
+      "name": "난홍",
+      "thumb": "https://placehold.co/600x400?text=4"
+    },
+    {
+      "id": "lov-05",
+      "name": "어느 날 월터 형제들과 살게 됐다",
+      "thumb": "https://placehold.co/600x400?text=5"
+    },
+    {
+      "id": "lov-06",
+      "name": "트라이",
+      "thumb": "https://placehold.co/600x400?text=6"
+    },
+    {
+      "id": "lov-07",
+      "name": "승부",
+      "thumb": "https://placehold.co/600x400?text=7"
+    },
+    {
+      "id": "lov-08",
+      "name": "천문",
+      "thumb": "https://placehold.co/600x400?text=8"
+    },
+    {
+      "id": "lov-09",
+      "name": "미생",
+      "thumb": "https://placehold.co/600x400?text=9"
+    }
+  ]
+}
