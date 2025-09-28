@@ -1,16 +1,17 @@
 import SuspenseContainer from '../suspenseContainer/suspenseContainer';
+import { wrapPromise } from '../utils';
 
 class AsyncComponent extends HTMLElement {
-  #dataPromise!: Promise<unknown>;
+  #resource: ReturnType<typeof wrapPromise> | null = null;
 
   set dataPromise(p: Promise<unknown>) {
-    this.#dataPromise = p;
+    this.#resource = wrapPromise(p);
     const suspense = this.closest('suspense-container') as SuspenseContainer;
-    suspense?.registerPromise(this.id, () => this.#dataPromise!);
+    suspense?.registerResource(this.id, this.#resource);
   }
 
-  get dataPromise() {
-    return this.#dataPromise;
+  get resource() {
+    return this.#resource;
   }
 }
 
