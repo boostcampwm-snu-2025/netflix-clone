@@ -40,10 +40,17 @@ class SuspenseContainer extends HTMLElement {
       .then(data => {
         this.#resolved.set(key, data);
         this.#pending.delete(key);
-        this.#loading = false;
+        // Only set loading to false if no other promises are pending
+        if (this.#pending.size === 0) {
+          this.#loading = false;
+        }
       })
       .catch(error => {
         this.#pending.delete(key);
+        // Only set loading to false if no other promises are pending
+        if (this.#pending.size === 0) {
+          this.#loading = false;
+        }
         ErrorBoundary.reportError(error);
       });
   }
