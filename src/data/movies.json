@@ -1,0 +1,128 @@
+{
+  "trending": [
+    {
+      "id": 1,
+      "title": "크라임씬 제로",
+      "thumbnail": "/images/movies/thumbnails/movie1.webp",
+      "background": "/images/movies/backgrounds/movie1.webp",
+      "icon": "/images/movies/icons/movie1.webp",
+      "rank": 1,
+      "description": "미스터리 추리 예능의 새로운 챕터가 열린다! 여섯 명의 출연진들이 미궁 속 살인 사건의 실마리를 찾아 나선다. 흩어진 단서들을 모아 추리력과 기지를 발휘해 진범의 정체를 밝혀내야 한다.",
+      "genre": [
+        "2025",
+        "15+",
+        "시리즈",
+        "전 세계 예능이 한곳에!",
+        "리얼리티 프로그램"
+      ],
+      "likes": 0
+    },
+    {
+      "id": 2,
+      "title": "사마귀",
+      "thumbnail": "/images/movies/thumbnails/movie2.webp",
+      "background": "/images/movies/backgrounds/movie2.webp",
+      "icon": "/images/movies/icons/movie2.webp",
+      "rank": 2,
+      "description": "하룻밤 사이 몰락한 청부살인 업계의 거물들. 그들이 세운 질서가 무너지고, 어둠의 세계가 흔들린다. 혼돈 속에서 기회를 노리는 실력자 '사마귀'. 그의 손끝에서 새로운 킬러들의 시대가 열린다.",
+      "genre": ["2025", "청불", "영화", "액션", "스릴러"],
+      "likes": 0
+    },
+    {
+      "id": 3,
+      "title": "케이팝 데몬 헌터스",
+      "thumbnail": "/images/movies/thumbnails/movie3.webp",
+      "background": "/images/movies/backgrounds/movie3.webp",
+      "icon": "/images/movies/icons/movie3.webp",
+      "rank": 3,
+      "description": "케이팝 슈퍼스타 루미, 미라, 조이. 매진을 기록하는 대형 스타디움 공연이 없을 때면 이들은 또 다른 활동에 나선다. 바로 비밀 능력을 이용해 팬들을 초자연적 위협으로부터 보호하는 것.",
+      "genre": [
+        "2025",
+        "12+",
+        "영화",
+        "코미디",
+        "액션",
+        "키즈 콘텐츠",
+        "판타지"
+      ],
+      "likes": 0
+    },
+    {
+      "id": 4,
+      "title": "귀멸의 칼날",
+      "thumbnail": "/images/movies/thumbnails/movie4.webp",
+      "background": "/images/movies/backgrounds/movie4.webp",
+      "icon": "/images/movies/icons/movie4.webp",
+      "rank": 4,
+      "description": "마침내 탄지로의 칼날이 모두 벼려졌다! 피에 굶주린 혈귀의 습격으로 가족을 잃고 여동생마저 저주에 걸린 소년. 가혹한 운명의 사슬을 끊어내고 세상에서 혈귀를 멸하려, 지금 탄지로가 복수의 칼날을 높이 든다.",
+      "genre": ["2024", "19+", "시리즈", "액션", "아니메", "판타지"],
+      "likes": 0
+    },
+    {
+      "id": 5,
+      "title": "은중과 상연",
+      "thumbnail": "/images/movies/thumbnails/movie5.webp",
+      "background": "/images/movies/backgrounds/movie5.webp",
+      "icon": "/images/movies/icons/movie5.webp",
+      "rank": 5,
+      "description": "10대부터 함께한 은중과 상연. 동경과 질투, 애증이 20대, 30대를 채우다 결국 돌이킬 수 없이 멀어졌다. 이제 마흔셋. 은중은 상연의 마지막 여정에 동행해 달라는 부탁을 받는다.",
+      "genre": ["2025", "15+", "시리즈", "드라마 장르"],
+      "likes": 0
+    },
+    {
+      "id": 6,
+      "title": "야당",
+      "thumbnail": "/images/movies/thumbnails/movie6.webp",
+      "background": "/images/movies/backgrounds/movie6.webp",
+      "icon": "/images/movies/icons/movie6.webp",
+      "rank": 6,
+      "description": "억울하게 교도소에 수감된 청년. 누명을 벗고자 야심 가득한 검사의 정보원이 되기로 한 그가 마약 밀매의 세계에 발을 들인다.",
+      "genre": ["2025", "청불", "영화", "스릴러"],
+      "likes": 0
+    },
+    {
+      "id": 7,
+      "title": "사마귀: 살인자의 외출",
+      "thumbnail": "/images/movies/thumbnails/movie7.webp",
+      "background": "/images/movies/backgrounds/movie7.webp",
+      "icon": "/images/movies/icons/movie7.webp",
+      "rank": 7,
+      "description": "연쇄 살인마 '사마귀'의 모방 범죄 사건을 맡은 형사. 범인을 막기 위해, 평생 잊으려 발버둥 쳤던 자신의 엄마이자 사마귀와 뜻밖의 공조 수사를 시작한다.",
+      "genre": ["2025", "19+", "시리즈", "스릴러", "드라마 장르"],
+      "likes": 0
+    },
+    {
+      "id": 8,
+      "title": "에스콰이어",
+      "thumbnail": "/images/movies/thumbnails/movie8.webp",
+      "background": "/images/movies/backgrounds/movie8.webp",
+      "icon": "/images/movies/icons/movie8.webp",
+      "rank": 8,
+      "description": "국내 굴지의 로펌에 입사한 정의감 넘치는 신입 변호사. 냉정하고 까칠한 상사 밑에서 복잡한 법조계를 헤쳐 나간다.",
+      "genre": ["2025", "15+", "시리즈", "드라마 장르"],
+      "likes": 0
+    },
+    {
+      "id": 9,
+      "title": "폭군의 셰프",
+      "thumbnail": "/images/movies/thumbnails/movie9.webp",
+      "background": "/images/movies/backgrounds/movie9.webp",
+      "icon": "/images/movies/icons/movie9.webp",
+      "rank": 9,
+      "description": "조선 시대로 타임슬립한 천재 셰프. 무소불위의 폭군을 현대식 요리로 사로잡지만, 그녀 앞엔 궁중의 시련이 기다리고 있다.",
+      "genre": ["2025", "15+", "시리즈", "로맨스", "드라마 장르"],
+      "likes": 0
+    },
+    {
+      "id": 10,
+      "title": "애마",
+      "thumbnail": "/images/movies/thumbnails/movie10.webp",
+      "background": "/images/movies/backgrounds/movie10.webp",
+      "icon": "/images/movies/icons/movie10.webp",
+      "rank": 10,
+      "description": "1980년대 충무로, 당대 최고의 스타와 신인 배우가 만난다. 순조롭지 않은 촬영과 외부의 압력을 비롯해 온갖 장애물에 부딪히는 그들. 무엇에도 굴하지 않고 영화 《애마부인》을 완성하려 한다.",
+      "genre": ["2025", "청불", "시리즈", "코미디", "드라마 장르"],
+      "likes": 0
+    }
+  ]
+}
