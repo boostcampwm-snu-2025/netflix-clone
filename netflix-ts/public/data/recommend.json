@@ -1,0 +1,66 @@
+{
+  "sectionId": "recommend",
+  "title": "회원님을 위해 엄선한 오늘의 콘텐츠",
+  "items": [
+    {
+      "id": "rec-01",
+      "name": "귀멸의 칼날",
+      "thumb": "https://placehold.co/600x400?text=1"
+    },
+    {
+      "id": "rec-02",
+      "name": "트리거",
+      "thumb": "https://placehold.co/600x400?text=2"
+    },
+    {
+      "id": "rec-03",
+      "name": "미션 임파서블",
+      "thumb": "https://placehold.co/600x400?text=3"
+    },
+    {
+      "id": "rec-04",
+      "name": "폭싹 속았수다",
+      "thumb": "https://placehold.co/600x400?text=4"
+    },
+    {
+      "id": "rec-05",
+      "name": "브레이킹 배드",
+      "thumb": "https://placehold.co/600x400?text=5"
+    },
+    {
+      "id": "rec-06",
+      "name": "폭군의 셰프",
+      "thumb": "https://placehold.co/600x400?text=6"
+    },
+    {
+      "id": "rec-07",
+      "name": "터미널",
+      "thumb": "https://placehold.co/600x400?text=7"
+    },
+    {
+      "id": "rec-08",
+      "name": "다운사이징",
+      "thumb": "https://placehold.co/600x400?text=8"
+    },
+    {
+      "id": "rec-09",
+      "name": "언내추럴",
+      "thumb": "https://placehold.co/600x400?text=9"
+    },
+    {
+      "id": "rec-10",
+      "name": "삼국지",
+      "thumb": "https://placehold.co/600x400?text=10"
+    },
+    {
+      "id": "rec-11",
+      "name": "설국열차",
+      "thumb": "https://placehold.co/600x400?text=11"
+    },
+    {
+      "id": "rec-12",
+      "name": "고스트 워",
+      "thumb": "https://placehold.co/600x400?text=12"
+    }
+  ]
+}

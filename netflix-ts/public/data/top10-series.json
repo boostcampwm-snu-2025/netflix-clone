@@ -1,0 +1,56 @@
+{
+  "sectionId": "top10-series",
+  "title": "오늘 대한민국의 TOP 10 시리즈",
+  "items": [
+    {
+      "id": "top-01",
+      "name": "사마귀",
+      "thumb": "https://placehold.co/600x400?text=1"
+    },
+    {
+      "id": "top-02",
+      "name": "폭군의 셰프",
+      "thumb": "https://placehold.co/600x400?text=2"
+    },
+    {
+      "id": "top-03",
+      "name": "에스콰이어",
+      "thumb": "https://placehold.co/600x400?text=3"
+    },
+    {
+      "id": "top-04",
+      "name": "애마",
+      "thumb": "https://placehold.co/600x400?text=4"
+    },
+    {
+      "id": "top-05",
+      "name": "나는 SOLO",
+      "thumb": "https://placehold.co/600x400?text=5"
+    },
+    {
+      "id": "top-06",
+      "name": "귀멸의 칼날",
+      "thumb": "https://placehold.co/600x400?text=6"
+    },
+    {
+      "id": "top-07",
+      "name": "은중과 상연",
+      "thumb": "https://placehold.co/600x400?text=7"
+    },
+    {
+      "id": "top-08",
+      "name": "마이턴",
+      "thumb": "https://placehold.co/600x400?text=8"
+    },
+    {
+      "id": "top-09",
+      "name": "괴수 8호",
+      "thumb": "https://placehold.co/600x400?text=9"
+    },
+    {
+      "id": "top-10",
+      "name": "소용없어 거짓말",
+      "thumb": "https://placehold.co/600x400?text=10"
+    }
+  ]
+}
