@@ -21,15 +21,14 @@
 - [ ] 범용 무한 캐러셀 로직 작성 및 리팩토링
 
 ### 데이터 분리 및 구조화
-- [ ] `src/data/movies.json` 파일 생성
-- [ ] 영화 데이터 스키마 정의 (id, title, thumbnail, description, category, liked 등)
-- [ ] 현재 HTML에 하드코딩된 영화 데이터를 JSON으로 이동
+- [o] `src/data/movies.json` 파일 생성
+- [o] 영화 데이터 스키마 정의 (id, title, thumbnail, description, category, liked 등)
+- [o] 현재 HTML에 하드코딩된 영화 데이터를 JSON으로 이동
 
 ### API 서비스 구현
-- [ ] `src/services/movieService.js` 파일 생성
-- [ ] `fetchMovies()` 함수 구현
+- [o] `getMovies()` 함수 구현
 - [ ] `updateMovieLike()` 함수 구현  
-- [ ] `index.js`에서 기존 하드코딩된 데이터 호출을 fetch로 변경
+- [o] `index.js`에서 기존 하드코딩된 데이터 호출을 fetch로 변경
 
 ### 좋아요 기능 개발
 - [ ] `movieModdal` 컴포넌트에 좋아요 버튼 UI 추가
@@ -38,10 +37,10 @@
 - [ ] localStorage를 활용한 좋아요 상태 영구 저장
 
 ### Vite 개발환경 구성
-- [ ] Vite 설치
-- [ ] 빌드 테스트
+- [o] Vite 설치
+- [o] 빌드 테스트
 
 ### Mock Server 환경 구성
 **MSW (Mock Service Worker) 사용 예정**
-- [ ] API 핸들러 정의
-- [ ] 브라우저 서비스 워커 설정
+- [o] API 핸들러 정의
+- [o] 브라우저 서비스 워커 설정
