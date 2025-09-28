@@ -8,15 +8,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles/global.css">
-    <link rel="stylesheet" href="styles/header.css">
-    <link rel="stylesheet" href="styles/notification.css">
-    <link rel="stylesheet" href="styles/profile.css">
-    <link rel="stylesheet" href="styles/hero.css">
-    <link rel="stylesheet" href="styles/recommendation.css">
-    <link rel="stylesheet" href="styles/footer.css">
+    <link rel="stylesheet" href="src/styles/global.css">
+    <link rel="stylesheet" href="src/styles/header.css">
+    <link rel="stylesheet" href="src/styles/notification.css">
+    <link rel="stylesheet" href="src/styles/profile.css">
+    <link rel="stylesheet" href="src/styles/hero.css">
+    <link rel="stylesheet" href="src/styles/recommendation.css">
+    <link rel="stylesheet" href="src/styles/footer.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
-    <script type="module" src="./js/main.js"></script>
+    <script type="module" src="src/scripts/main.js"></script>
 </head>
 
 <body>
@@ -32,32 +32,17 @@
                 <a href="#">시리즈</a>
                 <a href="#">영화</a>
                 <a href="#">게임</a>
-                <a href="#">NEW! 요즘 대세 컨텐츠</a>
+                <a href="#">NEW! 요즘 대세 콘텐츠</a>
                 <a href="#">내가 찜한 리스트</a>
                 <a href="#">언어별로 찾아보기</a>
             </ul>
         </nav>
         <div class="user-menu">
             <i class="fa-solid fa-magnifying-glass"></i>
-            <div class="notification">
-                <i class="fa-solid fa-bell"></i>
-                <div class="notification-menu" aria-hidden="true">
-                    <div class="notification-item">
-                        <img src="assets/notification1.png" alt="Notification 1">
-                        <div class="notification-text">
-                            <p class="notification-title">신규 컨텐츠<br>나는 생존자다</p>
-                            <p class="notification-time">1주 전</p>
-                        </div>
+                    <div class="notification">
+                        <i class="fa-solid fa-bell"></i>
+                        <div class="notification-menu" aria-hidden="true"></div>
                     </div>
-                    <div class="notification-item">
-                        <img src="assets/notification2.png" alt="Notification 2">
-                        <div class="notification-text">
-                            <p class="notification-title">신규 컨텐츠<br>토요 미스테리 극장</p>
-                            <p class="notification-time">2주 전</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
             <div class="profile" role="button" aria-haspopup="true" aria-expanded="false">
                 <img src="assets/profile.png" alt="Profile">
                 <i class="fa-solid fa-caret-down caret" aria-hidden="true"></i>
@@ -70,13 +55,13 @@
             </div>
         </div>
     </header>
+
     <main>
         <section class="hero-container">
             <img src="assets/hero-image.png" alt="Hero Image" class="hero-image">
             <div class="hero-content">
                 <img src="assets/hero-title.png" alt="Hero Title" class="hero-title">
-                <p class="hero-description">시간을 거슬러 과거로 가게 된 현대의 셰프가 폭군으로 악명 높은 왕을 만난다. 그녀는 탁월한 요리 솜씨로 왕의 마음과 입맛을 모두
-                    사로잡을 수 있을까?</p>
+                <p class="hero-description">시간을 거슬러 과거로 가게 된 현대의 셰프가 폭군으로 악명 높은 왕을 만난다. 그녀는 탁월한 요리 솜씨로 왕의 마음과 입맛을 모두 사로잡을 수 있을까?</p>
                 <div class="hero-actions">
                     <div class="hero-buttons">
                         <button disabled class="play-button">
@@ -95,57 +80,19 @@
                 </div>
             </div>
         </section>
+
         <section class="recommendation-container">
             <div>
                 <p class="section-title with-indicator">누구나 사랑하는 명작
                     <span class="page-indicator" aria-hidden="true">
-                        <span class="pi-track">
-                        </span>
+                        <span class="pi-track"></span>
                     </span>
                 </p>
                 <div class="carousel" data-infinite="true">
                     <span class="handle handlePrev" aria-hidden="true">
                         <b class="handle-icon fa-solid fa-chevron-left"></b>
                     </span>
-                    <div class="recommendation-list">
-                        <div class="recommendation-item" data-index="1">
-                            <img src="assets/recommendation1_1.png" alt="Recommendation 1">
-                        </div>
-                        <div class="recommendation-item" data-index="2">
-                            <img src="assets/recommendation1_2.png" alt="Recommendation 2">
-                        </div>
-                        <div class="recommendation-item" data-index="3">
-                            <img src="assets/recommendation1_3.png" alt="Recommendation 3">
-                        </div>
-                        <div class="recommendation-item" data-index="4">
-                            <img src="assets/recommendation1_4.png" alt="Recommendation 4">
-                        </div>
-                        <div class="recommendation-item" data-index="5">
-                            <img src="assets/recommendation1_5.png" alt="Recommendation 5">
-                        </div>
-                        <div class="recommendation-item" data-index="6">
-                            <img src="assets/recommendation1_6.png" alt="Recommendation 6">
-                        </div>
-                        <div class="recommendation-item" data-index="7">
-                            <img src="assets/recommendation1_7.png" alt="Recommendation 7">
-                        </div>
-                        <div class="recommendation-item" data-index="8">
-                            <img src="assets/recommendation1_8.png" alt="Recommendation 8">
-                        </div>
-                        <div class="recommendation-item" data-index="9">
-                            <img src="assets/recommendation1_9.png" alt="Recommendation 9">
-                        </div>
-                        <div class="recommendation-item" data-index="10">
-                            <img src="assets/recommendation1_10.png" alt="Recommendation 10">
-                        </div>
-                        <div class="recommendation-item" data-index="11">
-                            <img src="assets/recommendation1_11.png" alt="Recommendation 11">
-                        </div>
-                        <div class="recommendation-item" data-index="12">
-                            <img src="assets/recommendation1_12.png" alt="Recommendation 12">
-                        </div>
-
-                    </div>
+                    <div class="recommendation-list"></div>
                     <span class="handle handleNext" aria-hidden="true">
                         <b class="handle-icon fa-solid fa-chevron-right"></b>
                     </span>
@@ -154,69 +101,28 @@
             <div>
                 <p class="section-title with-indicator">해외 시리즈
                     <span class="page-indicator" aria-hidden="true">
-                        <span class="pi-track">
-                        </span>
+                        <span class="pi-track"></span>
                     </span>
                 </p>
                 <div class="carousel" data-infinite="true">
                     <span class="handle handlePrev" aria-hidden="true">
                         <b class="handle-icon fa-solid fa-chevron-left"></b>
                     </span>
-                    <div class="recommendation-list">
-                        <div class="recommendation-item" data-index="1">
-                            <img src="assets/recommendation2_1.png" alt="Recommendation 1">
-                        </div>
-                        <div class="recommendation-item" data-index="2">
-                            <img src="assets/recommendation2_2.png" alt="Recommendation 2">
-                        </div>
-                        <div class="recommendation-item" data-index="3">
-                            <img src="assets/recommendation2_3.png" alt="Recommendation 3">
-                        </div>
-                        <div class="recommendation-item" data-index="4">
-                            <img src="assets/recommendation2_4.png" alt="Recommendation 4">
-                        </div>
-                        <div class="recommendation-item" data-index="5">
-                            <img src="assets/recommendation2_5.png" alt="Recommendation 5">
-                        </div>
-                        <div class="recommendation-item" data-index="6">
-                            <img src="assets/recommendation2_6.png" alt="Recommendation 6">
-                        </div>
-                        <div class="recommendation-item" data-index="7">
-                            <img src="assets/recommendation2_7.png" alt="Recommendation 7">
-                        </div>
-                        <div class="recommendation-item" data-index="8">
-                            <img src="assets/recommendation2_8.png" alt="Recommendation 8">
-                        </div>
-                        <div class="recommendation-item" data-index="9">
-                            <img src="assets/recommendation2_9.png" alt="Recommendation 9">
-                        </div>
-                        <div class="recommendation-item" data-index="10">
-                            <img src="assets/recommendation2_10.png" alt="Recommendation 10">
-                        </div>
-                        <div class="recommendation-item" data-index="11">
-                            <img src="assets/recommendation2_11.png" alt="Recommendation 11">
-                        </div>
-                        <div class="recommendation-item" data-index="12">
-                            <img src="assets/recommendation2_12.png" alt="Recommendation 12">
-                        </div>
-                    </div>
+                    <div class="recommendation-list"></div>
                     <span class="handle handleNext" aria-hidden="true">
                         <b class="handle-icon fa-solid fa-chevron-right"></b>
                     </span>
                 </div>
             </div>
         </section>
+
         <footer class="footer">
             <div class="footer-inner">
                 <div class="social-links">
-                    <a href="https://www.facebook.com/NetflixKR" aria-label="Facebook"><i
-                            class="fa-brands fa-facebook-f"></i></a>
-                    <a href="https://www.instagram.com/netflixkr/" aria-label="Instagram"><i
-                            class="fa-brands fa-instagram"></i></a>
-                    <a href="https://twitter.com/NetflixKR" aria-label="Twitter"><i
-                            class="fa-brands fa-twitter"></i></a>
-                    <a href="https://www.youtube.com/channel/UCiEEF51uRAeZeCo8CJFhGWw/featured" aria-label="YouTube"><i
-                            class="fa-brands fa-youtube"></i></a>
+                    <a href="https://www.facebook.com/NetflixKR" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/netflixkr/" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://twitter.com/NetflixKR" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="https://www.youtube.com/channel/UCiEEF51uRAeZeCo8CJFhGWw/featured" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
                 </div>
                 <ul class="footer-links">
                     <li><a href="#">화면 해설</a></li>
@@ -233,14 +139,15 @@
                     <li><a href="#">문의하기</a></li>
                 </ul>
                 <div class="footer-note">
-                    <p>넷플릭스서비시스코리아 유한회사 통신판매업신고번호: 제2018-서울종로-0426호 전화번호: 00-308-321-0161 (수신자 부담)</p>
-                    <p>대표: 레지널드 숀 톰프슨</p>
+                    <p>넷플릭스서비스코리아 유한회사 통신판매업신고번호: 제2018-서울종로-0426호 전화번호: 00-308-321-0161 (수신자 부담)</p>
+                    <p>대표: 레지널드 쉴 튠프슨</p>
                     <p>사업자 등록번호: korea@netflix.com</p>
-                    <p>주소: 대한민국 서울특별시 종로구 우정국로 26, 센트로폴리스 A동 20층 우편변호 03161</p>
+                    <p>주소: 대한민국 서울특별시 종로구 우정국로 26, 센트로폴리스 A동 20층 우편번호 03161</p>
                     <p>사업자등록번호: 165-87-00119</p>
                     <p>클라우드 호스팅: Amazon Web Services Inc.</p>
                     <a href="https://www.ftc.go.kr/bizCommPop.do?wrkr_no=1658700119">공정거래위원회 웹사이트</a>
                 </div>
+            </div>
         </footer>
     </main>
 </body>

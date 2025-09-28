@@ -2,7 +2,9 @@ export function initMuteButton(selector = '.mute-btn') {
   const muteBtn = document.querySelector(selector);
   if (!muteBtn) return;
   const icon = muteBtn.querySelector('i');
-  let muted = true;
+  // Allow initial state from attribute set by data rendering
+  const initialAttr = muteBtn.getAttribute('data-initial-muted');
+  let muted = initialAttr ? initialAttr === 'true' : true;
   const update = () => {
     if (icon) icon.className = muted ? 'fa-solid fa-volume-xmark' : 'fa-solid fa-volume-high';
     muteBtn.setAttribute('aria-pressed', muted ? 'true' : 'false');

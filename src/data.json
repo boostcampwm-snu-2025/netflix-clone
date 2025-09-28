@@ -1,0 +1,63 @@
+{
+  
+	"notifications": [
+		{
+			"image": { "src": "assets/notification1.png", "alt": "Notification 1" },
+			"title": "신규 콘텐츠\n나는 생존자다",
+			"time": "1주 전"
+		},
+		{
+			"image": { "src": "assets/notification2.png", "alt": "Notification 2" },
+			"title": "신규 콘텐츠\n토요 미스터리 극장",
+			"time": "2주 전"
+		}
+	],
+	"hero": {
+		"image": { "src": "assets/hero-image.png", "alt": "Hero Image" },
+		"titleImage": { "src": "assets/hero-title.png", "alt": "Hero Title" },
+		"description": "시간을 거슬러 과거로 가게 된 현대의 셰프가 폭군으로 악명 높은 왕을 만난다. 그녀는 탁월한 요리 솜씨로 왕의 마음과 입맛을 모두 사로잡을 수 있을까?",
+		"buttons": [
+			{ "type": "play", "label": "재생", "disabled": true, "icon": "fa-solid fa-play" },
+			{ "type": "info", "label": "상세 정보", "disabled": true, "icon": "fa-solid fa-circle-info" }
+		],
+		"controls": { "muted": true, "ageBadge": "15+" }
+	},
+	"recommendations": [
+		{
+			"title": "누구나 사랑하는 명작",
+			"carousel": { "infinite": true },
+			"items": [
+				{ "image": { "src": "assets/recommendation1_1.png", "alt": "Recommendation 1" } },
+				{ "image": { "src": "assets/recommendation1_2.png", "alt": "Recommendation 2" } },
+				{ "image": { "src": "assets/recommendation1_3.png", "alt": "Recommendation 3" } },
+				{ "image": { "src": "assets/recommendation1_4.png", "alt": "Recommendation 4" } },
+				{ "image": { "src": "assets/recommendation1_5.png", "alt": "Recommendation 5" } },
+				{ "image": { "src": "assets/recommendation1_6.png", "alt": "Recommendation 6" } },
+				{ "image": { "src": "assets/recommendation1_7.png", "alt": "Recommendation 7" } },
+				{ "image": { "src": "assets/recommendation1_8.png", "alt": "Recommendation 8" } },
+				{ "image": { "src": "assets/recommendation1_9.png", "alt": "Recommendation 9" } },
+				{ "image": { "src": "assets/recommendation1_10.png", "alt": "Recommendation 10" } },
+				{ "image": { "src": "assets/recommendation1_11.png", "alt": "Recommendation 11" } },
+				{ "image": { "src": "assets/recommendation1_12.png", "alt": "Recommendation 12" } }
+			]
+		},
+		{
+			"title": "해외 시리즈",
+			"carousel": { "infinite": true },
+			"items": [
+				{ "image": { "src": "assets/recommendation2_1.png", "alt": "Recommendation 1" } },
+				{ "image": { "src": "assets/recommendation2_2.png", "alt": "Recommendation 2" } },
+				{ "image": { "src": "assets/recommendation2_3.png", "alt": "Recommendation 3" } },
+				{ "image": { "src": "assets/recommendation2_4.png", "alt": "Recommendation 4" } },
+				{ "image": { "src": "assets/recommendation2_5.png", "alt": "Recommendation 5" } },
+				{ "image": { "src": "assets/recommendation2_6.png", "alt": "Recommendation 6" } },
+				{ "image": { "src": "assets/recommendation2_7.png", "alt": "Recommendation 7" } },
+				{ "image": { "src": "assets/recommendation2_8.png", "alt": "Recommendation 8" } },
+				{ "image": { "src": "assets/recommendation2_9.png", "alt": "Recommendation 9" } },
+				{ "image": { "src": "assets/recommendation2_10.png", "alt": "Recommendation 10" } },
+				{ "image": { "src": "assets/recommendation2_11.png", "alt": "Recommendation 11" } },
+				{ "image": { "src": "assets/recommendation2_12.png", "alt": "Recommendation 12" } }
+			]
+		}
+		]
+}
