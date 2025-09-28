@@ -785,3 +785,53 @@ a{ color: inherit; text-decoration: none; }
   scroll-snap-align: start;
 }
 
+/* Like button overlay (hidden & not interactive by default) */
+.card__like-btn{
+  position: absolute;
+  inset: 0;                          /* cover the card */
+  display: grid;
+  place-items: center;
+  background: rgba(0,0,0,0.0);
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+
+  opacity: 0;
+  pointer-events: none;              /* ← don't catch hover/click when hidden */
+  transition: opacity .18s ease, background .18s ease, transform .18s ease;
+  z-index: 3;
+}
+
+/* show ONLY on mouse hover over the card */
+.card__link:hover .card__like-btn{
+  opacity: 1;
+  background: rgba(0,0,0,0.18);
+  pointer-events: auto;              /* ← now clickable */
+}
+
+/* optional: dim image while showing */
+.card__link:hover .card__img{
+  filter: brightness(0.9);
+}
+
+/* keyboard accessibility: show when the button itself has visible focus */
+.card__like-btn:focus-visible{
+  opacity: 1;
+  background: rgba(0,0,0,0.18);
+  outline: 2px solid var(--red);
+  outline-offset: -6px;
+  pointer-events: auto;
+}
+
+/* heart icon */
+.card__like-btn svg{
+  width: 44px; height: 44px;
+  margin-top: 20%;
+  margin-left: 70%;
+  fill: rgba(255,255,255,0.88);
+  filter: drop-shadow(0 6px 18px rgba(0,0,0,.55));
+  pointer-events: none;
+}
+
+/* liked state */
+.card__like-btn.is-liked svg{ fill: var(--red); }
