@@ -84,20 +84,34 @@ nav ul {
 
 /* 리스트 스타일 */
 .dropdown-list { display: grid; gap: 6px; }
+
 .dropdown-item {
+  display: grid;
+  grid-template-columns: 1fr; /* 단일 열 */
+  gap: 10px;
+  align-items: center;
+  padding: 10px;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+.dropdown-item-notification {
   display: grid;
   grid-template-columns: 56px 1fr;
   gap: 10px;
   align-items: center;
   padding: 10px;
   border-radius: 8px;
+  transition: background 0.3s ease;
 }
-.dropdown-item:hover { background: rgba(255,255,255,0.06); }
+.dropdown-item:hover { background: var(--overlay); }
 .dropdown-item img {
   width: 56px; height: 56px; object-fit: cover; border-radius: 6px;
 }
 .dropdown-item .title { font-weight: 700; margin: 0 0 2px; }
 .dropdown-item .desc  { color: var(--muted); font-size: 14px; margin: 0; }
+
+
 
 /* 아이콘 버튼(시각적 리셋) */
 .icon-btn {
