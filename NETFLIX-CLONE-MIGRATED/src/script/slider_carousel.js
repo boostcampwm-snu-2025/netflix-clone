@@ -276,5 +276,11 @@
     document.head.appendChild(styleElement);
   }
 
-  document.querySelectorAll('.slider').forEach(initInfiniteSlider);
+  // document.querySelectorAll('.slider').forEach(initInfiniteSlider);
+  document.addEventListener('DOMContentLoaded', () => {
+  // 콘텐츠 로딩 완료 후 슬라이더 초기화
+  document.addEventListener('contentLoaded', () => {
+    document.querySelectorAll('.slider').forEach(initInfiniteSlider);
+    });
+  });
 })();
