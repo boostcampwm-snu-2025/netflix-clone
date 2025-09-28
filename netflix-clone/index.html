@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>Netflix</title>
+        <link rel="stylesheet" href="./src/css/style.css">
+        <link rel="stylesheet" href="./src/css/header.css">
+        <link rel="stylesheet" href="./src/css/footer.css">
+        <link rel="stylesheet" href="./src/css/hero.css">
+        <link rel="stylesheet" href="./src/css/category.css">
+        <link rel="stylesheet" href="./src/css/slider.css">
+        <link rel="stylesheet" href="./src/css/modal.css">
+        <link rel="stylesheet" href="./src/css/like.css">
+    </head>
+
+    <body>
+        <header class="header">
+            <div class="header-container">
+                <div class="left-section">
+                    <img src="images/neflix.png" alt="netflix-logo" height="40px">
+                    <nav class="left-menu">
+                        <ul>
+                            <li><a href="#">홈</a></li>
+                            <li><a href="#">시리즈</a></li>
+                            <li><a href="#">영화</a></li>
+                            <li><a href="#">게임</a></li>
+                            <li><a href="#">NEW! 요즘 대세 콘텐츠</a></li>
+                            <li><a href="#">내가 찜한 콘텐츠</a></li>
+                            <li><a href="#">언어별로 찾아보기</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="right-menu">
+                    <img src="./images/search.png" alt="search-icon" height="20px">
+                    <img src="./images/bell.png" alt="bell-icon" height="22px" data-modal-trigger="notification">
+                    <img src="./images/user.png" alt="user-icon" height="20px" data-modal-trigger="profile">
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <section class="hero">
+                <div class="hero-background">
+                    <img src="./images/poster.webp" alt="hero-poster" width="100%">
+                    <div class="hero-overlay"></div>
+                </div>
+                <div class="hero-content">
+                    <h1 class="hero-title">킹덤</h1>
+                    <p class="hero-description">병든 왕을 둘러싸고 흉흉한 소문이 떠돈다. 어둠에 뒤덮인 조선, 기이한 역병에 신음하는 산하. 정체 모를 악에 맞서 백성을 구원할 희망은 오직 세자뿐이다.</p>
+                    <div class="hero-buttons">
+                        <button class="btn-play">재생</button>
+                        <button class="btn-info">상세 정보</button>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- 카테고리 컨테이너 - 동적으로 생성될 영역 -->
+            <div class="categories-container"></div>
+        </main>
+
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-description">
+                    <p>넷플릭스서비시스코리아 유한회사 통신판매업신고번호: 제2018-서울종로-0426호 전화번호: 00-308-321-0161 (수신자 부담)</p>
+                    <p>대표: 레지널드 숀 톰프슨</p>
+                    <p>이메일 주소: korea@neflix.com</p>
+                    <p>주소: 대한민국 서울특별시 종로구 우정국로 26, 센트로폴리스 A동 20층 우편번호 03161</p>
+                    <p>사업자등록번호: 165-87-00119</p>
+                    <p>클라우드 호스팅: Amazon Web Services Inc.</p>
+                    <p style="color: #767676; text-decoration: underline;">공정거래위원회 웹사이트</p>
+                </div>
+            </div>
+        </footer>
+        <script type="module" src="./src/js/app.js"></script>
+    </body>
+</html>
