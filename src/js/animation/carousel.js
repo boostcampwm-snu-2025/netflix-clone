@@ -203,3 +203,158 @@ export function initializeInfiniteCarousel(containerSelector, options) {
     
     requestAnimationFrame(runSetup);
 }
+
+
+
+export function initializeCarousel(containerSelector, options) {
+    const container = document.querySelector(containerSelector);
+    if (!container) return;
+
+    const wrapper = container.querySelector('.carousel-wrapper');
+    const prevBtn = container.querySelector('.carousel__btn--prev');
+    const nextBtn = container.querySelector('.carousel__btn--next');
+    const originalCards = Array.from(wrapper.querySelectorAll('.card'));
+    const indicator = container.previousElementSibling;
+
+    const SLIDES_TO_MOVE = options?.move || 4;
+    const VISIBLE_SLIDES = options?.visible || 4;
+    const TOTAL_ORIGINAL_CARDS = originalCards.length;
+
+    if (TOTAL_ORIGINAL_CARDS <= VISIBLE_SLIDES) {
+        if (prevBtn) prevBtn.style.display = 'none';
+        if (nextBtn) nextBtn.style.display = 'none';
+        return;
+    }
+    
+    // 양방향 루프 애니메이션을 위한 복제
+    const CLONE_COUNT = VISIBLE_SLIDES;
+    for (let i = 0; i < CLONE_COUNT; i++) {
+        const cloneEnd = originalCards[TOTAL_ORIGINAL_CARDS - 1 - i].cloneNode(true);
+        wrapper.prepend(cloneEnd);
+        const cloneStart = originalCards[i].cloneNode(true);
+        wrapper.appendChild(cloneStart);
+    }
+
+    // 인덱스 기준 재설정
+    const START_INDEX = CLONE_COUNT; // 실제 콘텐츠 시작 인덱스
+    const MAX_INDEX = CLONE_COUNT + TOTAL_ORIGINAL_CARDS - VISIBLE_SLIDES; // 실제 콘텐츠 마지막 페이지 인덱스
+    
+    let currentIndex = START_INDEX;
+    let isMoving = false;
+    let slideWidth = 0;
+
+    const applyTransform = () => {
+        wrapper.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+    };
+
+    const moveSlider = () => {
+        wrapper.style.transition = 'transform 0.5s ease-out';
+        applyTransform();
+    };
+
+    // 1. '다음' 버튼 로직: 경계에서 멈추는 기능 추가
+    nextBtn.addEventListener('click', () => {
+        if (isMoving) return;
+        isMoving = true;
+
+        if (currentIndex < MAX_INDEX) { // Case 1: 아직 끝이 아니면 정상 이동
+            currentIndex = Math.min(currentIndex + SLIDES_TO_MOVE, MAX_INDEX);
+        } else { // Case 2: 이미 끝에 도달했다면, 루프 애니메이션 시작
+            currentIndex += VISIBLE_SLIDES;
+        }
+        moveSlider();
+    });
+
+    // 2. '이전' 버튼 로직: 경계에서 멈추는 기능 추가
+    prevBtn.addEventListener('click', () => {
+        if (isMoving) return;
+        isMoving = true;
+
+        if (currentIndex > START_INDEX) { // Case 1: 아직 처음이 아니면 정상 이동
+            currentIndex = Math.max(currentIndex - SLIDES_TO_MOVE, START_INDEX);
+        } else { // Case 2: 이미 처음에 도달했다면, 루프 애니메이션 시작
+            currentIndex -= VISIBLE_SLIDES;
+        }
+        moveSlider();
+    });
+
+    // 3. '순간이동' 로직: 루프 애니메이션 후 위치 리셋
+    wrapper.addEventListener('transitionend', () => {
+        isMoving = false;
+
+        // 오른쪽 끝 복제본 영역으로 넘어갔을 때
+        if (currentIndex >= TOTAL_ORIGINAL_CARDS + CLONE_COUNT) {
+            wrapper.style.transition = 'none';
+            currentIndex = START_INDEX; // 원본 시작 위치로 순간이동
+            applyTransform();
+        }
+
+        // 왼쪽 끝 복제본 영역으로 넘어갔을 때
+        if (currentIndex < START_INDEX) {
+            wrapper.style.transition = 'none';
+            currentIndex = MAX_INDEX; // 원본 마지막 위치로 순간이동
+            applyTransform();
+        }
+
+        updateIndicator();
+
+    });
+
+    // --- 인디케이터 및 초기 설정 로직 ---
+    const TOTAL_PAGES = Math.ceil(TOTAL_ORIGINAL_CARDS / SLIDES_TO_MOVE);
+    let indicatorDots = null;
+    if (indicator) {
+        indicator.innerHTML = '';
+        for (let i = 0; i < TOTAL_PAGES; i++) {
+            const dot = document.createElement('span');
+            dot.classList.add('indicator-dot');
+            indicator.appendChild(dot);
+        }
+        indicatorDots = indicator.querySelectorAll('.indicator-dot');
+    }
+
+    const updateIndicator = () => {
+        if (!indicatorDots) return;
+
+        let currentPage;
+        
+        // 1. 오른쪽으로 루프하는 애니메이션 중일 때 -> 첫 페이지(0)를 가리킴
+        if (currentIndex >= TOTAL_ORIGINAL_CARDS + CLONE_COUNT) {
+            currentPage = 0;
+        } 
+        // 2. 왼쪽으로 루프하는 애니메이션 중일 때 -> 마지막 페이지를 가리킴
+        else if (currentIndex < START_INDEX) {
+            currentPage = TOTAL_PAGES - 1;
+        } 
+        // 3. 캐러셀이 정확히 마지막 페이지에 멈춰있을 때
+        else if (currentIndex === MAX_INDEX) {
+            currentPage = TOTAL_PAGES - 1;
+        }
+        // 4. 그 외 모든 일반적인 경우
+        else {
+            const realIndex = currentIndex - CLONE_COUNT;
+            currentPage = Math.floor(realIndex / SLIDES_TO_MOVE);
+        }
+
+        indicatorDots.forEach((dot, i) => {
+            dot.classList.toggle('is-active', i === currentPage);
+        });
+    };
+
+    const runSetup = () => {
+        const firstCard = wrapper.querySelector('.card');
+        if (!firstCard) return;
+        slideWidth = firstCard.offsetWidth + 8;
+
+        if (slideWidth === 0) {
+            requestAnimationFrame(runSetup);
+            return;
+        }
+        
+        wrapper.style.transition = 'none';
+        applyTransform();
+        updateIndicator();
+    };
+    
+    requestAnimationFrame(runSetup);
+}
