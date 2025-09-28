@@ -2,30 +2,31 @@
 // 무한 슬라이더 구현
 // - HTML 구조: .slider > .slider-content > (.prev-button, .next-button, .slider-container > .slider-item*)
 (function () {
-  const CARDS_PER_STEP = 3;     // ✅ 정확히 3장씩
   const SCROLL_SETTLE_MS = 200; // 스크롤 안정화 대기
-
+  const CARDS_PER_STEP = 3;     
+  
   function debounce(fn, ms=120){ let t; return (...a)=>{clearTimeout(t); t=setTimeout(()=>fn(...a),ms);} }
-
+  
   function initInfiniteSlider(sliderEl) {
     const container = sliderEl.querySelector('.slider-container');
     const prevBtn   = sliderEl.querySelector('.prev-button');
     const nextBtn   = sliderEl.querySelector('.next-button');
     if (!container || !prevBtn || !nextBtn) return;
-
+    
     // 이미 초기화된 슬라이더는 패스
     if (container.dataset.infinite === 'on') return;
     container.dataset.infinite = 'on';
-
+    
     // 1) 초기 목록과 클론 구성
     let items = Array.from(container.querySelectorAll('.slider-item'));
     const style = getComputedStyle(container);
     const gapPx = parseFloat(style.columnGap || style.gap || '8') || 8;
 
     // 화면에 보이는 카드 수 추정(N) → 앞뒤로 N개씩 클론
-    const N = estimateVisibleCount(container, items[0], gapPx);
+    const N = 5;
     const headClones = items.slice(-N).map(cloneItem);
-    const tailClones = items.slice(0,  N).map(cloneItem);
+    const tailClones = items.slice(0, N).map(cloneItem);
+    headClones.reverse(); // append 순서 보정
     headClones.forEach(c => container.insertBefore(c, container.firstChild));
     tailClones.forEach(c => container.appendChild(c));
 
@@ -76,7 +77,41 @@
       const cur = nearestIndex();
       let target = cur + dir * CARDS_PER_STEP;
       // 범위를 벗어나도 일단 부드럽게 스크롤 → 끝나면 보정 로직이 처리
-      target = Math.max(0, Math.min(items.length - 1, target));
+
+      const visibleCards = estimateVisibleCount(container, items[0], gapPx);
+
+      // ✅ 핵심: 이동 후 화면에 보이는 영역이 "순수 원본" 또는 "순수 클론"만 포함하도록
+      if (dir > 0) { // 오른쪽으로
+        const lastVisible = target + visibleCards - 1;
+        const originalEnd = N + ORIGINAL_LEN - 1;
+        const cloneStart = N + ORIGINAL_LEN;
+        
+        // 원본과 클론이 섞여서 보이게 되는 상황이면 조정
+        if (target <= originalEnd && lastVisible >= cloneStart) {
+          // 클론영역 직전에서 멈춤
+          target = cloneStart - visibleCards + 1;
+        } else if (target > originalEnd) {
+          // 완전히 클론 영역으로 이동
+          target = cloneStart;
+        }
+      } else { // 왼쪽으로
+        const lastVisible = target + visibleCards - 1;
+        const originalStart = N;
+        const cloneEnd = N - 1;
+        
+        // 원본과 클론이 섞여서 보이게 되는 상황이면 조정
+        if (target <= cloneEnd && lastVisible >= originalStart) {
+          // 완전히 클론 영역으로 이동
+          target = Math.max(0, originalStart - visibleCards);
+        } else if (lastVisible < originalStart) {
+          // 클론영역 직후에서 멈춤
+          target = Math.max(0, cloneEnd - visibleCards + 1);
+        }
+      }
+      
+      // 전체 범위 내에서 제한
+      target = Math.max(0, Math.min(items.length - visibleCards, target));
+
       isAnimating = true;                    // ✅ 애니메이션 시작
       jumpToIndex(target, true);
     }
