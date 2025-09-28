@@ -8,7 +8,7 @@
     </title>
     <link rel="stylesheet" href="src/styles/globals.css" />
     <link rel="stylesheet" href="src/styles/style.css" />
-    <script type="module" defer src="src/main.ts"></script>
+    <script type="module" defer src="src/entry-client.ts"></script>
   </head>
   <body>
     <main>
@@ -56,92 +56,7 @@
       </section>
       <section class="top-contents">
         <h2 class="top-contents__title">지금 뜨는 콘텐츠</h2>
-        <div class="top-contents__container">
-          <arrow-button direction="left"></arrow-button>
-          <ol class="top-contents__list">
-            <li class="top-contents__item">
-              <movie-card
-                src="/images/thumbnails/movie1.webp"
-                alt="movie1"
-                title="movie1"
-                rank="1"
-              ></movie-card>
-            </li>
-            <li class="top-contents__item">
-              <movie-card
-                src="/images/thumbnails/movie2.webp"
-                alt="movie2"
-                title="movie2"
-                rank="2"
-              ></movie-card>
-            </li>
-            <li class="top-contents__item">
-              <movie-card
-                src="/images/thumbnails/movie3.webp"
-                alt="movie3"
-                title="movie3"
-                rank="3"
-              ></movie-card>
-            </li>
-            <li class="top-contents__item">
-              <movie-card
-                src="/images/thumbnails/movie4.webp"
-                alt="movie4"
-                title="movie4"
-                rank="4"
-              ></movie-card>
-            </li>
-            <li class="top-contents__item">
-              <movie-card
-                src="/images/thumbnails/movie5.webp"
-                alt="movie5"
-                title="movie5"
-                rank="5"
-              ></movie-card>
-            </li>
-            <li class="top-contents__item">
-              <movie-card
-                src="/images/thumbnails/movie6.webp"
-                alt="movie6"
-                title="movie6"
-                rank="6"
-              ></movie-card>
-            </li>
-            <li class="top-contents__item">
-              <movie-card
-                src="/images/thumbnails/movie7.webp"
-                alt="movie7"
-                title="movie7"
-                rank="7"
-              ></movie-card>
-            </li>
-            <li class="top-contents__item">
-              <movie-card
-                src="/images/thumbnails/movie8.webp"
-                alt="movie8"
-                title="movie8"
-                rank="8"
-              ></movie-card>
-            </li>
-            <li class="top-contents__item">
-              <movie-card
-                src="/images/thumbnails/movie9.webp"
-                alt="movie9"
-                title="movie9"
-                rank="9"
-              ></movie-card>
-            </li>
-            <li class="top-contents__item">
-              <movie-card
-                src="/images/thumbnails/movie10.webp"
-                alt="movie10"
-                title="movie10"
-                rank="10"
-              ></movie-card>
-            </li>
-          </ol>
-          <arrow-button direction="right"></arrow-button>
-        </div>
+        <movie-list></movie-list>
       </section>
       <section class="reasons">
         <h2 class="reasons__title">가입해야 하는 또 다른 이유</h2>
