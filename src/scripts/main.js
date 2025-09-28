@@ -12,7 +12,7 @@ async function initializeApp() {
     initCarousels();
     initMuteButton();
   } catch (e) {
-    console.error(e);
+    console.error('Failed to initialize app:', e);
   }
 }
 
