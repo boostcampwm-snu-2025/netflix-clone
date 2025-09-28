@@ -26,7 +26,7 @@ header {
   top: 0px;           /* Distance from the top edge of the viewport */
   height: auto;       /* Height adjusts automatically based on content */
   min-height: 70px;   /* Ensures the header is at least 70px tall */
-  z-index: 1;         /* Places header above other elements to prevent overlap */
+  z-index: 1000;         /* Places header above other elements to prevent overlap */
   line-height: 1.4;
   background: rgb(20, 20, 20);
   /* background-image: linear-gradient(180deg, rgba(0, 0, 0, .7) 10%, transparent); */
@@ -368,4 +368,22 @@ img {
   right: 0;
   top: 0;
   width: 100%;
+}
+
+
+.sliderMask {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.sliderContent {
+  display: flex;
+  will-change: transform;
+}
+
+.slider-item {
+  flex: 0 0 calc(100% / 6); /* 👈 match itemsPerPage */
+  box-sizing: border-box;
+  padding: 0 0.2vw;
 }
