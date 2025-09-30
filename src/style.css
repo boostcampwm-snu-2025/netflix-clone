@@ -212,7 +212,7 @@ ul.primary-navigation{
 }
 .row-container img{ 
     margin-right: 10px;
-    width: 200px; 
+    width: 250px; 
     border-radius: 4px; 
     transition: transform 0.3s ease; 
     transform-origin: center bottom;
@@ -262,4 +262,64 @@ footer a:hover{
 .info p{
     margin: 0.25rem 0;
     line-height: 1.5;
+}
+/* Card wrapper is the div, not the link */
+/* Overlay sits on top of the image inside row-container */
+.content-card-wrapper {
+    position: relative; /* needed for absolute overlay */
+    display: inline-block;
+    margin-right: 10px; /* match row-container spacing */
+}
+
+.content-card-wrapper img.content-card {
+    width: 250px;
+    height: 150px;
+    border-radius: 8px;
+    display: block;
+    transition: transform 0.3s ease;
+    transform-origin: center bottom;
+}
+
+/* Zoom on hover */
+.row-container img.content-card:hover,
+.content-card-wrapper:hover img.content-card {
+    transform: scale(1.2); /* keep your existing zoom logic */
+    z-index: 10;
+    box-shadow: 0 10px 20px #00000083;
+}
+
+/* Hover overlay */
+.hover-overlay {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    background: rgb(135, 135, 135);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    border-radius: 8px;
+    padding: 10px;
+    transition: opacity 0.3s;
+    z-index: 20; /* higher than the image zoom */
+}
+
+/* Show overlay on hover */
+.content-card-wrapper:hover .hover-overlay {
+    opacity: 1;
+}
+
+/* Hover buttons inside overlay */
+.hover-buttons button, .hover-buttons b {
+    margin: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 16px;
 }

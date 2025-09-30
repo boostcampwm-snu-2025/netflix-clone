@@ -1,209 +1,23 @@
-<!--       _
-       .__(.)< (MEOW)
-        \___)   
- ~~~~~~~~~~~~~~~~~~-->
-<!DOCTYPE html>
-<html lang="kr">
-    <head>
-        <title>넷플릭스 클론</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="styles.css">
-        <script type = "module" defer src="./components/slider.js"></script>
-        <script type = "module" defer src="./components/dropdown.js"></script>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>넷플릭스 클론</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script type="module" defer src="./src/header.ts"></script>
+    <script type="module" defer src="./src/hero.ts"></script>
+    <script type="module" defer src="./src/slider.js"></script>
+    <script type="module" defer src="./src/footer.ts"></script>
 
-    </head>
-    <body>
-        <header>
-            <nav>
-                <img src="./img/logo.png">
-                <div class ="navigation">
-                <ul class = "primary-navigation">
-                    <li class="navigation-tab">
-                        <a href="">Home</a>
-                    </li>
-                    <li class="navigation-tab">
-                        <a href="">Shows</a>
-                    </li>
-                    <li class="navigation-tab">
-                        <a href="">Movies</a>
-                    </li>
-                    <li class="navigation-tab">
-                        <a href="">Games</a>
-                    </li>
-                    <li class="navigation-tab">
-                        <a href="">New & Popular</a>
-                    </li>
-                    <li class="navigation-tab">
-                        <a href="">My List</a>
-                    </li>
-                    <li class="navigation-tab">
-                        <a href="">Browse by Language</a>
-                    </li>
-                </ul>
-                <div class = "secondary-navigation">
-                    <a href="" class = "nav-element">
-                        <i class="fa fa-search"></i>
-                    </a>
-                    <a href="" class = "nav-element">
-                        <i class="fa fa-bell"></i>
-                        <div class="dropdown">
-                            <p>No notifications.</p>
-                        </div>
-                    </a>
-                    <a href="" class = "nav-element profile">
-                        <img src="./img/profile.png">
-                        <div class = "dropdown">
-                            <div class = "other-profile">
-                                <img src="./img/profile.png">
-                                Mom
-                            </div>
-                            <div class = "other-profile">
-                                <img src="./img/profile.png">
-                                Dad
-                            </div>
-                            <div class = "other-profile">
-                                <img src="./img/profile.png">
-                                Kids
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                </div>
-            </nav>
-        </header>
-
-        <main>
-            <section class="hero">
-                <div class = "hero-image-wrapper">
-                    <img src = "./img/hero-img.webp">
-                </div>
-                <div class = "right-button-layer">
-                    <i class="fa fa-refresh"></i>
-                    <span class="maturity-rating">
-                        <p>15+</p>
-                    </span>
-                </div>
-                <div class="fill-container">
-                    <div class="titleWrapper">
-                        <img src="img/title-card.webp">
-                    </div>
-                    <div class="info-wrapper">
-                        <h1>#2 in TV Shows Today</h1>
-                        <p>A modern-day chef travels back in time and finds herself before a tyrant king. Can she win over his heart-and his palate-with her culinary creations?</p>
-                    </div>
-                    <div class = "left-button-layer">
-                        <button>
-                            <i class="fa fa-play"></i>
-                            Play
-                        </button>
-                        <button>
-                            <i class="fa fa-info-circle"></i>
-                            More Info
-                        </button>
-                    </div>
-                </div>
-            </section>
-            <section class="content-row first">
-                <h1>New on Netflix</h1>
-                <div class = "outer-carousel">
-                <button class="prev"></button>
-                <div class="carousel">                    
-                    <div class="row-container">
-                        <a href="">
-                            <img src="./img/cat.jpg">
-                        </a>
-                        <a href="">
-                            <img src="./img/inside-job.jpg">
-                        </a>
-                        <a href="">
-                            <img src="./img/rick-and-morty.webp">
-                        </a>
-                        <a href="">
-                            <img src="./img/breaking-bad.webp">
-                        </a>
-                        <a href="">
-                            <img src="./img/dexter.webp">
-                        </a>
-                        <a href="">
-                            <img src="./img/gossip-girl.webp">
-                        </a>
-                        <a href="">
-                            <img src="./img/knives-out.webp">
-                        </a>
-                        <a href="">
-                            <img src="./img/rick-and-morty.webp">
-                        </a>
-                    </div>
-                </div>
-                <button class="next"></button>
-                </div>
-            </section>
-            <section class="content-row">
-                <h1>New on Netflix</h1>
-                <div class = "outer-carousel">
-                <button class="prev"></button>
-                <div class="carousel">                    
-                    <div class="row-container">
-                        <a href="">
-                            <img src="./img/cat.jpg">
-                        </a>
-                        <a href="">
-                            <img src="./img/inside-job.jpg">
-                        </a>
-                        <a href="">
-                            <img src="./img/rick-and-morty.webp">
-                        </a>
-                        <a href="">
-                            <img src="./img/breaking-bad.webp">
-                        </a>
-                        <a href="">
-                            <img src="./img/dexter.webp">
-                        </a>
-                    </div>
-                </div>
-                <button class="next"></button>
-                </div>
-            </section>
-        </main>
-        
-        <footer>
-            <div class="socials">
-                <a href=""><i class = "fa fa-facebook"></i></a>
-                <a href=""><i class = "fa fa-instagram"></i></a>
-                <a href=""><i class = "fa fa-twitter"></i></a>
-                <a href=""><i class = "fa fa-youtube-play"></i></a>
-            </div>
-            <div class="links">
-                <div class="link-column">
-                    <a href="">Audio Descriptions</a>
-                    <a href="">Investor Relations</a>
-                    <a href="">Legal Notices</a>
-                </div>
-                <div class="link-column">
-                    <a href="">Help Centers</a>
-                    <a href="">Jobs</a>
-                    <a href="">Cookie Preferences</a>
-                </div>
-                <div class="link-column">
-                    <a href="">Gift Cards</a>
-                    <a href="">Terms of Use</a>
-                    <a href="">Corporate Informations</a>
-                </div>
-                <div class="link-column">
-                    <a href="">Media Center</a>
-                    <a href="">Privacy</a>
-                    <a href="">Contact Us</a>
-                </div>
-            </div>
-            <div class = "info">
-                <p>Netflix Services Korea Ltd. E-Commerce Registration Number: Je 2018-Seoul Jong-ro-0426 Ho. Phone: </p>
-                <p>Representative: Reginald Shawn Thompson</p>
-                <p>Email: korea@netflix.com</p>
-                <p>Address: 20F, Tower A, Centropolis Building 26, Ujeongguk-ro, Jongno-gu, Seoul, 03161 Republic of Korea</p>
-                <p>Business registration number: 165-87-00119</p>
-                <p>Hosted by: Amazon Web Services Inc.</p>
-                <p>KFTC website</p>
-            </div>
-        </footer>
-    </body>
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <header></header>
+    <main>
+      <section class="hero"></section>
+    </main>
+    <footer></footer>
+  </body>
 </html>
