@@ -1,15 +1,23 @@
-// app.js
+import './style.css';
 
 const items_per_page = 6;
 const clones = items_per_page + 1;
 
+interface Movie {
+  title: string;
+  image: string;
+}
+
 // fetch movies and fill slider content
-async function fetch_movies_for_row(slider_content, num_img = items_per_page) {
+async function fetch_movies_for_row(
+  slider_content: HTMLElement,
+  num_img: number = items_per_page
+): Promise<Movie[]> {
   try {
     const res = await fetch(`http://localhost:3000/api/data?num_img=${num_img}`);
     if (!res.ok) throw new Error("http error " + res.status);
 
-    const movies = await res.json();
+    const movies: Movie[] = await res.json();
     let html = "";
     movies.forEach(movie => {
       html += `
@@ -23,23 +31,35 @@ async function fetch_movies_for_row(slider_content, num_img = items_per_page) {
     });
     slider_content.innerHTML = html;
 
-    // make sure dom is updated before init
+    // make sure DOM is updated before init
     await new Promise(requestAnimationFrame);
 
     return movies;
-  } catch (err) {
+  } catch (err: any) {
     slider_content.innerHTML = `<p>❌ error: ${err.message}</p>`;
     return [];
   }
 }
 
 class Slider {
-  constructor(wrapper, items_per_page = 6) {
+  private wrapper: HTMLElement;
+  private slider_content: HTMLElement;
+  private slider_mask: HTMLElement;
+  private prev_btn: HTMLButtonElement;
+  private next_btn: HTMLButtonElement;
+
+  private items_per_page: number;
+  private clones: number;
+  private current_index: number;
+  private is_animating: boolean;
+  private has_clicked: boolean;
+
+  constructor(wrapper: HTMLElement, items_per_page: number = 6) {
     this.wrapper = wrapper;
-    this.slider_content = wrapper.querySelector(".sliderContent");
-    this.slider_mask = wrapper.querySelector(".sliderMask");
-    this.prev_btn = wrapper.querySelector(".prev");
-    this.next_btn = wrapper.querySelector(".next");
+    this.slider_content = wrapper.querySelector(".sliderContent") as HTMLElement;
+    this.slider_mask = wrapper.querySelector(".sliderMask") as HTMLElement;
+    this.prev_btn = wrapper.querySelector(".prev") as HTMLButtonElement;
+    this.next_btn = wrapper.querySelector(".next") as HTMLButtonElement;
 
     this.items_per_page = items_per_page;
     this.clones = items_per_page + 1;
@@ -51,7 +71,7 @@ class Slider {
     this.add_listeners();
   }
 
-  setup() {
+  private setup(): void {
     const items = Array.from(this.slider_content.querySelectorAll(".slider-item"));
     const original_count = items.length;
 
@@ -76,20 +96,20 @@ class Slider {
     this.slider_mask.style.padding = `0 ${peek_padding}%`;
 
     // apply card size to items
-    this.wrapper.querySelectorAll(".slider-item").forEach(item => {
+    this.wrapper.querySelectorAll<HTMLElement>(".slider-item").forEach(item => {
       item.style.flex = `0 0 ${card_size}%`;
     });
 
     this.update_transform();
   }
 
-  update_transform(animate = false) {
+  private update_transform(animate: boolean = false): void {
     this.slider_content.style.transition = animate ? "transform 0.6s ease" : "none";
     this.slider_content.style.transform =
       `translateX(-${this.current_index * (100 / this.items_per_page)}%)`;
   }
 
-  slide_next() {
+  private slide_next(): void {
     if (this.is_animating) return;
     this.is_animating = true;
     this.has_clicked = true;
@@ -107,7 +127,7 @@ class Slider {
     }, { once: true });
   }
 
-  slide_prev() {
+  private slide_prev(): void {
     if (!this.has_clicked) return;
     if (this.is_animating) return;
     this.is_animating = true;
@@ -124,16 +144,16 @@ class Slider {
     }, { once: true });
   }
 
-  add_listeners() {
+  private add_listeners(): void {
     this.next_btn.addEventListener("click", () => this.slide_next());
     this.prev_btn.addEventListener("click", () => this.slide_prev());
   }
 }
 
-// initialize sliders after dom ready
+// initialize sliders after DOM ready
 window.addEventListener("DOMContentLoaded", () => {
-  document.querySelectorAll(".sliderWrapper").forEach(wrapper => {
-    const slider_content = wrapper.querySelector(".sliderContent");
+  document.querySelectorAll<HTMLElement>(".sliderWrapper").forEach(wrapper => {
+    const slider_content = wrapper.querySelector(".sliderContent") as HTMLElement;
     fetch_movies_for_row(slider_content, items_per_page * 3).then(() => {
       new Slider(wrapper, items_per_page);
     });
