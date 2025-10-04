@@ -115,7 +115,7 @@ class ContentLoader {
       rankingSvg = this.getRankingSvg(item.rank);
     }
 
-        const buttonsHtml = `
+    const buttonsHtml = `
       <div class="slider-item-detail">
         <div class="detail-header">
           <button class="icon-btn btn-play" aria-label="재생">▶</button>
