@@ -1,0 +1,74 @@
+.navbar {
+    height: 72px;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 40px;
+    right: 40px;
+    color: #e5e5e5;
+}
+
+.nav-left {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.nav-tabs {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+}
+
+.search-container.active {
+    background-color: #333;
+    background-color: rgba(0, 0, 0, .9);
+    border: 1px solid hsla(0, 0%, 100%, .85);
+}
+
+.search-input {
+    background-color: transparent;
+    border: none;
+    box-sizing: border-box;
+    width: 0px;
+    padding: 0px;
+    color: #fff;
+    visibility: hidden;
+}
+
+.search-container.active .search-input {
+    visibility: visible;
+    width: 212px;
+    padding: 7px 14px 7px 7px;
+    transition: width 0.3s ease-in-out;
+}
+
+.nav-tabs a:hover:not(.current) {
+    color: #b3b3b3;
+}
+
+.nav-tabs .current {
+    cursor: default;
+}
+
+.logo {
+    height: 30px;
+}
+
+.modal-container {
+    position: relative;
+}
