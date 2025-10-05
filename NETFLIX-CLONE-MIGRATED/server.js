@@ -3,12 +3,17 @@
 import express from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url'; // 파일 경로 변환을 위한 모듈 추가
+import cors from 'cors';
+
+// CORS 설정
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
 const port = 3001; 
+app.use(express.json());
+app.use(cors());
 
 // --- 1. 정적 파일 경로 설정 (Static File Serving) ---
 app.use('/img', express.static(path.join(__dirname, 'public', 'img')));
