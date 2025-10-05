@@ -1,6 +1,7 @@
 export interface ContentItem {
 	image: string;
 	alt: string;
+	keywords?: string[];
 }
 
 export interface Notification extends ContentItem {

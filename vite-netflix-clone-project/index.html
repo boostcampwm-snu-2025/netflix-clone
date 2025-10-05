@@ -25,7 +25,29 @@
 				<a href="#">언어별로 찾아보기</a>
 			</nav>
 			<div class="icons">
-				<button class="icon-btn" aria-label="검색"></button>
+				<div class="search-wrap" data-state="collapsed">
+					<button
+						class="icon-btn search-toggle"
+						aria-label="검색"
+						aria-expanded="false"
+					>
+						<span class="material-symbols-outlined">search</span>
+					</button>
+
+					<div class="search-box" role="search">
+						<span class="material-symbols-outlined search-icon">search</span>
+						<input
+							id="site-search"
+							class="search-input"
+							type="text"
+							placeholder="제목, 사람, 장르"
+							aria-label="검색 입력"
+							autocomplete="off"
+						/>
+					</div>
+					<!-- 최근검색 -->
+					<div class="recent-layer" aria-hidden="true"></div>
+				</div>
 				<div class="icon-btn notif" aria-label="알림">
 					<span class="material-symbols-outlined">notifications</span>
 					<div class="notif-dropdown"><ul></ul></div>
@@ -71,7 +93,17 @@
 				<div class="hero-content">
 					<p class="rank"></p>
 					<p class="desc"></p>
-					<div class="buttons"></div>
+					<div class="hero-buttons">
+						<button class="btn btn-play" aria-label="재생">
+							<span class="material-symbols-outlined">play_arrow</span>
+							<span>재생</span>
+						</button>
+
+						<button class="btn btn-info" aria-label="상세 정보">
+							<span class="material-symbols-outlined">info</span>
+							<span>상세 정보</span>
+						</button>
+					</div>
 				</div>
 			</div>
 		</section>

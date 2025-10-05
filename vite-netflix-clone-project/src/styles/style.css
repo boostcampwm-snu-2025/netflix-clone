@@ -75,6 +75,118 @@ body {
 	align-items: center;
 }
 
+.search-wrap {
+	position: relative;
+	display: flex;
+	align-items: center;
+	height: 36px;
+	gap: 0;
+}
+
+.search-box {
+	position: relative;
+	display: flex;
+	align-items: center;
+	height: 36px;
+	width: 0;
+	overflow: hidden;
+	background: rgba(0, 0, 0, 0.85);
+	border: 1px solid rgba(255, 255, 255, 0.35);
+	transition: width 180ms ease, opacity 180ms ease;
+	opacity: 0;
+	border-radius: 2px;
+}
+
+.search-box .search-icon {
+	font-size: 20px;
+	margin-left: 10px;
+	margin-right: 6px;
+	color: rgba(255, 255, 255, 0.8);
+	flex: 0 0 auto;
+}
+
+.search-input {
+	background: transparent;
+	border: none;
+	outline: none;
+	color: #fff;
+	width: 100%;
+	font-size: 14px;
+	padding-right: 10px;
+}
+
+.search-wrap[data-state="expanded"] .search-box {
+	width: min(44vw, 420px);
+	opacity: 1;
+}
+
+.search-input::placeholder {
+	color: rgba(255, 255, 255, 0.75);
+}
+
+.recent-layer {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 100%;
+	margin-top: 8px;
+	margin-left: 24px;
+	background: rgba(20, 20, 20, 0.95);
+	border: 1px solid rgba(255, 255, 255, 0.12);
+	border-radius: 8px;
+	box-shadow: 0 10px 24px rgba(0, 0, 0, 0.5);
+	display: none;
+	z-index: 50;
+	overflow: hidden;
+}
+
+.recent-layer[data-open="true"] {
+	display: block;
+}
+
+.recent-list {
+	list-style: none;
+	margin: 0;
+	padding: 6px 0;
+}
+.recent-item {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 10px;
+	padding: 10px 14px;
+	cursor: pointer;
+	color: #e6e6e6;
+	font-size: 14px;
+}
+.recent-item:hover,
+.recent-item.active {
+	background: rgba(255, 255, 255, 0.08);
+}
+
+.recent-text {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.recent-remove {
+	border: 0;
+	background: transparent;
+	color: #aaa;
+	cursor: pointer;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+}
+.recent-remove:hover {
+	color: #fff;
+}
+.recent-empty {
+	padding: 12px 14px;
+	color: #9aa0a6;
+	font-size: 13px;
+}
+
 .notif {
 	position: relative;
 }
@@ -249,7 +361,7 @@ body {
 			rgba(0, 0, 0, 0.35) 40%,
 			rgba(0, 0, 0, 0) 70%
 		),
-		url("/assets/runningman.png") center / cover no-repeat; /* 경로 수정 */
+		url("/assets/runningman.png") center / cover no-repeat;
 	z-index: 0;
 }
 .hero__inner {
@@ -261,7 +373,55 @@ body {
 	margin-top: 250px;
 }
 .hero-content {
-	max-width: 600px;
+	max-width: 500px;
+}
+
+.hero-buttons {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	margin-top: 20px;
+}
+
+.hero-buttons .btn {
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
+	border: 0;
+	border-radius: 8px;
+	cursor: pointer;
+	font-weight: 700;
+	letter-spacing: 0.2px;
+	transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease,
+		color 0.15s ease;
+	line-height: 1;
+}
+
+.hero-buttons .btn .material-symbols-outlined {
+	font-size: 24px;
+}
+
+.hero-buttons .btn-play {
+	background: #fff;
+	color: #000;
+	padding: 14px 22px;
+	box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+}
+.hero-buttons .btn-play:hover {
+	transform: translateY(-1px);
+	background: #eaeaea;
+	box-shadow: 0 8px 22px rgba(0, 0, 0, 0.35);
+}
+
+.hero-buttons .btn-info {
+	background: rgba(109, 109, 110, 0.7);
+	color: #fff;
+	padding: 14px 18px;
+	border: 1px solid rgba(255, 255, 255, 0.15);
+}
+.hero-buttons .btn-info:hover {
+	transform: translateY(-1px);
+	background: rgba(109, 109, 110, 0.9);
 }
 .rank {
 	font-size: 18px;
@@ -422,6 +582,7 @@ body {
 	gap: 16px;
 	will-change: transform;
 	transition: transform 0.45s ease;
+	z-index: 1;
 }
 .cr-card {
 	flex: 0 0 auto;
@@ -459,15 +620,17 @@ body {
 	align-items: center;
 	justify-content: center;
 	cursor: pointer;
-	z-index: 2;
+	z-index: 1000;
 	opacity: 0;
 	pointer-events: none;
 	background: transparent;
 	transition: opacity 0.2s ease, background 0.25s ease;
+	z-index: 30;
 }
 .carousel-row:hover .cr-btn {
 	opacity: 1;
 	pointer-events: auto;
+	z-index: 30;
 }
 
 .carousel-row:hover .cr-btn.prev {

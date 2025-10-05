@@ -8,6 +8,12 @@ import type {
 import { repaintLikes } from "../components/handleLikes";
 
 // Hero
+function showHero(show: boolean) {
+	const hero = document.querySelector<HTMLElement>(".hero");
+	if (!hero) return;
+	hero.style.display = show ? "flex" : "none";
+}
+
 export function renderHero(data: HeroData) {
 	const heroSection = document.querySelector<HTMLElement>(".hero");
 	const rankEl = document.querySelector(".hero-content .rank");
@@ -25,14 +31,14 @@ export function renderNotifications(data: Notification[]) {
 	list.innerHTML = data
 		.map(
 			(item) => `
-				<li>
-					<img src="${item.image}" alt="${item.alt}" />
-					<div class="notif-text">
-						<p class="notif-title">${item.title}</p>
-						<p class="notif-desc">${item.desc}</p>
-					</div>
-				</li>
-			`
+        <li>
+          <img src="${item.image}" alt="${item.alt}" />
+          <div class="notif-text">
+            <p class="notif-title">${item.title}</p>
+            <p class="notif-desc">${item.desc}</p>
+          </div>
+        </li>
+      `
 		)
 		.join("");
 }
@@ -55,15 +61,24 @@ export function renderProfiles(data: Profile[]) {
 	});
 }
 
-// Carousel
-export function renderCarousels(data: CarouselData[]) {
+function clearCarousels() {
+	document.querySelectorAll(".carousel-row").forEach((row) => row.remove());
+	document.querySelectorAll(".search-header").forEach((el) => el.remove());
+}
+
+// Carousel (기본 전체 렌더)
+export function renderCarousels(
+	data: CarouselData[],
+	opts?: { skipClear?: boolean }
+) {
 	const top10Section = document.querySelector(".top10-section");
 	if (!top10Section) return;
 
-	// 기존 캐러셀은 삭제
-	document.querySelectorAll(".carousel-row").forEach((row) => row.remove());
+	if (!opts?.skipClear) {
+		clearCarousels();
+		showHero(true);
+	}
 
-	// Top 10 섹션 앞에 새로운 캐러셀들을 추가
 	data.forEach((carousel) => {
 		const section = document.createElement("section");
 		section.className = "carousel-row";
@@ -101,7 +116,7 @@ export function renderCarousels(data: CarouselData[]) {
 							<span class="series-type">리미티드 시리즈</span>
 							<span class="quality">HD</span>
 						</div>
-
+						
 						<div class="hover-genres">
 							순한맛 코미디 | 재밌는 | 셀럽
 						</div>
@@ -112,11 +127,11 @@ export function renderCarousels(data: CarouselData[]) {
 			.join("");
 
 		section.innerHTML = `
-			<h2>${carousel.title}</h2>
-			<button class="cr-btn prev" aria-label="이전">&#10094;</button>
-			<div class="cr-viewport"><div class="cr-track">${cardsHtml}</div></div>
-			<button class="cr-btn next" aria-label="다음">&#10095;</button>
-    	`;
+      <h2>${carousel.title}</h2>
+      <button class="cr-btn prev" aria-label="이전">&#10094;</button>
+      <div class="cr-viewport"><div class="cr-track">${cardsHtml}</div></div>
+      <button class="cr-btn next" aria-label="다음">&#10095;</button>
+    `;
 		top10Section.parentNode?.insertBefore(section, top10Section);
 	});
 
@@ -130,12 +145,103 @@ export function renderTop10(data: ContentItem[]) {
 	list.innerHTML = data
 		.map(
 			(item) => `
-				<li class="top10-item" data-rank="${item.alt}">
-				<div class="poster-wrap">
-					<img class="poster-23" src="${item.image}" alt="${item.alt}" />
-				</div>
-				</li>
-			`
+        <li class="top10-item" data-rank="${item.alt}">
+          <div class="poster-wrap">
+            <img class="poster-23" src="${item.image}" alt="${item.alt}" />
+          </div>
+        </li>
+      `
 		)
 		.join("");
+}
+
+// For search result rendering
+function escapeHtml(s: string) {
+	return s.replace(
+		/[&<>"']/g,
+		(c) =>
+			({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[
+				c
+			]!)
+	);
+}
+
+export function renderSearchResults(items: ContentItem[], query: string) {
+	const top10Section = document.querySelector(
+		".top10-section"
+	) as HTMLElement | null;
+	const mountParent = top10Section?.parentNode as ParentNode | null;
+
+	clearCarousels();
+	showHero(false);
+
+	if (!items.length) {
+		if (mountParent) {
+			const empty = document.createElement("div");
+			empty.className = "search-header";
+			empty.style.padding = "20px 50px";
+			empty.style.color = "#9aa0a6";
+			empty.innerHTML = `“${escapeHtml(query)}”에 대한 결과가 없습니다.`;
+			mountParent.insertBefore(empty, top10Section!);
+		}
+		return;
+	}
+
+	const section = document.createElement("section");
+	section.className = "carousel-row";
+	section.setAttribute("data-carousel", "search-inline");
+
+	section.style.marginTop = "100px";
+
+	const cardsHtml = items
+		.map(
+			(item, index) => `
+			<div class="cr-card" data-id="${"search-" + index}">
+				<div class="card-media">
+					<img src="${item.image}" alt="${item.alt}" />
+				</div>
+				<div class="card-hover">
+					<div class="hover-top">
+					<div class="hover-right">
+						<button class="icon-btn circle play" aria-label="재생">
+							<span class="material-symbols-outlined">play_arrow</span>
+						</button>
+						<button class="icon-btn circle ghost" aria-label="내가 찜한 리스트에 추가">
+							<span class="material-symbols-outlined">add</span>
+						</button>
+						<button class="icon-btn circle ghost btn-like" aria-label="좋아요" aria-pressed="false">
+							<span class="material-symbols-outlined">thumb_up</span>
+						</button>
+					</div>
+					<div class="hover-left">
+						<button class="icon-btn circle ghost" aria-label="더보기">
+							<span class="material-symbols-outlined">expand_more</span>
+						</button>
+					</div>
+				</div>
+				<div class="hover-meta">
+					<div class="age-badge">15+</div>
+					<span class="series-type">리미티드 시리즈</span>
+					<span class="quality">HD</span>
+				</div>
+				<div class="hover-genres">순한맛 코미디 | 재밌는 | 셀럽</div>
+				</div>
+			</div>`
+		)
+		.join("");
+
+	section.innerHTML = `
+		<h2>“${escapeHtml(query)}” 관련 콘텐츠</h2>
+		<button class="cr-btn prev" aria-label="이전">&#10094;</button>
+		<div class="cr-viewport"><div class="cr-track">${cardsHtml}</div></div>
+		<button class="cr-btn next" aria-label="다음">&#10095;</button>
+	`;
+
+	if (mountParent) {
+		mountParent.insertBefore(section, top10Section!);
+	} else {
+		document.body.appendChild(section);
+	}
+
+	repaintLikes(section);
 }

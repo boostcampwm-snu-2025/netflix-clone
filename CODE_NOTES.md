@@ -1,5 +1,8 @@
 # Directory Structure
 
+- `vite-netflix-clone-project` : Vite Frontend
+- `server` : Express Backend
+
 - `data.json` : Contains all data, including `.png` files, constant values (titles, content, etc)
 
 - `scripts` : typescript files

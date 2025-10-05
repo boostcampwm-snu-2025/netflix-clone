@@ -10,6 +10,7 @@ import {
 	renderTop10,
 } from "./render/render";
 import { initLikeButtons } from "./components/handleLikes";
+import { initSearchToggle } from "./components/search";
 
 async function initializeApp() {
 	try {
@@ -28,6 +29,8 @@ async function initializeApp() {
 		top10();
 
 		initLikeButtons();
+
+		initSearchToggle(data);
 	} catch (error) {
 		document.body.innerHTML = `<h1>페이지 로딩 중 오류가 발생했습니다.</h1>`;
 	}
