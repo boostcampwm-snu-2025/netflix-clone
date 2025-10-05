@@ -14,7 +14,30 @@
         "secondary_navigation": {
             "search": {
                 "img_src": "/images/header/search_icon.png",
-                "alt": "search-button"
+                "alt": "search-button",
+                "search_bar": {
+                    "search": {
+                        "img_src": "/images/header/search_icon.png"
+                    },
+                    "cancel": {
+                        "img_src": "/images/header/cancel_icon.png" 
+                    },
+                    "user_input": {
+                        "text": "제목, 사람, 장르"
+                    },
+                    "icons": {
+                        "play_button": "/images/content/play_icon.png",
+                        "wish_button": "/images/content/wish_icon.png",
+                        "wish_button_active": "/images/content/wish_icon_active.png",
+                        "like_button": "/images/content/like_icon.png",
+                        "like_button_active": "/images/content/like_icon_active.png",
+                        "dislike_button": "/images/content/dislike_icon.png",
+                        "dislike_button_active": "/images/content/dislike_icon_active.png",
+                        "best_button": "/images/content/best_icon.png",
+                        "best_button_active": "/images/content/best_icon_active.png",            
+                        "dropdown_button": "/images/content/dropdown_icon.png"
+                    }
+                }
             },
             "notification": {
                 "img_src": "/images/header/notification_icon.png",

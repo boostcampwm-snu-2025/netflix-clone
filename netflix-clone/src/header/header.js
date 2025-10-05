@@ -2,7 +2,7 @@
 // Header
 // =================================================================
 import { create_component, create_component_with_img } from "../utils.js";
-const img_dir = "./header/images/";
+import { Card } from "../content/card/card.js";
 
 // Functions
 function create_logo(parent, data) {
@@ -55,11 +55,106 @@ function create_secondary_navigation_item(parent, img_src, alt) {
             dropdown.classList.remove("is-rotated");
         })
     }
+
+    return container;
 }
 
+// ==========================================================================================
+
 function create_search(parent, data) {
-    create_secondary_navigation_item(parent, data.img_src, data.alt);
+    const search_container = create_secondary_navigation_item(parent, data.img_src, data.alt);
+    const search_button = document.querySelector(".search-button");
+    const search_modal = create_search_modal(search_container, data.search_bar);
 }
+
+function create_search_modal(parent, data) {
+    const search_modal = create_component("div", "search-modal", parent);
+    const search_bar = create_component("form", "search-bar", search_modal);
+    const search_icon = create_component_with_img("div", "search-icon", search_bar, data.search.img_src);
+    const user_input = create_user_input(search_bar, data.user_input);
+    const cancel_button = create_component_with_img("button", "cancel-button", search_bar, data.cancel.img_src);
+    add_search_modal_animation(parent, cancel_button, search_modal);
+    search(user_input, data.icons);
+
+    return search_modal;
+}
+
+function create_user_input(parent, data) {
+    const user_input = create_component("input", "user-input", parent);
+    user_input.type = "text";
+    user_input.placeholder = data.text;
+    return user_input;
+}
+
+function add_search_modal_animation(search_button, cancel_button, search_modal) {
+    search_button.addEventListener("click", () => {
+        search_modal.classList.add("active");
+    });
+
+    cancel_button.addEventListener("click", () => {
+        search_modal.classList.remove("active");
+    })
+}
+
+function search(user_input, data) {
+    user_input.addEventListener("input", () => {
+        const current_input = user_input.value;
+        initialize_search_results(current_input);
+        request_search(current_input, data);
+    })
+}
+
+function initialize_search_results(current_input) {
+    const hero = document.querySelector(".hero");
+    const content = document.querySelector(".content");        
+    if (current_input === "") {
+        hero.style.display = "flex";
+        content.style.display = "flex";
+    } else {
+        hero.style.display = "none";
+        content.style.display = "none";
+    }
+}
+
+function request_search(current_input, data) {
+    const base_url = "http://localhost:3001/api/search";
+    const query = `?q=${current_input}`;
+    const url = base_url + query;
+    fetch(url)
+        .then(res => res.json())
+        .then(response => {
+            let results = response.items;
+            construct_search_results(results, current_input, data);
+        })
+}
+
+function construct_search_results(results, current_input, data) {
+    let search_results = reset_search_results();
+    if (results.length === 0) {
+        search_results.textContent = `입력하신 검색어 "${current_input}"와(과) 일치하는 결과가 없습니다.`;
+    } else {    
+        let current_row = null;
+        results.forEach((result, index) => {
+            if (index % 6 === 0) current_row = create_component("div", "search-results-row", search_results);
+            const card_width = 214;
+            const card_height = 121;
+            const card_type = "category";
+            const result_card = new Card(current_row, index, card_width, card_height, data, result, card_type);
+        });
+    }
+}
+
+function reset_search_results() {
+    const old_search_results = document.querySelector(".search-results");
+    if (old_search_results) old_search_results.remove();
+    const footer = document.querySelector(".footer");
+    const search_results = document.createElement("div");
+    search_results.className = "search-results";
+    document.body.insertBefore(search_results, footer);
+    return search_results;
+}
+
+// ================================================================================
 
 function create_notification(parent, data) {
     create_secondary_navigation_item(parent, data.img_src, data.alt);

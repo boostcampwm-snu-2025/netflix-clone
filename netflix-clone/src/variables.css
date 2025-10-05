@@ -59,8 +59,8 @@
     --height-primary-navigation-item: 19.5px;
     --margin-primary-navigation-item-left: 24px;
     --margin-secondary-navigation-item-right: 24px;
-    --width-secondary-navigation-search: 28px;
-    --height-secondary-navigation-search: 28px;
+    --width-secondary-navigation-search: 32px;
+    --height-secondary-navigation-search: 32px;
     --width-secondary-navigation-notification: 32px;
     --height-secondary-navigation-notification: 32px;
     --width-secondary-navigation-profile-container: 48px;
@@ -70,6 +70,8 @@
     --height-secondary-navigation-profile: 32px;
     --width-profile-dropdown: 10px;
     --height-profile-dropdown: 5px;
+    --width-search-modal: 280px;
+    --width-user-input: 200px;
 
     --width-notification-modal: 400px;
     --height-notification-modal: 408px;
