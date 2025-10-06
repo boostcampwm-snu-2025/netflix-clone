@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "dev:node": "node server.ts",
     "build": "tsc && vite build",
     "preview": "vite preview",
     "format": "prettier --write .",
@@ -15,6 +16,7 @@
     "prepare": "husky"
   },
   "devDependencies": {
+    "@types/node": "^24.5.2",
     "husky": "^9.1.7",
     "lint-staged": "^16.1.6",
     "msw": "^2.11.3",
@@ -39,5 +41,8 @@
     "workerDirectory": [
       "public"
     ]
+  },
+  "dependencies": {
+    "express": "^5.1.0"
   }
 }
