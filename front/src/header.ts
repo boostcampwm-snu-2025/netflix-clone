@@ -2,7 +2,7 @@ import { appendChildrenSync, createStyledElement } from "./utils";
 
 export const composeHeader = async (): Promise<HTMLElement[]> => {
   const header = createStyledElement("header", [
-    "bg-transparent duration-700 fixed top-0 w-screen h-header-narrow netflix:h-header-wide px-wrapper-wide flex flex-row items-center justify-between z-50",
+    "bg-transparent duration-700 fixed top-0 w-screen h-header-narrow netflix:h-header-wide px-wrapper-wide flex flex-row items-center justify-between z-[60]",
   ]);
   await appendChildrenSync(header, [
     composeLogo,
@@ -75,12 +75,82 @@ const composeProfileMenu = async (): Promise<HTMLElement> => {
     "flex flex-row relative text-[1.2rem] gap-[12px] h-full items-center",
   ]);
 
-  const searchA = createStyledElement("a");
+  const searchBtn = createStyledElement("button", [
+    "flex flex-row place-items-center h-[32px] p-[4px] gap-[4px] min-w-[24px] cursor-pointer",
+  ]);
   const searchImg = createStyledElement("img", ["w-[24px] h-[24px]"]);
+  const searchInput = createStyledElement("input", [
+    "h-[24px] transition-[width] transition-500 outline-none caret-white text-white",
+  ]);
+  const searchCancelBtn = createStyledElement("button", [
+    "w-[24px] h-[24px] text-white text-2xl cursor-pointer hidden",
+  ]);
+  searchCancelBtn.innerText = "X";
+  searchInput.style.width = "0px";
   searchImg.src = "/header/search.svg";
   searchImg.alt = "Search Magnifying Glass Icon";
-  searchA.appendChild(searchImg);
-  profileMenu.appendChild(searchA);
+  searchBtn.appendChild(searchImg);
+  searchBtn.appendChild(searchInput);
+  searchBtn.appendChild(searchCancelBtn);
+  profileMenu.appendChild(searchBtn);
+
+  searchBtn.addEventListener("click", () => {
+    searchBtn.style.border = "1px solid white";
+    searchInput.style.width = "96px";
+    searchBtn.style.backgroundColor = "black";
+    searchBtn.disabled = true;
+    searchCancelBtn.style.display = "block";
+    searchInput.focus();
+  });
+  searchCancelBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    searchBtn.style.border = "none";
+    searchBtn.style.backgroundColor = "transparent";
+    searchBtn.disabled = false;
+    searchInput.style.width = "0px";
+    searchInput.value = "";
+    searchCancelBtn.style.display = "none";
+    const prevSearchDiv = document.getElementById("searchRes");
+    if (prevSearchDiv) prevSearchDiv.remove();
+  });
+
+  let timerMemo = undefined;
+  const search = async (param) => {
+    console.log(param);
+    const res = await fetch(
+      `http://localhost:3001/api/search?search=${encodeURIComponent(param)}`,
+    );
+    const data = await res.json();
+    const prevSearchDiv = document.getElementById("searchRes");
+    // if (prevSearchDiv) prevSearchDiv.remove();
+    const newSearchDiv =
+      prevSearchDiv ??
+      createStyledElement("div", [
+        "grid grid-cols-3 auto-rows-min pt-[50px] px-[50px] gap-4 w-screen h-full absolute top-0 bg-base z-50",
+      ]);
+
+    while (newSearchDiv.children.length)
+      newSearchDiv.removeChild(newSearchDiv.lastChild);
+
+    newSearchDiv.id = "searchRes";
+    for (const datum of data) {
+      const { href, id, src } = datum;
+      const a = createStyledElement("a", ["flex flex-col min-h-0 w-full"]);
+      const img = createStyledElement("img", ["w-full"]);
+      img.src = src;
+      a.appendChild(img);
+      newSearchDiv.appendChild(a);
+    }
+    document.body.appendChild(newSearchDiv);
+  };
+  searchInput.addEventListener("input", async (e) => {
+    if (timerMemo) clearTimeout(timerMemo);
+    const searchKeyword = e.target.value.trim();
+    if (searchKeyword.length)
+      timerMemo = setTimeout(() => {
+        search(searchKeyword);
+      }, 500);
+  });
 
   const kidsA = createStyledElement("a", ["text-white not-netflix:hidden"]);
   kidsA.innerText = "키즈";
