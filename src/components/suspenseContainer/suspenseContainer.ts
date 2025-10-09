@@ -1,5 +1,3 @@
-import ErrorBoundary from '../errorBoundary/errorBoundary';
-
 class SuspenseContainer extends HTMLElement {
   #pending: Map<string, Promise<unknown>> = new Map();
   #resolved: Map<string, unknown> = new Map();
@@ -49,7 +47,7 @@ class SuspenseContainer extends HTMLElement {
         if (this.#pending.size === 0) {
           this.#loading = false;
         }
-        ErrorBoundary.reportError(error);
+        console.error(error);
       });
   }
 
@@ -69,7 +67,7 @@ class SuspenseContainer extends HTMLElement {
       if (e instanceof Promise) {
         promise = e;
       } else {
-        ErrorBoundary.reportError(e);
+        console.error(e);
         return;
       }
     }
@@ -88,7 +86,7 @@ class SuspenseContainer extends HTMLElement {
         .catch(error => {
           this.#pending.delete(key);
           if (this.#pending.size === 0) this.#loading = false;
-          ErrorBoundary.reportError(error);
+          console.error(error);
         });
     }
   }
