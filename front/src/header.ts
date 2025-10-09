@@ -76,7 +76,7 @@ const composeProfileMenu = async (): Promise<HTMLElement> => {
   ]);
 
   const searchBtn = createStyledElement("button", [
-    "flex flex-row place-items-center h-[32px] p-[4px] gap-[4px] min-w-[24px] cursor-pointer",
+    "flex flex-row place-items-center h-[32px] p-[4px] gap-[4px] min-w-[24px] cursor-pointer relative",
   ]);
   const searchImg = createStyledElement("img", ["w-[24px] h-[24px]"]);
   const searchInput = createStyledElement("input", [
@@ -85,6 +85,36 @@ const composeProfileMenu = async (): Promise<HTMLElement> => {
   const searchCancelBtn = createStyledElement("button", [
     "w-[24px] h-[24px] text-white text-2xl cursor-pointer hidden",
   ]);
+  const searchHistoryDiv = createStyledElement("div", [
+    "flex flex-col absolute top-[32px] right-0 w-[96px] bg-base hidden z-[70]",
+  ]);
+  const renderSearchHistory = () => {
+    while (searchHistoryDiv.children.length)
+      searchHistoryDiv.removeChild(searchHistoryDiv.lastChild);
+    const savedHistory = localStorage.getItem("history");
+    const history = savedHistory ? JSON.parse(savedHistory) : [];
+    history.forEach((h) => {
+      const btn = createStyledElement("button", [
+        "w-full h-[24px] text-white text-start px-[8px]",
+      ]);
+      btn.innerText = h;
+      btn.addEventListener("click", () => {
+        searchInput.value = h;
+        searchInput.dispatchEvent(
+          new Event("input", { bubbles: true, composed: true }),
+        );
+      });
+      btn.addEventListener("mouseenter", () => {
+        searchInput.placeholder = h;
+      });
+      btn.addEventListener("mouseleave", () => {
+        searchInput.placeholder = "";
+      });
+      searchHistoryDiv.appendChild(btn);
+    });
+  };
+  renderSearchHistory();
+
   searchCancelBtn.innerText = "X";
   searchInput.style.width = "0px";
   searchImg.src = "/header/search.svg";
@@ -92,18 +122,26 @@ const composeProfileMenu = async (): Promise<HTMLElement> => {
   searchBtn.appendChild(searchImg);
   searchBtn.appendChild(searchInput);
   searchBtn.appendChild(searchCancelBtn);
+  searchBtn.appendChild(searchHistoryDiv);
   profileMenu.appendChild(searchBtn);
 
-  searchBtn.addEventListener("click", () => {
+  let isActivated = false;
+
+  const activateSearchBar = () => {
+    isActivated = true;
     searchBtn.style.border = "1px solid white";
-    searchInput.style.width = "96px";
     searchBtn.style.backgroundColor = "black";
     searchBtn.disabled = true;
     searchCancelBtn.style.display = "block";
+    searchInput.style.width = "96px";
     searchInput.focus();
-  });
-  searchCancelBtn.addEventListener("click", (e) => {
+    searchHistoryDiv.style.display = "block";
+  };
+  searchBtn.addEventListener("click", activateSearchBar);
+
+  const deactivateSearchBar = (e) => {
     e.stopPropagation();
+    isActivated = false;
     searchBtn.style.border = "none";
     searchBtn.style.backgroundColor = "transparent";
     searchBtn.disabled = false;
@@ -112,17 +150,29 @@ const composeProfileMenu = async (): Promise<HTMLElement> => {
     searchCancelBtn.style.display = "none";
     const prevSearchDiv = document.getElementById("searchRes");
     if (prevSearchDiv) prevSearchDiv.remove();
-  });
+    searchHistoryDiv.style.display = "none";
+  };
+  searchCancelBtn.addEventListener("click", deactivateSearchBar);
 
   let timerMemo = undefined;
-  const search = async (param) => {
-    console.log(param);
+  const syncSearchHistory = (newSearch: string) => {
+    const storedHistory = localStorage.getItem("history");
+    const prev = storedHistory ? JSON.parse(storedHistory) : [];
+    const newHistory = [
+      newSearch,
+      ...prev.filter((x) => x !== newSearch),
+    ].slice(0, 5);
+    localStorage.setItem("history", JSON.stringify(newHistory));
+  };
+  const search = async (param: string) => {
+    syncSearchHistory(param);
+    renderSearchHistory();
     const res = await fetch(
       `http://localhost:3001/api/search?search=${encodeURIComponent(param)}`,
     );
     const data = await res.json();
+    if (!isActivated) return;
     const prevSearchDiv = document.getElementById("searchRes");
-    // if (prevSearchDiv) prevSearchDiv.remove();
     const newSearchDiv =
       prevSearchDiv ??
       createStyledElement("div", [
