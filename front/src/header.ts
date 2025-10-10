@@ -118,10 +118,7 @@ const composeProfileMenu = async (): Promise<HTMLElement> => {
   searchInput.style.width = "0px";
   searchImg.src = "/header/search.svg";
   searchImg.alt = "Search Magnifying Glass Icon";
-  searchBtn.appendChild(searchImg);
-  searchBtn.appendChild(searchInput);
-  searchBtn.appendChild(searchCancelBtn);
-  searchBtn.appendChild(searchHistoryDiv);
+  searchBtn.append(searchImg, searchInput, searchCancelBtn, searchHistoryDiv);
   profileMenu.appendChild(searchBtn);
 
   let isActivated = false;
@@ -225,10 +222,8 @@ const composeProfileMenu = async (): Promise<HTMLElement> => {
   profileMenu.appendChild(profileA);
 
   const profileDropdown = await composeProfileDropdown();
-  profileMenu.appendChild(profileDropdown);
-
   const notificationDropdown = await composeNotificationDropdown();
-  profileMenu.appendChild(notificationDropdown);
+  profileMenu.append(profileDropdown, notificationDropdown);
 
   let profileDropdownTimeoutCnt;
   let notificationTimeoutDropdownCnt;
@@ -352,8 +347,7 @@ const composeNotificationDropdown = async (): Promise<HTMLElement> => {
     description.innerText = detail;
     const dateP = createStyledElement("p", ["text-gray-200"]);
     dateP.innerText = date;
-    descriptionCol.appendChild(description);
-    descriptionCol.appendChild(dateP);
+    descriptionCol.append(description, dateP);
     const imgSlot = createStyledElement("div", [
       "grid place-items-center h-[95px] w-[144px]",
     ]);
@@ -361,8 +355,7 @@ const composeNotificationDropdown = async (): Promise<HTMLElement> => {
     coverImg.src = src;
     coverImg.alt = `${detail}의 커버 이미지`;
     imgSlot.appendChild(coverImg);
-    a.appendChild(imgSlot);
-    a.appendChild(descriptionCol);
+    a.append(imgSlot, descriptionCol);
     li.appendChild(a);
     return li;
   };
