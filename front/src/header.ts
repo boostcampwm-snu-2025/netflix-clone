@@ -128,8 +128,10 @@ const composeProfileMenu = async (): Promise<HTMLElement> => {
 
   const activateSearchBar = () => {
     isActivated = true;
-    searchBtn.style.border = "1px solid white";
-    searchBtn.style.backgroundColor = "black";
+    Object.assign(searchBtn.style, {
+      border: "1px solid white",
+      backgroundColor: "black",
+    });
     searchBtn.disabled = true;
     searchCancelBtn.style.display = "block";
     searchInput.style.width = "96px";
@@ -141,8 +143,10 @@ const composeProfileMenu = async (): Promise<HTMLElement> => {
   const deactivateSearchBar = (e) => {
     e.stopPropagation();
     isActivated = false;
-    searchBtn.style.border = "none";
-    searchBtn.style.backgroundColor = "transparent";
+    Object.assign(searchBtn.style, {
+      border: "none",
+      backgroundColor: "transparent",
+    });
     searchBtn.disabled = false;
     searchInput.style.width = "0px";
     searchInput.value = "";
@@ -231,63 +235,72 @@ const composeProfileMenu = async (): Promise<HTMLElement> => {
 
   profileA.addEventListener("mouseover", () => {
     if (profileDropdownTimeoutCnt) clearTimeout(profileDropdownTimeoutCnt);
-    notificationDropdown.style.visibility = "hidden";
-    notificationDropdown.style.opacity = 0;
-    profileDropdown.style.visibility = "";
-    profileDropdown.style.opacity = 100;
+    Object.assign(notificationDropdown.style, {
+      visibility: "hidden",
+      opacity: 0,
+    });
+    Object.assign(profileDropdown.style, {
+      visibility: "",
+      opacity: 100,
+    });
   });
   profileA.addEventListener("mouseout", () => {
     if (profileDropdownTimeoutCnt) clearTimeout(profileDropdownTimeoutCnt);
     profileDropdownTimeoutCnt = setTimeout(() => {
-      profileDropdown.style.visibility = "hidden";
-      profileDropdown.style.opacity = 0;
+      Object.assign(profileDropdown.style, {
+        visibility: "hidden",
+        opacity: 0,
+      });
     }, 300);
   });
   profileDropdown.addEventListener("mouseover", () => {
     if (profileDropdownTimeoutCnt) clearTimeout(profileDropdownTimeoutCnt);
-    notificationDropdown.style.visibility = "hidden";
-    notificationDropdown.style.opacity = 0;
-    profileDropdown.style.visibility = "";
-    profileDropdown.style.opacity = 100;
+    Object.assign(notificationDropdown.style, {
+      visibility: "hidden",
+      opacity: 0,
+    });
+    Object.assign(profileDropdown.style, { visibility: "", opacity: 100 });
   });
   profileDropdown.addEventListener("mouseout", () => {
     if (profileDropdownTimeoutCnt) clearTimeout(profileDropdownTimeoutCnt);
     profileDropdownTimeoutCnt = setTimeout(() => {
-      profileDropdown.style.visibility = "hidden";
-      profileDropdown.style.opacity = 0;
+      Object.assign(profileDropdown.style, {
+        visibility: "hidden",
+        opacity: 0,
+      });
     }, 300);
   });
 
   notificationA.addEventListener("mouseover", () => {
     if (notificationTimeoutDropdownCnt)
       clearTimeout(notificationTimeoutDropdownCnt);
-    profileDropdown.style.visibility = "hidden";
-    profileDropdown.style.opacity = 0;
-    notificationDropdown.style.visibility = "";
-    notificationDropdown.style.opacity = 100;
+    Object.assign(profileDropdown.style, { visibility: "hidden", opacity: 0 });
+    Object.assign(notificationDropdown.style, { visibility: "", opacity: 100 });
   });
   notificationA.addEventListener("mouseout", () => {
     if (notificationTimeoutDropdownCnt)
       clearTimeout(notificationTimeoutDropdownCnt);
     notificationTimeoutDropdownCnt = setTimeout(() => {
-      notificationDropdown.style.visibility = "hidden";
-      notificationDropdown.style.opacity = 0;
+      Object.assign(notificationDropdown.style, {
+        visibility: "hidden",
+        opacity: 0,
+      });
     }, 300);
   });
   notificationDropdown.addEventListener("mouseover", () => {
     if (notificationTimeoutDropdownCnt)
       clearTimeout(notificationTimeoutDropdownCnt);
-    profileDropdown.style.visibility = "hidden";
-    profileDropdown.style.opacity = 0;
-    notificationDropdown.style.visibility = "";
-    notificationDropdown.style.opacity = 100;
+    Object.assign(profileDropdown.style, { visibility: "hidden", opacity: 0 });
+    Object.assign(notificationDropdown.style, { visibility: "", opacity: 100 });
   });
   notificationDropdown.addEventListener("mouseout", () => {
     if (notificationTimeoutDropdownCnt)
       clearTimeout(notificationTimeoutDropdownCnt);
     notificationTimeoutDropdownCnt = setTimeout(() => {
-      notificationDropdown.style.visibility = "hidden";
-      notificationDropdown.style.opacity = 0;
+      Object.assign(notificationDropdown.style, {
+        visibility: "hidden",
+        opacity: 0,
+      });
     }, 300);
   });
 
