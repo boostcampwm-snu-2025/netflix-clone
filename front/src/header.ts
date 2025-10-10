@@ -89,8 +89,7 @@ const composeProfileMenu = async (): Promise<HTMLElement> => {
     "flex flex-col absolute top-[32px] right-0 w-[96px] bg-base hidden z-[70]",
   ]);
   const renderSearchHistory = () => {
-    while (searchHistoryDiv.children.length)
-      searchHistoryDiv.removeChild(searchHistoryDiv.lastChild);
+    searchHistoryDiv.replaceChildren();
     const savedHistory = localStorage.getItem("history");
     const history = savedHistory ? JSON.parse(savedHistory) : [];
     history.forEach((h) => {
@@ -179,8 +178,7 @@ const composeProfileMenu = async (): Promise<HTMLElement> => {
         "grid grid-cols-3 auto-rows-min pt-[50px] px-[50px] gap-4 w-screen h-full absolute top-0 bg-base z-50",
       ]);
 
-    while (newSearchDiv.children.length)
-      newSearchDiv.removeChild(newSearchDiv.lastChild);
+    newSearchDiv.replaceChildren([]);
 
     newSearchDiv.id = "searchRes";
     for (const datum of data) {
