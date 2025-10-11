@@ -1,5 +1,5 @@
 import express from 'express';
-import moviesData from './src/data/movies.json';
+import moviesData from './src/data/movies.json' with { type: 'json' };
 
 const app = express();
 app.use(express.json());
