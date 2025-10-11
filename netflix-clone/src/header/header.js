@@ -1,7 +1,7 @@
 // =================================================================
 // Header
 // =================================================================
-import { create_component, create_component_with_img } from "../utils.js";
+import { create_component, create_component_with_img, debounce } from "../utils.js";
 import { Card } from "../content/card/card.js";
 
 // Functions
@@ -110,11 +110,17 @@ function add_search_modal_animation(search_button, cancel_button, search_modal, 
     })
 }
 
+function search_api(user_input, data) {
+    const current_input = user_input.value;
+    initialize_search_results(current_input);
+    request_search(current_input, data);
+}
+
 function search(user_input, data) {
+    const debounced_search = debounce(search_api, 500);
+
     user_input.addEventListener("input", () => {
-        const current_input = user_input.value;
-        initialize_search_results(current_input);
-        request_search(current_input, data);
+        debounced_search(user_input, data);
     })
 }
 
