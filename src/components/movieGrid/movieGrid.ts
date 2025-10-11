@@ -27,10 +27,16 @@ class MovieGrid extends HTMLElement {
 
     if (this.abortController) this.abortController.abort();
     this.abortController = new AbortController();
+    const timeoutSignal = AbortSignal.timeout(5000);
+
+    const signal = AbortSignal.any([
+      this.abortController.signal,
+      timeoutSignal,
+    ]);
 
     const apiCall = query
-      ? searchMovies(this.abortController.signal, query, page)
-      : getMovies(this.abortController.signal, page);
+      ? searchMovies(signal, query, page)
+      : getMovies(signal, page);
 
     moviesLoader.dataPromise = apiCall
       .then((response: MoviesResponse | SearchResponse) => {
@@ -65,8 +71,15 @@ class MovieGrid extends HTMLElement {
       `;
       })
       .catch(error => {
+        console.log(error.name);
         if (error.name === 'AbortError') {
-          return '';
+          return '<div></div>';
+        } else if (error.name === 'TimeoutError') {
+          return `<div class="movie-grid empty">
+            <div class="movie-grid__item">
+                <h3 class="movie-grid__title">요청이 타임아웃되었습니다.</h3>
+            </div>
+          </div>`;
         }
       });
   }
