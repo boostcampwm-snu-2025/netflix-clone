@@ -64,3 +64,10 @@
     font-size: 18px;
   }
 }
+
+.movie-grid.empty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}

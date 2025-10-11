@@ -9,6 +9,8 @@ import { loadTemplate } from '../utils.ts';
 import './style.css';
 
 class MovieGrid extends HTMLElement {
+  private latestRequestId = 0;
+
   constructor() {
     super();
   }
@@ -24,12 +26,26 @@ class MovieGrid extends HTMLElement {
     const moviesLoader = this.querySelector('#movies-loader') as AsyncComponent;
     if (!moviesLoader) return;
 
+    const requestId = ++this.latestRequestId;
+
     const apiCall = query ? searchMovies(query, page) : getMovies(page);
 
     moviesLoader.dataPromise = apiCall.then(
       (response: MoviesResponse | SearchResponse) => {
         const movies =
           'movies' in response ? response.movies : response.results;
+
+        if (requestId !== this.latestRequestId) {
+          return '';
+        }
+
+        if (movies.length === 0) {
+          return `<div class="movie-grid empty">
+          <div class="movie-grid__item">
+            <h3 class="movie-grid__title">영화를 찾을 수 없습니다.</h3>
+          </div>
+          </div>`;
+        }
 
         return `
         <div class="movie-grid">
