@@ -1,47 +1,8 @@
-import './style.css';
+import { fetch_movies_for_row } from '../api/fetchMovies';
 
 const items_per_page = 6;
-const clones = items_per_page + 1;
 
-interface Movie {
-  title: string;
-  image: string;
-}
-
-// fetch movies and fill slider content
-async function fetch_movies_for_row(
-  slider_content: HTMLElement,
-  num_img: number = items_per_page
-): Promise<Movie[]> {
-  try {
-    const res = await fetch(`http://localhost:3000/api/data?num_img=${num_img}`);
-    if (!res.ok) throw new Error("http error " + res.status);
-
-    const movies: Movie[] = await res.json();
-    let html = "";
-    movies.forEach(movie => {
-      html += `
-        <div class="slider-item">
-          <div class="boxart-rounded">
-            <img class="boxart-image"
-                 src="http://localhost:3000${movie.image}"
-                 alt="${movie.title}">
-          </div>
-        </div>`;
-    });
-    slider_content.innerHTML = html;
-
-    // make sure DOM is updated before init
-    await new Promise(requestAnimationFrame);
-
-    return movies;
-  } catch (err: any) {
-    slider_content.innerHTML = `<p>❌ error: ${err.message}</p>`;
-    return [];
-  }
-}
-
-class Slider {
+export class Slider {
   private wrapper: HTMLElement;
   private slider_content: HTMLElement;
   private slider_mask: HTMLElement;
@@ -92,7 +53,7 @@ class Slider {
 
     // dynamic peek padding
     const card_size = 100 / this.items_per_page;
-    const peek_padding = card_size * 0.2; // 20% of a card
+    const peek_padding = card_size * 0.2;
     this.slider_mask.style.padding = `0 ${peek_padding}%`;
 
     // apply card size to items
@@ -149,13 +110,3 @@ class Slider {
     this.prev_btn.addEventListener("click", () => this.slide_prev());
   }
 }
-
-// initialize sliders after DOM ready
-window.addEventListener("DOMContentLoaded", () => {
-  document.querySelectorAll<HTMLElement>(".sliderWrapper").forEach(wrapper => {
-    const slider_content = wrapper.querySelector(".sliderContent") as HTMLElement;
-    fetch_movies_for_row(slider_content, items_per_page * 3).then(() => {
-      new Slider(wrapper, items_per_page);
-    });
-  });
-});
