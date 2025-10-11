@@ -38,6 +38,7 @@ export interface MoviesResponse {
 const API_BASE_URL = 'http://localhost:3000/api';
 
 export async function searchMovies(
+  signal: AbortSignal,
   query: string = '',
   page: number = 1,
   limit: number = 20
@@ -51,7 +52,7 @@ export async function searchMovies(
     params.append('q', query);
   }
 
-  const response = await fetch(`${API_BASE_URL}/search?${params}`);
+  const response = await fetch(`${API_BASE_URL}/search?${params}`, { signal });
 
   if (!response.ok) {
     throw new Error(`HTTP error status: ${response.status}`);
@@ -61,6 +62,7 @@ export async function searchMovies(
 }
 
 export async function getMovies(
+  signal: AbortSignal,
   page: number = 1,
   limit: number = 20
 ): Promise<MoviesResponse> {
@@ -69,7 +71,7 @@ export async function getMovies(
     limit: limit.toString(),
   });
 
-  const response = await fetch(`${API_BASE_URL}/movies?${params}`);
+  const response = await fetch(`${API_BASE_URL}/movies?${params}`, { signal });
 
   if (!response.ok) {
     throw new Error(`HTTP error status: ${response.status}`);
@@ -80,6 +82,7 @@ export async function getMovies(
 
 export async function getNextPage(
   currentResponse: SearchResponse | MoviesResponse,
+  signal: AbortSignal,
   type: 'search' | 'movies' = 'movies',
   searchQuery?: string
 ): Promise<SearchResponse | MoviesResponse | null> {
@@ -91,11 +94,12 @@ export async function getNextPage(
 
   if (type === 'search') {
     return searchMovies(
+      signal,
       searchQuery || '',
       nextPage,
       currentResponse.itemsPerPage
     );
   } else {
-    return getMovies(nextPage, currentResponse.itemsPerPage);
+    return getMovies(signal, nextPage, currentResponse.itemsPerPage);
   }
 }
