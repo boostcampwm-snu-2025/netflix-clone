@@ -63,19 +63,21 @@ function create_secondary_navigation_item(parent, img_src, alt) {
 
 function create_search(parent, data) {
     const search_container = create_secondary_navigation_item(parent, data.img_src, data.alt);
-    const search_button = document.querySelector(".search-button");
     const search_modal = create_search_modal(search_container, data.search_bar);
 }
 
 function create_search_modal(parent, data) {
     const search_modal = create_component("div", "search-modal", parent);
     const search_bar = create_component("form", "search-bar", search_modal);
-    const search_icon = create_component_with_img("div", "search-icon", search_bar, data.search.img_src);
+    const submit_button = create_component_with_img("button", "submit-button", search_bar, data.search.img_src);
+    submit_button.type = "submit";
     const user_input = create_user_input(search_bar, data.user_input);
     const cancel_button = create_component_with_img("button", "cancel-button", search_bar, data.cancel.img_src);
-    add_search_modal_animation(parent, cancel_button, search_modal);
+    const recent_search_history_modal = create_component("div", "recent-search-history-modal", search_modal);
+    add_search_modal_animation(parent, cancel_button, search_modal, recent_search_history_modal, user_input, data);
     search(user_input, data.icons);
-
+    save_recent_search_history(search_modal, search_bar, user_input, recent_search_history_modal, data);
+    
     return search_modal;
 }
 
@@ -86,13 +88,25 @@ function create_user_input(parent, data) {
     return user_input;
 }
 
-function add_search_modal_animation(search_button, cancel_button, search_modal) {
+function add_search_modal_animation(search_button, cancel_button, search_modal, recent_search_history_modal, user_input, data) {
     search_button.addEventListener("click", () => {
         search_modal.classList.add("active");
     });
 
-    cancel_button.addEventListener("click", () => {
+    cancel_button.addEventListener("click", (event) => {
+        event.stopPropagation();
         search_modal.classList.remove("active");
+        user_input.value = "";
+        initialize_search_results(user_input.value);
+        reset_search_results();
+    })
+
+    search_modal.addEventListener("mouseenter", () => {
+        recent_search_history_modal.classList.add("active");
+        update_recent_search_history(recent_search_history_modal, user_input, data);
+    })
+    search_modal.addEventListener("mouseleave", () => {
+        recent_search_history_modal.classList.remove("active");
     })
 }
 
@@ -152,6 +166,76 @@ function reset_search_results() {
     search_results.className = "search-results";
     document.body.insertBefore(search_results, footer);
     return search_results;
+}
+
+function save_recent_search_history(search_modal, search_bar, user_input, recent_search_history_modal, data) {
+    search_bar.addEventListener("submit", (event) => {
+        event.preventDefault();
+        if (search_modal.classList.contains("active") && user_input.value !== "") {
+            set_search_history(user_input.value);
+            update_recent_search_history(recent_search_history_modal, user_input, data);
+        }
+    })
+}
+
+function set_search_history(user_input) {
+    const response = localStorage.getItem("search_history");
+    let search_history = response ? JSON.parse(response) : [];
+    search_history.push(user_input);
+
+    localStorage.setItem("search_history", JSON.stringify(search_history));
+}
+
+function update_recent_search_history(recent_search_history_modal, user_input, data) {
+    reset_recent_search_history_modal(recent_search_history_modal);
+    const response = localStorage.getItem("search_history");
+    let search_history = response ? JSON.parse(response) : [];
+    search_history = search_history.reverse();
+    let recent_search_history = search_history.length >= 5 ? search_history.slice(0, 5) : search_history.slice(0, search_history.length); 
+    recent_search_history.forEach((search_history) => {
+        create_search_history(recent_search_history_modal, search_history, user_input, data);    
+    })
+}
+
+function reset_recent_search_history_modal(recent_search_history_modal) {
+    recent_search_history_modal.innerHTML = "";
+}
+
+function create_search_history(recent_search_history_modal, search_history, user_input, data) {
+    const container = create_component("div", "search-history-container", recent_search_history_modal);
+    const search_history_text = create_component("div", "search-history-text", container);
+    search_history_text.textContent = search_history;
+    const remove_button = create_component_with_img("button", "remove-button", container, data.cancel.img_src);
+
+    let original_user_input = "";
+    container.addEventListener("mouseenter", () => {
+        original_user_input = user_input.value;
+        user_input.value = search_history;
+    })
+    container.addEventListener("mouseleave", () => {
+        user_input.value = original_user_input;
+    })
+    container.addEventListener("click", () => {
+        search_by_history(user_input, data.icons);
+    })
+
+    remove_button.addEventListener("click", () => {
+        container.remove();
+        remove_search_history(search_history);
+    })
+}
+
+function search_by_history(user_input, data) {
+    const current_input = user_input.value;
+    initialize_search_results(current_input);
+    request_search(current_input, data);
+}
+
+function remove_search_history(target_history) {
+    const response = localStorage.getItem("search_history");
+    const search_history = response ? JSON.parse(response) : [];
+    const updated_search_history = search_history.filter(history => history !== target_history);
+    localStorage.setItem("search_history", JSON.stringify(updated_search_history));
 }
 
 // ================================================================================
