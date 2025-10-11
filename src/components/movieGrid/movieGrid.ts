@@ -1,4 +1,9 @@
-import { getMovies, type MoviesResponse } from '../../api/movies.ts';
+import {
+  getMovies,
+  searchMovies,
+  type MoviesResponse,
+  type SearchResponse,
+} from '../../api/movies.ts';
 import type AsyncComponent from '../asyncComponent/asyncComponent.ts';
 import { loadTemplate } from '../utils.ts';
 import './style.css';
@@ -15,13 +20,20 @@ class MovieGrid extends HTMLElement {
     this.loadMovies();
   }
 
-  async loadMovies() {
+  async loadMovies(query: string = '', page: number = 1) {
     const moviesLoader = this.querySelector('#movies-loader') as AsyncComponent;
     if (!moviesLoader) return;
-    moviesLoader.dataPromise = getMovies().then((response: MoviesResponse) => {
-      return `
+
+    const apiCall = query ? searchMovies(query, page) : getMovies(page);
+
+    moviesLoader.dataPromise = apiCall.then(
+      (response: MoviesResponse | SearchResponse) => {
+        const movies =
+          'movies' in response ? response.movies : response.results;
+
+        return `
         <div class="movie-grid">
-          ${response.movies
+          ${movies
             .map(
               movie => `
             <div class="movie-grid__item">
@@ -37,7 +49,12 @@ class MovieGrid extends HTMLElement {
             .join('')}
         </div>
       `;
-    });
+      }
+    );
+  }
+
+  search(query: string) {
+    this.loadMovies(query, 1);
   }
 }
 
