@@ -3,7 +3,7 @@ import cors from "cors";
 import { TITLES, CATEGORIES } from "./data.js";
 
 const app = express();
-const PORT = 3001;
+const PORT = 3000;
 
 // Middleware
 app.use(cors());
@@ -32,9 +32,7 @@ app.get("/api/search", delayMiddleware, (req, res) => {
 
   const q = query.toLowerCase();
   const result = TITLES.filter(title =>
-    title.name.toLowerCase().includes(q) ||
-    title.description.toLowerCase().includes(q) ||
-    title.category.toLowerCase().includes(q)
+    title.name.toLowerCase().includes(q)
   );
 
   console.log(`[검색] 키워드: "${query}" - 결과: ${result.length}개`);
@@ -46,6 +44,7 @@ app.get("/api/search", delayMiddleware, (req, res) => {
   });
 });
 
+/* 현재 사용하지 않는 API들
 // GET /api/titles - 모든 콘텐츠 조회
 app.get("/api/titles", delayMiddleware, (req, res) => {
   console.log(`[조회] 전체 콘텐츠: ${TITLES.length}개`);
@@ -109,6 +108,7 @@ app.get("/api/categories/:category", delayMiddleware, (req, res) => {
     total: items.length
   });
 });
+*/
 
 // Health Check
 app.get("/", (req, res) => {
@@ -116,11 +116,12 @@ app.get("/", (req, res) => {
     message: "Netflix Clone API Server",
     version: "1.0.0",
     endpoints: {
-      search: "/api/search?q=키워드",
-      allTitles: "/api/titles",
-      titleDetail: "/api/titles/:id",
-      allCategories: "/api/categories",
-      categoryDetail: "/api/categories/:category"
+      search: "/api/search?q=키워드"
+      // 현재 사용하지 않는 endpoints
+      // allTitles: "/api/titles",
+      // titleDetail: "/api/titles/:id",
+      // allCategories: "/api/categories",
+      // categoryDetail: "/api/categories/:category"
     }
   });
 });

@@ -9,9 +9,23 @@ export default class Search {
     this.recentSearchesLayer = document.querySelector('.recent-searches-layer');
     this.recentSearchesList = document.querySelector('.recent-searches-list');
 
+    // 검색 결과 페이지 요소
+    this.searchResultsSection = document.querySelector('.search-results-section');
+    this.searchResultsTitle = document.querySelector('.search-results-title');
+    this.searchResultsGrid = document.querySelector('.search-results-grid');
+    this.mainElement = document.querySelector('main');
+    this.footerElement = document.querySelector('footer');
+    this.headerElement = document.querySelector('.header');
+
     // 상태
     this.recentSearches = this.loadRecentSearches();
     this.selectedIndex = -1;
+    this.debounceTimer = null;
+    this.isSearching = false;
+    this.currentQuery = '';
+
+    // API 설정
+    this.API_BASE_URL = 'http://localhost:3000';
 
     this.bindEvents();
     this.renderRecentSearches();
@@ -40,6 +54,19 @@ export default class Search {
       e.stopPropagation();
     });
 
+    // 검색 결과 섹션 클릭 시 이벤트 전파 중단
+    this.searchResultsSection.addEventListener('click', (e) => {
+      e.stopPropagation();
+    });
+
+    // 헤더 클릭 시 검색 완전히 닫기
+    this.headerElement.addEventListener('click', (e) => {
+      if (this.searchBox.classList.contains('active') || !this.searchResultsSection.classList.contains('hidden')) {
+        e.stopPropagation();
+        this.closeSearch();
+      }
+    });
+
     // 검색 입력 이벤트
     this.searchInput.addEventListener('input', (e) => {
       this.handleInput(e.target.value);
@@ -58,7 +85,14 @@ export default class Search {
     // 문서 전체 클릭 시 검색창 닫기
     document.addEventListener('click', () => {
       if (this.searchBox.classList.contains('active')) {
-        this.closeSearch();
+        // 검색어가 입력되어 있으면 검색창만 닫고 검색 페이지는 유지
+        if (this.searchInput.value.trim() !== '') {
+          this.searchBox.classList.remove('active');
+          this.hideAllLayers();
+        } else {
+          // 검색어가 없으면 완전히 닫기
+          this.closeSearch();
+        }
       }
     });
   }
@@ -73,6 +107,8 @@ export default class Search {
     this.searchInput.value = '';
     this.hideAllLayers();
     this.selectedIndex = -1;
+    this.clearDebounce();
+    this.hideSearchPage();
   }
 
   hideAllLayers() {
@@ -96,10 +132,12 @@ export default class Search {
   handleInput(value) {
     const trimmedValue = value.trim();
 
-    // 입력값이 없으면 최근 검색어 표시
+    // 입력값이 없으면 최근 검색어 표시 및 원래 페이지 복원
     if (trimmedValue === '') {
       this.hideAllLayers();
       this.showRecentSearches();
+      this.clearDebounce();
+      this.hideSearchPage();
       return;
     }
 
@@ -107,6 +145,19 @@ export default class Search {
     this.recentSearchesLayer.classList.remove('show');
     this.selectedIndex = -1;
     this.clearSelection();
+
+    // Debounce 처리 후 검색 실행
+    this.clearDebounce();
+    this.debounceTimer = setTimeout(() => {
+      this.performSearch(trimmedValue);
+    }, 300);
+  }
+
+  clearDebounce() {
+    if (this.debounceTimer) {
+      clearTimeout(this.debounceTimer);
+      this.debounceTimer = null;
+    }
   }
 
 
@@ -167,6 +218,94 @@ export default class Search {
     document.querySelectorAll('.keyboard-selected').forEach(item => {
       item.classList.remove('keyboard-selected');
     });
+  }
+
+  // 검색 API 호출
+  async performSearch(query) {
+    if (this.isSearching) return;
+
+    this.isSearching = true;
+    this.showSearchPage();
+    this.showSearchLoading();
+
+    try {
+      const response = await fetch(`${this.API_BASE_URL}/api/search?q=${encodeURIComponent(query)}`);
+
+      if (!response.ok) {
+        throw new Error('검색 API 요청 실패');
+      }
+
+      const data = await response.json();
+      this.renderSearchResults(data.items, query);
+
+    } catch (error) {
+      console.error('검색 중 오류 발생:', error);
+      this.showSearchError();
+    } finally {
+      this.isSearching = false;
+    }
+  }
+
+  showSearchPage() {
+    this.mainElement.classList.add('hidden');
+    this.footerElement.classList.add('hidden');
+    this.searchResultsSection.classList.remove('hidden');
+  }
+
+  hideSearchPage() {
+    this.searchResultsSection.classList.add('hidden');
+    this.mainElement.classList.remove('hidden');
+    this.footerElement.classList.remove('hidden');
+    this.clearSearchResults();
+  }
+
+  showSearchLoading() {
+    this.searchResultsSection.classList.add('loading');
+    this.searchResultsSection.classList.remove('empty', 'error');
+  }
+
+  showSearchError() {
+    this.searchResultsSection.classList.add('error');
+    this.searchResultsSection.classList.remove('loading', 'empty');
+  }
+
+  renderSearchResults(results, query) {
+    this.searchResultsSection.classList.remove('loading', 'error', 'empty');
+
+    // 현재 검색어 저장
+    this.currentQuery = query;
+
+    // 제목 설정
+    this.searchResultsTitle.textContent = `"${query}" 검색 결과 (${results.length}개)`;
+
+    // 빈 결과 처리
+    if (results.length === 0) {
+      this.searchResultsSection.classList.add('empty');
+      this.searchResultsGrid.innerHTML = '';
+      return;
+    }
+
+    // 결과 렌더링
+    this.searchResultsGrid.innerHTML = results.map(item => `
+      <div class="search-result-card" data-id="${item.id}">
+        <img src="${item.image}" alt="${item.name}">
+        <div class="search-result-card-title">${item.name}</div>
+      </div>
+    `).join('');
+
+    // 카드 클릭 이벤트 추가
+    this.searchResultsGrid.querySelectorAll('.search-result-card').forEach(card => {
+      card.addEventListener('click', () => {
+        // 현재 검색어를 최근 검색어에 추가
+        this.addRecentSearch(this.currentQuery);
+      });
+    });
+  }
+
+  clearSearchResults() {
+    this.searchResultsGrid.innerHTML = '';
+    this.searchResultsTitle.textContent = '';
+    this.searchResultsSection.classList.remove('loading', 'error', 'empty');
   }
 
   // 최근 검색어 관리

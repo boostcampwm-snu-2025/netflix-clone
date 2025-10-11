@@ -11,6 +11,7 @@
         <link rel="stylesheet" href="./src/css/slider.css">
         <link rel="stylesheet" href="./src/css/modal.css">
         <link rel="stylesheet" href="./src/css/like.css">
+        <link rel="stylesheet" href="./src/css/search-results.css">
     </head>
 
     <body>
@@ -56,6 +57,28 @@
                 </div>
             </div>
         </header>
+
+        <!-- 검색 결과 섹션 -->
+        <section class="search-results-section hidden">
+            <div class="search-results-container">
+                <div class="search-results-header">
+                    <h2 class="search-results-title"></h2>
+                </div>
+                <div class="search-results-loading">
+                    <div class="loading-spinner"></div>
+                    <p>검색 중...</p>
+                </div>
+                <div class="search-results-empty">
+                    <p>검색 결과가 없습니다</p>
+                </div>
+                <div class="search-results-error">
+                    <p>검색 중 오류가 발생했습니다</p>
+                </div>
+                <div class="search-results-grid">
+                    <!-- 검색 결과 카드가 동적으로 추가됩니다 -->
+                </div>
+            </div>
+        </section>
 
         <main>
             <section class="hero">
