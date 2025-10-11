@@ -46,6 +46,13 @@
   -webkit-box-orient: vertical;
 }
 
+.movie-grid__fallback {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
 @media (min-width: 768px) {
   .movie-grid__title {
     font-size: 17px;
