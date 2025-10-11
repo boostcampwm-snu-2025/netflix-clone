@@ -36,7 +36,13 @@ export async function headerRender() {
         <div>
             <ul class = "header__icon-list">
                 <li>
-                    <img src="${headerData.icons.magnifier.src}" class="header__icon--magnifier" alt="${headerData.icons.magnifier.alt}">
+                    <div class="search-wrapper">
+                        <div class="modal--magnifier">
+                            <img src="${headerData.icons.magnifier.src}" class="header__icon--magnifier" alt="${headerData.icons.magnifier.alt}">
+                            <input type=search id=header__search placeholder="제목, 사람, 장르">
+                        </div>
+                        <div id="search-results-overlay" class="search-results-overlay"></div>
+                    </div>
                 </li>
                 <li>
                     <div class="modal-wrapper--notification">

@@ -8,6 +8,7 @@
     height: 40px;
     top: 0;
     z-index: 100;
+    width: 1440px;
 }
 
 .header__nav {
@@ -51,6 +52,114 @@
     height: 23px;
     width: auto;
     cursor: pointer;
+}
+
+.modal--magnifier {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    background-color: transparent;
+    transition: all 0.4s ease;
+}
+
+/* 검색창(input)의 기본 상태: 숨김 */
+.modal--magnifier input#header__search {
+    width: 0;
+    opacity: 0;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: white;
+    font-size: 14px;
+    padding: 0;
+    margin-left: 0;
+    transition: width 0.4s ease, opacity 0.4s ease, margin-left 0.4s ease;
+}
+
+/* 활성화 상태: .active 클래스가 추가되었을 때의 스타일 */
+.modal--magnifier.active {
+    background-color: rgba(0, 0, 0, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.85);
+}
+
+.modal--magnifier.active input#header__search {
+    width: 200px;
+    opacity: 1;
+    padding: 0 8px; 
+    margin-left: 8px;
+}
+
+/* 검색 컴포넌트 전체 래퍼: 오버레이 위치 기준점 */
+.search-wrapper {
+    position: relative;
+}
+
+/* 검색 결과 오버레이 창 */
+.search-results-overlay {
+    display: none; /* 평소에는 숨김 */
+    position: absolute;
+    
+    /* 화면 중앙에 위치시키기 위한 설정 */
+    top: 36px;
+    left: 0%;
+    transform: translateX(-1039.1px); /* 하드코딩 */
+
+    width: 1440px;
+    padding: 24px;
+
+    max-height: 300px; /* 약 2줄 정도의 높이 (아이템 높이에 따라 조절) */
+    overflow-y: auto; /* 내용이 max-height를 넘어가면 스크롤바 자동 생성 */
+
+    background-color: rgba(20, 20, 20, 0.95);
+    border: 1px solid #333;
+    border-top: none; /* 헤더와 맞닿는 위쪽 테두리는 제거 */
+    border-radius: 0 0 6px 6px; /* 아래쪽 모서리만 둥글게 */
+    box-sizing: border-box; /* padding이 너비에 포함되도록 설정 */
+    z-index: 1000;
+}
+
+/* 오버레이를 보여줄 때 사용할 클래스 */
+.search-results-overlay.visible {
+    display: flex;
+    flex-wrap: wrap;      /* 아이템이 공간을 넘어가면 자동으로 다음 줄로 넘김 */
+    align-content: start; /* 여러 줄일 경우 위쪽부터 쌓임*/
+    
+    /* 기존 스타일 유지 */
+    gap: 16px;
+    justify-content: start;
+}
+
+/* 개별 검색 결과 아이템 */
+.search-result-item {
+    width: fit-content; 
+    white-space: nowrap; /* 텍스트가 길어도 줄바꿈되지 않음 */
+
+    /* 기존 스타일 유지 */
+    background-color: #2f2f2f;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px; /* 좌우 여백 */
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-bottom: none;
+}
+
+.search-result-item:hover {
+    transform: scale(1.05);
+    background-color: #444;
+}
+
+/* 검색 결과 없음 또는 에러 메시지 */
+.no-results-message,
+.error-message {
+    color: #888;
+    padding: 20px;
+    text-align: center;
 }
 
 .modal-wrapper--notification {
