@@ -8,6 +8,13 @@ import { initRouter } from './router.js';
 import { renderSearchPage } from './pages/searchPage.js';
 
 async function initializeApp() {
+
+  const hero = document.querySelector('.hero-container');
+  const rec = document.querySelector('.recommendation-container');
+  if (hero) {
+    hero.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;min-height:100vh;"><p style="font-size:24px;color:#fff;">콘텐츠를 불러오는 중...</p></div>';
+  }
+
   try {
     const data = await loadData();
     const renderHome = () => {
@@ -34,6 +41,9 @@ async function initializeApp() {
     initSearchToggle();
   } catch (e) {
     console.error('Failed to initialize app:', e);
+    if (hero) {
+      hero.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;min-height:100vh;"><p style="font-size:24px;color:#fff;">콘텐츠를 불러오는 중 오류가 발생했습니다.</p></div>';
+    }
   }
 }
 
