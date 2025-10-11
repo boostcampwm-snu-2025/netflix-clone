@@ -10,6 +10,11 @@
     overflow: hidden;
 }
 
+.hero-container.is-hidden {
+    display: none;
+    min-height: 0;
+}
+
 
 .hero-container::before {
     content: "";

@@ -153,3 +153,19 @@
 .rate-option { background: rgba(255,255,255,0.1); }
 .rate-option:hover { background: rgba(255,255,255,0.2); }
 .rate-option.is-selected { background: rgba(255,255,255,0.3); }
+
+.search-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 15px;
+    padding: 10px;
+}
+.search-grid .recommendation-item {
+    width: 300px;
+    height: 200px;
+}
+
+/* When hero is hidden, add top spacing so content doesn't sit under the fixed header */
+.hero-container.is-hidden + .recommendation-container { 
+    margin-top: 70px;
+}
