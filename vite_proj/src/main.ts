@@ -1,6 +1,7 @@
 import './styles/style.css';
 import { fetch_movies_for_row } from './api/fetchMovies';
 import { Slider } from './components/Slider';
+import { SearchBar } from './components/SearchBar';
 
 const items_per_page = 6;
 
@@ -12,4 +13,10 @@ window.addEventListener("DOMContentLoaded", () => {
       new Slider(wrapper, items_per_page);
     });
   });
+
+  // ✅ Initialize search bar
+  const searchContainer = document.querySelector(".navbar-secondary-element");
+  if (searchContainer) {
+    new SearchBar(searchContainer);
+  }
 });
