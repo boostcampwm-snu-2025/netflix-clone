@@ -61,7 +61,7 @@ export class SearchBar {
       this.performSearch(query.trim());
     }, 400);
 
-    this.input.addEventListener("input", (e) => {
+    this.input.addEventListener("input", () => {
       const query = this.input.value;
       debouncedSearch(query);
     });
@@ -84,56 +84,59 @@ export class SearchBar {
 
   private async performSearch(query: string) {
     if (!this.searchResults || !this.homepage) return;
-    if (query === this.lastQuery) return; // ✅ prevent duplicate calls
-    this.lastQuery = query;
 
-    this.searchResults.innerHTML = `<p class="loading">🔍 검색 중...</p>`;
+    if (query === "") {
+      this.clearSearch();
+      return;
+    }
+
+    // Only show loading overlay, not blank container
+    const loadingOverlay = document.createElement("div");
+    loadingOverlay.className = "loading-overlay";
+    loadingOverlay.textContent = "🔍 검색 중...";
+    this.searchResults.appendChild(loadingOverlay);
+
     this.homepage.classList.add("hidden");
     this.searchResults.classList.remove("hidden");
     if (this.mainView) this.mainView.classList.add("hidden");
 
     try {
       const movies = await get_search_results(query, 20);
+      console.log(`✅ Received ${movies.length} results`);
       this.renderResults(movies);
     } catch (err: any) {
       console.error("❌ Search error:", err.message);
       this.searchResults.innerHTML = `<p>오류 발생: ${err.message}</p>`;
+    } finally {
+      // remove loading smoothly
+      loadingOverlay.classList.add("fade-out");
+      setTimeout(() => loadingOverlay.remove(), 200);
     }
   }
 
-  private renderResults(sections: any[]) {
+
+  private renderResults(movies: any[]) {
     if (!this.searchResults) return;
 
     this.searchResults.innerHTML = `
       <h2 class="row-header-title">검색 결과</h2>
-      <div class="search-results-sections"></div>
+      <div class="search-results-grid"></div>
     `;
 
-    const wrapper = this.searchResults.querySelector(".search-results-sections") as HTMLElement;
+    const grid = this.searchResults.querySelector(".search-results-grid") as HTMLElement;
 
-    if (sections.length === 0) {
-      wrapper.innerHTML = `<p>검색 결과가 없습니다.</p>`;
+    if (movies.length === 0) {
+      grid.innerHTML = `<p>검색 결과가 없습니다.</p>`;
       return;
     }
 
-    sections.forEach((section) => {
-      const sectionDiv = document.createElement("div");
-      sectionDiv.className = "search-section";
-      sectionDiv.innerHTML = `
-        <h3 class="search-section-title">${section.title}</h3>
-        <div class="search-results-grid"></div>
+    movies.forEach((movie) => {
+      const card = document.createElement("div");
+      card.className = "movie-card";
+      card.innerHTML = `
+        <img src="${movie.image}" alt="${movie.title}">
       `;
-
-      const grid = sectionDiv.querySelector(".search-results-grid") as HTMLElement;
-
-      section.results.forEach((movie: any) => {
-        const card = document.createElement("div");
-        card.className = "movie-card";
-        card.innerHTML = `<img src="${movie.image}" alt="${movie.title}">`;
-        grid.appendChild(card);
-      });
-
-      wrapper.appendChild(sectionDiv);
+      grid.appendChild(card);
     });
   }
 
