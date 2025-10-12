@@ -36,21 +36,16 @@ async function fetchSearchResults(query) {
 
 // 검색 결과를 화면에 렌더링하는 함수
 function renderResults(data) {
-    // 1. 결과 없음 처리
+    // 결과 없음 처리
     if (!data || data.total === 0) {
-        resultsContainer.innerHTML = `<p>검색 결과가 없습니다. ${data.total}개의 결과</p>`;
-        // [수정] 4열 배치를 위해 추가했던 클래스 제거
-        resultsContainer.classList.remove('poster-grid');
+        resultsContainer.innerHTML = `<p>검색 결과가 없습니다.</p>`;
         return;
     }
 
-    // 2. 4열 배치를 위한 클래스 추가 (grid 설정)
-    resultsContainer.classList.add('poster-grid');
-
-    // 3. 총 개수 표시 (결과 컨테이너 밖에 표시되도록 임시 변수에 저장)
+    // 총 개수 표시 (결과 컨테이너 밖에 표시되도록 임시 변수에 저장)
     const totalCountHtml = `<h2>총 ${data.total}개의 결과</h2>`;
 
-    // 4. 검색 결과를 이미지 태그로 변환
+    // 검색 결과를 이미지 태그로 변환
     let itemsHtml = data.items.map(item => {
         return `
             <div class="poster-item">
@@ -59,9 +54,11 @@ function renderResults(data) {
             </div>
         `;
     }).join('');
+    // 포스터들을 그리드 컨테이너로 감싸기
+    const gridHtml = `<div class="poster-grid">${itemsHtml}</div>`;
 
-    // 5. 결과를 컨테이너에 삽입 (총 개수 + 이미지들)
-    resultsContainer.innerHTML = totalCountHtml + itemsHtml;
+    // 결과를 컨테이너에 삽입 (총 개수 + 이미지들)
+    resultsContainer.innerHTML = totalCountHtml + gridHtml;
 }
 
 
