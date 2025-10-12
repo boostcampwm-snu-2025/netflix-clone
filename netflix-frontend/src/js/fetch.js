@@ -8,7 +8,7 @@ function createCardHTML(card, type) {
     return `
       <li class="movie_card2">
         <span class="rank">${card.rank}</span>
-        <img src="${card.img}" alt="">
+        <img src="${card.img}" alt="${card.title}">
       </li>
     `;
   }

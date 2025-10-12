@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="/src/css/style.css">
+        <title>Hyungyu Jung's Static Netflix Clone Webpage</title>
+        <script type="module" src="/src/js/main.js" defer></script>
+    </head>
+    <body class="page">
+        <header class="header">
+            <div class="header_left">
+                <h1 class="netflix_logo">
+                    <a href="#">NETFLIX</a>
+                </h1>
+                <nav class="main_nav">
+                    <ul>
+                        <li><a href="#">홈</a></li>
+                        <li><a href="#">시리즈</a></li>
+                        <li><a href="#">영화</a></li>
+                        <li><a href="#">New! 요즘 대세 콘텐츠</a></li>
+                        <li><a href="#">내가 찜한 콘텐츠</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="header_right">
+                <div class="search_container">
+                    <input type="text" class="search_input" placeholder="제목, 사람, 장르">
+                    <button class="search_button">
+                        <img src="/img/icon/search_icon.png" alt="search button">
+                    </button>
+                </div>
+                <div class="notification_icon">
+                    <a href="#">알림</a>
+                    <div class="modal notification_modal">
+                        <p>새로운 알림이 없습니다.</p>
+                    </div>
+                </div>
+                <div class="profile_icon">
+                    <a href="#">프로필</a>
+                    <div class="modal profile_modal">
+                        <ul>
+                            <li><a href="#">계정</a></li>
+                            <li><a href="#">고객 센터</a></li>
+                            <li><a href="#">넷플릭스에서 로그아웃</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main class="main">
+            <section class="hero">
+                <div class="hero_content">
+                    <h2 class="hero_title">Before Sunset</h2>
+                    <p class="hero_rank">
+                        오늘 시리즈 순위 2위
+                    </p>
+                    <p class="hero_description">
+                        9년 만에 파리에서 재회한 제시와 셀린. 그들에게 주어진 시간은 단 몇 시간뿐. 해가 지기 전까지 이들의 사랑은 다시 시작될 수 있을까?
+                    </p>
+                    <div class="hero_buttons">
+                        <button class="btn btn_play">▶︎ 재생</button>
+                        <button class="btn btn_info">ⓘ 상세 정보</button>
+                    </div>
+                </div>
+            </section>
+
+			<section class="custom_list">
+                <div class="slide_wrapper" data-visible-count="6">
+                    <div class="list_title_row">
+                        <h2 class="list_title">위시 콘텐츠</h2>
+                        <div class="pagination"></div>
+                    </div>
+                    <ul class="slides">
+                        <!-- will be filled by fetching movie data -->
+                    </ul>
+                    <p class="controller">
+                        <span class="prev">&lang;</span>  
+                        <span class="next">&rang;</span>
+                    </p>
+                </div>
+            </section>
+
+            <section class="watching_list">
+                <div class = "slide_wrapper" data-visible-count="6">
+                    <div class="list_title_row">
+                        <h2 class="list_title">.님이 시청 중인 콘텐츠</h2>
+                        <div class="pagination"></div>
+                    </div>
+                    <ul class="slides">
+                        <!-- will be filled by fetching movie data -->
+                    </ul>
+                    <p class="controller">
+                        <span class="prev">&lang;</span>  
+                        <span class="next">&rang;</span>
+                    </p>
+                </div>              
+            </section>
+
+            <section class="recommends">
+                <div class = "slide_wrapper" data-visible-count="6">
+                    <div class="list_title_row">
+                        <h2 class="list_title">추천 콘텐츠</h2>
+                        <div class="pagination"></div>
+                    </div>
+                    <ul class="slides">
+                        <!-- will be filled by fetching movie data -->
+                    </ul>
+                    <p class="controller">
+                        <span class="prev">&lang;</span>  
+                        <span class="next">&rang;</span>
+                    </p>
+                </div>
+            </section>
+            
+            <section class="top10_list_section">
+                <div class = "slide_wrapper" data-visible-count="7">
+                    <div class="list_title_row">
+                        <h2 class="list_title">오늘 대한민국의 TOP 10 콘텐츠</h2>
+                        <div class="pagination"></div>
+                    </div>
+                    <ul class="slides">
+                        <!-- will be filled by fetching movie data -->
+                    </ul>
+                    <p class="controller">
+                        <span class="prev">&lang;</span>  
+                        <span class="next">&rang;</span>
+                    </p>
+                </div>    
+            </section>
+
+            <section class="search_results_section">
+                <!-- will be filled if search executed -->
+            </section>
+        </main>
+        <footer class = "footer">
+            <div class = "footer-content">
+				Copyright Hyungyu Jung.
+            </div>
+        </footer>
+    </body>
+</html>

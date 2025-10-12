@@ -47,6 +47,69 @@
     color: inherit;
 }
 
+/* SEARCH BAR STYLE START*/
+.search_container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* 아이템을 오른쪽으로 정렬 */
+}
+
+.search_input {
+    width: 0;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    color: white;
+    font-size: 1rem;
+    opacity: 0; /* 처음에는 투명하게 */
+    transition: width 0.4s ease, opacity 0.4s ease, padding 0.4s ease; /* 부드러운 전환 효과 */
+    outline: none;
+}
+
+.search_input.active {
+    width: 250px; /* 활성화 시 너비 */
+    padding: 8px 12px;
+    border: 1px solid white;
+    background-color: rgba(0, 0, 0, 0.75);
+    opacity: 1; /* 활성화 시 보이게 */
+}
+
+.search_button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.search_button img{
+    width: 24px;
+    height: 24px;
+}
+/* SEARCH BAR STYLE END  */
+
+/* Search Result Style */
+.search_results_section {
+    display: none; /* hide */
+    padding: 40px 24px;
+}
+
+.search_results_title {
+    color: white;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.results_grid {
+    display: grid;
+    /* 화면 크기에 맞춰 자동으로 열 개수를 조절하는 반응형 그리드 */
+    grid-template-columns: repeat(auto-fill, minmax(224px, 1fr));
+    gap: 16px; 
+}
+
+
+
 /* =================================
    Header Hover Modal Styles
    ================================= */
@@ -264,8 +327,37 @@
     background-color: rgba(0, 0, 0, 0.8);
 }
 
+/* like button style */
+.like-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: rgba(0,0,0,0.5);
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    color: #e50914;
+    z-index: 5;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+    padding: 0;
+}
+.like-btn.liked {
+    color: #e50914;
+    background: rgba(255,255,255,0.7);
+}
+.like-btn:hover {
+    background: rgba(255,255,255,0.2);
+}
+
 /* movie card1 styles (except ranking row) */
 .movie_card1{
+    position: relative;
 	width:224px;
 	margin: 8px;
 }
@@ -284,30 +376,8 @@
 }
 
 /* movie card2 styles (ranking row) */
-/* .movie_card2{
-	display: flex;
-	align-items:center;
-    flex-direction: column;
-	flex-wrap: wrap;
-    width: 180px;
-	margin: 8px;
-}
-
-.movie_card2 .rank {
-    font-size: 6rem; 
-    font-weight: bold;
-    color: #555;      
-    margin-right: -20px;
-    z-index: -1; 
-}
-.movie_card2 img {
-    width:120px; 
-    height: 180px;
-    object-fit: cover; 
-    display: block; 
-} */
-
 .movie_card2 {
+    position: relative;
     display: flex;
     flex-direction: row;
     align-items: center;
