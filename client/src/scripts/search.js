@@ -77,10 +77,17 @@ export function initSearchToggle() {
         window.location.href = `#/search?query=${encodeURIComponent(query)}`;
         close();
       }
+    } else if (e.key === 'ArrowDown') {
+      if (historyContainer && historyContainer.classList.contains('is-visible')) {
+        const firstItem = historyContainer.querySelector('.search-history-item');
+        if (firstItem) {
+          e.preventDefault();
+          firstItem.focus();
+        }
+      }
     }
   });
 
-  // Show history on focus/input
   input.addEventListener('focus', showHistory);
   input.addEventListener('input', () => {
     if (input.value.trim() === '') {
@@ -89,4 +96,35 @@ export function initSearchToggle() {
       hideHistory();
     }
   });
+
+  if (historyContainer) {
+    historyContainer.addEventListener('keydown', (e) => {
+      const items = Array.from(historyContainer.querySelectorAll('.search-history-item'));
+      const currentIndex = items.indexOf(document.activeElement);
+      
+      if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        if (currentIndex < items.length - 1) {
+          items[currentIndex + 1].focus();
+        } else {
+          items[0].focus();
+        }
+      } else if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        if (currentIndex > 0) {
+          items[currentIndex - 1].focus();
+        } else {
+          input.focus();
+        }
+      } else if (e.key === 'Enter') {
+        e.preventDefault();
+        if (document.activeElement && document.activeElement.classList.contains('search-history-item')) {
+          document.activeElement.click();
+        }
+      } else if (e.key === 'Escape') {
+        e.preventDefault();
+        input.focus();
+      }
+    });
+  }
 }

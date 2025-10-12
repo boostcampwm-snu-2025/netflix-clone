@@ -1,8 +1,5 @@
 import { initInfiniteCarousels } from './components/infiniteCarousel.js';
 
-// Backward-compatible initializer for recommendation carousels.
-// Delegates to the reusable InfiniteCarousel component with the selectors
-// used by the current recommendation markup.
 export function initCarousels(options = {}) {
   const {
     selector = '.carousel',

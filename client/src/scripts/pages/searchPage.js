@@ -1,11 +1,6 @@
 import { loadSearchResults } from '../api/loadData.js';
 
-/**
- * Render search results page
- * @param {Object} ctx - Router context with query params
- */
 export function renderSearchPage(ctx) {
-  // Hide hero on search route
   const hero = document.querySelector('.hero-container');
   if (hero) {
     hero.innerHTML = '';
@@ -17,20 +12,17 @@ export function renderSearchPage(ctx) {
 
   const q = (ctx?.query?.q || ctx?.query?.query || '').trim();
 
-  // Loading placeholder
   const loading = document.createElement('p');
   loading.style.padding = '80px 40px';
   loading.textContent = q ? `"${q}" 검색 중…` : '검색 중…';
   (recContainer || document.querySelector('main')).appendChild(loading);
 
   loadSearchResults({ q }).then(results => {
-    // Clear placeholder
     loading.remove();
 
     const container = document.querySelector('.recommendation-container') || document.querySelector('main');
     if (!container) return;
 
-    // Title
     const titleEl = document.createElement('p');
     titleEl.className = 'section-title';
     titleEl.textContent = q ? `검색 결과 (${results.length}개)` : '검색 결과';
@@ -44,7 +36,6 @@ export function renderSearchPage(ctx) {
       return;
     }
 
-    // Grid container
     const grid = document.createElement('div');
     grid.className = 'search-grid';
     results.forEach((r, i) => {

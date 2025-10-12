@@ -39,6 +39,8 @@ export function renderSearchHistory(container, onSelect) {
   history.forEach(query => {
     const item = document.createElement('div');
     item.className = 'search-history-item';
+    item.setAttribute('tabindex', '0');
+    item.setAttribute('role', 'button');
     
     const icon = document.createElement('i');
     icon.className = 'fa-solid fa-clock-rotate-left';
