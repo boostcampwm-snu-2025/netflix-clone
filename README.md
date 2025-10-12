@@ -29,29 +29,52 @@
   - [X] 검색어를 받아 관련 영화 데이터 반환
   - [ ] 검색 결과 정렬 및 필터링 기능
 
-# 실행 방법
+## 실행 방법
 
-1. 백엔드 서버 실행
+### 1. 백엔드 서버 실행
 
-    ```bash
-    uvicorn server.main:app --reload
-    ```
+#### 1. uv 설치
 
-2. 프론트엔드 서버 실행
+  Windows
 
-    ```bash
-    cd client
-    npm run dev
-    ```
+  ```bash
+  powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+  ```
 
-3. 한번에 실행
+  MacOS / Linux
 
-    ```bash
-    bash run.sh
-    ```
+  ```bash
+  curl -sSL https://astral.sh/uv/install.sh | sh
+  ```
 
-    또는
+  #### 2. uv로 가상환경 생성
 
-    ```bash
-    sh run.sh
-    ```
+  ```bash
+  uv sync
+  source .venv/bin/activate
+  ```
+
+  #### 3. 서버 실행
+
+  ```bash
+  uvicorn server.main:app --reload
+  ```
+
+### 2. 프론트엔드 서버 실행
+
+  ```bash
+  cd client
+  npm run dev
+  ```
+
+### 3. 한번에 실행
+
+  ```bash
+  bash run.sh
+  ```
+
+  또는
+
+  ```bash
+  sh run.sh
+  ```
