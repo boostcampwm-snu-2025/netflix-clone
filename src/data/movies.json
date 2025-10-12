@@ -124,5 +124,1208 @@
       "genre": ["2025", "청불", "시리즈", "코미디", "드라마 장르"],
       "likes": 0
     }
+  ],
+  "search": [
+    {
+      "id": 1,
+      "title": "크라임씬 제로",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["스릴러", "범죄", "2025"]
+    },
+    {
+      "id": 2,
+      "title": "마약왕의 그림자",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["범죄", "액션", "청불"]
+    },
+    {
+      "id": 3,
+      "title": "사마귀의 유산",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["스릴러", "미스터리", "19+"]
+    },
+    {
+      "id": 4,
+      "title": "에스콰이어: 법정의 신",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["드라마", "법정", "15+"]
+    },
+    {
+      "id": 5,
+      "title": "셰프의 복수",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["코미디", "드라마", "음식"]
+    },
+    {
+      "id": 6,
+      "title": "애마의 비밀",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["로맨스", "드라마", "청불"]
+    },
+    {
+      "id": 7,
+      "title": "시간의 문",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["SF", "미스터리", "2025"]
+    },
+    {
+      "id": 8,
+      "title": "블랙아웃",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["스릴러", "액션"]
+    },
+    {
+      "id": 9,
+      "title": "러브 인 더 시티",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["로맨스", "코미디"]
+    },
+    {
+      "id": 10,
+      "title": "미스터리 하우스",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["미스터리", "공포"]
+    },
+    {
+      "id": 11,
+      "title": "파라독스 나이트",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["SF", "스릴러"]
+    },
+    {
+      "id": 12,
+      "title": "유령의 연회",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["공포", "판타지"]
+    },
+    {
+      "id": 13,
+      "title": "달빛 탐정단",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["미스터리", "드라마"]
+    },
+    {
+      "id": 14,
+      "title": "코드네임: 제로",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["액션", "스릴러"]
+    },
+    {
+      "id": 15,
+      "title": "스노우폴",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["드라마", "로맨스"]
+    },
+    {
+      "id": 16,
+      "title": "섀도우 플레이",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["스릴러", "범죄"]
+    },
+    {
+      "id": 17,
+      "title": "황혼의 추적자",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["액션", "스릴러"]
+    },
+    {
+      "id": 18,
+      "title": "인비저블 라인",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["SF", "드라마"]
+    },
+    {
+      "id": 19,
+      "title": "레드 스팟",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["스릴러", "미스터리"]
+    },
+    {
+      "id": 20,
+      "title": "스위치",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["코미디", "드라마"]
+    },
+    {
+      "id": 21,
+      "title": "마지막 증인",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["범죄", "스릴러"]
+    },
+    {
+      "id": 22,
+      "title": "도시의 그림자",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["드라마", "범죄"]
+    },
+    {
+      "id": 23,
+      "title": "블루 미스트",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["미스터리", "드라마"]
+    },
+    {
+      "id": 24,
+      "title": "스파이럴",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["스릴러", "SF"]
+    },
+    {
+      "id": 25,
+      "title": "골든 타임",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["드라마", "의학"]
+    },
+    {
+      "id": 26,
+      "title": "비밀의 숲",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["미스터리", "스릴러"]
+    },
+    {
+      "id": 27,
+      "title": "아틀란티스 코드",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["SF", "모험"]
+    },
+    {
+      "id": 28,
+      "title": "스틸 라이프",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["드라마", "예술"]
+    },
+    {
+      "id": 29,
+      "title": "루프",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["SF", "스릴러"]
+    },
+    {
+      "id": 30,
+      "title": "화이트 나이트",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["로맨스", "드라마"]
+    },
+    {
+      "id": 31,
+      "title": "이클립스",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["SF", "미스터리"]
+    },
+    {
+      "id": 32,
+      "title": "오로라 프로젝트",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["SF", "드라마"]
+    },
+    {
+      "id": 33,
+      "title": "레퀴엠",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["드라마", "음악"]
+    },
+    {
+      "id": 34,
+      "title": "서바이버",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["액션", "스릴러"]
+    },
+    {
+      "id": 35,
+      "title": "인셉션 코드",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["SF", "스릴러"]
+    },
+    {
+      "id": 36,
+      "title": "블러드라인",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["스릴러", "범죄"]
+    },
+    {
+      "id": 37,
+      "title": "시그널",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["미스터리", "스릴러"]
+    },
+    {
+      "id": 38,
+      "title": "트와일라잇 시티",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["SF", "드라마"]
+    },
+    {
+      "id": 39,
+      "title": "제로 아워",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["스릴러", "액션"]
+    },
+    {
+      "id": 40,
+      "title": "스펙트럼",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["SF", "드라마"]
+    },
+    {
+      "id": 41,
+      "title": "미로의 끝",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["미스터리", "스릴러"]
+    },
+    {
+      "id": 42,
+      "title": "페이탈 게임",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["스릴러", "액션"]
+    },
+    {
+      "id": 43,
+      "title": "언락",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["스릴러", "범죄"]
+    },
+    {
+      "id": 44,
+      "title": "블라인드 스팟",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["미스터리", "스릴러"]
+    },
+    {
+      "id": 45,
+      "title": "스톰 체이서",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["액션", "모험"]
+    },
+    {
+      "id": 46,
+      "title": "다크 레인",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["스릴러", "드라마"]
+    },
+    {
+      "id": 47,
+      "title": "인피니티",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["SF", "드라마"]
+    },
+    {
+      "id": 48,
+      "title": "크로스로드",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["드라마", "로맨스"]
+    },
+    {
+      "id": 49,
+      "title": "시크릿 에이전트",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["액션", "스릴러"]
+    },
+    {
+      "id": 50,
+      "title": "노바",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["SF", "모험"]
+    },
+    {
+      "id": 51,
+      "title": "에코",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["드라마", "음악"]
+    },
+    {
+      "id": 52,
+      "title": "스틸하트",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["액션", "드라마"]
+    },
+    {
+      "id": 53,
+      "title": "라스트 코드",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["미스터리", "스릴러"]
+    },
+    {
+      "id": 54,
+      "title": "오퍼레이션 나이트",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["액션", "스릴러"]
+    },
+    {
+      "id": 55,
+      "title": "블루 플레임",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["드라마", "로맨스"]
+    },
+    {
+      "id": 56,
+      "title": "서클",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["SF", "미스터리"]
+    },
+    {
+      "id": 57,
+      "title": "인사이드 아웃",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["드라마", "코미디"]
+    },
+    {
+      "id": 58,
+      "title": "스노우맨",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["미스터리", "스릴러"]
+    },
+    {
+      "id": 59,
+      "title": "레드라인",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["액션", "스릴러"]
+    },
+    {
+      "id": 60,
+      "title": "미싱 링크",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["미스터리", "SF"]
+    },
+    {
+      "id": 61,
+      "title": "스텔라",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["드라마", "로맨스"]
+    },
+    {
+      "id": 62,
+      "title": "어둠의 파수꾼",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["스릴러", "공포"]
+    },
+    {
+      "id": 63,
+      "title": "루나틱",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["SF", "스릴러"]
+    },
+    {
+      "id": 64,
+      "title": "트리거",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["액션", "스릴러"]
+    },
+    {
+      "id": 65,
+      "title": "스위트 나이트",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["로맨스", "드라마"]
+    },
+    {
+      "id": 66,
+      "title": "그레이존",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["스릴러", "미스터리"]
+    },
+    {
+      "id": 67,
+      "title": "오메가",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["SF", "액션"]
+    },
+    {
+      "id": 68,
+      "title": "스파크",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["드라마", "음악"]
+    },
+    {
+      "id": 69,
+      "title": "미드나잇 익스프레스",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["스릴러", "드라마"]
+    },
+    {
+      "id": 70,
+      "title": "블랙박스",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["미스터리", "SF"]
+    },
+    {
+      "id": 71,
+      "title": "에덴의 문",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["SF", "드라마"]
+    },
+    {
+      "id": 72,
+      "title": "스펙터",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["스릴러", "액션"]
+    },
+    {
+      "id": 73,
+      "title": "라스트 미션",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["액션", "스릴러"]
+    },
+    {
+      "id": 74,
+      "title": "인카운터",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["로맨스", "드라마"]
+    },
+    {
+      "id": 75,
+      "title": "스톰 브레이커",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["액션", "모험"]
+    },
+    {
+      "id": 76,
+      "title": "루비의 비밀",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["미스터리", "드라마"]
+    },
+    {
+      "id": 77,
+      "title": "다크니스",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["공포", "스릴러"]
+    },
+    {
+      "id": 78,
+      "title": "에이전트 K",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["액션", "스릴러"]
+    },
+    {
+      "id": 79,
+      "title": "스노우필드",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["드라마", "미스터리"]
+    },
+    {
+      "id": 80,
+      "title": "블루버드",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["드라마", "음악"]
+    },
+    {
+      "id": 81,
+      "title": "시리우스",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["SF", "드라마"]
+    },
+    {
+      "id": 82,
+      "title": "트루스 헌터",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["스릴러", "미스터리"]
+    },
+    {
+      "id": 83,
+      "title": "오로라의 밤",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["드라마", "로맨스"]
+    },
+    {
+      "id": 84,
+      "title": "스틸 블루",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["드라마", "음악"]
+    },
+    {
+      "id": 85,
+      "title": "미러월드",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["SF", "미스터리"]
+    },
+    {
+      "id": 86,
+      "title": "레드 퀸",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["드라마", "스릴러"]
+    },
+    {
+      "id": 87,
+      "title": "인비저블 시티",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["SF", "드라마"]
+    },
+    {
+      "id": 88,
+      "title": "스파이더",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["스릴러", "액션"]
+    },
+    {
+      "id": 89,
+      "title": "루프타운",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["SF", "드라마"]
+    },
+    {
+      "id": 90,
+      "title": "블랙스완",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["드라마", "음악"]
+    },
+    {
+      "id": 91,
+      "title": "에코스톤",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["SF", "드라마"]
+    },
+    {
+      "id": 92,
+      "title": "스톰나이트",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["액션", "모험"]
+    },
+    {
+      "id": 93,
+      "title": "라스트 체이서",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["스릴러", "액션"]
+    },
+    {
+      "id": 94,
+      "title": "오로라 코드",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["SF", "미스터리"]
+    },
+    {
+      "id": 95,
+      "title": "스틸레인",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["액션", "스릴러"]
+    },
+    {
+      "id": 96,
+      "title": "미드나잇 블루",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["드라마", "로맨스"]
+    },
+    {
+      "id": 97,
+      "title": "레드문",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["SF", "스릴러"]
+    },
+    {
+      "id": 98,
+      "title": "인사이드 코드",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["미스터리", "SF"]
+    },
+    {
+      "id": 99,
+      "title": "스노우퀸",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["드라마", "로맨스"]
+    },
+    {
+      "id": 100,
+      "title": "블루라이트",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["SF", "드라마"]
+    },
+
+    {
+      "id": 101,
+      "title": "크림슨 나이트",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["스릴러", "액션"]
+    },
+    {
+      "id": 102,
+      "title": "골드 러쉬",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["드라마", "모험"]
+    },
+    {
+      "id": 103,
+      "title": "섀도우 헌터",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["스릴러", "미스터리"]
+    },
+    {
+      "id": 104,
+      "title": "에버그린",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["드라마", "로맨스"]
+    },
+    {
+      "id": 105,
+      "title": "블랙홀",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["SF", "스릴러"]
+    },
+    {
+      "id": 106,
+      "title": "루나의 비밀",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["미스터리", "드라마"]
+    },
+    {
+      "id": 107,
+      "title": "스카이폴",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["액션", "스릴러"]
+    },
+    {
+      "id": 108,
+      "title": "에메랄드 시티",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["판타지", "모험"]
+    },
+    {
+      "id": 109,
+      "title": "인셉션 나이트",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["SF", "스릴러"]
+    },
+    {
+      "id": 110,
+      "title": "블루문",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["드라마", "로맨스"]
+    },
+    {
+      "id": 111,
+      "title": "스톰워커",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["액션", "모험"]
+    },
+    {
+      "id": 112,
+      "title": "레드 스톰",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["액션", "스릴러"]
+    },
+    {
+      "id": 113,
+      "title": "미러 나이트",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["SF", "미스터리"]
+    },
+    {
+      "id": 114,
+      "title": "오로라의 비밀",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["미스터리", "드라마"]
+    },
+    {
+      "id": 115,
+      "title": "스노우 체이서",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["액션", "스릴러"]
+    },
+    {
+      "id": 116,
+      "title": "루비 나이트",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["드라마", "로맨스"]
+    },
+    {
+      "id": 117,
+      "title": "다크 엔젤",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["스릴러", "공포"]
+    },
+    {
+      "id": 118,
+      "title": "에이전트 X",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["액션", "스릴러"]
+    },
+    {
+      "id": 119,
+      "title": "스노우 드롭",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["드라마", "로맨스"]
+    },
+    {
+      "id": 120,
+      "title": "블루 스카이",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["드라마", "음악"]
+    },
+    {
+      "id": 121,
+      "title": "시리우스 코드",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["SF", "미스터리"]
+    },
+    {
+      "id": 122,
+      "title": "트루스 코드",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["미스터리", "스릴러"]
+    },
+    {
+      "id": 123,
+      "title": "오로라 헌터",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["스릴러", "드라마"]
+    },
+    {
+      "id": 124,
+      "title": "스틸 나이트",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["액션", "모험"]
+    },
+    {
+      "id": 125,
+      "title": "미러 퀸",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["드라마", "미스터리"]
+    },
+    {
+      "id": 126,
+      "title": "레드 시티",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["드라마", "스릴러"]
+    },
+    {
+      "id": 127,
+      "title": "인비저블 코드",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["SF", "미스터리"]
+    },
+    {
+      "id": 128,
+      "title": "스파이더맨",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["액션", "모험"]
+    },
+    {
+      "id": 129,
+      "title": "루프 코드",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["SF", "스릴러"]
+    },
+    {
+      "id": 130,
+      "title": "블랙 퀸",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["드라마", "스릴러"]
+    },
+    {
+      "id": 131,
+      "title": "에코 나이트",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["드라마", "음악"]
+    },
+    {
+      "id": 132,
+      "title": "스톰 코드",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["액션", "스릴러"]
+    },
+    {
+      "id": 133,
+      "title": "라스트 퀸",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["드라마", "로맨스"]
+    },
+    {
+      "id": 134,
+      "title": "오로라 나이트",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["드라마", "미스터리"]
+    },
+    {
+      "id": 135,
+      "title": "스틸 코드",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["SF", "스릴러"]
+    },
+    {
+      "id": 136,
+      "title": "미드나잇 코드",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["미스터리", "스릴러"]
+    },
+    {
+      "id": 137,
+      "title": "레드 스톤",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["드라마", "스릴러"]
+    },
+    {
+      "id": 138,
+      "title": "인사이드 퀸",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["드라마", "미스터리"]
+    },
+    {
+      "id": 139,
+      "title": "스노우 코드",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["SF", "스릴러"]
+    },
+    {
+      "id": 140,
+      "title": "블루 퀸",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["드라마", "로맨스"]
+    },
+    {
+      "id": 141,
+      "title": "크라임씬 나이트",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["스릴러", "범죄"]
+    },
+    {
+      "id": 142,
+      "title": "마약왕의 복수",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["범죄", "액션"]
+    },
+    {
+      "id": 143,
+      "title": "사마귀의 그림자",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["스릴러", "미스터리"]
+    },
+    {
+      "id": 144,
+      "title": "에스콰이어: 정의의 신",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["드라마", "법정"]
+    },
+    {
+      "id": 145,
+      "title": "셰프의 비밀",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["코미디", "드라마"]
+    },
+    {
+      "id": 146,
+      "title": "애마의 유산",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["로맨스", "드라마"]
+    },
+    {
+      "id": 147,
+      "title": "시간의 비밀",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["SF", "미스터리"]
+    },
+    {
+      "id": 148,
+      "title": "블랙아웃 나이트",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["스릴러", "액션"]
+    },
+    {
+      "id": 149,
+      "title": "러브 인 더 다크",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["로맨스", "드라마"]
+    },
+    {
+      "id": 150,
+      "title": "미스터리 코드",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["미스터리", "스릴러"]
+    },
+    {
+      "id": 151,
+      "title": "파라독스 코드",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["SF", "스릴러"]
+    },
+    {
+      "id": 152,
+      "title": "유령의 밤",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["공포", "판타지"]
+    },
+    {
+      "id": 153,
+      "title": "달빛 코드",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["미스터리", "드라마"]
+    },
+    {
+      "id": 154,
+      "title": "코드네임: 나이트",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["액션", "스릴러"]
+    },
+    {
+      "id": 155,
+      "title": "스노우 코드",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["SF", "스릴러"]
+    },
+    {
+      "id": 156,
+      "title": "섀도우 코드",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["스릴러", "범죄"]
+    },
+    {
+      "id": 157,
+      "title": "황혼의 코드",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["액션", "스릴러"]
+    },
+    {
+      "id": 158,
+      "title": "인비저블 코드",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["SF", "드라마"]
+    },
+    {
+      "id": 159,
+      "title": "레드 코드",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["스릴러", "미스터리"]
+    },
+    {
+      "id": 160,
+      "title": "스위치 코드",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["코미디", "드라마"]
+    },
+    {
+      "id": 161,
+      "title": "마지막 코드",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["범죄", "스릴러"]
+    },
+    {
+      "id": 162,
+      "title": "도시의 코드",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["드라마", "범죄"]
+    },
+    {
+      "id": 163,
+      "title": "블루 코드",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["미스터리", "드라마"]
+    },
+    {
+      "id": 164,
+      "title": "스파이럴 코드",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["스릴러", "SF"]
+    },
+    {
+      "id": 165,
+      "title": "골든 코드",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["드라마", "의학"]
+    },
+    {
+      "id": 166,
+      "title": "비밀의 코드",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["미스터리", "스릴러"]
+    },
+    {
+      "id": 167,
+      "title": "아틀란티스 나이트",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["SF", "모험"]
+    },
+    {
+      "id": 168,
+      "title": "스틸 코드",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["드라마", "예술"]
+    },
+    {
+      "id": 169,
+      "title": "루프 나이트",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["SF", "스릴러"]
+    },
+    {
+      "id": 170,
+      "title": "화이트 코드",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["로맨스", "드라마"]
+    },
+    {
+      "id": 171,
+      "title": "이클립스 코드",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["SF", "미스터리"]
+    },
+    {
+      "id": 172,
+      "title": "오로라 코드",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["SF", "드라마"]
+    },
+    {
+      "id": 173,
+      "title": "레퀴엠 코드",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["드라마", "음악"]
+    },
+    {
+      "id": 174,
+      "title": "서바이버 코드",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["액션", "스릴러"]
+    },
+    {
+      "id": 175,
+      "title": "인셉션 나이트",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["SF", "스릴러"]
+    },
+    {
+      "id": 176,
+      "title": "블러드 코드",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["스릴러", "범죄"]
+    },
+    {
+      "id": 177,
+      "title": "시그널 코드",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["미스터리", "스릴러"]
+    },
+    {
+      "id": 178,
+      "title": "트와일라잇 코드",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["SF", "드라마"]
+    },
+    {
+      "id": 179,
+      "title": "제로 코드",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["스릴러", "액션"]
+    },
+    {
+      "id": 180,
+      "title": "스펙트럼 코드",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["SF", "드라마"]
+    },
+    {
+      "id": 181,
+      "title": "미로의 코드",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["미스터리", "스릴러"]
+    },
+    {
+      "id": 182,
+      "title": "페이탈 코드",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["스릴러", "액션"]
+    },
+    {
+      "id": 183,
+      "title": "언락 코드",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["스릴러", "범죄"]
+    },
+    {
+      "id": 184,
+      "title": "블라인드 코드",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["미스터리", "스릴러"]
+    },
+    {
+      "id": 185,
+      "title": "스톰 코드",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["액션", "모험"]
+    },
+    {
+      "id": 186,
+      "title": "다크 코드",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["스릴러", "드라마"]
+    },
+    {
+      "id": 187,
+      "title": "인피니티 코드",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["SF", "드라마"]
+    },
+    {
+      "id": 188,
+      "title": "크로스 코드",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["드라마", "로맨스"]
+    },
+    {
+      "id": 189,
+      "title": "시크릿 코드",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["액션", "스릴러"]
+    },
+    {
+      "id": 190,
+      "title": "노바 코드",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["SF", "모험"]
+    },
+    {
+      "id": 191,
+      "title": "에코 코드",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["드라마", "음악"]
+    },
+    {
+      "id": 192,
+      "title": "스틸하트 코드",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["액션", "드라마"]
+    },
+    {
+      "id": 193,
+      "title": "라스트 코드2",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["미스터리", "스릴러"]
+    },
+    {
+      "id": 194,
+      "title": "오퍼레이션 코드",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["액션", "스릴러"]
+    },
+    {
+      "id": 195,
+      "title": "블루 플레임 코드",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["드라마", "로맨스"]
+    },
+    {
+      "id": 196,
+      "title": "서클 코드",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["SF", "미스터리"]
+    },
+    {
+      "id": 197,
+      "title": "인사이드 코드2",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["드라마", "코미디"]
+    },
+    {
+      "id": 198,
+      "title": "스노우맨 코드",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["미스터리", "스릴러"]
+    },
+    {
+      "id": 199,
+      "title": "레드라인 코드",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["액션", "스릴러"]
+    },
+    {
+      "id": 200,
+      "title": "미싱 코드",
+      "thumbnail": "https://picsum.photos/400/200",
+      "genre": ["미스터리", "SF"]
+    }
   ]
 }

@@ -1,29 +1,37 @@
-import { worker } from './mocks/browser.ts';
+import './components/spinner/spinner.ts';
+import './components/suspenseContainer/suspenseContainer.ts';
+import './components/asyncComponent/asyncComponent.ts';
+import './components/movieGrid/movieGrid.ts';
+import type MovieGrid from './components/movieGrid/movieGrid.ts';
 
-import('./components/suspenseContainer/suspenseContainer.ts');
-import('./components/asyncComponent/asyncComponent.ts');
-import('./components/appButton/appButton.ts');
-import('./components/arrowButton/arrowButton.ts');
-import('./components/faqAccordion/faqAccordion.ts');
-import('./components/featureCard/featureCard.ts');
-import('./components/languageSelect/languageSelect.ts');
-import('./components/movieCard/movieCard.ts');
-import('./components/movieModal/movieModal.ts');
-import('./components/movieSkeletonCard/movieSkeletonCard.ts');
-import('./components/movieList/movieList.ts');
-
-async function initializeApp() {
-  await worker.start({
-    onUnhandledRequest: 'warn',
-  });
-
-  if (document.readyState === 'loading') {
-    await new Promise(resolve => {
-      document.addEventListener('DOMContentLoaded', resolve);
-    });
-  }
+function debounce(func: () => void, wait: number) {
+  let timeout: ReturnType<typeof setTimeout>;
+  return (...args: Parameters<typeof func>) => {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => func(...args), wait);
+  };
 }
 
-initializeApp().catch(error => {
-  console.error('Failed to initialize app:', error);
+document.addEventListener('DOMContentLoaded', () => {
+  const searchInput = document.querySelector(
+    '.search-input'
+  ) as HTMLInputElement;
+  const searchButton = document.querySelector(
+    '.search-button'
+  ) as HTMLButtonElement;
+  const movieGrid = document.querySelector('movie-grid') as MovieGrid;
+
+  if (!searchInput || !searchButton || !movieGrid) return;
+
+  const handleSearch = debounce(() => {
+    const query = searchInput.value.trim();
+    movieGrid.search(query);
+  }, 200);
+  searchInput.addEventListener('input', handleSearch);
+  searchButton.addEventListener('click', handleSearch);
+  searchInput.addEventListener('keypress', e => {
+    if (e.key === 'Enter') {
+      handleSearch();
+    }
+  });
 });
