@@ -1,22 +1,14 @@
-import './styles/style.css';
-import { fetch_movies_for_row } from './api/fetchMovies';
-import { Slider } from './components/Slider';
-import { SearchBar } from './components/SearchBar';
+import "./styles/style.css";
+import { initSlider } from "./components/Slider";
+import { initSearchBar } from "./components/SearchBar";
 
 const items_per_page = 6;
 
-// ✅ Everything initializes here
 window.addEventListener("DOMContentLoaded", () => {
-  document.querySelectorAll<HTMLElement>(".sliderWrapper").forEach(wrapper => {
-    const slider_content = wrapper.querySelector(".sliderContent") as HTMLElement;
-    fetch_movies_for_row(slider_content, items_per_page * 3).then(() => {
-      new Slider(wrapper, items_per_page);
-    });
+  document.querySelectorAll<HTMLElement>(".sliderWrapper").forEach((wrapper) => {
+    initSlider(wrapper, items_per_page);
   });
 
-  // ✅ Initialize search bar
   const searchContainer = document.querySelector(".navbar-secondary-element");
-  if (searchContainer) {
-    new SearchBar(searchContainer);
-  }
+  if (searchContainer) initSearchBar(searchContainer);
 });
