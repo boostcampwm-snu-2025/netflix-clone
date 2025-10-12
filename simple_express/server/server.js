@@ -1,3 +1,9 @@
+import path from "path";
+import { fileURLToPath } from "url";
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+
 import express from "express";
 import cors from "cors";
 import { TITLES } from "./data.js";
@@ -9,6 +15,14 @@ const DELAY_MS = 1000; // 1초 지연 (요구사항)
 // CORS 허용 설정
 app.use(cors());
 app.use(express.json());
+// ✨ client 폴더를 정적 서빙
+app.use(express.static(path.resolve(__dirname, "../client")))
+
+
+// GET 요청시 / 경로에 index.html 서빙
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "../client/index.html"));
+});
 
 // GET 요청시 /api/search?q=키워드 router 등록
 app.get("/api/search", (req, res) => {
@@ -20,8 +34,8 @@ app.get("/api/search", (req, res) => {
 
   // 1초 지연 후 응답
   setTimeout(() => {
-    res.json({ 
-      items: result, 
+    res.json({
+      items: result,
       total: result.length,
       // query: q,
       // babo: "you are a babo"
