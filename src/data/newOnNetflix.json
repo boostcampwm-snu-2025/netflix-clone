@@ -1,9 +1,9 @@
 [
-  {"likes": 0, "dislikes":0, "playCount": 0,"title": "Breaking Bad", "img": "./src/img/breaking-bad.webp"},
-  {"likes": 0, "dislikes":0, "playCount": 0,"title": "Cat", "img": "./src/img/cat.jpg"},
-  {"likes": 0, "dislikes":0, "playCount": 0,"title": "Inside Job", "img": "./src/img/inside-job.jpg"},
-  {"likes": 0, "dislikes":0, "playCount": 0,"title": "Rick and Morty", "img": "./src/img/rick-and-morty.webp"},
-  {"likes": 0, "dislikes":0, "playCount": 0,"title": "Dexter", "img": "./src/img/dexter.webp"},
-  {"likes": 0, "dislikes":0, "playCount": 0,"title": "Gossip Girl", "img": "./src/img/gossip-girl.webp"},
-  {"likes": 0, "dislikes":0, "playCount": 0,"title": "Knives Out", "img": "./src/img/knives-out.webp"}
+  {"likes": 0, "dislikes":0, "playCount": 0,"name": "Breaking Bad", "image": "./src/img/breaking-bad.webp"},
+  {"likes": 0, "dislikes":0, "playCount": 0,"name": "Cat", "image": "./src/img/cat.jpg"},
+  {"likes": 0, "dislikes":0, "playCount": 0,"name": "Inside Job", "image": "./src/img/inside-job.jpg"},
+  {"likes": 0, "dislikes":0, "playCount": 0,"name": "Rick and Morty", "image": "./src/img/rick-and-morty.webp"},
+  {"likes": 0, "dislikes":0, "playCount": 0,"name": "Dexter", "image": "./src/img/dexter.webp"},
+  {"likes": 0, "dislikes":0, "playCount": 0,"name": "Gossip Girl", "image": "./src/img/gossip-girl.webp"},
+  {"likes": 0, "dislikes":0, "playCount": 0,"name": "Knives Out", "image": "./src/img/knives-out.webp"}
 ]

@@ -1,0 +1,15 @@
+[
+  { "id": 1, "name": "Stranger Things", "type": "series", "image": "https://image.tmdb.org/t/p/w200/x2LSRK2Cm7MZhjluni1msVJ3wDF.jpg" },
+  { "id": 2, "name": "The Witcher", "type": "series", "image": "https://image.tmdb.org/t/p/w200/zrPpUlehQaBf8YX2NrVrKK8IEpf.jpg" },
+  { "id": 3, "name": "Breaking Bad", "type": "series", "image": "https://image.tmdb.org/t/p/w200/ggFHVNu6YYI5L9pCfOacjizRGt.jpg" },
+  { "id": 4, "name": "Game of Thrones", "type": "series", "image": "https://image.tmdb.org/t/p/w200/u3bZgnGQ9T01sWNhyveQz0wH0Hl.jpg" },
+  { "id": 5, "name": "Black Mirror", "type": "series", "image": "https://image.tmdb.org/t/p/w200/pHkKbIRoCe7zIFvqan9LFSaQAde.jpg" },
+  { "id": 6, "name": "The Crown", "type": "series", "image": "https://image.tmdb.org/t/p/w200/izg2Yl0uFvYtVx0c0Bz3e8AAf7K.jpg" },
+  { "id": 7, "name": "Dune: Part Two", "type": "movie", "image": "https://image.tmdb.org/t/p/w200/8b8R8l88Qje9dn9OE8PY05Nxl1X.jpg" },
+  { "id": 8, "name": "Oppenheimer", "type": "movie", "image": "https://image.tmdb.org/t/p/w200/bAQ8O5Uw6FedtlCbJTutenzPVKd.jpg" },
+  { "id": 9, "name": "Barbie", "type": "movie", "image": "https://image.tmdb.org/t/p/w200/iuFNMS8U5cb6xfzi51Dbkovj7vM.jpg" },
+  { "id": 10, "name": "Inception", "type": "movie", "image": "https://image.tmdb.org/t/p/w200/9gk7adHYeDvHkCSEqAvQNLV5Uge.jpg" },
+  { "id": 11, "name": "The Dark Knight", "type": "movie", "image": "https://image.tmdb.org/t/p/w200/qJ2tW6WMUDux911r6m7haRef0WH.jpg" },
+  { "id": 12, "name": "Interstellar", "type": "movie", "image": "https://image.tmdb.org/t/p/w200/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg" },
+  { "id": 13, "name": "Avatar: The Way of Water", "type": "movie", "image": "https://image.tmdb.org/t/p/w200/t6HIqrRAclMCA60NsSmeqe9RmNV.jpg" }
+]

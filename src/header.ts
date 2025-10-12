@@ -30,7 +30,7 @@ document.querySelector<HTMLElement>('header')!.innerHTML = `
                     </li>
                 </ul>
                 <div class = "secondary-navigation">
-                    <a href="" class = "nav-element">
+                    <a href="#" class = "search-element">
                         <i class="fa fa-search"></i>
                     </a>
                     <a href="" class = "nav-element">

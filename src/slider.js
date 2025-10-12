@@ -36,21 +36,21 @@ function generateCarousel(title, items){
 
         const img = document.createElement("img");
         img.classList.add("content-card");
-        img.src = item.img;
-        img.alt = item.title;
+        img.src = item.image;
+        img.alt = item.name;
         //add like hover
         const hover = document.createElement("div");
         hover.classList.add("hover-overlay");
         const thumbnail = document.createElement("img");
         const title = document.createElement("h2");
-        title.textContent = item.title;
+        title.textContent = item.name;
         const buttons = document.createElement("div");
         buttons.classList.add("hover-buttons");
 
         //count data
-         const playCount = parseInt(localStorage.getItem(item.title + "-play")) || 0;
-         const likes = parseInt(localStorage.getItem(item.title + "-likes")) || 0;
-         const dislikes = parseInt(localStorage.getItem(item.title + "-dislikes")) || 0;
+         const playCount = parseInt(localStorage.getItem(item.name + "-play")) || 0;
+         const likes = parseInt(localStorage.getItem(item.name + "-likes")) || 0;
+         const dislikes = parseInt(localStorage.getItem(item.name + "-dislikes")) || 0;
 
 
         const playBtn = document.createElement("button");
@@ -62,24 +62,24 @@ function generateCarousel(title, items){
         playBtn.addEventListener("click", (e) => {
             e.preventDefault(); // prevent the link from navigating
             e.stopPropagation();
-            const newCount = (parseInt(localStorage.getItem(item.title + "-play")) || 0) + 1;
-            localStorage.setItem(item.title + "-play", newCount);
+            const newCount = (parseInt(localStorage.getItem(item.name + "-play")) || 0) + 1;
+            localStorage.setItem(item.name + "-play", newCount);
             playBtn.textContent = `▶ ${newCount}`;
         });
 
         likeBtn.addEventListener("click", (e) => {
             e.preventDefault();
             e.stopPropagation();
-            const newCount = (parseInt(localStorage.getItem(item.title + "-likes")) || 0) + 1;
-            localStorage.setItem(item.title + "-likes", newCount);
+            const newCount = (parseInt(localStorage.getItem(item.name + "-likes")) || 0) + 1;
+            localStorage.setItem(item.name + "-likes", newCount);
             likeBtn.textContent = `👍 ${newCount}`;
         });
 
         dislikeBtn.addEventListener("click", e => {
             e.preventDefault();
             e.stopPropagation();
-            const newCount = (parseInt(localStorage.getItem(item.title + "-dislikes")) || 0) + 1;
-            localStorage.setItem(item.title + "-dislikes", newCount);
+            const newCount = (parseInt(localStorage.getItem(item.name + "-dislikes")) || 0) + 1;
+            localStorage.setItem(item.name + "-dislikes", newCount);
             dislikeBtn.textContent = `👎 ${newCount}`;
         });
         buttons.append(playBtn, likeBtn, dislikeBtn);
@@ -115,7 +115,7 @@ function initCarousel(carousel){
         firstClones.push(first);
         lastClones.push(last);
     }
-    lastClones.forEach(clone => container.insertBefore(clone, container.firstChild));
+    lastClones.slice().reverse().forEach(clone => container.insertBefore(clone, container.firstChild));
     firstClones.forEach(clone => container.appendChild(clone));
     let i = imagePerRow;
 
@@ -130,7 +130,7 @@ function initCarousel(carousel){
             setTimeout(()=>{
                 container.style.transition = 'none';
                 container.style.transform=`translateX(${-imageWidth * i}px)`;
-            }, 300);
+            }, 400);
         }
         else{
             if(i>=images.length-imagePerRow) 
@@ -148,11 +148,11 @@ function initCarousel(carousel){
         if(i==imagePerRow){
             i=imagePerRow+images.length-imagePerRow;
             container.style.transition = 'transform 0.4s ease-in-out';
-            container.style.transform = `translateX(${imageWidth*(images.length-imagePerRow)}px)`;
+            container.style.transform = `translateX(0px)`;
             setTimeout(()=>{
                 container.style.transition='none';
                 container.style.transform = `translateX(${-imageWidth*i}px)`;
-            },300);
+            },400);
         }
         else if(i<imagePerRow+imagePerRow){
             i=imagePerRow;
@@ -174,7 +174,8 @@ function initCarousel(carousel){
 }
 const carousels = [
     { title: "New on Netflix", url: "./src/data/newOnNetflix.json" },
-    { title: "Trending Now", url: "./src/data/numbers.json" },
+    { title: "Trending Now", url: "./src/data/trending.json" },
+    {title: "Recommended for You", url: "./src/data/recommended.json"}
 ];
 carousels.forEach(carouselInfo=>{
     fetch(carouselInfo.url)
