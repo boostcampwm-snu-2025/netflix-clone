@@ -2,7 +2,7 @@ import { appendChildrenSync, createStyledElement } from "./utils";
 
 export const composeHeader = async (): Promise<HTMLElement[]> => {
   const header = createStyledElement("header", [
-    "bg-transparent duration-700 fixed top-0 w-screen h-header-narrow netflix:h-header-wide px-wrapper-wide flex flex-row items-center justify-between z-50",
+    "bg-transparent duration-700 fixed top-0 w-screen h-header-narrow netflix:h-header-wide px-wrapper-wide flex flex-row items-center justify-between z-[60]",
   ]);
   await appendChildrenSync(header, [
     composeLogo,
@@ -75,12 +75,131 @@ const composeProfileMenu = async (): Promise<HTMLElement> => {
     "flex flex-row relative text-[1.2rem] gap-[12px] h-full items-center",
   ]);
 
-  const searchA = createStyledElement("a");
+  const searchBtn = createStyledElement("button", [
+    "flex flex-row place-items-center h-[32px] p-[4px] gap-[4px] min-w-[24px] cursor-pointer relative",
+  ]);
   const searchImg = createStyledElement("img", ["w-[24px] h-[24px]"]);
+  const searchInput = createStyledElement("input", [
+    "h-[24px] transition-[width] transition-500 outline-none caret-white text-white",
+  ]);
+  const searchCancelBtn = createStyledElement("button", [
+    "w-[24px] h-[24px] text-white text-2xl cursor-pointer hidden",
+  ]);
+  const searchHistoryDiv = createStyledElement("div", [
+    "flex flex-col absolute top-[32px] right-0 w-[96px] bg-base hidden z-[70]",
+  ]);
+  const renderSearchHistory = () => {
+    searchHistoryDiv.replaceChildren();
+    const savedHistory = localStorage.getItem("history");
+    const history = savedHistory ? JSON.parse(savedHistory) : [];
+    history.forEach((h) => {
+      const btn = createStyledElement("button", [
+        "w-full h-[24px] text-white text-start px-[8px]",
+      ]);
+      btn.innerText = h;
+      btn.addEventListener("click", () => {
+        searchInput.value = h;
+        searchInput.dispatchEvent(
+          new Event("input", { bubbles: true, composed: true }),
+        );
+      });
+      btn.addEventListener("mouseenter", () => {
+        searchInput.placeholder = h;
+      });
+      btn.addEventListener("mouseleave", () => {
+        searchInput.placeholder = "";
+      });
+      searchHistoryDiv.appendChild(btn);
+    });
+  };
+  renderSearchHistory();
+
+  searchCancelBtn.innerText = "X";
+  searchInput.style.width = "0px";
   searchImg.src = "/header/search.svg";
   searchImg.alt = "Search Magnifying Glass Icon";
-  searchA.appendChild(searchImg);
-  profileMenu.appendChild(searchA);
+  searchBtn.append(searchImg, searchInput, searchCancelBtn, searchHistoryDiv);
+  profileMenu.appendChild(searchBtn);
+
+  let isActivated = false;
+
+  const activateSearchBar = () => {
+    isActivated = true;
+    Object.assign(searchBtn.style, {
+      border: "1px solid white",
+      backgroundColor: "black",
+    });
+    searchBtn.disabled = true;
+    searchCancelBtn.style.display = "block";
+    searchInput.style.width = "96px";
+    searchInput.focus();
+    searchHistoryDiv.style.display = "block";
+  };
+  searchBtn.addEventListener("click", activateSearchBar);
+
+  const deactivateSearchBar = (e) => {
+    e.stopPropagation();
+    isActivated = false;
+    Object.assign(searchBtn.style, {
+      border: "none",
+      backgroundColor: "transparent",
+    });
+    searchBtn.disabled = false;
+    searchInput.style.width = "0px";
+    searchInput.value = "";
+    searchCancelBtn.style.display = "none";
+    const prevSearchDiv = document.getElementById("searchRes");
+    if (prevSearchDiv) prevSearchDiv.remove();
+    searchHistoryDiv.style.display = "none";
+  };
+  searchCancelBtn.addEventListener("click", deactivateSearchBar);
+
+  let timerMemo = undefined;
+  const syncSearchHistory = (newSearch: string) => {
+    const storedHistory = localStorage.getItem("history");
+    const prev = storedHistory ? JSON.parse(storedHistory) : [];
+    const newHistory = [
+      newSearch,
+      ...prev.filter((x) => x !== newSearch),
+    ].slice(0, 5);
+    localStorage.setItem("history", JSON.stringify(newHistory));
+  };
+  const search = async (param: string) => {
+    syncSearchHistory(param);
+    renderSearchHistory();
+    const res = await fetch(
+      `http://localhost:3001/api/search?search=${encodeURIComponent(param)}`,
+    );
+    const data = await res.json();
+    if (!isActivated) return;
+    const prevSearchDiv = document.getElementById("searchRes");
+    const newSearchDiv =
+      prevSearchDiv ??
+      createStyledElement("div", [
+        "grid grid-cols-3 auto-rows-min pt-[50px] px-[50px] gap-4 w-screen h-full absolute top-0 bg-base z-50",
+      ]);
+
+    newSearchDiv.replaceChildren([]);
+
+    newSearchDiv.id = "searchRes";
+    for (const datum of data) {
+      const { href, id, src } = datum;
+      const a = createStyledElement("a", ["flex flex-col min-h-0 w-full"]);
+      const img = createStyledElement("img", ["w-full"]);
+      img.src = src;
+      a.appendChild(img);
+      newSearchDiv.appendChild(a);
+    }
+    document.body.appendChild(newSearchDiv);
+  };
+  searchInput.addEventListener("input", async (e) => {
+    if (timerMemo) clearTimeout(timerMemo);
+    const searchKeyword = e.target.value.trim();
+    if (searchKeyword.length)
+      timerMemo = setTimeout(() => {
+        search(searchKeyword);
+      }, 500);
+  });
 
   const kidsA = createStyledElement("a", ["text-white not-netflix:hidden"]);
   kidsA.innerText = "키즈";
@@ -103,73 +222,80 @@ const composeProfileMenu = async (): Promise<HTMLElement> => {
   profileMenu.appendChild(profileA);
 
   const profileDropdown = await composeProfileDropdown();
-  profileMenu.appendChild(profileDropdown);
-
   const notificationDropdown = await composeNotificationDropdown();
-  profileMenu.appendChild(notificationDropdown);
+  profileMenu.append(profileDropdown, notificationDropdown);
 
   let profileDropdownTimeoutCnt;
   let notificationTimeoutDropdownCnt;
 
   profileA.addEventListener("mouseover", () => {
     if (profileDropdownTimeoutCnt) clearTimeout(profileDropdownTimeoutCnt);
-    notificationDropdown.style.visibility = "hidden";
-    notificationDropdown.style.opacity = 0;
-    profileDropdown.style.visibility = "";
-    profileDropdown.style.opacity = 100;
+    Object.assign(notificationDropdown.style, {
+      visibility: "hidden",
+      opacity: 0,
+    });
+    Object.assign(profileDropdown.style, {
+      visibility: "",
+      opacity: 100,
+    });
   });
   profileA.addEventListener("mouseout", () => {
     if (profileDropdownTimeoutCnt) clearTimeout(profileDropdownTimeoutCnt);
     profileDropdownTimeoutCnt = setTimeout(() => {
-      profileDropdown.style.visibility = "hidden";
-      profileDropdown.style.opacity = 0;
+      Object.assign(profileDropdown.style, {
+        visibility: "hidden",
+        opacity: 0,
+      });
     }, 300);
   });
   profileDropdown.addEventListener("mouseover", () => {
     if (profileDropdownTimeoutCnt) clearTimeout(profileDropdownTimeoutCnt);
-    notificationDropdown.style.visibility = "hidden";
-    notificationDropdown.style.opacity = 0;
-    profileDropdown.style.visibility = "";
-    profileDropdown.style.opacity = 100;
+    Object.assign(notificationDropdown.style, {
+      visibility: "hidden",
+      opacity: 0,
+    });
+    Object.assign(profileDropdown.style, { visibility: "", opacity: 100 });
   });
   profileDropdown.addEventListener("mouseout", () => {
     if (profileDropdownTimeoutCnt) clearTimeout(profileDropdownTimeoutCnt);
     profileDropdownTimeoutCnt = setTimeout(() => {
-      profileDropdown.style.visibility = "hidden";
-      profileDropdown.style.opacity = 0;
+      Object.assign(profileDropdown.style, {
+        visibility: "hidden",
+        opacity: 0,
+      });
     }, 300);
   });
 
   notificationA.addEventListener("mouseover", () => {
     if (notificationTimeoutDropdownCnt)
       clearTimeout(notificationTimeoutDropdownCnt);
-    profileDropdown.style.visibility = "hidden";
-    profileDropdown.style.opacity = 0;
-    notificationDropdown.style.visibility = "";
-    notificationDropdown.style.opacity = 100;
+    Object.assign(profileDropdown.style, { visibility: "hidden", opacity: 0 });
+    Object.assign(notificationDropdown.style, { visibility: "", opacity: 100 });
   });
   notificationA.addEventListener("mouseout", () => {
     if (notificationTimeoutDropdownCnt)
       clearTimeout(notificationTimeoutDropdownCnt);
     notificationTimeoutDropdownCnt = setTimeout(() => {
-      notificationDropdown.style.visibility = "hidden";
-      notificationDropdown.style.opacity = 0;
+      Object.assign(notificationDropdown.style, {
+        visibility: "hidden",
+        opacity: 0,
+      });
     }, 300);
   });
   notificationDropdown.addEventListener("mouseover", () => {
     if (notificationTimeoutDropdownCnt)
       clearTimeout(notificationTimeoutDropdownCnt);
-    profileDropdown.style.visibility = "hidden";
-    profileDropdown.style.opacity = 0;
-    notificationDropdown.style.visibility = "";
-    notificationDropdown.style.opacity = 100;
+    Object.assign(profileDropdown.style, { visibility: "hidden", opacity: 0 });
+    Object.assign(notificationDropdown.style, { visibility: "", opacity: 100 });
   });
   notificationDropdown.addEventListener("mouseout", () => {
     if (notificationTimeoutDropdownCnt)
       clearTimeout(notificationTimeoutDropdownCnt);
     notificationTimeoutDropdownCnt = setTimeout(() => {
-      notificationDropdown.style.visibility = "hidden";
-      notificationDropdown.style.opacity = 0;
+      Object.assign(notificationDropdown.style, {
+        visibility: "hidden",
+        opacity: 0,
+      });
     }, 300);
   });
 
@@ -221,8 +347,7 @@ const composeNotificationDropdown = async (): Promise<HTMLElement> => {
     description.innerText = detail;
     const dateP = createStyledElement("p", ["text-gray-200"]);
     dateP.innerText = date;
-    descriptionCol.appendChild(description);
-    descriptionCol.appendChild(dateP);
+    descriptionCol.append(description, dateP);
     const imgSlot = createStyledElement("div", [
       "grid place-items-center h-[95px] w-[144px]",
     ]);
@@ -230,8 +355,7 @@ const composeNotificationDropdown = async (): Promise<HTMLElement> => {
     coverImg.src = src;
     coverImg.alt = `${detail}의 커버 이미지`;
     imgSlot.appendChild(coverImg);
-    a.appendChild(imgSlot);
-    a.appendChild(descriptionCol);
+    a.append(imgSlot, descriptionCol);
     li.appendChild(a);
     return li;
   };

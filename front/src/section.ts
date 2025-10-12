@@ -135,11 +135,13 @@ export const composeCarousel = (
       });
 
       imgElem.src = src;
-      hoverDiv.style.width = `${width * 1.2}px`;
-      hoverDiv.style.height = `${height * 1.2}px`;
-      hoverDiv.style.left = `${left - width * 0.1}px`;
-      hoverDiv.style.top = `${top - height * 0.1}px`;
-      hoverDiv.style.visibility = "visible";
+      Object.assign(hoverDiv.style, {
+        width: `${width * 1.2}px`,
+        height: `${height * 1.2}px`,
+        left: `${left - width * 0.1}px`,
+        top: `${top - height * 0.1}px`,
+        visibility: "visible",
+      });
     });
     li.style.width = imgWidth + "px";
     const img = createStyledElement("img", ["w-full"]);
@@ -148,9 +150,11 @@ export const composeCarousel = (
     li.appendChild(img);
     carousel.appendChild(li);
   });
-  carousel.style.width = imgWidth * data.length * 2 + "px";
   const initialOffset = imgWidth * data.length - 60;
-  carousel.style.transform = `translate(-${initialOffset}px,0px)`;
+  Object.assign(carousel.style, {
+    width: imgWidth * data.length * 2 + "px",
+    transform: `translate(-${initialOffset}px,0px)`,
+  });
 
   const prevBtn = createStyledElement("button", [
     "h-[calc(100%-20px)] w-[60px] absolute left-0 bg-gray-700/70 text-white text-3xl top-[20px] z-50",
