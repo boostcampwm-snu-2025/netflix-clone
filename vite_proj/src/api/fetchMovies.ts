@@ -36,3 +36,30 @@ export async function fetch_movies_for_row(
     return [];
   }
 }
+
+
+export async function get_search_results(query: string, num_img: number = 20): Promise<Movie[]> {
+  try {
+    console.log(`🔎 Searching for: ${query}`);
+    const res = await fetch(`http://localhost:3000/api/search_test?query=${encodeURIComponent(query)}&num_img=${num_img}`);
+
+    if (!res.ok) throw new Error("http error " + res.status);
+
+    const data = await res.json();
+    const movies: Movie[] = data.results || [];
+
+    // normalize image URLs so they work from vite (5173)
+    movies.forEach(movie => {
+      if (!movie.image.startsWith("http")) {
+        movie.image = `http://localhost:3000${movie.image}`;
+      }
+    });
+
+    console.log(`✅ Found ${movies.length} results`);
+    return movies;
+
+  } catch (err: any) {
+    console.error("❌ search error:", err.message);
+    return [];
+  }
+}

@@ -68,6 +68,25 @@ app.get("/api/data", async (req, res) => {
   }
 });
 
+
+app.get("/api/search_test", async (req, res) => {
+  const folder_path = path.join(__dirname, "movie_img");
+  const extension = req.query.extension || "webp";
+  const num_img = parseInt(req.query.num_img) || 6;
+  const search_query = req.query.query || ""; // accepted but not used
+
+  try {
+    const movies = await get_random_img_list(folder_path, extension, num_img);
+    res.json({
+      query: search_query,
+      results: movies,
+    });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "unable_to_read_movie_folder" });
+  }
+});
+
 app.listen(PORT, () => {
   console.log(`✅ server_running_at http://localhost:${PORT}`);
 });

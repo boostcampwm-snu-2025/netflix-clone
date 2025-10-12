@@ -190,6 +190,11 @@ header .navbar-notification {
 
 main {
   position: relative;
+
+}
+
+.homepage-content {
+  position: relative;
   top: -240px;
 }
 
@@ -614,4 +619,49 @@ img {
   border: none;
   color: white;
   cursor: pointer;
+}
+
+/*****************/
+
+.hidden {
+  display: none;
+}
+
+/* Search results section */
+.search-results {
+  margin: 2rem 4%;
+  color: white;
+  animation: fadeIn 0.3s ease;
+}
+
+/* 5 items per row like Netflix */
+.search-results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+/* Card style */
+.movie-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.movie-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+}
+
+.movie-card:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
