@@ -1,6 +1,7 @@
 import HeaderModal from './modal.js';
 import Slider from './slider.js';
 import Like from './like.js';
+import Search from './search.js';
 
 class NetflixApp {
   constructor() {
@@ -16,6 +17,11 @@ class NetflixApp {
     this.initModals();
     this.initSliders();
     this.initLikes();
+    this.initSearch();
+  }
+
+  initSearch() {
+    new Search();
   }
 
   async loadMovieData() {

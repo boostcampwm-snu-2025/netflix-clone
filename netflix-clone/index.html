@@ -11,6 +11,7 @@
         <link rel="stylesheet" href="./src/css/slider.css">
         <link rel="stylesheet" href="./src/css/modal.css">
         <link rel="stylesheet" href="./src/css/like.css">
+        <link rel="stylesheet" href="./src/css/search-results.css">
     </head>
 
     <body>
@@ -31,12 +32,53 @@
                     </nav>
                 </div>
                 <div class="right-menu">
-                    <img src="./images/search.png" alt="search-icon" height="20px">
+                    <div class="search-container">
+                        <img src="./images/search.png" alt="search-icon" height="20px" class="search-icon">
+                        <div class="search-box">
+                            <img src="./images/search.png" alt="search-icon" height="20px" class="search-box-icon">
+                            <input type="text" placeholder="시리즈, 영화, 게임을 검색해 보세요..." class="search-input">
+                            <button class="search-close">×</button>
+                        </div>
+                        <!-- 최근 검색어 레이어 -->
+                        <div class="recent-searches-layer">
+                            <div class="recent-searches-header">
+                                <h3>최근 검색어</h3>
+                            </div>
+                            <ul class="recent-searches-list">
+                                <!-- 최근 검색어가 동적으로 추가됩니다 -->
+                            </ul>
+                            <div class="recent-searches-empty">
+                                최근 검색 내역이 없습니다
+                            </div>
+                        </div>
+                    </div>
                     <img src="./images/bell.png" alt="bell-icon" height="22px" data-modal-trigger="notification">
                     <img src="./images/user.png" alt="user-icon" height="20px" data-modal-trigger="profile">
                 </div>
             </div>
         </header>
+
+        <!-- 검색 결과 섹션 -->
+        <section class="search-results-section hidden">
+            <div class="search-results-container">
+                <div class="search-results-header">
+                    <h2 class="search-results-title"></h2>
+                </div>
+                <div class="search-results-loading">
+                    <div class="loading-spinner"></div>
+                    <p>검색 중...</p>
+                </div>
+                <div class="search-results-empty">
+                    <p>검색 결과가 없습니다</p>
+                </div>
+                <div class="search-results-error">
+                    <p>검색 중 오류가 발생했습니다</p>
+                </div>
+                <div class="search-results-grid">
+                    <!-- 검색 결과 카드가 동적으로 추가됩니다 -->
+                </div>
+            </div>
+        </section>
 
         <main>
             <section class="hero">
