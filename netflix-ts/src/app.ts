@@ -5,9 +5,18 @@ import { initFavorites }   from './favorites';
 import { renderSectionById } from './sections';
 import { renderHero } from './hero';
 
+import { initSearch } from './search/search';
+import "./styles/search.css";
+
+import { initSearchPage } from "./search/searchPage";
+import "./styles/search-page.css";
+
 async function bootstrap() {
   initFavorites();
   initHeaderMenus();
+
+  initSearchPage();
+  initSearch({ mount: "#search-root", dropdown: false });
 
   await renderHero();
 
