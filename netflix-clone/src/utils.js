@@ -19,3 +19,13 @@ export function create_component_with_img(tag, class_name, parent, img_src) {
     img.src = img_src;
     return component
 }
+
+export function debounce(callback, delay) {
+    let timer;
+    return function(...args) {
+        clearTimeout(timer);
+        timer = setTimeout(() => {
+            callback(...args)        
+        }, delay)    
+    }
+}

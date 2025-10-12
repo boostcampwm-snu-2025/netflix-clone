@@ -409,7 +409,6 @@
     transform: translateY(-50%);
     
     visibility: hidden;
-    overflow: hidden;
     transition: width 0.5s ease;
 }
 
@@ -433,26 +432,29 @@
     box-sizing: border-box;
 }
 
-.search-icon, .cancel-button {
+.submit-button, .cancel-button {
     width: var(--width-secondary-navigation-search);
     height: var(--height-secondary-navigation-search);
+
+    padding: 0;
+    margin: 0;
+
+    flex-shrink: 0;
+    background-color: transparent;
+    border: none;
 }
 
-.search-icon img, .cancel-button img {
+.submit-button img, .cancel-button img {
     width: 100%;
     height: 100%;
 }
 
-.search-icon {
+.submit-button {
     left: 0%;
 }
 
 .cancel-button {
-    flex-shrink: 0;
-    right: 0%;
-
-    background-color: transparent;
-    border: none;
+    right: 0%;    
 }
 
 .user-input {
@@ -497,4 +499,68 @@
     transform: 'transform 0.5s ease';
 }
 
+.recent-search-history-modal {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    top: 100%;
+    right: 0;
+    width: 160px;
+    height: auto;
+    padding: 4px;
 
+    background-color: var(--color-background);
+    box-sizing: content-box;
+    border-radius: 1em;
+    box-shadow: var(--box-shadow-inner-modal);
+
+    opacity: 0;
+    visibility: hidden;
+}
+
+.recent-search-history-modal.active{
+    opacity: 1;
+    visibility: visible;
+}
+
+.search-history-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    
+    width: 150px;
+    height: 50px;
+    border-radius: 1em;
+    padding: 10px;
+    box-sizing: border-box;
+    
+    cursor: pointer;
+    color: var(--color-font);
+}
+
+.search-history-container:hover {
+    background-color: rgba(110, 110, 110, 0.3);
+}
+
+.search-history-text {
+    flex-grow: 1;
+    font-size: var(--font-size-navigation);
+}
+
+.remove-button {
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.remove-button img {
+    width: 100%;
+    height: 100%;
+}
