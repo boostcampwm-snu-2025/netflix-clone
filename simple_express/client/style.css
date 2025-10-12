@@ -46,6 +46,7 @@ body {
 }
 
 .search {
+    position: relative;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -99,8 +100,63 @@ body {
     border: 0;
 }
 
+/* Recent searches styles */
+.recent {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    width: 100%;
+    background: rgba(17, 24, 39, .98);
+    border: 1px solid rgba(255, 255, 255, .12);
+    border-radius: 12px;
+    overflow: hidden;
+    z-index: 20;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, .45);
+}
+
+.recent[hidden] {
+    display: none !important;
+}
+
+.recent-head {
+    padding: 10px 12px;
+    font-size: 12px;
+    color: #94a3b8;
+    border-bottom: 1px solid rgba(255, 255, 255, .08);
+}
+
+.recent-list {
+    list-style: none;
+    margin: 0;
+    padding: 6px;
+    max-height: 240px;
+    overflow: auto;
+}
+
+.recent-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.recent-item:hover {
+    background: rgba(255, 255, 255, .06);
+}
+
+.recent-text {
+    color: #e2e8f0;
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 
 
+
+/* Search Results style */
 .poster-grid {
     /* [핵심] CSS Grid를 사용하여 4열 배치 */
     display: grid;

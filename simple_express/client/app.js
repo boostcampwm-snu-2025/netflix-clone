@@ -1,13 +1,14 @@
-const searchInput = document.getElementById("q");
-const searchForm = document.getElementById("searchForm");
-const resultsContainer = document.getElementById("results");
+
 
 // 서버의 기본 URL (현재 localhost:3001에서 실행 중)
 const API_BASE_URL = "http://localhost:3001/api/search";
 
 
-
-// 서버에 검색 요청을 보내고 결과를 가져오는 비동기 함수
+///////////// Search Related Functions /////////////
+const searchInput = document.getElementById("q");
+const searchForm = document.getElementById("searchForm");
+const resultsContainer = document.getElementById("results");
+// Search Request to server, and retrieve (asynchronous)
 async function fetchSearchResults(query) {
     // 쿼리 파라미터를 인코딩하여 안전하게 URL에 추가합니다.
     const url = `${API_BASE_URL}?q=${encodeURIComponent(query)}`;
@@ -33,8 +34,7 @@ async function fetchSearchResults(query) {
         return null;
     }
 }
-
-// 검색 결과를 화면에 렌더링하는 함수
+// Render Search Results
 function renderResults(data) {
     // 결과 없음 처리
     if (!data || data.total === 0) {
@@ -60,16 +60,8 @@ function renderResults(data) {
     // 결과를 컨테이너에 삽입 (총 개수 + 이미지들)
     resultsContainer.innerHTML = totalCountHtml + gridHtml;
 }
-
-
-/**
- * 검색 버튼 클릭 이벤트 핸들러
- */
+// Search Event Handler
 async function handleSearch(event) {
-    if (event && event.preventDefault) {
-        event.preventDefault(); // 폼 제출 기본 동작 방지 (새로고침 방지)
-    }
-
     const query = searchInput.value.trim(); // 입력된 값 가져오기
 
     if (query.length === 0) {
@@ -87,15 +79,95 @@ async function handleSearch(event) {
 }
 
 
-// 이벤트 리스너 등록
-searchForm.addEventListener("submit", handleSearch);
 
-// (선택 사항) 엔터 키를 눌러도 검색이 되도록 추가
-// searchInput.addEventListener("keypress", (event) => {
-//     if (event.key === 'Enter') {
-//         handleSearch();
-//     }
-// });
+///////////// Recent Key Related Functions /////////////
+const RECENT_KEY = "recent_searches";
+const MAX_RECENT = 5;
+const recentLayer = document.getElementById("recentLayer");
+const searchBar = document.getElementById("q");
 
-// 초기 상태 메시지
-resultsContainer.innerHTML = `<p>검색을 시작하세요.</p>`;
+function loadRecent() {
+    return JSON.parse(localStorage.getItem(RECENT_KEY)) || [];
+}
+
+function saveRecent(arr) {
+    localStorage.setItem(RECENT_KEY, JSON.stringify(arr))
+}
+
+function addRecent(q) {
+    const cur = (q || "").trim(); // remove whitespace
+    if (cur.length === 0) return; // if blank, return
+
+    // load and add cur to recent items
+    let arr = loadRecent().filter(x => x !== cur); // remove duplicates
+    arr.unshift(cur); // add to front
+
+    // keep only MAX_RECENT items
+    if (arr.length > MAX_RECENT)
+        arr = arr.slice(0, MAX_RECENT);
+
+    saveRecent(arr);
+    console.log("Saved recent searches:", arr);
+}
+
+function renderRecent() {
+    const ul = document.getElementById("recentList");
+    const recentitems = loadRecent();
+
+    // if no items
+    if (!recentitems.length) {
+        recentLayer.hidden = true;
+        return;
+    }
+
+    ul.innerHTML = recentitems.map(v => `
+        <li class="recent-item" data-q="${encodeURIComponent(v)}">
+          <span class="recent-text">${v.replace(/</g, "&lt;").replace(/>/g, "&gt;")}</span>
+        </li>
+    `).join("");
+    recentLayer.hidden = false;
+}
+
+function hideRecent() {
+    recentLayer.hidden = true;
+}
+
+
+///////////// Register Event Listeners /////////////
+// Search Event Listner
+searchForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    addRecent(searchInput.value);
+    hideRecent();
+    await handleSearch();
+});
+
+
+// Recent Item Event Listner
+// click on searchbar, render recents
+searchBar.addEventListener("click", renderRecent);
+// click elsewhere, hide recents
+document.addEventListener("click", (event) => {
+    // if event is not a child of searchbar or recentLayer, hide
+    if (!searchBar.contains(event.target) && !recentLayer.contains(event.target)) {
+        hideRecent();
+    }
+});
+// escape key, hide recents
+searchBar.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+        hideRecent();
+    }
+});
+
+// click on specific item
+document.getElementById("recentList").addEventListener("click", (e) => {
+    const li = e.target.closest(".recent-item");
+    if (!li) return;
+
+    const q = decodeURIComponent(li.dataset.q || "");
+
+    // update search input
+    searchInput.value = q;
+    hideRecent();
+});
