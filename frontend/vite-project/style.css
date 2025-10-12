@@ -460,3 +460,240 @@ footer {
   flex-shrink: 0;
   width: 240px;
 }
+
+/* ====== 검색 기능 스타일 ====== */
+
+/* 검색 컨테이너 */
+.search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-right: var(--spacing-sm);
+}
+
+/* 검색 버튼 */
+.search-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  transition: opacity 0.2s;
+  z-index: 10;
+}
+
+.search-button:hover {
+  opacity: 0.7;
+}
+
+.search-icon {
+  width: 24px;
+  height: 24px;
+}
+
+/* 검색 입력창 */
+.search-input {
+  position: absolute;
+  right: 0;
+  width: 0;
+  height: 36px;
+  padding: 0;
+  border: 1px solid transparent;
+  background-color: rgba(0, 0, 0, 0.75);
+  color: var(--color-white);
+  font-size: 14px;
+  outline: none;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+  z-index: 5;
+}
+
+.search-container.expanded .search-input {
+  width: 300px;
+  padding: 8px 40px 8px 12px;
+  border-color: var(--color-white);
+  opacity: 1;
+}
+
+.search-input::placeholder {
+  color: var(--color-gray-dark);
+}
+
+/* 검색 닫기 버튼 */
+.search-close-btn {
+  position: absolute;
+  right: 8px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  z-index: 10;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.search-container.expanded .search-close-btn {
+  display: flex;
+}
+
+.search-close-btn:hover {
+  opacity: 1;
+}
+
+.search-close-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* 최근 검색어 레이어 */
+.recent-searches {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  width: 300px;
+  background-color: rgba(0, 0, 0, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--border-radius-sm);
+  padding: var(--spacing-sm);
+  display: none;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.recent-searches-title {
+  font-size: 12px;
+  color: var(--color-gray-dark);
+  margin-bottom: var(--spacing-xs);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.recent-searches-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.recent-search-item {
+  padding: 10px 12px;
+  cursor: pointer;
+  border-radius: var(--border-radius-sm);
+  transition: background-color 0.2s;
+  color: var(--color-white);
+  font-size: 14px;
+}
+
+.recent-search-item:hover,
+.recent-search-item.selected {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* 검색 결과 레이어 */
+.search-results {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  width: 400px;
+  max-height: 500px;
+  background-color: rgba(0, 0, 0, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--border-radius-sm);
+  display: none;
+  overflow-y: auto;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.search-results::-webkit-scrollbar {
+  width: 8px;
+}
+
+.search-results::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.search-results::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+}
+
+.search-results::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* 검색 상태 메시지 */
+.search-loading,
+.search-no-results,
+.search-error {
+  padding: var(--spacing-md);
+  text-align: center;
+  color: var(--color-white);
+  font-size: 14px;
+}
+
+.search-loading {
+  color: var(--color-gray-dark);
+}
+
+.search-error {
+  color: var(--color-red);
+}
+
+/* 검색 결과 리스트 */
+.search-results-list {
+  padding: var(--spacing-xs);
+}
+
+.search-result-item {
+  display: flex;
+  align-items: center;
+  padding: var(--spacing-xs);
+  cursor: pointer;
+  border-radius: var(--border-radius-sm);
+  transition: background-color 0.2s;
+  margin-bottom: var(--spacing-xs);
+}
+
+.search-result-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.result-thumbnail {
+  width: 80px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: var(--border-radius-sm);
+  margin-right: var(--spacing-sm);
+}
+
+.result-info {
+  flex: 1;
+}
+
+.result-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-white);
+  margin-bottom: 4px;
+}
+
+.result-type {
+  font-size: 12px;
+  color: var(--color-gray-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .search-container.expanded .search-input {
+    width: 250px;
+  }
+  
+  .search-results,
+  .recent-searches {
+    width: 280px;
+  }
+  
+  .search-results {
+    max-height: 400px;
+  }
+}

@@ -30,27 +30,44 @@
         </nav>
       </div>
       <div class="header-right">
-        <button class="search-button" disabled>
-          <svg
-            viewBox="0 0 24 24"
-            width="24"
-            height="24"
-            data-icon="MagnifyingGlassMedium"
-            data-icon-id=":r0:"
-            aria-hidden="true"
-            class="search-icon"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            role="img"
-          >
-            <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
-              d="M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10ZM15.6177 17.0319C14.078 18.2635 12.125 19 10 19C5.02944 19 1 14.9706 1 10C1 5.02944 5.02944 1 10 1C14.9706 1 19 5.02944 19 10C19 12.125 18.2635 14.078 17.0319 15.6177L22.7071 21.2929L21.2929 22.7071L15.6177 17.0319Z"
-              fill="currentColor"
-            ></path>
-          </svg>
-        </button>
+        <!-- 검색 기능 -->
+        <div class="search-container">
+          <button class="search-button">
+            <svg
+              viewBox="0 0 24 24"
+              width="24"
+              height="24"
+              data-icon="MagnifyingGlassMedium"
+              aria-hidden="true"
+              class="search-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              role="img"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10ZM15.6177 17.0319C14.078 18.2635 12.125 19 10 19C5.02944 19 1 14.9706 1 10C1 5.02944 5.02944 1 10 1C14.9706 1 19 5.02944 19 10C19 12.125 18.2635 14.078 17.0319 15.6177L22.7071 21.2929L21.2929 22.7071L15.6177 17.0319Z"
+                fill="currentColor"
+              ></path>
+            </svg>
+          </button>
+          <input 
+            type="text" 
+            class="search-input" 
+            placeholder="제목, 배우, 장르"
+            autocomplete="off"
+          />
+          <button class="search-close-btn">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+              <path d="M18.3 5.71a.996.996 0 00-1.41 0L12 10.59 7.11 5.7A.996.996 0 105.7 7.11L10.59 12 5.7 16.89a.996.996 0 101.41 1.41L12 13.41l4.89 4.89a.996.996 0 101.41-1.41L13.41 12l4.89-4.89c.38-.38.38-1.02 0-1.4z"></path>
+            </svg>
+          </button>
+          <!-- 최근 검색어 -->
+          <div class="recent-searches"></div>
+          <!-- 검색 결과 -->
+          <div class="search-results"></div>
+        </div>
         <button class="kids-button" disabled>KIDS</button>
         <button class="notification-button">
           <svg
