@@ -157,6 +157,35 @@ nav ul {
 .dropdown-item .desc  { color: var(--muted); font-size: 14px; margin: 0; }
 
 
+.search-history-panel {
+    /* ⭐ 위치 조정: header의 오른쪽 끝에 위치하고, header 아래로 내려오도록 합니다. ⭐ */
+    top: var(--header-h);   
+    right: var(--spacing-32); /* 헤더의 오른쪽 패딩에 맞춥니다. */
+    width: 320px; /* 검색창 너비와 유사하게 설정 */
+    z-index: 1050; /* 알림/프로필 드롭다운보다 높게 */
+    
+    /* 기본 .dropdown-panel의 transition과 opacity: 0; visibility: hidden; 스타일을 사용합니다. */
+}
+
+/* ⭐ 검색 기록 항목 스타일 (선택 사항) ⭐ */
+.history-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 12px;
+}
+.history-item:hover {
+    background-color: var(--overlay);
+}
+
+.history-remove-btn {
+    background: transparent;
+    border: none;
+    color: var(--muted);
+    cursor: pointer;
+    font-size: 1.2em;
+}
+
 
 /* 아이콘 버튼(시각적 리셋) */
 .icon-btn {
