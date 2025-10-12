@@ -1,23 +1,18 @@
-import type { Category } from "./types";
+import type { Category, Title } from "./types";
 
 export function makeCategory(
-    name: string,
-    title: string,
-    visible: number,
-    count: number
+        genre: string,
+        visible: number,
+        titles: Title[]
     ): Category {
-        const items = Array.from({ length: count }, (_, i) => {
-            const idx = i + 1;
-            return {
-            id: `${name}${idx}`,
-            title: `작품 ${name}${idx}`,
-            img: idx % 2 === 1 ? "images/sample.png" : "images/sample2.png",
-            alt: `작품 ${name}${idx} 포스터`
-            };
-        });
+        const items = titles.map(t => ({
+            id: t.id.toString(),
+            title: t.title,
+            img: t.image,
+            alt: `${t.title} 포스터`,
+        }));
 
-        items[0].img = "images/first.png";
-        return { title, visible, items };
+        return { genre, visible, items };
     }
 
 export function renderCategoryRow(key: string, category: Category): HTMLElement {
@@ -28,7 +23,7 @@ export function renderCategoryRow(key: string, category: Category): HTMLElement 
 
     section.innerHTML = `
         <div class="row__header">
-        <h2>${category.title}</h2>
+        <h2>${category.genre}</h2>
         <div class="page-indicator"></div>
         </div>
         <div class="carousel">
