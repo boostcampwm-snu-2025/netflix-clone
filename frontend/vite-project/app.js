@@ -1,5 +1,6 @@
 import { createSimpleModal } from "./modules/modal.js";
 import { initSliders } from "./modules/slider.js";
+import { initSearchFeature } from "./modules/search.js";
 
 function initHeaderModals() {
   console.log("Initializing header modals...");
@@ -310,6 +311,9 @@ function addCardHoverHandlers(container) {
 document.addEventListener("DOMContentLoaded", async () => {
   // Initialize header modals first
   initHeaderModals();
+  
+  // Initialize search feature
+  initSearchFeature();
 
   const imagesLoaded = await loadAndDisplayImages();
   
