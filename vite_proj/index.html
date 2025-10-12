@@ -26,10 +26,31 @@
       </ul>
       <div class="navbar-secondary">
         <div class="navbar-secondary-element">
-          <button class="navbar-search">🔍</button>
+          <button class="navbar-search">
+            <svg viewBox="0 0 24 24" width="24" height="24" data-icon="MagnifyingGlassMedium" data-icon-id=":r0:"
+              aria-hidden="true" class="search-icon" xmlns="http://www.w3.org/2000/svg" fill="none" role="img">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10ZM15.6177 17.0319C14.078 18.2635 12.125 19 10 19C5.02944 19 1 14.9706 1 10C1 5.02944 5.02944 1 10 1C14.9706 1 19 5.02944 19 10C19 12.125 18.2635 14.078 17.0319 15.6177L22.7071 21.2929L21.2929 22.7071L15.6177 17.0319Z"
+                fill="currentColor"></path>
+
+            </svg>
+          </button>
         </div>
+
         <div class="navbar-secondary-element"><a href="">키즈</a></div>
-        <div class="navbar-secondary-element"><button class="navbar-notification">🔔</button></div>
+        <div class="navbar-secondary-element">
+          <span>
+            <button class="navbar-notification">
+              <svg viewBox="0 0 24 24" width="24" height="24" data-icon="BellMedium" data-icon-id=":r1:"
+                aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" role="img">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M13.0002 4.07092C16.3924 4.55624 19 7.4736 19 11V15.2538C20.0489 15.3307 21.0851 15.4245 22.1072 15.5347L21.8928 17.5232C18.7222 17.1813 15.4092 17 12 17C8.59081 17 5.27788 17.1813 2.10723 17.5232L1.89282 15.5347C2.91498 15.4245 3.95119 15.3307 5.00003 15.2538V11C5.00003 7.47345 7.60784 4.55599 11.0002 4.07086V2H13.0002V4.07092ZM17 15.1287V11C17 8.23858 14.7614 6 12 6C9.2386 6 7.00003 8.23858 7.00003 11V15.1287C8.64066 15.0437 10.3091 15 12 15C13.691 15 15.3594 15.0437 17 15.1287ZM8.62593 19.3712C8.66235 20.5173 10.1512 22 11.9996 22C13.848 22 15.3368 20.5173 15.3732 19.3712C15.3803 19.1489 15.1758 19 14.9533 19H9.0458C8.82333 19 8.61886 19.1489 8.62593 19.3712Z"
+                  fill="currentColor"></path>
+              </svg>
+            </button>
+          </span>
+        </div>
+
         <div class="navbar-secondary-element">
           <div class="account-dropdown">
             <a href=""><img class="profile-icon" src="./resource/profile01.png" alt=""></a>
@@ -94,88 +115,95 @@
   </header>
 
   <main>
-
-    <!-- Row 1 -->
-    <div class="lolomoRow">
-      <h2 class="rowHeader"><span class="rowTitle">
-          <div class="row-header-title">미국 영화</div>
-        </span></h2>
-      <div class="rowContainer">
-        <div class="sliderWrapper">
-          <button class="slider-btn prev hidden">&#10094;</button>
-          <div class="sliderMask">
-            <div class="sliderContent"></div>
+    <div class="homepage-content">
+      <!-- Row 1 -->
+      <div class="lolomoRow">
+        <h2 class="rowHeader"><span class="rowTitle">
+            <div class="row-header-title">미국 영화</div>
+          </span></h2>
+        <div class="rowContainer">
+          <div class="sliderWrapper">
+            <button class="slider-btn prev hidden">&#10094;</button>
+            <div class="sliderMask">
+              <div class="sliderContent"></div>
+            </div>
+            <button class="slider-btn next">&#10095;</button>
           </div>
-          <button class="slider-btn next">&#10095;</button>
+        </div>
+      </div>
+
+      <!-- Row 2 -->
+      <div class="lolomoRow">
+        <h2 class="rowHeader"><span class="rowTitle">
+            <div class="row-header-title">미국 영화</div>
+          </span></h2>
+        <div class="rowContainer">
+          <div class="sliderWrapper">
+            <button class="slider-btn prev hidden">&#10094;</button>
+            <div class="sliderMask">
+              <div class="sliderContent"></div>
+            </div>
+            <button class="slider-btn next">&#10095;</button>
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- Row 2 -->
-    <div class="lolomoRow">
-      <h2 class="rowHeader"><span class="rowTitle">
-          <div class="row-header-title">미국 영화</div>
-        </span></h2>
-      <div class="rowContainer">
-        <div class="sliderWrapper">
-          <button class="slider-btn prev hidden">&#10094;</button>
-          <div class="sliderMask">
-            <div class="sliderContent"></div>
-          </div>
-          <button class="slider-btn next">&#10095;</button>
-        </div>
-      </div>
+    <div class="search-results">
+      
     </div>
 
-    <footer>
-      <ul class="footer-links">
-        <li class="member-footer-link-wrapper"><a class="member-footer-link" href="/browse/audio-description"
-            target="_self"><span class="member-footer-link-content">화면 해설</span></a></li>
-        <li class="member-footer-link-wrapper"><a class="member-footer-link" href="https://help.netflix.com/"
-            target="_self"><span class="member-footer-link-content">고객 센터</span></a></li>
-        <li class="member-footer-link-wrapper"><a class="member-footer-link" href="/redeem" target="_self"><span
-              class="member-footer-link-content">기프트카드</span></a></li>
-        <li class="member-footer-link-wrapper"><a class="member-footer-link" href="https://media.netflix.com/"
-            target="_self"><span class="member-footer-link-content">미디어 센터</span></a></li>
-        <li class="member-footer-link-wrapper"><a class="member-footer-link" href="http://ir.netflix.com/"
-            target="_self"><span class="member-footer-link-content">투자 정보(IR)</span></a></li>
-        <li class="member-footer-link-wrapper"><a class="member-footer-link" href="https://jobs.netflix.com/"
-            target="_self"><span class="member-footer-link-content">입사 정보</span></a></li>
-        <li class="member-footer-link-wrapper"><a class="member-footer-link"
-            href="https://help.netflix.com/legal/termsofuse" target="_self"><span class="member-footer-link-content">이용
-              약관</span></a></li>
-        <li class="member-footer-link-wrapper"><a class="member-footer-link"
-            href="https://help.netflix.com/legal/privacy" target="_self"><span
-              class="member-footer-link-content">개인정보</span></a></li>
-        <li class="member-footer-link-wrapper"><a class="member-footer-link"
-            href="https://help.netflix.com/legal/notices" target="_self"><span class="member-footer-link-content">법적
-              고지</span></a></li>
-        <li class="member-footer-link-wrapper"><a class="member-footer-link" href="/Cookies" target="_self"><span
-              class="member-footer-link-content">쿠키 설정</span></a></li>
-        <li class="member-footer-link-wrapper"><a class="member-footer-link"
-            href="https://help.netflix.com/legal/corpinfo" target="_self"><span class="member-footer-link-content">회사
-              정보</span></a></li>
-        <li class="member-footer-link-wrapper"><a class="member-footer-link" href="https://help.netflix.com/contactus"
-            target="_self"><span class="member-footer-link-content">문의하기</span></a></li>
-      </ul>
 
-      <div class="footer-copyright">
-        <div class="copy-text">
-          <div class="copy-text-block">넷플릭스서비시스코리아 유한회사 통신판매업신고번호: 제2018-서울종로-0426호 전화번호: 00-308-321-0161 (수신자 부담)</div>
-          <div class="copy-text-block">대표: 레지널드 숀 톰프슨</div>
-          <div class="copy-text-block">이메일 주소: korea@netflix.com</div>
-          <div class="copy-text-block">주소: 대한민국 서울특별시 종로구 우정국로 26, 센트로폴리스 A동 20층 우편번호 03161</div>
-          <div class="copy-text-block">사업자등록번호: 165-87-00119</div>
-          <div class="copy-text-block">클라우드 호스팅: Amazon Web Services Inc.</div>
-          <div id="" class="copy-text-block" data-uia=""><a
-              href="http://www.ftc.go.kr/bizCommPop.do?wrkr_no=1658700119">공정거래위원회 웹사이트</a></div>
-        </div>
+  </main>
 
+  <footer>
+    <ul class="footer-links">
+      <li class="member-footer-link-wrapper"><a class="member-footer-link" href="/browse/audio-description"
+          target="_self"><span class="member-footer-link-content">화면 해설</span></a></li>
+      <li class="member-footer-link-wrapper"><a class="member-footer-link" href="https://help.netflix.com/"
+          target="_self"><span class="member-footer-link-content">고객 센터</span></a></li>
+      <li class="member-footer-link-wrapper"><a class="member-footer-link" href="/redeem" target="_self"><span
+            class="member-footer-link-content">기프트카드</span></a></li>
+      <li class="member-footer-link-wrapper"><a class="member-footer-link" href="https://media.netflix.com/"
+          target="_self"><span class="member-footer-link-content">미디어 센터</span></a></li>
+      <li class="member-footer-link-wrapper"><a class="member-footer-link" href="http://ir.netflix.com/"
+          target="_self"><span class="member-footer-link-content">투자 정보(IR)</span></a></li>
+      <li class="member-footer-link-wrapper"><a class="member-footer-link" href="https://jobs.netflix.com/"
+          target="_self"><span class="member-footer-link-content">입사 정보</span></a></li>
+      <li class="member-footer-link-wrapper"><a class="member-footer-link"
+          href="https://help.netflix.com/legal/termsofuse" target="_self"><span class="member-footer-link-content">이용
+            약관</span></a></li>
+      <li class="member-footer-link-wrapper"><a class="member-footer-link" href="https://help.netflix.com/legal/privacy"
+          target="_self"><span class="member-footer-link-content">개인정보</span></a></li>
+      <li class="member-footer-link-wrapper"><a class="member-footer-link" href="https://help.netflix.com/legal/notices"
+          target="_self"><span class="member-footer-link-content">법적
+            고지</span></a></li>
+      <li class="member-footer-link-wrapper"><a class="member-footer-link" href="/Cookies" target="_self"><span
+            class="member-footer-link-content">쿠키 설정</span></a></li>
+      <li class="member-footer-link-wrapper"><a class="member-footer-link"
+          href="https://help.netflix.com/legal/corpinfo" target="_self"><span class="member-footer-link-content">회사
+            정보</span></a></li>
+      <li class="member-footer-link-wrapper"><a class="member-footer-link" href="https://help.netflix.com/contactus"
+          target="_self"><span class="member-footer-link-content">문의하기</span></a></li>
+    </ul>
+
+    <div class="footer-copyright">
+      <div class="copy-text">
+        <div class="copy-text-block">넷플릭스서비시스코리아 유한회사 통신판매업신고번호: 제2018-서울종로-0426호 전화번호: 00-308-321-0161 (수신자 부담)</div>
+        <div class="copy-text-block">대표: 레지널드 숀 톰프슨</div>
+        <div class="copy-text-block">이메일 주소: korea@netflix.com</div>
+        <div class="copy-text-block">주소: 대한민국 서울특별시 종로구 우정국로 26, 센트로폴리스 A동 20층 우편번호 03161</div>
+        <div class="copy-text-block">사업자등록번호: 165-87-00119</div>
+        <div class="copy-text-block">클라우드 호스팅: Amazon Web Services Inc.</div>
+        <div id="" class="copy-text-block" data-uia=""><a
+            href="http://www.ftc.go.kr/bizCommPop.do?wrkr_no=1658700119">공정거래위원회 웹사이트</a></div>
       </div>
 
-    </footer>
+    </div>
 
-    <script type="module" src="/src/app.ts"></script>
+  </footer>
+
+  <script type="module" src="/src/main.ts"></script>
 
 </body>
 
