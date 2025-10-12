@@ -1,9 +1,10 @@
 import { headerRender } from './render/headerRender.js';
 import { heroRender } from './render/heroRender.js';
-import { toggleLike } from './animation/likedState.js';
 import { mainRender } from './render/mainRender.js';
 import { footerRender } from './render/footerRender.js';
 import { initializeFiniteCarousel, initializeInfiniteCarousel, initializeCarousel } from './animation/carousel.js';
+import {initializeSearchFeature} from './animation/search.js';
+import { toggleLike } from './animation/likedState.js';
 import { initializeHeaderInteraction } from './animation/modal.js';
 
 
@@ -12,8 +13,9 @@ async function init() {
     await heroRender();
     await mainRender();
     await footerRender();
-    setupLikeButtonListener();
     setupAllCarousels();
+    initializeSearchFeature();
+    setupLikeButtonListener();
     initializeHeaderInteraction();
 }
 
@@ -35,8 +37,8 @@ function setupLikeButtonListener() {
 
 
 function setupAllCarousels() {
-    initializeFiniteCarousel('.carousel-container__for-user', { visible: 6, move: 5 });
-    initializeInfiniteCarousel('.carousel-container__top10', { move: 5 });
+    initializeCarousel('.carousel-container__for-user', { visible: 6, move: 5 });
+    initializeCarousel('.carousel-container__top10', { visible: 6, move: 5 });
     initializeCarousel('.carousel-container__new', { visible: 6, move: 5 });
 }
 

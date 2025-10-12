@@ -33,5 +33,5 @@ a:focus-visible {
     display: flex;
     flex-direction: column;
     gap: 8px;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
 }

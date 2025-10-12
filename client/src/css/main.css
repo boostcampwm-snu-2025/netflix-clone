@@ -1,8 +1,9 @@
 .contents {
     position: relative;
     width: 1400px;
-    margin-left: 40px;
+    padding-left: 40px;
     margin-top: 24px;
+    overflow: hidden;
 }
 
 .contents__title {
