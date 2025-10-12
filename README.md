@@ -101,3 +101,5 @@ sh ./start-all.sh # at root directory
 - [Troubleshooting 과정](./TROUBLESHOOTING_NOTES.md)
 
 - [프로젝트 구조, 코드 등 정리](./CODE_NOTES.md)
+
+- [학습 중간 회고 글- 2025년 10월 7일 작성](./progress_reflection/PROGRESS_REFLECTION.md)
