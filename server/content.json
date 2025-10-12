@@ -1,0 +1,302 @@
+[
+  {
+    "id": 1,
+    "name": "주술회전",
+    "type": "series",
+    "image": "https://occ-0-8124-325.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABTQgWndOxdbek9ptaRf7mPpKmCxyrbKUSz4VvOuaKKXr6N4Tzsgtb2oPeIPkKGgtWD_19bl0MXEC_DNnbAmK-I1zwh6zAQtST1k.webp?r=f11"
+  },
+  {
+    "id": 2,
+    "name": "스파이 패밀리",
+    "type": "series",
+    "image": "https://occ-0-8124-325.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABWthlPiia3tglAvvPGXa6fo1AsDuc5IOrJwdgHahkLjx_5UHpGSsiUc9t0vz3EdQQ_xoUKZFTX1KWUr6eteaWTLcoFVriBhphxrzIaI1EzDGZcjKIj7TnezreB16wkSwl6B6fA3XVpWuEdka4yIdC6Rs2-D2LM8AToNPAizQzw3WX0k.webp?r=54b"
+  },
+  {
+    "id": 3,
+    "name": "Oppenheimer",
+    "type": "movie",
+    "image": "https://dummyimage.com/300x200/000/fff"
+  },
+  {
+    "id": 4,
+    "name": "Shōgun",
+    "type": "series",
+    "image": "https://dummyimage.com/300x200/000/fff"
+  },
+  {
+    "id": 5,
+    "name": "Fallout",
+    "type": "series",
+    "image": "https://dummyimage.com/300x200/000/fff"
+  },
+  {
+    "id": 6,
+    "name": "Barbie",
+    "type": "movie",
+    "image": "https://dummyimage.com/300x200/000/fff"
+  },
+  {
+    "id": 7,
+    "name": "The Last of Us",
+    "type": "series",
+    "image": "https://dummyimage.com/300x200/000/fff"
+  },
+  {
+    "id": 8,
+    "name": "Poor Things",
+    "type": "movie",
+    "image": "https://dummyimage.com/300x200/000/fff"
+  },
+  {
+    "id": 9,
+    "name": "Succession",
+    "type": "series",
+    "image": "https://dummyimage.com/300x200/000/fff"
+  },
+  {
+    "id": 10,
+    "name": "Killers of the Flower Moon",
+    "type": "movie",
+    "image": "https://dummyimage.com/300x200/000/fff"
+  },
+  {
+    "id": 11,
+    "name": "Spider-Man: Across the Spider-Verse",
+    "type": "movie",
+    "image": "https://dummyimage.com/300x200/000/fff"
+  },
+  {
+    "id": 12,
+    "name": "Beef",
+    "type": "series",
+    "image": "https://dummyimage.com/300x200/000/fff"
+  },
+  {
+    "id": 13,
+    "name": "Godzilla Minus One",
+    "type": "movie",
+    "image": "https://dummyimage.com/300x200/000/fff"
+  },
+  {
+    "id": 14,
+    "name": "Severance",
+    "type": "series",
+    "image": "https://dummyimage.com/300x200/000/fff"
+  },
+  {
+    "id": 15,
+    "name": "The Holdovers",
+    "type": "movie",
+    "image": "https://dummyimage.com/300x200/000/fff"
+  },
+  {
+    "id": 16,
+    "name": "House of the Dragon",
+    "type": "series",
+    "image": "https://dummyimage.com/300x200/000/fff"
+  },
+  {
+    "id": 17,
+    "name": "Anatomy of a Fall",
+    "type": "movie",
+    "image": "https://dummyimage.com/300x200/000/fff"
+  },
+  {
+    "id": 18,
+    "name": "Furiosa: A Mad Max Saga",
+    "type": "movie",
+    "image": "https://dummyimage.com/300x200/000/fff"
+  },
+  {
+    "id": 19,
+    "name": "The Lord of the Rings: The Rings of Power",
+    "type": "series",
+    "image": "https://dummyimage.com/300x200/000/fff"
+  },
+  {
+    "id": 20,
+    "name": "Inside Out 2",
+    "type": "movie",
+    "image": "https://dummyimage.com/300x200/000/fff"
+  },
+  {
+    "id": 21,
+    "name": "Kingdom of the Planet of the Apes",
+    "type": "movie",
+    "image": "https://dummyimage.com/300x200/000/fff"
+  },
+  {
+    "id": 22,
+    "name": "Squid Game",
+    "type": "series",
+    "image": "https://dummyimage.com/300x200/000/fff"
+  },
+  {
+    "id": 23,
+    "name": "The Zone of Interest",
+    "type": "movie",
+    "image": "https://dummyimage.com/300x200/000/fff"
+  },
+  {
+    "id": 24,
+    "name": "Wednesday",
+    "type": "series",
+    "image": "https://dummyimage.com/300x200/000/fff"
+  },
+  {
+    "id": 25,
+    "name": "American Fiction",
+    "type": "movie",
+    "image": "https://dummyimage.com/300x200/000/fff"
+  },
+  {
+    "id": 26,
+    "name": "The Mandalorian",
+    "type": "series",
+    "image": "https://dummyimage.com/300x200/000/fff"
+  },
+  {
+    "id": 27,
+    "name": "Challengers",
+    "type": "movie",
+    "image": "https://dummyimage.com/300x200/000/fff"
+  },
+  {
+    "id": 28,
+    "name": "Andor",
+    "type": "series",
+    "image": "https://dummyimage.com/300x200/000/fff"
+  },
+  {
+    "id": 29,
+    "name": "The Fall Guy",
+    "type": "movie",
+    "image": "https://dummyimage.com/300x200/000/fff"
+  },
+  {
+    "id": 30,
+    "name": "Arcane",
+    "type": "series",
+    "image": "https://dummyimage.com/300x200/000/fff"
+  },
+  {
+    "id": 31,
+    "name": "Civil War",
+    "type": "movie",
+    "image": "https://dummyimage.com/300x200/000/fff"
+  },
+  {
+    "id": 32,
+    "name": "Ted Lasso",
+    "type": "series",
+    "image": "https://dummyimage.com/300x200/000/fff"
+  },
+  {
+    "id": 33,
+    "name": "Wonka",
+    "type": "movie",
+    "image": "https://dummyimage.com/300x200/000/fff"
+  },
+  {
+    "id": 34,
+    "name": "The White Lotus",
+    "type": "series",
+    "image": "https://dummyimage.com/300x200/000/fff"
+  },
+  {
+    "id": 35,
+    "name": "Anyone But You",
+    "type": "movie",
+    "image": "https://dummyimage.com/300x200/000/fff"
+  },
+  {
+    "id": 36,
+    "name": "Stranger Things",
+    "type": "series",
+    "image": "https://dummyimage.com/300x200/000/fff"
+  },
+  {
+    "id": 37,
+    "name": "The Boy and the Heron",
+    "type": "movie",
+    "image": "https://dummyimage.com/300x200/000/fff"
+  },
+  {
+    "id": 38,
+    "name": "The Witcher",
+    "type": "series",
+    "image": "https://dummyimage.com/300x200/000/fff"
+  },
+  {
+    "id": 39,
+    "name": "Past Lives",
+    "type": "movie",
+    "image": "https://dummyimage.com/300x200/000/fff"
+  },
+  {
+    "id": 40,
+    "name": "Bridgerton",
+    "type": "series",
+    "image": "https://dummyimage.com/300x200/000/fff"
+  },
+  {
+    "id": 41,
+    "name": "Mission: Impossible - Dead Reckoning Part One",
+    "type": "movie",
+    "image": "https://dummyimage.com/300x200/000/fff"
+  },
+  {
+    "id": 42,
+    "name": "Reacher",
+    "type": "series",
+    "image": "https://dummyimage.com/300x200/000/fff"
+  },
+  {
+    "id": 43,
+    "name": "John Wick: Chapter 4",
+    "type": "movie",
+    "image": "https://dummyimage.com/300x200/000/fff"
+  },
+  {
+    "id": 44,
+    "name": "The Boys",
+    "type": "series",
+    "image": "https://dummyimage.com/300x200/000/fff"
+  },
+  {
+    "id": 45,
+    "name": "Guardians of the Galaxy Vol. 3",
+    "type": "movie",
+    "image": "https://dummyimage.com/300x200/000/fff"
+  },
+  {
+    "id": 46,
+    "name": "Yellowstone",
+    "type": "series",
+    "image": "https://dummyimage.com/300x200/000/fff"
+  },
+  {
+    "id": 47,
+    "name": "Only Murders in the Building",
+    "type": "series",
+    "image": "https://dummyimage.com/300x200/000/fff"
+  },
+  {
+    "id": 48,
+    "name": "Pachinko",
+    "type": "series",
+    "image": "https://dummyimage.com/300x200/000/fff"
+  },
+  {
+    "id": 49,
+    "name": "Abbott Elementary",
+    "type": "series",
+    "image": "https://dummyimage.com/300x200/000/fff"
+  },
+  {
+    "id": 50,
+    "name": "Everything Everywhere All at Once",
+    "type": "movie",
+    "image": "https://image.tmdb.org/t/p/w200/w3LxiVYdWWRvEVdn5RYq6jIqkb1.jpg"
+  }
+]
