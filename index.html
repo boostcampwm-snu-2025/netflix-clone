@@ -22,8 +22,16 @@
           </ul>
         </nav>
         <div class="header__actions">
-          <!-- 검색 -->
-          <span id="search-icon">🔍</span>
+          <!-- 검색: searchBar.js로 제어 + style.css에서 애니메이션 효과 -->
+          <div class="search-box" id="search-box">
+            <span id="search-icon">🔍</span>
+            <input
+              type="text"
+              id="search-input"
+              placeholder="제목, 인물, 장르"
+            />
+            <div class="search-results" id="search-results"></div>
+          </div>
 
           <!-- 알림 -->
           <span id="notif-icon">🔔</span>

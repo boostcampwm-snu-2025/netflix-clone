@@ -3,6 +3,7 @@ import { initCarousel } from "./modules/carousel.js";
 import { loadMovies } from "./modules/movieLoader.js";
 import { initLikeButtons } from "./modules/like.js";
 import { initBookmarkButtons } from "./modules/bookmark.js";
+import { initSearchBar } from "./modules/searchBar.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
   await loadMovies();
@@ -10,4 +11,6 @@ document.addEventListener("DOMContentLoaded", async () => {
   initLikeButtons();
   initBookmarkButtons();
   initModal();
+  initSearchBar();
+  initSearchBar();
 });
