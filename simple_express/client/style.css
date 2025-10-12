@@ -93,3 +93,47 @@ body {
     white-space: nowrap;
     border: 0;
 }
+
+
+
+.poster-grid {
+    /* [핵심] CSS Grid를 사용하여 4열 배치 */
+    display: grid;
+    /* repeat(4, 1fr)은 4개의 동일한 폭(1fr)을 가진 열을 만듭니다. */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    /* 포스터 간의 간격 */
+    padding-top: 20px;
+    /* 상단 여백 */
+}
+
+/* 포스터 개별 항목 스타일 */
+.poster-item {
+    text-align: center;
+    overflow: hidden;
+    /* 이미지를 벗어나는 요소 숨김 */
+}
+
+/* 이미지 스타일 */
+.poster-item img {
+    width: 100%;
+    /* 부모 .poster-item 너비에 맞춤 */
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    /* 모서리 둥글게 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 포스터 제목 스타일 */
+.poster-title {
+    margin-top: 8px;
+    font-size: 0.9em;
+    font-weight: bold;
+    color: #333;
+    white-space: nowrap;
+    /* 제목이 한 줄로 표시되도록 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* 넘치는 텍스트는 ...으로 표시 */
+}
