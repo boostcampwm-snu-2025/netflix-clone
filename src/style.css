@@ -1,0 +1,344 @@
+
+body{
+    background-color:#000;
+    font-family:sans-serif;
+    color:#ffffff;
+}
+h1 {
+    font-size: 1.5rem;
+}
+
+header{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index:10;
+    background: linear-gradient(to bottom, #000, #000000de);
+    padding: 0.5rem 2rem;
+}
+nav{
+    display: flex;
+}
+nav img{
+    height: 40px;
+}
+
+.navigation{
+    justify-content: space-between;
+    display: flex;
+    width: 85%;
+}
+
+ul.primary-navigation{
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+.navigation-tab:first-of-type a{
+    color: #ffffff
+}
+.navigation-tab a{
+    text-decoration: none;
+    color:#ffffffb4;
+    transition: color 0.2s;
+}
+.navigation-tab a:hover{
+    color:#ffffff6a;
+    
+}
+
+.secondary-navigation{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.secondary-navigation img{
+    height: 35px;
+    width: 35px;
+    border-radius: 4px;
+}
+.secondary-navigation i{
+    font-size: 25px;
+}
+.secondary-navigation a{
+    color:#ffffff;
+}
+.nav-element{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+}
+.nav-element .dropdown{
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background:#000000ca;
+    z-index: 10;
+    min-width: 250px;
+    min-height: 50px;
+}
+.nav-element .dropdown p{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.nav-element .dropdown.active{
+    display: block;
+}
+.other-profile{
+    display: flex;
+    align-items: center;
+    width: 250px;
+    height: 50px;
+    padding-left: 20px;
+}
+
+
+.hero {
+    position: relative;
+    height: auto;
+    width: 100%;
+}
+.hero-image-wrapper {
+    position: relative;
+}
+.hero-image-wrapper::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    background: linear-gradient(to bottom, #00000000, #000)
+}
+.hero-image-wrapper img{
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+.fill-container{
+    position: absolute;
+    bottom: 20%;
+    left: 5%;
+    max-width: 550px;
+}
+.titleWrapper img{
+    max-width: 100%;
+    margin-bottom: 1rem;
+}
+.info-wrapper h1{
+    margin-bottom: 0.5rem;
+}
+.info-wrapper p{
+    font-size:1.3rem;
+    margin-bottom: 1.5rem;
+}
+.left-button-layer{
+    display: flex;
+    gap:1rem;
+}
+.left-button-layer button {
+    padding: 0.6rem 1.85rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.3rem;
+}
+.left-button-layer button:first-child{
+    background-color: #ffffff;
+    color: #000;
+}
+.left-button-layer button:last-child{
+    background-color: #7c7c7c;
+    color: #ffffff;
+}
+
+.right-button-layer {
+    position: absolute;
+    right: 0%;
+    bottom: 20%;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+.right-button-layer i{
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+}
+.maturity-rating{
+    display: flex;
+    align-items: center;
+    padding-right: 50px;
+    padding-left: 10px;
+    margin-left: 0.5rem;
+    height:35px;
+    
+    
+    background:#0000006f;
+    border-left: 2px solid #ffffff;
+}
+.content-row.first{
+    margin-top: -5rem;
+}
+.content-row{
+     margin-top: 2rem; 
+     padding: 0 2rem; 
+     position: relative;
+     z-index: 5;
+} 
+.carousel {
+    position: relative;
+    overflow:hidden;
+    width: 100%;
+}
+.outer-carousel {
+    display: flex;
+}
+.row-container{ 
+    z-index: auto;
+    position: relative;
+    display: flex; 
+} 
+.row-container::-webkit-scrollbar{
+    display:none;
+}
+.row-container img{ 
+    margin-right: 10px;
+    width: 250px; 
+    border-radius: 4px; 
+    transition: transform 0.3s ease; 
+    transform-origin: center bottom;
+} 
+.row-container img:hover{ 
+    position: relative;
+    z-index: 10;
+    transform: scale(1.2);
+    box-shadow: 0 10px 20px #00000083;
+}
+.content-row h1{
+    position: relative;
+    z-index: 1;
+}
+footer{
+    padding: 3rem 2rem;
+    font-size: 0.8rem;
+    align-items: center;
+}
+
+footer a{
+    color: #b4b3b3;
+    text-decoration: none;
+}
+footer a:hover{
+    text-decoration: underline;
+}
+.socials{
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+.socials a{
+    font-size: 1.5rem;
+}
+.links{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+.link-column{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.info p{
+    margin: 0.25rem 0;
+    line-height: 1.5;
+}
+/* Card wrapper is the div, not the link */
+/* Overlay sits on top of the image inside row-container */
+.content-card-wrapper {
+    position: relative; /* needed for absolute overlay */
+    display: inline-block;
+}
+
+.content-card-wrapper img.content-card {
+    width: 250px;
+    height: 150px;
+    border-radius: 8px;
+    display: block;
+    transition: transform 0.3s ease;
+    transform-origin: center bottom;
+}
+
+/* Zoom on hover */
+.row-container img.content-card:hover,
+.content-card-wrapper:hover img.content-card {
+    transform: scale(1.2); /* keep your existing zoom logic */
+    z-index: 10;
+    box-shadow: 0 10px 20px #00000083;
+}
+
+/* Hover overlay */
+.hover-overlay {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    background: rgb(135, 135, 135);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    border-radius: 8px;
+    padding: 10px;
+    transition: opacity 0.3s;
+    z-index: 20; /* higher than the image zoom */
+}
+
+/* Show overlay on hover */
+.content-card-wrapper:hover .hover-overlay {
+    opacity: 1;
+}
+
+/* Hover buttons inside overlay */
+.hover-buttons button, .hover-buttons b {
+    margin: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 16px;
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5 per row */
+  gap: 16px; /* space between cards */
+  margin-top: 20px;
+}
+
+.content-card-wrapper img {
+  width: 100%;
+  display: block;
+  border-radius: 6px;
+}
+
+.content-card-wrapper p {
+  text-align: center;
+  margin-top: 8px;
+  font-size: 0.9rem;
+  color: #fff;
+}
