@@ -1,0 +1,47 @@
+// data.js
+export const TITLES = [
+  { id: 1, name: "Stranger Things", type: "series", image: "https://image.tmdb.org/t/p/w300/x2LSRK2Cm7MZhjluni1msVJ3wDF.jpg" },
+  { id: 2, name: "The Witcher", type: "series", image: "https://image.tmdb.org/t/p/w300/7vjaCdMw15FEbXyLQTVa04URsPm.jpg" },
+  // { id: 3, name: "Squid Game", type: "series", image: "https://image.tmdb.org/t/p/w300/dDlEmu3EZ0Pgg93K2SVNmjSwo7V.jpg" },
+  { id: 4, name: "Arcane", type: "series", image: "https://image.tmdb.org/t/p/w300/5TbtcmRySXPAEXBzwhiOYYDQmgv.jpg" },
+  // { id: 5, name: "The Crown", type: "series", image: "https://image.tmdb.org/t/p/w300/ltCzE5Xn5VZyVbXbR8xvQnXcA0B.jpg" },
+  // { id: 6, name: "Black Mirror", type: "series", image: "https://image.tmdb.org/t/p/w300/p9FoEt5shEKRk8j6zf2zqXc5sF0.jpg" },
+  { id: 7, name: "The Queen's Gambit", type: "series", image: "https://image.tmdb.org/t/p/w300/zU0htwkhNvBQdVSIKB9s6hgVeFK.jpg" },
+  { id: 8, name: "Money Heist", type: "series", image: "https://image.tmdb.org/t/p/w300/reEMJA1uzscCbkpeRJeTT2bjqUp.jpg" },
+  { id: 9, name: "Breaking Bad", type: "series", image: "https://image.tmdb.org/t/p/w300/ggFHVNu6YYI5L9pCfOacjizRGt.jpg" },
+  // { id: 10, name: "Narcos", type: "series", image: "https://image.tmdb.org/t/p/w300/rTmal9fDbwh4K0R9vWjNVkNl9P0.jpg" },
+
+  { id: 11, name: "Interstellar", type: "movie", image: "https://image.tmdb.org/t/p/w300/rAiYTfKGqDCRIIqo664sY9XZIvQ.jpg" },
+  // { id: 12, name: "Inception", type: "movie", image: "https://image.tmdb.org/t/p/w300/qmDpIHrmpJINaRKAfWQfftjCdyi.jpg" },
+  // { id: 13, name: "Pulp Fiction", type: "movie", image: "https://image.tmdb.org/t/p/w300/dM2w364MScsjFf8pfMbaWUcWrR.jpg" },
+  { id: 14, name: "The Dark Knight", type: "movie", image: "https://image.tmdb.org/t/p/w300/qJ2tW6WMUDux911r6m7haRef0WH.jpg" },
+  { id: 15, name: "Fight Club", type: "movie", image: "https://image.tmdb.org/t/p/w300/bptfVGEQuv6vDTIMVCHjJ9Dz8PX.jpg" },
+  // { id: 16, name: "Oppenheimer", type: "movie", image: "https://image.tmdb.org/t/p/w300/bT3c4TSOP8vBmMoXZRDPTII6afR.jpg" },
+  { id: 17, name: "Dune", type: "movie", image: "https://image.tmdb.org/t/p/w300/d5NXSklXo0qyIYkgV94XAgMIckC.jpg" },
+  { id: 18, name: "Parasite", type: "movie", image: "https://image.tmdb.org/t/p/w300/7IiTTgloJzvGI1TAYymCfbfl3vT.jpg" },
+  { id: 19, name: "Spider-Man: No Way Home", type: "movie", image: "https://image.tmdb.org/t/p/w300/1g0dhYtq4irTY1GPXvft6k4YLjm.jpg" },
+  { id: 20, name: "The Last of Us", type: "series", image: "https://image.tmdb.org/t/p/w300/uKvVjHNqB5VmOrdxqAt2F7J78ED.jpg" },
+
+  { id: 21, name: "Loki", type: "series", image: "https://image.tmdb.org/t/p/w300/voHUmluYmKyleFkTu3lOXQG702u.jpg" },
+  { id: 22, name: "The Boys", type: "series", image: "https://image.tmdb.org/t/p/w300/mY7SeH4HFFxW1hiI6cWuwCRKptN.jpg" },
+  { id: 23, name: "House of the Dragon", type: "series", image: "https://image.tmdb.org/t/p/w300/1X4h40fcB4WWUmIBK0auT4zRBAV.jpg" },
+  { id: 24, name: "The Mandalorian", type: "series", image: "https://image.tmdb.org/t/p/w300/sWgBv7LV2PRoQgkxwlibdGXKz1S.jpg" },
+  { id: 25, name: "Wednesday", type: "series", image: "https://image.tmdb.org/t/p/w300/9PFonBhy4cQy7Jz20NpMygczOkv.jpg" },
+  // { id: 26, name: "The Bear", type: "series", image: "https://image.tmdb.org/t/p/w300/jjIRyDwaR3FD1sGPR0j6hS3QpFj.jpg" },
+  // { id: 27, name: "Severance", type: "series", image: "https://image.tmdb.org/t/p/w300/9p9yHn3oK3aR9mLnvTgkoA57KkV.jpg" },
+  { id: 28, name: "Better Call Saul", type: "series", image: "https://image.tmdb.org/t/p/w300/fC2HDm5t0kHl7mTm7jxMR31b7by.jpg" },
+  { id: 29, name: "Peaky Blinders", type: "series", image: "https://image.tmdb.org/t/p/w300/vUUqzWa2LnHIVqkaKVlVGkVcZIW.jpg" },
+  { id: 30, name: "Game of Thrones", type: "series", image: "https://image.tmdb.org/t/p/w300/u3bZgnGQ9T01sWNhyveQz0wH0Hl.jpg" },
+
+  { id: 31, name: "John Wick", type: "movie", image: "https://image.tmdb.org/t/p/w300/fZPSd91yGE9fCcCe6OoQr6E3Bev.jpg" },
+  { id: 32, name: "Avatar", type: "movie", image: "https://image.tmdb.org/t/p/w300/kyeqWdyUXW608qlYkRqosgbbJyK.jpg" },
+  { id: 33, name: "The Avengers", type: "movie", image: "https://image.tmdb.org/t/p/w300/RYMX2wcKCBAr24UyPD7xwmjaTn.jpg" },
+  { id: 34, name: "Guardians of the Galaxy", type: "movie", image: "https://image.tmdb.org/t/p/w300/r7vmZjiyZw9rpJMQJdXpjgiCOk9.jpg" },
+  { id: 35, name: "The Batman", type: "movie", image: "https://image.tmdb.org/t/p/w300/74xTEgt7R36Fpooo50r9T25onhq.jpg" },
+  { id: 36, name: "Django Unchained", type: "movie", image: "https://image.tmdb.org/t/p/w300/7oWY8VDWW7thTzWh3OKYRkWUlD5.jpg" },
+  { id: 37, name: "Joker", type: "movie", image: "https://image.tmdb.org/t/p/w300/udDclJoHjfjb8Ekgsd4FDteOkCU.jpg" },
+  { id: 38, name: "Tenet", type: "movie", image: "https://image.tmdb.org/t/p/w300/k68nPLbIST6NP96JmTxmZijEvCA.jpg" },
+  // { id: 39, name: "The Martian", type: "movie", image: "https://image.tmdb.org/t/p/w300/5aGhaIHYuQbqlHWvWYqMCnj40y2.jpg" },
+  { id: 40, name: "La La Land", type: "movie", image: "https://image.tmdb.org/t/p/w300/uDO8zWDhfWwoFdKS4fzkUJt0Rf0.jpg" }
+
+];

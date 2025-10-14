@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Search</title>
+    <link rel="stylesheet" href="/style.css" />
+</head>
+
+<body>
+    <main class="container">
+        <h1 class="title">Simple Movie Search Engine</h1>
+        <form class="search" role="search" id="searchForm">
+            <div id="recentLayer" class="recent" hidden>
+                <div class="recent-head">최근 검색어</div>
+                <ul id="recentList" class="recent-list"></ul>
+            </div>
+            <label class="visually-hidden" for="q">검색어</label>
+            <input id="q" name="q" type="search" placeholder="Search…" autocomplete="off" autofocus />
+            <button type="submit">Search</button>
+        </form>
+
+        <!-- 검색 결과 영역 -->
+        <div id="results"></div>
+    </main>
+    <script src="./app.js" type="module"></script>
+</body>
+
+</html>
